@@ -1009,8 +1009,17 @@ s32 act_twirl_land(struct MarioState *m) {
 
 s32 act_ground_pound_land(struct MarioState *m) {
     m->actionState = ACT_STATE_GROUND_POUND_LAND_1;
-    if (m->input & INPUT_STOMPED) {
-        return drop_and_set_mario_action(m, ACT_SHOCKWAVE_BOUNCE, 0);
+
+    if (m->input & INPUT_B_PRESSED) {
+        m->faceAngle[1] = m->intendedYaw;
+        m->vel[1] = 30.0f;
+        mario_set_forward_vel(m, 50.0f);
+        return set_mario_action(m, ACT_DIVE, 0);
+    }
+
+    if (m->input & INPUT_A_DOWN) {
+        mario_set_forward_vel(m, m->forwardVel *= 1.5f);
+        return set_mario_action(m, ACT_TRIPLE_JUMP, 0);
     }
 
     if (m->input & INPUT_OFF_FLOOR) {
