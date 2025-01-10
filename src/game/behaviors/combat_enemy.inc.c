@@ -20,7 +20,7 @@ static u8 sCombatEnemyAttackHandlers[6] = {
 };
 
 void bhv_combat_enemy_loop(void) {
-    if (obj_handle_attacks(&sCombatEnmemyHitbox, o->oAction, sCombatEnemyAttackHandlers)) {
+    if (obj_handle_attacks(&sCombatEnmemyHitbox, o->oAction, sCombatEnemyAttackHandlers) == sCombatEnemyAttackHandlers[0]) {
         play_sound(SOUND_GENERAL_COLLECT_1UP, gGlobalSoundSource);
         obj_die_if_health_non_positive();
         o->oHealth--;
