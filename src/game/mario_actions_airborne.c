@@ -579,11 +579,6 @@ s32 act_side_flip(struct MarioState *m) {
         return set_mario_action(m, ACT_DIVE, 0);
     }
 
-    if (m->input & INPUT_Z_DOWN) {
-        m->marioObj->header.gfx.angle[1] += 0x8000;
-        return set_mario_action(m, ACT_LONG_JUMP, 0);
-    }
-
     if (m->input & INPUT_Z_PRESSED) {
         m->marioObj->header.gfx.angle[1] += 0x8000;
         return set_mario_action(m, ACT_GROUND_POUND, 0);
