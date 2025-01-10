@@ -579,6 +579,11 @@ s32 act_side_flip(struct MarioState *m) {
         return set_mario_action(m, ACT_DIVE, 0);
     }
 
+    if (m->input & INPUT_Z_DOWN) {
+        m->marioObj->header.gfx.angle[1] += 0x8000;
+        return set_mario_action(m, ACT_LONG_JUMP, 0);
+    }
+
     if (m->input & INPUT_Z_PRESSED) {
         m->marioObj->header.gfx.angle[1] += 0x8000;
         return set_mario_action(m, ACT_GROUND_POUND, 0);
@@ -914,6 +919,10 @@ s32 act_ground_pound(struct MarioState *m) {
             m->peakHeight = m->pos[1];
             vec3f_copy(m->marioObj->header.gfx.pos, m->pos);
         }
+    }
+
+    if (m->input & INPUT_B_PRESSED) {
+        return set_mario_action(m, ACT_JUMP_KICK, 0);
     }
 
     if (m->actionTimer == 0) {
