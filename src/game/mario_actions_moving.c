@@ -1580,6 +1580,10 @@ s32 act_dive_slide(struct MarioState *m) {
         return TRUE;
     }
 
+    if (m->input & INPUT_Z_PRESSED){
+        set_mario_action(m, ACT_GROUND_POUND, 0);
+    }
+
     common_slide_action(m, ACT_STOMACH_SLIDE_STOP, ACT_FREEFALL, MARIO_ANIM_DIVE);
     return FALSE;
 }
