@@ -55,7 +55,8 @@ extern const GeoLayout mario_002_switch_opt0_001_switch_opt0_000_switch_opt0_000
 extern const GeoLayout mario_002_switch_opt0_001_switch_opt0_000_switch_opt0_000_switch_001_opt7[];
 extern const GeoLayout mario_geo[];
 extern u8 mario_ShadowFluffSGI_ia8[];
-extern u8 mario_metal_rgba16[];
+extern u8 mario_mario_metal_rgba16_tint_ci8[];
+extern u8 mario_mario_metal_rgba16_tint_pal_rgba16[];
 extern u8 mario_mario_eyes_center_rgba16_ci8[];
 extern u8 mario_mario_eyes_center_rgba16_pal_rgba16[];
 extern u8 mario_hair_ci8[];

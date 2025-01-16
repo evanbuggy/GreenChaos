@@ -415,14 +415,15 @@ s32 update_decelerating_speed(struct MarioState *m) {
     return stopped;
 }
 
+#define WALK_MULTI 1250.0f
 void update_walking_speed(struct MarioState *m) {
     f32 maxTargetSpeed;
     f32 targetSpeed;
 
     if (m->floor != NULL && m->floor->type == SURFACE_SLOW) {
-        maxTargetSpeed = 24.0f;
+        maxTargetSpeed = 24.0f* WALK_MULTI;
     } else {
-        maxTargetSpeed = 32.0f;
+        maxTargetSpeed = 32.0f* WALK_MULTI;
     }
 
     targetSpeed = m->intendedMag < maxTargetSpeed ? m->intendedMag : maxTargetSpeed;
@@ -430,7 +431,7 @@ void update_walking_speed(struct MarioState *m) {
     if (m->quicksandDepth > 10.0f) {
         targetSpeed *= 6.25f / m->quicksandDepth;
     }
-
+    targetSpeed *= WALK_MULTI;
     if (m->forwardVel <= 0.0f) {
         // Slow down if moving backwards
         m->forwardVel += 1.1f;
@@ -441,8 +442,8 @@ void update_walking_speed(struct MarioState *m) {
         m->forwardVel -= 1.0f;
     }
 
-    if (m->forwardVel > 48.0f) {
-        m->forwardVel = 48.0f;
+    if (m->forwardVel > 48.0f* WALK_MULTI) {
+        m->forwardVel = 48.0f* WALK_MULTI;
     }
 
 #ifdef VELOCITY_BASED_TURN_SPEED
@@ -590,6 +591,7 @@ void anim_and_audio_for_walk(struct MarioState *m) {
                         //! (Speed Crash) If Mario's speed is more than 2^17.
                         animSpeed = (s32)(intendedSpeed / 4.0f * 0x10000);
                         set_mario_anim_with_accel(m, MARIO_ANIM_RUNNING, animSpeed);
+                        m->marioBodyState->handState = (m, MARIO_HAND_OPEN);
                         play_step_sound(m, 9, 45);
                         targetPitch = tilt_body_running(m);
 
