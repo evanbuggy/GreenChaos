@@ -2,7 +2,7 @@ static struct ObjectHitbox sCombatEnmemyHitbox = {
     /* interactType:      */ INTERACT_BOUNCE_TOP,
     /* downOffset:        */ 0,
     /* damageOrCoinValue: */ 1,
-    /* health:            */ 5,
+    /* health:            */ 20,
     /* numLootCoins:      */ 1,
     /* radius:            */ 200,
     /* height:            */ 100,
@@ -20,10 +20,12 @@ static u8 sCombatEnemyAttackHandlers[6] = {
 };
 
 void bhv_combat_enemy_loop(void) {
-    if (obj_handle_attacks(&sCombatEnmemyHitbox, o->oAction, sCombatEnemyAttackHandlers) == ATTACK_PUNCH) {
-        play_sound(SOUND_GENERAL_COLLECT_1UP, gGlobalSoundSource);
+    if (obj_handle_attacks(&sCombatEnmemyHitbox, o->oAction, sCombatEnemyAttackHandlers) == ATTACK_KICK_OR_TRIP) {
         obj_die_if_health_non_positive();
-        o->oHealth--;
+        // This defines how long Mario has in frames to cancel his kick into a jump after hitting this enemy.
+        gMarioState->jumpTimer = 10;
+        
+        //o->oHealth--;
         o->oForwardVel = 0.0f;
         o->oVelY = 70.0f;
     }

@@ -1591,16 +1591,29 @@ s32 act_jump_kick(struct MarioState *m) {
         m->flags |= MARIO_KICKING;
     }
 
+    // This handles the jump Mario can perform out of a kick, only if he has hit a valid enemy with
+    if (m->jumpTimer > 0) {
+        play_sound(SOUND_GENERAL_COIN, gGlobalSoundSource);
+        m->jumpTimer--;
+        if (m->input & INPUT_A_PRESSED) {
+            m->jumpTimer = 0;
+            mario_set_forward_vel(m, 10.0f);
+            return set_mario_action(m, ACT_TRIPLE_JUMP, 0);
+        }
+    }
+
     update_air_without_turn(m);
 
     switch (perform_air_step(m, 0)) {
         case AIR_STEP_LANDED:
             if (!check_fall_damage_or_get_stuck(m, ACT_HARD_BACKWARD_GROUND_KB)) {
+                m->jumpTimer = 0;
                 set_mario_action(m, ACT_FREEFALL_LAND, 0);
             }
             break;
 
         case AIR_STEP_HIT_WALL:
+            m->jumpTimer = 0;
             mario_set_forward_vel(m, 0.0f);
             break;
     }
