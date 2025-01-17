@@ -1,26 +1,8 @@
-Lights1 goomba_Fast3D_Material_002_lights = gdSPDefLights1(
-	0x7F, 0x7F, 0x7F,
-	0xFF, 0xFF, 0xFF, 0x49, 0x49, 0x49);
 
-Lights1 goomba_Fast3D_Material_001_lights = gdSPDefLights1(
-	0x7F, 0x7F, 0x7F,
-	0xFF, 0xFF, 0xFF, 0x49, 0x49, 0x49);
 
-Lights1 goomba_Fast3D_Material_005_lights = gdSPDefLights1(
-	0xE, 0xE, 0xE,
-	0x28, 0x28, 0x28, 0x49, 0x49, 0x49);
 
-Lights1 goomba_Fast3D_Material_lights = gdSPDefLights1(
-	0x0, 0x7F, 0x11,
-	0x0, 0xFF, 0x2C, 0x49, 0x49, 0x49);
 
-Lights1 goomba_Fast3D_Material_004_lights = gdSPDefLights1(
-	0x7F, 0x7F, 0x7F,
-	0xFF, 0xFF, 0xFF, 0x49, 0x49, 0x49);
 
-Lights1 goomba_Fast3D_Material_006_lights = gdSPDefLights1(
-	0x40, 0x1F, 0x0,
-	0x87, 0x48, 0x0, 0x49, 0x49, 0x49);
 
 Gfx goomba_goomba_body_rgba16_ci8_aligner[] = {gsSPEndDisplayList()};
 u8 goomba_goomba_body_rgba16_ci8[] = {
@@ -1070,7 +1052,8 @@ Gfx goomba_000_offset_004_mesh_layer_1_tri_0[] = {
 
 Gfx mat_goomba_Fast3D_Material_002[] = {
 	gsSPGeometryMode(G_CULL_BACK, 0),
-	gsSPSetLights1(goomba_Fast3D_Material_002_lights),
+    gsSPLightColor(LIGHT_1, 0xffffffff),
+    gsSPLightColor(LIGHT_2, 0x7f7f7fff),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, TEXEL0, 0, ENVIRONMENT, 0, TEXEL0, 0, SHADE, 0, TEXEL0, 0, ENVIRONMENT, 0),
 	gsDPSetAlphaDither(G_AD_NOISE),
@@ -1096,7 +1079,8 @@ Gfx mat_revert_goomba_Fast3D_Material_002[] = {
 };
 
 Gfx mat_goomba_Fast3D_Material_001[] = {
-	gsSPSetLights1(goomba_Fast3D_Material_001_lights),
+    gsSPLightColor(LIGHT_1, 0xffffffff),
+    gsSPLightColor(LIGHT_2, 0x7f7f7fff),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT, TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT),
 	gsDPSetAlphaDither(G_AD_NOISE),
@@ -1121,7 +1105,8 @@ Gfx mat_revert_goomba_Fast3D_Material_001[] = {
 };
 
 Gfx mat_goomba_Fast3D_Material_005[] = {
-	gsSPSetLights1(goomba_Fast3D_Material_005_lights),
+    gsSPLightColor(LIGHT_1, 0x282828ff),
+    gsSPLightColor(LIGHT_2, 0xe0e0eff),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(0, 0, 0, SHADE, 0, 0, 0, ENVIRONMENT, 0, 0, 0, SHADE, 0, 0, 0, ENVIRONMENT),
 	gsDPSetAlphaDither(G_AD_NOISE),
@@ -1136,7 +1121,8 @@ Gfx mat_revert_goomba_Fast3D_Material_005[] = {
 };
 
 Gfx mat_goomba_Fast3D_Material[] = {
-	gsSPSetLights1(goomba_Fast3D_Material_lights),
+    gsSPLightColor(LIGHT_1, 0xff2cff),
+    gsSPLightColor(LIGHT_2, 0x7f11ff),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, SHADE, TEXEL0_ALPHA, SHADE, 0, 0, 0, ENVIRONMENT, TEXEL0, SHADE, TEXEL0_ALPHA, SHADE, 0, 0, 0, ENVIRONMENT),
 	gsDPSetAlphaDither(G_AD_NOISE),
@@ -1161,7 +1147,8 @@ Gfx mat_revert_goomba_Fast3D_Material[] = {
 };
 
 Gfx mat_goomba_Fast3D_Material_004[] = {
-	gsSPSetLights1(goomba_Fast3D_Material_004_lights),
+    gsSPLightColor(LIGHT_1, 0xffffffff),
+    gsSPLightColor(LIGHT_2, 0x7f7f7fff),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT, TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT),
 	gsDPSetAlphaDither(G_AD_NOISE),
@@ -1186,7 +1173,8 @@ Gfx mat_revert_goomba_Fast3D_Material_004[] = {
 };
 
 Gfx mat_goomba_Fast3D_Material_006[] = {
-	gsSPSetLights1(goomba_Fast3D_Material_006_lights),
+    gsSPLightColor(LIGHT_1, 0x874800ff),
+    gsSPLightColor(LIGHT_2, 0x401f00ff),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(0, 0, 0, SHADE, 0, 0, 0, ENVIRONMENT, 0, 0, 0, SHADE, 0, 0, 0, ENVIRONMENT),
 	gsDPSetAlphaDither(G_AD_NOISE),
