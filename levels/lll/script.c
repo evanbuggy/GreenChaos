@@ -12,6 +12,10 @@
 #include "levels/scripts.h"
 
 #include "actors/common1.h"
+
+/* Fast64 begin persistent block [includes] */
+/* Fast64 end persistent block [includes] */
+
 #include "make_const_nonconst.h"
 #include "levels/lll/header.h"
 
@@ -75,6 +79,7 @@ const LevelScript level_lll_entry[] = {
 	LOAD_MODEL_FROM_GEO(MODEL_LLL_FALLING_PLATFORM, lll_geo_000B80), 
 	LOAD_MODEL_FROM_GEO(MODEL_LLL_LARGE_FALLING_PLATFORM, lll_geo_000B98), 
 	LOAD_MODEL_FROM_GEO(MODEL_LLL_VOLCANO_FALLING_TRAP, lll_geo_000EA8), 
+
 	/* Fast64 begin persistent block [level commands] */
 	/* Fast64 end persistent block [level commands] */
 
@@ -82,8 +87,8 @@ const LevelScript level_lll_entry[] = {
 		WARP_NODE(0x0A, LEVEL_BOB, 0x01, 0x0A, WARP_NO_CHECKPOINT),
 		WARP_NODE(0xF0, LEVEL_BOB, 0x01, 0x0A, WARP_NO_CHECKPOINT),
 		WARP_NODE(0xF1, LEVEL_BOB, 0x01, 0x0A, WARP_NO_CHECKPOINT),
-		MARIO_POS(0x01, 90, -27180, 3650, -26284),
-		OBJECT(MODEL_NONE, -27180, 3650, -26284, 0, 90, 0, 0x000A0000, bhvSpinAirborneWarp),
+		MARIO_POS(0x01, 90, -21572, 3650, -20896),
+		OBJECT(MODEL_NONE, -21572, 3650, -20896, 0, 90, 0, 0x000A0000, bhvSpinAirborneWarp),
 		TERRAIN(lll_area_1_collision),
 		MACRO_OBJECTS(lll_area_1_macro_objs),
 		SET_BACKGROUND_MUSIC(0x00, SEQ_LEVEL_HOT),
@@ -91,8 +96,9 @@ const LevelScript level_lll_entry[] = {
 		/* Fast64 begin persistent block [area commands] */
 		/* Fast64 end persistent block [area commands] */
 	END_AREA(),
+
 	FREE_LEVEL_POOL(),
-	MARIO_POS(0x01, 90, -27180, 3650, -26284),
+	MARIO_POS(0x01, 90, -21572, 3650, -20896),
 	CALL(0, lvl_init_or_update),
 	CALL_LOOP(1, lvl_init_or_update),
 	CLEAR_LEVEL(),

@@ -19,7 +19,7 @@ extern Vtx lll_dl_Level_mesh_layer_1_vtx_0[100];
 extern Gfx lll_dl_Level_mesh_layer_1_tri_0[];
 extern Vtx lll_dl_Level_mesh_layer_1_vtx_1[240];
 extern Gfx lll_dl_Level_mesh_layer_1_tri_1[];
-extern Vtx lll_dl_Level_mesh_layer_1_vtx_2[378];
+extern Vtx lll_dl_Level_mesh_layer_1_vtx_2[374];
 extern Gfx lll_dl_Level_mesh_layer_1_tri_2[];
 extern Vtx lll_dl_Level_mesh_layer_1_vtx_3[229];
 extern Gfx lll_dl_Level_mesh_layer_1_tri_3[];
