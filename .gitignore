@@ -1308,7 +1308,6 @@ sound/sequences/us/02_menu_title_screen.m64
 sound/sequences/us/03_level_grass.m64
 sound/sequences/us/04_level_inside_castle.m64
 sound/sequences/us/05_level_water.m64
-sound/sequences/us/06_level_hot.m64
 sound/sequences/us/07_level_boss_koopa.m64
 sound/sequences/us/08_level_snow.m64
 sound/sequences/us/09_level_slide.m64
@@ -1827,7 +1826,6 @@ textures/segment2/segment2.05000.rgba16.png
 textures/segment2/segment2.05200.rgba16.png
 textures/segment2/segment2.05400.rgba16.png
 textures/segment2/segment2.05600.rgba16.png
-textures/segment2/segment2.05800.rgba16.png
 textures/segment2/segment2.05C00.rgba16.png
 textures/segment2/segment2.05E00.rgba16.png
 textures/segment2/segment2.06000.rgba16.png
@@ -2059,16 +2057,6 @@ textures/sky/rr_textures.06000.rgba16.png
 textures/sky/rr_textures.07000.rgba16.png
 textures/sky/rr_textures.07800.rgba16.png
 textures/sky/rr_textures.08000.rgba16.png
-textures/skyboxes/bbh.png
-textures/skyboxes/bidw.png
-textures/skyboxes/bitfs.png
-textures/skyboxes/bits.png
-textures/skyboxes/ccm.png
-textures/skyboxes/cloud_floor.png
-textures/skyboxes/clouds.png
-textures/skyboxes/ssl.png
-textures/skyboxes/water.png
-textures/skyboxes/wdw.png
 textures/snow/ccm_textures.00000.rgba16.png
 textures/snow/ccm_textures.00800.rgba16.png
 textures/snow/ccm_textures.01000.rgba16.png
