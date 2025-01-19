@@ -706,6 +706,8 @@ enum MarioActionFlags {
 // group 0x1C0: custom actions
 // 0x1C0 - 0x1FF
 
+#define ACT_AIR_COMBO_JUMP             0x000001C0 // (0x1C0)
+
 /*
  this input mask is unused by the controller,
  but END_DEMO is used internally to signal
