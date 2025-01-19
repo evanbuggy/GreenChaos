@@ -1593,7 +1593,6 @@ s32 act_jump_kick(struct MarioState *m) {
 
     // This handles the jump Mario can perform out of a kick, only if he has hit a valid enemy with
     if (m->jumpTimer > 0) {
-        play_sound(SOUND_GENERAL_COIN, gGlobalSoundSource);
         m->jumpTimer--;
         if (m->input & INPUT_A_PRESSED) {
             m->jumpTimer = 0;
