@@ -1576,6 +1576,15 @@ s32 act_slide_kick(struct MarioState *m) {
 }
 
 s32 act_jump_kick(struct MarioState *m) {
+    // update_air_without_turn(m);
+    // mario_set_forward_vel(m, 10.0f);
+    // play_mario_sound(m, SOUND_ACTION_TERRAIN_JUMP, 0);
+    // set_mario_animation(m, MARIO_ANIM_FLUTTERKICK);
+
+    // if (m->actionTimer++ > 30) {
+    //     m->pos[1] += ((30 - m->actionTimer) * 0.5f);
+    // }
+    // return FALSE;
     if (m->actionState == ACT_STATE_JUMP_KICK_PLAY_SOUND_AND_ANIM) {
         play_sound_if_no_flag(m, SOUND_MARIO_PUNCH_HOO, MARIO_ACTION_SOUND_PLAYED);
         m->marioObj->header.gfx.animInfo.animID = -1;
@@ -1596,7 +1605,6 @@ s32 act_jump_kick(struct MarioState *m) {
         m->jumpTimer--;
         if (m->input & INPUT_A_PRESSED) {
             m->jumpTimer = 0;
-            mario_set_forward_vel(m, 10.0f);
             return set_mario_action(m, ACT_TRIPLE_JUMP, 0);
         }
     }
@@ -1988,18 +1996,6 @@ s32 act_special_triple_jump(struct MarioState *m) {
     return FALSE;
 }
 
-s32 act_air_combo_jump(struct MarioState *m) {
-    // update_air_without_turn(m);
-    // mario_set_forward_vel(m, 10.0f);
-    // play_mario_sound(m, SOUND_ACTION_TERRAIN_JUMP, 0);
-    // set_mario_animation(m, MARIO_ANIM_FLUTTERKICK);
-
-    // if (m->actionTimer++ > 30) {
-    //     m->pos[1] += ((30 - m->actionTimer) * 0.5f);
-    // }
-    // return FALSE;
-}
-
 s32 check_common_airborne_cancels(struct MarioState *m) {
     if (m->pos[1] < m->waterLevel - 100) {
         return set_water_plunge_action(m);
@@ -2075,7 +2071,6 @@ s32 mario_execute_airborne_action(struct MarioState *m) {
         case ACT_RIDING_HOOT:          cancel = act_riding_hoot(m);          break;
         case ACT_TOP_OF_POLE_JUMP:     cancel = act_top_of_pole_jump(m);     break;
         case ACT_VERTICAL_WIND:        cancel = act_vertical_wind(m);        break;
-        case ACT_AIR_COMBO_JUMP:       cancel = act_air_combo_jump(m);       break;
     }
     /* clang-format on */
 
