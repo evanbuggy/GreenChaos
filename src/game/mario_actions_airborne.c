@@ -463,27 +463,33 @@ s32 act_double_jump(struct MarioState *m) {
 }
 
 s32 act_triple_jump(struct MarioState *m) {
-    if (gSpecialTripleJump) {
-        return set_mario_action(m, ACT_SPECIAL_TRIPLE_JUMP, 0);
-    }
+    if (m->actionArg == 0) {
+        if (gSpecialTripleJump) {
+            return set_mario_action(m, ACT_SPECIAL_TRIPLE_JUMP, 0);
+        }
 
-    if (m->input & INPUT_B_PRESSED) {
-        return set_mario_action(m, ACT_DIVE, 0);
-    }
+        if (m->input & INPUT_B_PRESSED) {
+            return set_mario_action(m, ACT_DIVE, 0);
+        }
 
-    if (m->input & INPUT_Z_PRESSED) {
-        return set_mario_action(m, ACT_GROUND_POUND, 0);
-    }
+        if (m->input & INPUT_Z_PRESSED) {
+            return set_mario_action(m, ACT_GROUND_POUND, 0);
+        }
 
-    play_mario_sound(m, SOUND_ACTION_TERRAIN_JUMP, 0);
+        play_mario_sound(m, SOUND_ACTION_TERRAIN_JUMP, 0);
 
-    common_air_action_step(m, ACT_TRIPLE_JUMP_LAND, MARIO_ANIM_TRIPLE_JUMP, 0);
+        common_air_action_step(m, ACT_TRIPLE_JUMP_LAND, MARIO_ANIM_TRIPLE_JUMP, 0);
 #if ENABLE_RUMBLE
-    if (m->action == ACT_TRIPLE_JUMP_LAND) {
-        queue_rumble_data(5, 40);
-    }
+        if (m->action == ACT_TRIPLE_JUMP_LAND) {
+            queue_rumble_data(5, 40);
+        }
 #endif
-    play_flip_sounds(m, 2, 8, 20);
+        play_flip_sounds(m, 2, 8, 20);
+    }
+    else {
+        set_mario_animation(m, MARIO_ANIM_BREAKDANCE);
+        play_mario_sound(m, SOUND_ACTION_TERRAIN_JUMP, SOUND_MARIO_YAH_WAH_HOO);
+    }
     return FALSE;
 }
 
@@ -1603,9 +1609,9 @@ s32 act_jump_kick(struct MarioState *m) {
     // This handles the jump Mario can perform out of a kick, only if he has hit a valid enemy with
     if (m->jumpTimer > 0) {
         m->jumpTimer--;
-        if (m->input & INPUT_A_PRESSED) {
+        if (m->input & INPUT_A_DOWN) {
             m->jumpTimer = 0;
-            return set_mario_action(m, ACT_TRIPLE_JUMP, 0);
+            return set_mario_action(m, ACT_TRIPLE_JUMP, 1);
         }
     }
 
