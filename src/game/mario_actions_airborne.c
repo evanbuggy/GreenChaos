@@ -463,6 +463,15 @@ s32 act_double_jump(struct MarioState *m) {
 }
 
 s32 act_triple_jump(struct MarioState *m) {
+    // update_air_without_turn(m);
+    // mario_set_forward_vel(m, 10.0f);
+    // play_mario_sound(m, SOUND_ACTION_TERRAIN_JUMP, 0);
+    // set_mario_animation(m, MARIO_ANIM_FLUTTERKICK);
+
+    // if (m->actionTimer++ > 30) {
+    //     m->pos[1] += ((30 - m->actionTimer) * 0.5f);
+    // }
+    // return FALSE;
     if (m->actionArg == 0) {
         if (gSpecialTripleJump) {
             return set_mario_action(m, ACT_SPECIAL_TRIPLE_JUMP, 0);
@@ -478,7 +487,6 @@ s32 act_triple_jump(struct MarioState *m) {
 
         play_mario_sound(m, SOUND_ACTION_TERRAIN_JUMP, 0);
 
-        common_air_action_step(m, ACT_TRIPLE_JUMP_LAND, MARIO_ANIM_TRIPLE_JUMP, 0);
 #if ENABLE_RUMBLE
         if (m->action == ACT_TRIPLE_JUMP_LAND) {
             queue_rumble_data(5, 40);
@@ -487,9 +495,17 @@ s32 act_triple_jump(struct MarioState *m) {
         play_flip_sounds(m, 2, 8, 20);
     }
     else {
-        set_mario_animation(m, MARIO_ANIM_BREAKDANCE);
         play_mario_sound(m, SOUND_ACTION_TERRAIN_JUMP, SOUND_MARIO_YAH_WAH_HOO);
+        if (m->actionTimer++ < 30) {
+            m->vel[1] = (((30 - m->actionTimer) * 1.75));
+        }
+        else {
+            m->vel[1] = 0;
+        }
     }
+
+    common_air_action_step(m, ACT_TRIPLE_JUMP_LAND, MARIO_ANIM_TRIPLE_JUMP, 0);
+
     return FALSE;
 }
 
@@ -1582,15 +1598,6 @@ s32 act_slide_kick(struct MarioState *m) {
 }
 
 s32 act_jump_kick(struct MarioState *m) {
-    // update_air_without_turn(m);
-    // mario_set_forward_vel(m, 10.0f);
-    // play_mario_sound(m, SOUND_ACTION_TERRAIN_JUMP, 0);
-    // set_mario_animation(m, MARIO_ANIM_FLUTTERKICK);
-
-    // if (m->actionTimer++ > 30) {
-    //     m->pos[1] += ((30 - m->actionTimer) * 0.5f);
-    // }
-    // return FALSE;
     if (m->actionState == ACT_STATE_JUMP_KICK_PLAY_SOUND_AND_ANIM) {
         play_sound_if_no_flag(m, SOUND_MARIO_PUNCH_HOO, MARIO_ACTION_SOUND_PLAYED);
         m->marioObj->header.gfx.animInfo.animID = -1;
