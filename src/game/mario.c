@@ -1636,7 +1636,7 @@ void mario_update_hitbox_and_cap_model(struct MarioState *m) {
     //  this can be paused through to give continual invisibility. This leads to
     //  no interaction with objects.
     if ((m->invincTimer >= 3) && (gGlobalTimer & 1)) {
-        m->marioObj->header.gfx.node.flags |= GRAPH_RENDER_INVISIBLE;
+        m->particleFlags |= PARTICLE_SPARKLES;;
     }
 
     if (flags & MARIO_CAP_IN_HAND) {
@@ -1733,7 +1733,7 @@ s32 execute_mario_action(UNUSED struct Object *obj) {
         }
 #endif
 
-        gMarioState->marioObj->header.gfx.node.flags &= ~GRAPH_RENDER_INVISIBLE;
+        //gMarioState->marioObj->header.gfx.node.flags &= ~GRAPH_RENDER_INVISIBLE;
         mario_reset_bodystate(gMarioState);
         update_mario_inputs(gMarioState);
 

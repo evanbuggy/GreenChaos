@@ -497,10 +497,14 @@ s32 act_triple_jump(struct MarioState *m) {
     else {
         play_mario_sound(m, SOUND_ACTION_TERRAIN_JUMP, SOUND_MARIO_YAH_WAH_HOO);
         if (m->actionTimer++ < 30) {
-            m->vel[1] = (((30 - m->actionTimer) * 1.75));
+            m->vel[1] = (((30 - m->actionTimer) * 1.5));
         }
-        else {
-            m->vel[1] = 0;
+        // else {
+        //     m->vel[1] = 0;
+        // }
+
+        if (m->input & INPUT_B_PRESSED) {
+            return set_mario_action(m, ACT_JUMP_KICK, 0);
         }
     }
 
@@ -1618,6 +1622,7 @@ s32 act_jump_kick(struct MarioState *m) {
         m->jumpTimer--;
         if (m->input & INPUT_A_DOWN) {
             m->jumpTimer = 0;
+            mario_set_forward_vel(m, 4.0f);
             return set_mario_action(m, ACT_TRIPLE_JUMP, 1);
         }
     }
