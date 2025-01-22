@@ -463,15 +463,7 @@ s32 act_double_jump(struct MarioState *m) {
 }
 
 s32 act_triple_jump(struct MarioState *m) {
-    // update_air_without_turn(m);
-    // mario_set_forward_vel(m, 10.0f);
-    // play_mario_sound(m, SOUND_ACTION_TERRAIN_JUMP, 0);
-    // set_mario_animation(m, MARIO_ANIM_FLUTTERKICK);
-
-    // if (m->actionTimer++ > 30) {
-    //     m->pos[1] += ((30 - m->actionTimer) * 0.5f);
-    // }
-    // return FALSE;
+    m->actionTimer++;
     if (m->actionArg == 0) {
         if (gSpecialTripleJump) {
             return set_mario_action(m, ACT_SPECIAL_TRIPLE_JUMP, 0);
@@ -496,15 +488,25 @@ s32 act_triple_jump(struct MarioState *m) {
     }
     else {
         play_mario_sound(m, SOUND_ACTION_TERRAIN_JUMP, SOUND_MARIO_YAH_WAH_HOO);
-        if (m->actionTimer++ < 30) {
-            m->vel[1] = (((30 - m->actionTimer) * 1.5));
-        }
-        // else {
-        //     m->vel[1] = 0;
-        // }
 
-        if (m->input & INPUT_B_PRESSED) {
-            return set_mario_action(m, ACT_JUMP_KICK, 0);
+        if (m->actionArg == 1) {
+            if (m->actionTimer++ < 30) {
+                m->vel[1] = (((30 - m->actionTimer) * 1.5));
+            }
+        }
+
+        if (m->actionTimer >= 2) {
+            if (m->input & INPUT_B_PRESSED) {
+                return set_mario_action(m, ACT_JUMP_KICK, 1);
+            }
+
+            if (m->input & INPUT_A_PRESSED) {
+                m->faceAngle[1] = m->intendedYaw;
+                m->vel[1] = 30.0f;
+                mario_set_forward_vel(m, 60.0f);
+                m->invincTimer = 0;
+                return set_mario_action(m, ACT_DIVE, 0);
+            }
         }
     }
 
@@ -1602,11 +1604,30 @@ s32 act_slide_kick(struct MarioState *m) {
 }
 
 s32 act_jump_kick(struct MarioState *m) {
-    if (m->actionState == ACT_STATE_JUMP_KICK_PLAY_SOUND_AND_ANIM) {
-        play_sound_if_no_flag(m, SOUND_MARIO_PUNCH_HOO, MARIO_ACTION_SOUND_PLAYED);
-        m->marioObj->header.gfx.animInfo.animID = -1;
-        set_mario_animation(m, MARIO_ANIM_AIR_KICK);
-        m->actionState = ACT_STATE_JUMP_KICK_KICKING;
+    m->actionTimer++;
+    if (m->actionArg == 0) {
+        if (m->actionState == ACT_STATE_JUMP_KICK_PLAY_SOUND_AND_ANIM) {
+            play_sound_if_no_flag(m, SOUND_MARIO_PUNCH_HOO, MARIO_ACTION_SOUND_PLAYED);
+            m->marioObj->header.gfx.animInfo.animID = -1;
+            set_mario_animation(m, MARIO_ANIM_AIR_KICK);
+            m->actionState = ACT_STATE_JUMP_KICK_KICKING;
+        }
+    }
+    else {
+        if (m->actionState == ACT_STATE_JUMP_KICK_PLAY_SOUND_AND_ANIM) {
+            play_sound_if_no_flag(m, SOUND_MARIO_WAH2, MARIO_ACTION_SOUND_PLAYED);
+            m->marioObj->header.gfx.animInfo.animID = -1;
+            set_mario_animation(m, MARIO_ANIM_FIRST_PUNCH);
+            m->actionState = ACT_STATE_JUMP_KICK_KICKING;
+        }
+
+        if ((m->input & INPUT_Z_PRESSED) && ((m->actionTimer >= 2) && (m->airComboCancel == 1))) {
+            // TODO: Lots of cleanup, move changes in Y velocity to mario.c switch statement
+            m->vel[1] = 20.0f;
+            m->airComboCancel = 0;
+            mario_set_forward_vel(m, 10.0f);
+            return set_mario_action(m, ACT_TRIPLE_JUMP, 2);
+        }
     }
 
     s32 animFrame = m->marioObj->header.gfx.animInfo.animFrame;

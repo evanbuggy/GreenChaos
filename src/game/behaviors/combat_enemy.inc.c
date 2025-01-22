@@ -4,10 +4,10 @@ static struct ObjectHitbox sCombatEnmemyHitbox = {
     /* damageOrCoinValue: */ 1,
     /* health:            */ 5,
     /* numLootCoins:      */ 1,
-    /* radius:            */ 100,
-    /* height:            */ 100,
-    /* hurtboxRadius:     */ 42,
-    /* hurtboxHeight:     */ 40,   
+    /* radius:            */ 300,
+    /* height:            */ 200,
+    /* hurtboxRadius:     */ 100,
+    /* hurtboxHeight:     */ 75,   
 };
 
 static u8 sCombatEnemyAttackHandlers[6] = {
@@ -31,7 +31,7 @@ void bhv_combat_enemy_loop(void) {
         enable_time_stop_including_mario();
 
         // Makes Mario invincible while launching the enemy (for 2 seconds)
-        gMarioState->invincTimer = 60;
+        gMarioState->invincTimer = 30;
         
         o->oHealth--;
         o->oForwardVel = 0.0f;
@@ -41,7 +41,8 @@ void bhv_combat_enemy_loop(void) {
             gMarioState->jumpTimer = 10;
         }
         else {
-            o->oVelY = 5.0f;
+            o->oVelY = 40.0f;
+            gMarioState->airComboCancel = 1;
         }
 
         // This defines how long the enemy is invincible for in frames before it can be attacked again.
