@@ -1821,7 +1821,8 @@ void init_mario(void) {
 
     gMarioState->forwardVel = 0.0f;
     gMarioState->squishTimer = 0;
-    gMarioState-> jumpTimer = 0;
+    gMarioState->jumpTimer = 0;
+    gMarioState->airComboCancel = 0; 
 
     gMarioState->hurtCounter = 0;
     gMarioState->healCounter = 0;
