@@ -504,6 +504,7 @@ s32 act_triple_jump(struct MarioState *m) {
                 m->faceAngle[1] = m->intendedYaw;
                 m->vel[1] = 30.0f;
                 mario_set_forward_vel(m, 60.0f);
+                m->invincTimer = 0;
                 return set_mario_action(m, ACT_DIVE, 0);
             }
         }

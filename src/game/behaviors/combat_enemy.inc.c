@@ -31,7 +31,7 @@ void bhv_combat_enemy_loop(void) {
         enable_time_stop_including_mario();
 
         // Makes Mario invincible while launching the enemy (for 2 seconds)
-        gMarioState->invincTimer = 60;
+        gMarioState->invincTimer = 30;
         
         o->oHealth--;
         o->oForwardVel = 0.0f;
