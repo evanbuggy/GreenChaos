@@ -2139,3 +2139,4 @@ lib/libs2d_engine.a
 
 # user-specific config file
 include/config/config_local.h
+tools/mips64-elf-ld
