@@ -116,6 +116,7 @@ struct HudDisplay {
     /*0x08*/ s16 keys;
     /*0x0A*/ s16 flags;
     /*0x0C*/ u16 timer;
+    /*0x0E*/ u16 combo;
 #ifdef BREATH_METER
              u16 breath;
 #endif
