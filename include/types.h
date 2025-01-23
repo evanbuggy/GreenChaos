@@ -447,6 +447,9 @@ struct MarioState {
     // How long Mario has to jump cancel attacks
     s8 jumpTimer;
     u8 airComboCancel;
+    u16 combo;
+    u16 highestCombo;
+    u8 comboTimer;
     // -- HackerSM64 MarioState fields begin --
 #ifdef BREATH_METER
              s16 breath;

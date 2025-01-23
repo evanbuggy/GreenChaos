@@ -4,10 +4,10 @@ static struct ObjectHitbox sCombatEnmemyHitbox = {
     /* damageOrCoinValue: */ 1,
     /* health:            */ 5,
     /* numLootCoins:      */ 1,
-    /* radius:            */ 300,
-    /* height:            */ 200,
-    /* hurtboxRadius:     */ 100,
-    /* hurtboxHeight:     */ 75,   
+    /* radius:            */ 150,
+    /* height:            */ 500,
+    /* hurtboxRadius:     */ 25,
+    /* hurtboxHeight:     */ 25,   
 };
 
 static u8 sCombatEnemyAttackHandlers[6] = {
@@ -23,6 +23,7 @@ static u8 sCombatEnemyAttackHandlers[6] = {
 
 u8 invFrames = 0;
 u8 hitstopFrames = 0;
+u8 launched = 0;
 
 void bhv_combat_enemy_loop(void) {
     if (obj_handle_attacks(&sCombatEnmemyHitbox, o->oAction, sCombatEnemyAttackHandlers) == ATTACK_KICK_OR_TRIP) {
@@ -32,11 +33,14 @@ void bhv_combat_enemy_loop(void) {
 
         // Makes Mario invincible while launching the enemy (for 2 seconds)
         gMarioState->invincTimer = 30;
+        gMarioState->combo++;
+        gMarioState->comboTimer = 60;
         
         o->oHealth--;
         o->oForwardVel = 0.0f;
-        if (o->oMoveFlags & OBJ_MOVE_ON_GROUND) {
+        if (launched == 0) {
             o->oVelY = 70.0f;
+            launched = 1;
             // This defines how long Mario has in frames to cancel his kick into a jump after hitting this enemy.
             gMarioState->jumpTimer = 10;
         }
@@ -70,6 +74,7 @@ void bhv_combat_enemy_loop(void) {
 
     if (o->oMoveFlags & OBJ_MOVE_LANDED) {
         play_sound(SOUND_OBJ_POUNDING_LOUD, gGlobalSoundSource);
+        launched = 0;
     }
 
     // Movement functions, commented out ones were used for testing and may be used later

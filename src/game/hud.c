@@ -194,6 +194,13 @@ void render_dl_power_meter(s16 numHealthWedges) {
     gSPPopMatrix(gDisplayListHead++, G_MTX_MODELVIEW);
 }
 
+void render_combo() {
+    if (gHudDisplay.combo >= 2) {
+        print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(54), HUD_TOP_Y - 64, "%d", gHudDisplay.combo);
+        print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(40), HUD_TOP_Y - 80, "COMBO!");
+    }
+}
+
 /**
  * Power meter animation called when there's less than 8 health segments
  * Checks its timer to later change into deemphasizing mode.
@@ -633,6 +640,7 @@ void render_hud(void) {
 
         if (hudDisplayFlags & HUD_DISPLAY_FLAG_STAR_COUNT) {
             render_hud_stars();
+            render_combo();
             render_hud_coins();
             render_hud_time(22, 15, 48, 16, 0, 0);
             //render_hud_time(x, y, width, height, s, t);

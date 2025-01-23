@@ -1714,6 +1714,17 @@ s32 execute_mario_action(UNUSED struct Object *obj) {
     vec3f_get_lateral_dist(gMarioState->prevPos, gMarioState->pos, &gMarioState->lateralSpeed);
     vec3f_copy(gMarioState->prevPos, gMarioState->pos);
 
+    if (gMarioState->comboTimer > 0) {
+        gMarioState->comboTimer--;
+    }
+    else {
+        gMarioState->combo = 0;
+    }
+
+    if (gMarioState->combo > gMarioState->highestCombo) {
+        gMarioState->highestCombo = gMarioState->combo;
+    }
+
     if (gMarioState->action) {
 #ifdef ENABLE_DEBUG_FREE_MOVE
         if (
@@ -1822,7 +1833,10 @@ void init_mario(void) {
     gMarioState->forwardVel = 0.0f;
     gMarioState->squishTimer = 0;
     gMarioState->jumpTimer = 0;
-    gMarioState->airComboCancel = 0; 
+    gMarioState->airComboCancel = 0;
+    gMarioState->combo = 0;
+    gMarioState->comboTimer = 0;
+    gMarioState->highestCombo = 0;
 
     gMarioState->hurtCounter = 0;
     gMarioState->healCounter = 0;
