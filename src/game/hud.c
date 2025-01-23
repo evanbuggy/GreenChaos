@@ -201,6 +201,18 @@ void render_combo() {
     }
 }
 
+// void render_rank_screen() {
+//     if (gHudDisplay.flags & HUD_DISPLAY_FLAG_RANK) {
+//         for (u16 i = 0; i < 105; i++) {
+//             if ((i / 30) == 0) {
+//                 if ((i / 15) == 0) {
+
+//                 }
+//             }
+//         }
+//     }
+// }
+
 /**
  * Power meter animation called when there's less than 8 health segments
  * Checks its timer to later change into deemphasizing mode.
