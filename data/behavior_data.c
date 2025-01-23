@@ -6083,3 +6083,12 @@ const BehaviorScript bhvCombatEnemy[] = {
         CALL_NATIVE(bhv_combat_enemy_loop),
     END_LOOP(),
 };
+
+// Luigi Head in LLL
+const BehaviorScript bhvDisplayObj[] = {
+    BEGIN(OBJ_LIST_DEFAULT),
+    OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
+    SET_FLOAT(oDrawingDistance, 2000),
+    BILLBOARD(),
+    BREAK(),
+};

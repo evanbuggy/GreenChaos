@@ -130,4 +130,6 @@ extern const LevelScript level_lll_entry[];
 
 
 #include "levels/lll/header.inc.h"
+#include "levels/lll/luigi_head_geo/geo_header.h"
+
 #endif

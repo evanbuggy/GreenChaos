@@ -78,4 +78,10 @@ extern Gfx dl_billboard_num_E[];
 extern Gfx dl_billboard_num_F[];
 #endif
 
+extern u8 render_hud_time_TIME_rgba16[];
+
+extern u8 TIME_TIME_rgba16[];
+
+extern u8 render_hud_time_2_TIME2_rgba16[];
+
 #endif // SEGMENT2_H

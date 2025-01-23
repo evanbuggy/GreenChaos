@@ -44,3 +44,5 @@
 #include "levels/lll/areas/2/geo.inc.c"
 
 #include "levels/lll/geo.inc.c"
+
+#include "levels/lll/luigi_head_geo/geo.inc.c"

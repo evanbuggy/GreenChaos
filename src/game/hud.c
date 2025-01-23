@@ -425,10 +425,11 @@ void render_debug_mode(void) {
  * Renders the amount of coins collected.
  */
 void render_hud_coins(void) {
-    print_text        (GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(22), HUD_TOP_Y - 17, "$"); // 'Coin' glyph
-    print_text        (GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(38), HUD_TOP_Y - 17, "*"); // 'X' glyph
-    print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(54), HUD_TOP_Y - 17, "%d", gHudDisplay.coins);
+    print_text        (GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(22), HUD_TOP_Y - 16, "$"); // 'Coin' glyph
+    print_text        (GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(38), HUD_TOP_Y - 16, "*"); // 'X' glyph
+    print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(54), HUD_TOP_Y - 16, "%d", gHudDisplay.coins);
 }
+
 
 /**
  * Renders the amount of stars collected.
@@ -437,9 +438,9 @@ void render_hud_coins(void) {
 void render_hud_stars(void) {
     if (gHudFlash == HUD_FLASH_STARS && gGlobalTimer & 0x8) return;
     s8 showX = (gHudDisplay.stars < 100);
-    print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(22), HUD_TOP_Y, "^"); // 'Star' glyph
-    if (showX) print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(38), HUD_TOP_Y, "*"); // 'X' glyph
-    print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(54), HUD_TOP_Y, "%d", gHudDisplay.stars);
+    print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(22), HUD_TOP_Y - 32, "^"); // 'Star' glyph
+    if (showX) print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(38), HUD_TOP_Y -32, "*"); // 'X' glyph
+    print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(54), HUD_TOP_Y -32, "%d", gHudDisplay.stars);
 }
 
 /**
@@ -536,6 +537,56 @@ void render_hud_camera_status(void) {
  * Render HUD strings using hudDisplayFlags with it's render functions,
  * excluding the cannon reticle which detects a camera preset for it.
  */
+void render_hud_time(s32 x, s32 y, s32 width, s32 height, s32 s, s32 t) {
+	s32 xl = MAX(0, x);
+	s32 yl = MAX(0, y);
+	s32 xh = MAX(0, x + width - 1);
+	s32 yh = MAX(0, y + height - 1);
+	s = (x < 0) ? s - x : s;
+	t = (y < 0) ? t - y : t;
+	gDPSetCycleType(gDisplayListHead++, G_CYC_COPY);
+	gDPSetTexturePersp(gDisplayListHead++, G_TP_NONE);
+	gDPSetAlphaCompare(gDisplayListHead++, G_AC_THRESHOLD);
+	gDPSetBlendColor(gDisplayListHead++, 255, 255, 255, 255);
+	gDPSetRenderMode(gDisplayListHead++, G_RM_AA_XLU_SURF, G_RM_AA_XLU_SURF2);
+	gDPSetTextureImage(gDisplayListHead++, G_IM_FMT_RGBA, G_IM_SIZ_16b_LOAD_BLOCK, 1, render_hud_time_TIME_rgba16);
+	gDPSetTile(gDisplayListHead++, G_IM_FMT_RGBA, G_IM_SIZ_16b_LOAD_BLOCK, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0);
+	gDPLoadBlock(gDisplayListHead++, 7, 0, 0, 511, 256);
+	gDPSetTile(gDisplayListHead++, G_IM_FMT_RGBA, G_IM_SIZ_16b, 8, 0, 0, 0, G_TX_CLAMP | G_TX_NOMIRROR, 5, 0, G_TX_CLAMP | G_TX_NOMIRROR, 5, 0);
+	gDPSetTileSize(gDisplayListHead++, 0, 0, 0, 0, 0);
+	gSPScisTextureRectangle(gDisplayListHead++, xl << 2, yl << 2, xh << 2, yh << 2, 0, s << 5, t << 5,  4096, 1024);
+	gDPPipeSync(gDisplayListHead++);
+	gDPSetCycleType(gDisplayListHead++, G_CYC_1CYCLE);
+	gDPSetTexturePersp(gDisplayListHead++, G_TP_PERSP);
+	gDPSetAlphaCompare(gDisplayListHead++, G_AC_NONE);
+	gDPSetRenderMode(gDisplayListHead++, G_RM_AA_ZB_OPA_SURF, G_RM_AA_ZB_OPA_SURF2);
+}
+
+void render_hud_time_2(s32 x, s32 y, s32 width, s32 height, s32 s, s32 t) {
+	s32 xl = MAX(0, x);
+	s32 yl = MAX(0, y);
+	s32 xh = MAX(0, x + width - 1);
+	s32 yh = MAX(0, y + height - 1);
+	s = (x < 0) ? s - x : s;
+	t = (y < 0) ? t - y : t;
+	gDPSetCycleType(gDisplayListHead++, G_CYC_COPY);
+	gDPSetTexturePersp(gDisplayListHead++, G_TP_NONE);
+	gDPSetAlphaCompare(gDisplayListHead++, G_AC_THRESHOLD);
+	gDPSetBlendColor(gDisplayListHead++, 255, 255, 255, 255);
+	gDPSetRenderMode(gDisplayListHead++, G_RM_AA_XLU_SURF, G_RM_AA_XLU_SURF2);
+	gDPSetTextureImage(gDisplayListHead++, G_IM_FMT_RGBA, G_IM_SIZ_16b_LOAD_BLOCK, 1, render_hud_time_2_TIME2_rgba16);
+	gDPSetTile(gDisplayListHead++, G_IM_FMT_RGBA, G_IM_SIZ_16b_LOAD_BLOCK, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0);
+	gDPLoadBlock(gDisplayListHead++, 7, 0, 0, 255, 512);
+	gDPSetTile(gDisplayListHead++, G_IM_FMT_RGBA, G_IM_SIZ_16b, 4, 0, 0, 0, G_TX_CLAMP | G_TX_NOMIRROR, 5, 0, G_TX_CLAMP | G_TX_NOMIRROR, 5, 0);
+	gDPSetTileSize(gDisplayListHead++, 0, 0, 0, 0, 0);
+	gSPScisTextureRectangle(gDisplayListHead++, xl << 2, yl << 2, xh << 2, yh << 2, 0, s << 5, t << 5,  4096, 1024);
+	gDPPipeSync(gDisplayListHead++);
+	gDPSetCycleType(gDisplayListHead++, G_CYC_1CYCLE);
+	gDPSetTexturePersp(gDisplayListHead++, G_TP_PERSP);
+	gDPSetAlphaCompare(gDisplayListHead++, G_AC_NONE);
+	gDPSetRenderMode(gDisplayListHead++, G_RM_AA_ZB_OPA_SURF, G_RM_AA_ZB_OPA_SURF2);
+}
+
 void render_hud(void) {
     s16 hudDisplayFlags = gHudDisplay.flags;
 
@@ -583,6 +634,8 @@ void render_hud(void) {
         if (hudDisplayFlags & HUD_DISPLAY_FLAG_STAR_COUNT) {
             render_hud_stars();
             render_hud_coins();
+            render_hud_time(22, 15, 48, 16, 0, 0);
+            //render_hud_time(x, y, width, height, s, t);
         }
 
         if (hudDisplayFlags & HUD_DISPLAY_FLAG_KEYS) {
@@ -614,4 +667,6 @@ void render_hud(void) {
         }
 #endif
     }
+    
 }
+
