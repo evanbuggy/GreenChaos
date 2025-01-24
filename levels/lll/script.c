@@ -86,6 +86,7 @@ const LevelScript level_lll_entry[] = {
 	LOAD_MODEL_FROM_GEO(MODEL_BROTHER_LUIGI_HEAD, luigi_head_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_BROTHER_LUIGI_HEAD, luigi_head_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_BROTHER_LUIGI_HEAD, luigi_head_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_BROTHER_LUIGI_HEAD, luigi_head_geo), 
 	/* Fast64 begin persistent block [level commands] */
 	LOAD_MODEL_FROM_GEO(MODEL_BROTHER_LUIGI_HEAD, luigi_head_geo),
 	/* Fast64 end persistent block [level commands] */
@@ -95,6 +96,7 @@ const LevelScript level_lll_entry[] = {
 		WARP_NODE(0xF0, LEVEL_CASTLE, 0x01, 0x32, WARP_NO_CHECKPOINT),
 		WARP_NODE(0xF1, LEVEL_CASTLE, 0x01, 0x64, WARP_NO_CHECKPOINT),
 		MARIO_POS(0x01, 90, -21572, 3650, -20752),
+		OBJECT(MODEL_STAR, -11807, 1239, -4814, 0, 0, 0, 0x00000000, bhvStar),
 		OBJECT(MODEL_NONE, -21572, 3650, -20752, 0, 90, 0, 0x000A0000, bhvSpinAirborneWarp),
 		OBJECT(MODEL_BROTHER_LUIGI_HEAD, -16135, 4879, -24771, 0, 0, 0, 0x00000000, bhvDisplayObj),
 		TERRAIN(lll_area_1_collision),

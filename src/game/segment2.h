@@ -86,4 +86,10 @@ extern u8 render_hud_time_2_TIME2_rgba16[];
 
 extern u8 render_hud_mario_name_mariohud_rgba16[];
 
+extern u8 render_hud_mario_life_icon_new_shadowmarioraw2_rgba32[];
+
+extern u8 render_hud_mario_life_icon_new_shadowmarioraw2_rgba16[];
+
+extern u8 render_hud_mario_name_2_mariohud0_rgba16[];
+
 #endif // SEGMENT2_H
