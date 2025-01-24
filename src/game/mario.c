@@ -758,9 +758,9 @@ u32 set_mario_action_airborne(struct MarioState *m, u32 action, u32 actionArg) {
             break;
 
         case ACT_BACKFLIP:
-            m->marioObj->header.gfx.animInfo.animID = -1;
-            m->forwardVel = -16.0f;
-            set_mario_y_vel_based_on_fspeed(m, 62.0f, 0.0f);
+            // m->marioObj->header.gfx.animInfo.animID = -1;
+            // m->forwardVel = -16.0f;
+            set_mario_y_vel_based_on_fspeed(m, 45.0f, 0.0f);
             break;
 
         case ACT_TRIPLE_JUMP:
