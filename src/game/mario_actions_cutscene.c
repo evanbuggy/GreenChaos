@@ -619,7 +619,36 @@ void general_star_dance_handler(struct MarioState *m, s32 isInWater) {
                 play_sound(SOUND_MARIO_HERE_WE_GO, m->marioObj->header.gfx.cameraToObject);
                 break;
 
-            case 80:
+            case 130:
+                play_sound(SOUND_ACTION_METAL_STEP, gGlobalSoundSource);
+                gHudDisplay.rank++;
+                break;
+
+            case 145:
+                play_sound(SOUND_ACTION_METAL_STEP, gGlobalSoundSource);
+                gHudDisplay.rank++;
+                break;
+
+            case 160:
+                play_sound(SOUND_ACTION_METAL_STEP, gGlobalSoundSource);
+                gHudDisplay.rank++;
+                break;
+
+            case 175:
+                play_sound(SOUND_ACTION_METAL_STEP, gGlobalSoundSource);
+                gHudDisplay.rank++;
+                break;
+
+            case 220:
+                play_sound(SOUND_MENU_STAR_SOUND, gGlobalSoundSource);
+                gHudDisplay.rank++;
+                break;
+            
+            case 300: 
+                play_sound(SOUND_MARIO_IMA_TIRED, gGlobalSoundSource);
+                break;
+
+            case 400:
                 if (!(m->actionArg & 1)) {
                     level_trigger_warp(m, WARP_OP_STAR_EXIT);
                 } else {
