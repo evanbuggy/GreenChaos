@@ -1917,5 +1917,6 @@ void init_mario_from_save_file(void) {
     gMarioState->animYTrans = 0xBD;
 
     gHudDisplay.coins = 0;
+    gHudDisplay.rank = 0;
     gHudDisplay.wedges = 8;
 }

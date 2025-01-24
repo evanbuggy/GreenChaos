@@ -201,17 +201,35 @@ void render_combo() {
     }
 }
 
-// void render_rank_screen() {
-//     if (gHudDisplay.flags & HUD_DISPLAY_FLAG_RANK) {
-//         for (u16 i = 0; i < 105; i++) {
-//             if ((i / 30) == 0) {
-//                 if ((i / 15) == 0) {
-
-//                 }
-//             }
-//         }
-//     }
-// }
+void render_rank_screen() {
+    switch (gHudDisplay.rank) {
+        case 1:
+            print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(40), HUD_TOP_Y - 80, "COMBO:");
+            break;
+        case 2:
+            print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(40), HUD_TOP_Y - 80, "COMBO:");
+            print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(60), HUD_TOP_Y - 80, "%d", gMarioState->highestCombo);
+            break;
+        case 3:
+            print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(40), HUD_TOP_Y - 80, "COMBO:");
+            print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(60), HUD_TOP_Y - 80, "%d", gMarioState->highestCombo);
+            print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(40), HUD_TOP_Y - 120, "COINS:");
+            break;
+        case 4:
+            print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(40), HUD_TOP_Y - 80, "COMBO:");
+            print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(60), HUD_TOP_Y - 80, "%d", gMarioState->highestCombo);
+            print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(40), HUD_TOP_Y - 120, "COINS:");
+            print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(60), HUD_TOP_Y - 120, "%d", gHudDisplay.coins);
+            break;
+        case 5:
+            print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(40), HUD_TOP_Y - 80, "COMBO:");
+            print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(60), HUD_TOP_Y - 80, "%d", gMarioState->highestCombo);
+            print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(40), HUD_TOP_Y - 120, "COINS:");
+            print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(60), HUD_TOP_Y - 120, "%d", gHudDisplay.coins);
+            print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(100), HUD_TOP_Y - 160, "RANK GOES HERE");
+            break;
+    }
+}
 
 /**
  * Power meter animation called when there's less than 8 health segments
@@ -679,6 +697,7 @@ void render_hud(void) {
         if (hudDisplayFlags & HUD_DISPLAY_FLAG_STAR_COUNT) {
             render_hud_stars();
             render_combo();
+            render_rank_screen();
             render_hud_coins();
             render_hud_time(22, 15, 32, 16, 0, 0);
             render_hud_time_2(54, 15, 16, 16, 0, 0);
