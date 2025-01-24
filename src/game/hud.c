@@ -411,9 +411,9 @@ void render_hud_breath_meter(void) {
  * Renders the amount of lives Mario has.
  */
 void render_hud_mario_lives(void) {
-    print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(22), HUD_TOP_Y - 190, ","); // 'Mario Head' glyph
-    print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(38), HUD_TOP_Y - 192, "*"); // 'X' glyph
-    print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(52), HUD_TOP_Y - 192, "%d", gHudDisplay.lives);
+//    print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(22), HUD_TOP_Y - 190, ","); // 'Mario Head' glyph
+    print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(54), HUD_TOP_Y - 192, "*"); // 'X' glyph
+    print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(68), HUD_TOP_Y - 192, "%d", gHudDisplay.lives);
 }
 
 #ifdef VANILLA_STYLE_CUSTOM_DEBUG
@@ -619,6 +619,56 @@ void render_hud_mario_name(s32 x, s32 y, s32 width, s32 height, s32 s, s32 t) {
 	gDPSetRenderMode(gDisplayListHead++, G_RM_AA_ZB_OPA_SURF, G_RM_AA_ZB_OPA_SURF2);
 }
 
+void render_hud_mario_life_icon_new(s32 x, s32 y, s32 width, s32 height, s32 s, s32 t) {
+	s32 xl = MAX(0, x);
+	s32 yl = MAX(0, y);
+	s32 xh = MAX(0, x + width - 1);
+	s32 yh = MAX(0, y + height - 1);
+	s = (x < 0) ? s - x : s;
+	t = (y < 0) ? t - y : t;
+	gDPSetCycleType(gDisplayListHead++, G_CYC_COPY);
+	gDPSetTexturePersp(gDisplayListHead++, G_TP_NONE);
+	gDPSetAlphaCompare(gDisplayListHead++, G_AC_THRESHOLD);
+	gDPSetBlendColor(gDisplayListHead++, 255, 255, 255, 255);
+	gDPSetRenderMode(gDisplayListHead++, G_RM_AA_XLU_SURF, G_RM_AA_XLU_SURF2);
+	gDPSetTextureImage(gDisplayListHead++, G_IM_FMT_RGBA, G_IM_SIZ_16b_LOAD_BLOCK, 1, render_hud_mario_life_icon_new_shadowmarioraw2_rgba16);
+	gDPSetTile(gDisplayListHead++, G_IM_FMT_RGBA, G_IM_SIZ_16b_LOAD_BLOCK, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0);
+	gDPLoadBlock(gDisplayListHead++, 7, 0, 0, 1023, 256);
+	gDPSetTile(gDisplayListHead++, G_IM_FMT_RGBA, G_IM_SIZ_16b, 8, 0, 0, 0, G_TX_CLAMP | G_TX_NOMIRROR, 5, 0, G_TX_CLAMP | G_TX_NOMIRROR, 5, 0);
+	gDPSetTileSize(gDisplayListHead++, 0, 0, 0, 0, 0);
+	gSPScisTextureRectangle(gDisplayListHead++, xl << 2, yl << 2, xh << 2, yh << 2, 0, s << 5, t << 5,  4096, 1024);
+	gDPPipeSync(gDisplayListHead++);
+	gDPSetCycleType(gDisplayListHead++, G_CYC_1CYCLE);
+	gDPSetTexturePersp(gDisplayListHead++, G_TP_PERSP);
+	gDPSetAlphaCompare(gDisplayListHead++, G_AC_NONE);
+	gDPSetRenderMode(gDisplayListHead++, G_RM_AA_ZB_OPA_SURF, G_RM_AA_ZB_OPA_SURF2);
+}
+
+void render_hud_mario_name_2(s32 x, s32 y, s32 width, s32 height, s32 s, s32 t) {
+	s32 xl = MAX(0, x);
+	s32 yl = MAX(0, y);
+	s32 xh = MAX(0, x + width - 1);
+	s32 yh = MAX(0, y + height - 1);
+	s = (x < 0) ? s - x : s;
+	t = (y < 0) ? t - y : t;
+	gDPSetCycleType(gDisplayListHead++, G_CYC_COPY);
+	gDPSetTexturePersp(gDisplayListHead++, G_TP_NONE);
+	gDPSetAlphaCompare(gDisplayListHead++, G_AC_THRESHOLD);
+	gDPSetBlendColor(gDisplayListHead++, 255, 255, 255, 255);
+	gDPSetRenderMode(gDisplayListHead++, G_RM_AA_XLU_SURF, G_RM_AA_XLU_SURF2);
+	gDPSetTextureImage(gDisplayListHead++, G_IM_FMT_RGBA, G_IM_SIZ_16b_LOAD_BLOCK, 1, render_hud_mario_name_2_mariohud0_rgba16);
+	gDPSetTile(gDisplayListHead++, G_IM_FMT_RGBA, G_IM_SIZ_16b_LOAD_BLOCK, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0);
+	gDPLoadBlock(gDisplayListHead++, 7, 0, 0, 255, 512);
+	gDPSetTile(gDisplayListHead++, G_IM_FMT_RGBA, G_IM_SIZ_16b, 4, 0, 0, 0, G_TX_CLAMP | G_TX_NOMIRROR, 5, 0, G_TX_CLAMP | G_TX_NOMIRROR, 5, 0);
+	gDPSetTileSize(gDisplayListHead++, 0, 0, 0, 0, 0);
+	gSPScisTextureRectangle(gDisplayListHead++, xl << 2, yl << 2, xh << 2, yh << 2, 0, s << 5, t << 5,  4096, 1024);
+	gDPPipeSync(gDisplayListHead++);
+	gDPSetCycleType(gDisplayListHead++, G_CYC_1CYCLE);
+	gDPSetTexturePersp(gDisplayListHead++, G_TP_PERSP);
+	gDPSetAlphaCompare(gDisplayListHead++, G_AC_NONE);
+	gDPSetRenderMode(gDisplayListHead++, G_RM_AA_ZB_OPA_SURF, G_RM_AA_ZB_OPA_SURF2);
+}
+
 void render_hud(void) {
     s16 hudDisplayFlags = gHudDisplay.flags;
 
@@ -656,7 +706,9 @@ void render_hud(void) {
 #ifdef ENABLE_LIVES
         if (hudDisplayFlags & HUD_DISPLAY_FLAG_LIVES) {
             render_hud_mario_lives();
-            render_hud_mario_name(38, 195, 32, 16, 0, 0);
+            render_hud_mario_name(54, 193, 32, 16, 0, 0);
+            render_hud_mario_name_2(86, 193, 16, 16, 0, 0);
+            render_hud_mario_life_icon_new(20, 189, 32, 32, 0, 0);
         }
 #endif
 
