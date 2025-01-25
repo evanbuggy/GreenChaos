@@ -508,8 +508,9 @@ s32 act_triple_jump(struct MarioState *m) {
 }
 
 s32 act_backflip(struct MarioState *m) {
-    if (m->input & INPUT_Z_PRESSED) {
-        return set_mario_action(m, ACT_GROUND_POUND, 0);
+    m->actionTimer++;
+    if ((m->input & INPUT_Z_PRESSED) && m->actionTimer > 1) {
+        return set_mario_action(m, ACT_GROUND_POUND, 1);
     }
 
     play_mario_sound(m, SOUND_ACTION_TERRAIN_JUMP, SOUND_MARIO_YAH_WAH_HOO);
@@ -942,6 +943,12 @@ s32 act_ground_pound(struct MarioState *m) {
 
     if (m->input & INPUT_B_PRESSED) {
         return set_mario_action(m, ACT_JUMP_KICK, 0);
+    }
+
+    if ((m->input & INPUT_A_PRESSED) && m->actionArg != 1) {
+        m->faceAngle[1] = m->intendedYaw;
+        // mario_set_forward_vel(m, 60.0f);
+        return set_mario_action(m, ACT_BACKFLIP, 0);
     }
 
     if (m->actionTimer == 0) {

@@ -649,6 +649,7 @@ void general_star_dance_handler(struct MarioState *m, s32 isInWater) {
                 break;
 
             case 400:
+                gHudDisplay.rank = 0;
                 if (!(m->actionArg & 1)) {
                     level_trigger_warp(m, WARP_OP_STAR_EXIT);
                 } else {
