@@ -504,7 +504,10 @@ u32 bully_knock_back_mario(struct MarioState *mario) {
 }
 
 void bounce_off_object(struct MarioState *m, struct Object *obj, f32 velY) {
-    m->pos[1] = obj->oPosY + obj->hitboxHeight;
+    // This line is commented out, while I don't want to change global interaction types
+    // it should not make a difference with vanilla enemies
+    // - Buggy
+    //m->pos[1] = obj->oPosY + obj->hitboxHeight;
     m->vel[1] = velY;
 
     m->flags &= ~MARIO_JUMPING;
