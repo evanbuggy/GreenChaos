@@ -12,10 +12,6 @@
 #include "levels/scripts.h"
 
 #include "actors/common1.h"
-
-/* Fast64 begin persistent block [includes] */
-/* Fast64 end persistent block [includes] */
-
 #include "make_const_nonconst.h"
 #include "levels/bob/header.h"
 
@@ -45,30 +41,24 @@ const LevelScript level_bob_entry[] = {
 	LOAD_MODEL_FROM_GEO(MODEL_BOB_CHAIN_CHOMP_GATE, bob_geo_000440), 
 	LOAD_MODEL_FROM_GEO(MODEL_BOB_SEESAW_PLATFORM, bob_geo_000458), 
 	LOAD_MODEL_FROM_GEO(MODEL_BOB_BARS_GRILLS, bob_geo_000470), 
-
 	/* Fast64 begin persistent block [level commands] */
 	/* Fast64 end persistent block [level commands] */
 
 	AREA(1, bob_area_1),
 		WARP_NODE(0x0A, LEVEL_BOB, 0x01, 0x0A, WARP_NO_CHECKPOINT),
-		WARP_NODE(0xF0, LEVEL_CASTLE, 0x01, 0x0A, WARP_NO_CHECKPOINT),
-		WARP_NODE(0xF1, LEVEL_CASTLE, 0x01, 0x0A, WARP_NO_CHECKPOINT),
-		WARP_NODE(0x01, LEVEL_ENDING, 0x01, 0x0A, WARP_NO_CHECKPOINT),
-		OBJECT(MODEL_GOOMBA, 809, 4117, 0, 0, 90, 0, 0x00000000, bhvGoomba),
-		OBJECT(MODEL_NONE, -33, 4117, 1980, 0, 0, 0, 0x00000000, bhvGoombaTripletSpawner),
-		MARIO_POS(0x01, 90, -64, 4261, 0),
-		OBJECT(MODEL_GOOMBA, -36, 4217, -796, 0, 180, 0, 0x00000000, bhvCombatEnemy),
-		OBJECT(MODEL_NONE, -64, 4261, 0, 0, 90, 0, 0x000A0000, bhvSpinAirborneWarp),
+		WARP_NODE(0xF0, LEVEL_BOB, 0x01, 0x0A, WARP_NO_CHECKPOINT),
+		WARP_NODE(0xF1, LEVEL_BOB, 0x01, 0x0A, WARP_NO_CHECKPOINT),
+		MARIO_POS(0x01, 0, -24597, 10877, -26224),
+		OBJECT(MODEL_NONE, -24597, 10877, -26224, 0, 0, 0, 0x000A0000, bhvInstantActiveWarp),
 		TERRAIN(bob_area_1_collision),
 		MACRO_OBJECTS(bob_area_1_macro_objs),
-		SET_BACKGROUND_MUSIC(0x00, SEQ_LEVEL_INSIDE_CASTLE),
-		TERRAIN_TYPE(TERRAIN_STONE),
+		SET_BACKGROUND_MUSIC(0x00, SEQ_LEVEL_GRASS),
+		TERRAIN_TYPE(TERRAIN_GRASS),
 		/* Fast64 begin persistent block [area commands] */
 		/* Fast64 end persistent block [area commands] */
 	END_AREA(),
-
 	FREE_LEVEL_POOL(),
-	MARIO_POS(0x01, 90, -64, 4261, 0),
+	MARIO_POS(0x01, 0, -24597, 10877, -26224),
 	CALL(0, lvl_init_or_update),
 	CALL_LOOP(1, lvl_init_or_update),
 	CLEAR_LEVEL(),

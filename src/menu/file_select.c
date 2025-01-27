@@ -2007,10 +2007,10 @@ void print_file_select_strings(void) {
  * Geo function that prints file select strings and the cursor.
  */
 Gfx *geo_file_select_strings_and_menu_cursor(s32 callContext, UNUSED struct GraphNode *node, UNUSED Mat4 mtx) {
-    if (callContext == GEO_CONTEXT_RENDER) {
+    /*if (callContext == GEO_CONTEXT_RENDER) {
         print_file_select_strings();
         print_menu_cursor();
-    }
+            }*/
     return NULL;
 }
 
@@ -2053,8 +2053,20 @@ s32 lvl_init_menu_values_and_cursor_pos(UNUSED s32 arg, UNUSED s32 unused) {
  * defined in load_main_menu_save_file.
  */
 s32 lvl_update_obj_and_load_file_selected(UNUSED s32 arg, UNUSED s32 unused) {
+    if (gPlayer1Controller->buttonPressed & START_BUTTON) {
+        play_sound(SOUND_MENU_STAR_SOUND, gGlobalSoundSource);
+        return 1;
+    }
+    if ((gGlobalTimer & 31) < 20) {
+        if (gControllerBits == 0) {
+            print_text_centered(SCREEN_WIDTH / 2, 20, "NO CONTROLLER");
+        } else {
+            print_text_centered(SCREEN_WIDTH/2, SCREEN_HEIGHT/8 + 10, "START GAME"/*"DEV BUILD"*/);
+        }
+        //print_text_centered(SCREEN_WIDTH/2, SCREEN_HEIGHT/-5 + 30, "TEAM GREEN");
+    }
     area_update_objects();
-    return sSelectedFileNum;
+  return 0 /*sSelectedFileNum*/;
 }
 
 STATIC_ASSERT(SOUND_MODE_COUNT == MENU_BUTTON_SOUND_OPTION_MAX - MENU_BUTTON_SOUND_OPTION_MIN, "Mismatch between number of sound modes in audio code and file select!");

@@ -19,9 +19,6 @@
     "02_menu_title_screen": [
         "11"
     ],
-    "03_level_grass": [
-        "22"
-    ],
     "04_level_inside_castle": [
         "0E"
     ],
@@ -125,5 +122,8 @@
     },
     "23_ending_fly": [
         "ending_fly"
+    ],
+    "03_level_grass": [
+        "bobstage"
     ]
 }

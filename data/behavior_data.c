@@ -6084,11 +6084,18 @@ const BehaviorScript bhvCombatEnemy[] = {
     END_LOOP(),
 };
 
-// Luigi Head in LLL
+// Frijoles: Luigi Head in LLL
 const BehaviorScript bhvDisplayObj[] = {
     BEGIN(OBJ_LIST_DEFAULT),
     OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
     SET_FLOAT(oDrawingDistance, 2000),
     BILLBOARD(),
+    BREAK(),
+};
+
+// Frijoles: Title Screen Objects (Thanks Phil564)
+const BehaviorScript bhvTitleStaticObject[] = {
+    BEGIN(OBJ_LIST_LEVEL),
+    OR_INT(oFlags, (OBJ_FLAG_ACTIVE_FROM_AFAR | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
     BREAK(),
 };
