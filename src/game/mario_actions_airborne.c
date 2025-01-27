@@ -624,7 +624,7 @@ s32 act_wall_kick_air(struct MarioState *m) {
     }
 
     if (m->input & INPUT_Z_PRESSED) {
-        return set_mario_action(m, ACT_GROUND_POUND, 0);
+        return set_mario_action(m, ACT_GROUND_POUND, 1);
     }
 
     play_mario_jump_sound(m);
@@ -1631,7 +1631,7 @@ s32 act_jump_kick(struct MarioState *m) {
 
             if (m->input & INPUT_A_PRESSED) {
                 m->faceAngle[1] = m->intendedYaw;
-                m->vel[1] = 30.0f;
+                m->vel[1] = 50.0f;
                 mario_set_forward_vel(m, 60.0f);
                 m->invincTimer = 0;
                 return set_mario_action(m, ACT_DIVE, 0);

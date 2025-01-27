@@ -1018,7 +1018,9 @@ s32 act_ground_pound_land(struct MarioState *m) {
     }
 
     if (m->input & INPUT_A_DOWN) {
-        mario_set_forward_vel(m, m->forwardVel *= 1.5f);
+        // 27/01/25: Lowered it from 1.5 to 1.4
+        // - Buggy
+        mario_set_forward_vel(m, m->forwardVel *= 1.4f);
         return set_mario_action(m, ACT_TRIPLE_JUMP, 0);
     }
 
