@@ -499,6 +499,15 @@ s32 act_triple_jump(struct MarioState *m) {
             if (m->input & INPUT_B_PRESSED) {
                 return set_mario_action(m, ACT_JUMP_KICK, 1);
             }
+
+            // Dive out of the air combo triple jump
+            if (m->input & INPUT_A_PRESSED) {
+                m->faceAngle[1] = m->intendedYaw;
+                m->vel[1] = 50.0f;
+                mario_set_forward_vel(m, 60.0f);
+                m->invincTimer = 0;
+                return set_mario_action(m, ACT_DIVE, 0);
+            }
         }
     }
 
@@ -1613,6 +1622,7 @@ s32 act_jump_kick(struct MarioState *m) {
         }
     }
     else {
+        // Air combo punch
         if (m->actionState == ACT_STATE_JUMP_KICK_PLAY_SOUND_AND_ANIM) {
             play_sound_if_no_flag(m, SOUND_MARIO_WAH2, MARIO_ACTION_SOUND_PLAYED);
             m->marioObj->header.gfx.animInfo.animID = -1;
@@ -1620,6 +1630,7 @@ s32 act_jump_kick(struct MarioState *m) {
             m->actionState = ACT_STATE_JUMP_KICK_KICKING;
         }
 
+        // Cancel into jump mid air combo
         if (m->actionTimer >= 2) {
             if ((m->input & INPUT_Z_PRESSED) && (m->airComboCancel == 1)) {
                 // TODO: Lots of cleanup, move changes in Y velocity to mario.c switch statement

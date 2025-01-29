@@ -23,7 +23,6 @@ static u8 sCombatEnemyAttackHandlers[6] = {
 
 u8 invFrames = 0;
 u8 hitstopFrames = 0;
-u8 launched = 0;
 
 void bhv_combat_enemy_loop(void) {
     if (obj_handle_attacks(&sCombatEnmemyHitbox, o->oAction, sCombatEnemyAttackHandlers) == ATTACK_KICK_OR_TRIP) {
@@ -38,9 +37,8 @@ void bhv_combat_enemy_loop(void) {
         
         o->oHealth--;
         o->oForwardVel = 0.0f;
-        if (launched == 0) {
+        if ((o->oMoveFlags & OBJ_MOVE_LANDED) || (o->oMoveFlags & OBJ_MOVE_ON_GROUND)) {
             o->oVelY = 60.0f;
-            launched = 1;
             // This defines how long Mario has in frames to cancel his kick into a jump after hitting this enemy.
             gMarioState->jumpTimer = 10;
         }
@@ -53,7 +51,7 @@ void bhv_combat_enemy_loop(void) {
         // This is to prevent attacks like the kick from hitting multiple times.
         invFrames = 6;
 
-        hitstopFrames = 2;
+        hitstopFrames = 3;
 
         obj_die_if_health_non_positive();
     }
@@ -72,9 +70,8 @@ void bhv_combat_enemy_loop(void) {
         disable_time_stop_including_mario();
     }
 
-    if (o->oMoveFlags & OBJ_MOVE_LANDED) {
+    if (o->oMoveFlags & OBJ_MOVE_BOUNCE) {
         play_sound(SOUND_OBJ_POUNDING_LOUD, gGlobalSoundSource);
-        launched = 0;
     }
 
     // Movement functions, commented out ones were used for testing and may be used later
