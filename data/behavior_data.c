@@ -6097,9 +6097,7 @@ const BehaviorScript bhvDisplayObj[] = {
 const BehaviorScript bhvTitleStaticObject[] = {
     BEGIN(OBJ_LIST_LEVEL),
     OR_INT(oFlags, (OBJ_FLAG_ACTIVE_FROM_AFAR | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
-    CALL_NATIVE(bhv_init_room),
     BEGIN_LOOP(),
-        ANIMATE_TEXTURE(oAnimState, 2),
+        ADD_INT(oAnimState, 1),
     END_LOOP()
 };
-
