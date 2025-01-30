@@ -15,7 +15,7 @@
 
 #include "levels/scripts.h"
 
-#include "actors/common1.h"
+#include "actors/group0.h"
 
 #include "make_const_nonconst.h"
 #include "levels/menu/header.h"
@@ -29,15 +29,15 @@ const LevelScript level_main_menu_entry_file_select[] = {
     LOAD_YAY0(          /*seg*/ SEGMENT_GROUP0_YAY0, _group0_yay0SegmentRomStart, _group0_yay0SegmentRomEnd),
     LOAD_RAW_WITH_CODE( /*seg*/ SEGMENT_GROUP0_GEO,   _group0_geoSegmentRomStart,  _group0_geoSegmentRomEnd, _group0_geoSegmentBssStart, _group0_geoSegmentBssEnd),
     ALLOC_LEVEL_POOL(),
-//    LOAD_MODEL_FROM_GEO(MODEL_TITLE,                   title_logo_geo),
-//    LOAD_MODEL_FROM_GEO(MODEL_TITLE_SCREEN_BG,         title_select_bg_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_SHADOW_TITLE_SCREEN,                   shadow_mario_title_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_TITLE_SCREEN_BG,                        title_bg_geo),
 
 
     AREA(/*index*/ 1, geo_menu_file_select_strings_and_menu_cursor),
         //OBJECT(/*model*/ MODEL_NONE,                         /*pos*/ 0, 0, -19000, /*angle*/ 0, 0, 0, /*behParam*/ BP(0x04, 0x00, 0x00, 0x00), /*beh*/ bhvMenuButtonManager),
         // PHIL564: KING OF THE JANK
-//        OBJECT(/*model*/ MODEL_TITLE, /*pos*/ -35.892, 40, 600, /*angle*/ 90, 0, 0, /*behParam*/ 0, /*beh*/ bhvTitleStaticObject),
-//        OBJECT(/*model*/ MODEL_TITLE_SCREEN_BG, /*pos*/ 0, -0, -10000, /*angle*/ 0, 0, 0, /*behParam*/ 0, /*beh*/ bhvTitleStaticObject),
+        OBJECT(/*model*/ MODEL_SHADOW_TITLE_SCREEN, /*pos*/ -35.892, 0, 700, /*angle*/ 0, 0, 0, /*behParam*/ 0, /*beh*/ bhvTitleStaticObject),
+        OBJECT(/*model*/ MODEL_TITLE_SCREEN_BG, /*pos*/ 0, -20, 50, /*angle*/ 0, 0, 0, /*behParam*/ 0, /*beh*/ bhvTitleStaticObject),
         TERRAIN(/*terrainData*/ main_menu_seg7_collision),
     END_AREA(),
 

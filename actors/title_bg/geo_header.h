@@ -1,0 +1,12 @@
+extern const GeoLayout title_bg_geo[];
+extern u8 title_bg_forward_sign_rgba16[];
+extern Vtx title_bg_Plane_mesh_layer_1_vtx_cull[8];
+extern Vtx title_bg_Plane_mesh_layer_1_vtx_0[14];
+extern Gfx title_bg_Plane_mesh_layer_1_tri_0[];
+extern Vtx title_bg_Plane_mesh_layer_1_vtx_1[14];
+extern Gfx title_bg_Plane_mesh_layer_1_tri_1[];
+extern Gfx mat_title_bg_f3dlite_material[];
+extern Gfx mat_revert_title_bg_f3dlite_material[];
+extern Gfx mat_title_bg_f3dlite_material_001[];
+extern Gfx mat_revert_title_bg_f3dlite_material_001[];
+extern Gfx title_bg_Plane_mesh_layer_1[];

@@ -2065,7 +2065,8 @@ s32 lvl_update_obj_and_load_file_selected(UNUSED s32 arg, UNUSED s32 unused) {
         }
         //print_text_centered(SCREEN_WIDTH/2, SCREEN_HEIGHT/-5 + 30, "TEAM GREEN");
     }
-    area_update_objects();
+    //area_update_objects();
+    scroll_textures();
   return 0 /*sSelectedFileNum*/;
 }
 

@@ -18,3 +18,5 @@
 #include "mario/geo.inc.c"
 
 #include "star_ring/geo.inc.c"
+#include "shadow_mario_title/geo.inc.c"
+#include "title_bg/geo.inc.c"

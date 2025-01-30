@@ -335,4 +335,8 @@ extern const Gfx white_particle_small_unused_dl[];
 
 #include "star_ring/geo_header.h"
 
+#include "shadow_mario_title/geo_header.h"
+
+#include "title_bg/geo_header.h"
+
 #endif

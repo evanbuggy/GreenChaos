@@ -84,6 +84,11 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_LEAVES,                  leaves_geo),
     LOAD_MODEL_FROM_GEO(MODEL_PURPLE_MARBLE,           purple_marble_geo),
     LOAD_MODEL_FROM_GEO(MODEL_FISH,                    fish_geo),
+
+    LOAD_MODEL_FROM_GEO(MODEL_SHADOW_TITLE_SCREEN,     shadow_mario_title_geo), // New
+    LOAD_MODEL_FROM_GEO(MODEL_TITLE_SCREEN_BG,          title_bg_geo), // New
+    //marie splatoon gaming
+
     // LOAD_MODEL_FROM_GEO(MODEL_FISH_SHADOW,             fish_shadow_geo),
     LOAD_MODEL_FROM_GEO(MODEL_SPARKLES_ANIMATION,      sparkles_animation_geo),
     LOAD_MODEL_FROM_DL( MODEL_SAND_DUST,               sand_seg3_dl_particle,       LAYER_OCCLUDE_SILHOUETTE_ALPHA),

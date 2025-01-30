@@ -32,3 +32,5 @@
 #endif
 
 #include "star_ring/model.inc.c"
+#include "shadow_mario_title/model.inc.c"
+#include "title_bg/model.inc.c"
