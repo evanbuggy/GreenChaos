@@ -7,7 +7,7 @@ void scroll_wf_dl_ArrowSIgn_mesh_layer_1_vtx_0() {
 	int deltaX;
 	Vtx *vertices = segmented_to_virtual(wf_dl_ArrowSIgn_mesh_layer_1_vtx_0);
 
-	deltaX = (int)(3.0 * 0x20) % width;
+	deltaX = (int)(-3.0 * 0x20) % width;
 
 	if (absi(currentX) > width) {
 		deltaX -= (int)(absi(currentX) / width) * width * signum_positive(deltaX);
@@ -28,7 +28,7 @@ void scroll_wf_dl_ArrowSign2_mesh_layer_1_vtx_0() {
 	int deltaX;
 	Vtx *vertices = segmented_to_virtual(wf_dl_ArrowSign2_mesh_layer_1_vtx_0);
 
-	deltaX = (int)(3.0 * 0x20) % width;
+	deltaX = (int)(-3.0 * 0x20) % width;
 
 	if (absi(currentX) > width) {
 		deltaX -= (int)(absi(currentX) / width) * width * signum_positive(deltaX);
