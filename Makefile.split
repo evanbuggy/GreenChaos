@@ -80,6 +80,8 @@ PEACH_DIRS       := bird peach yoshi
 BOWSER_DIRS      := bowser_flame impact_ring yellow_sphere bowser bomb impact_smoke
 MARIO_DIRS       := mario bubble walk_smoke burn_smoke small_water_splash water_wave sparkle water_splash white_particle_small sparkle_animation
 
+SHADOW_MARIO_TITLE_DIRS       := shadow_mario_title
+
 # Actor Textures
 AMP_CHUCKYA_TEXTURES            := $(foreach dir,$(AMP_DIRS),        $(wildcard actors/$(dir)/*.png))
 BOBOMBS_BUBBLE_TEXTURES         := $(foreach dir,$(KING_BOBOMB_DIRS),$(wildcard actors/$(dir)/*.png))
@@ -102,8 +104,13 @@ SEA_CREATURES_TEXTURES          := $(foreach dir,$(SEA_DIRS),        $(wildcard 
 SKEETER_FISH_TEXTURES           := $(foreach dir,$(SKEETER_DIRS),    $(wildcard actors/$(dir)/*.png))
 SPINDRIFT_PENGUIN_TEXTURES      := $(foreach dir,$(SPINDRIFT_DIRS),  $(wildcard actors/$(dir)/*.png))
 
+MARIO_TITLE_TEXTURES            := $(foreach dir,$(SHADOW_MARIO_TITLE_DIRS),      $(wildcard actors/$(dir)/*.png))
+
 # Actor dependencies
 $(BUILD_DIR)/actors/group0.o:  $(MARIO_WATER_TEXTURES:%.png=$(BUILD_DIR)/%.inc.c)
+
+$(BUILD_DIR)/actors/group0.o:  $(MARIO_TITLE_TEXTURES:%.png=$(BUILD_DIR)/%.inc.c)
+
 $(BUILD_DIR)/actors/group1.o:  $(HOOT_THWOMP_TEXTURES:%.png=$(BUILD_DIR)/%.inc.c)
 $(BUILD_DIR)/actors/group2.o:  $(BULLY_BLARGG_TEXTURES:%.png=$(BUILD_DIR)/%.inc.c)
 $(BUILD_DIR)/actors/group3.o:  $(BOBOMBS_BUBBLE_TEXTURES:%.png=$(BUILD_DIR)/%.inc.c)

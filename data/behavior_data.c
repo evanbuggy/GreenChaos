@@ -6098,6 +6098,30 @@ const BehaviorScript bhvTitleStaticObject[] = {
     BEGIN(OBJ_LIST_LEVEL),
     OR_INT(oFlags, (OBJ_FLAG_ACTIVE_FROM_AFAR | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
     BEGIN_LOOP(),
-        ADD_INT(oAnimState, 1),
+//        ADD_INT(oAnimState, 1),
     END_LOOP()
+};
+
+extern void bhv_moving_shadow_title();
+const BehaviorScript bhvMovingShadow[] = {
+    BEGIN(OBJ_LIST_SURFACE),
+    OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
+    SET_FLOAT(oDrawingDistance, 20000),
+    SET_HOME(),
+    BEGIN_LOOP(),
+        ADD_INT(oAnimState, 1),
+        CALL_NATIVE(bhv_moving_shadow_title),
+    END_LOOP(),
+};
+
+extern void bhv_moving_title_logo();
+const BehaviorScript bhvMovingTitle[] = {
+    BEGIN(OBJ_LIST_SURFACE),
+    OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
+    SET_FLOAT(oDrawingDistance, 20000),
+    SET_HOME(),
+    BEGIN_LOOP(),
+        ADD_INT(oAnimState, 1),
+        CALL_NATIVE(bhv_moving_title_logo),
+    END_LOOP(),
 };

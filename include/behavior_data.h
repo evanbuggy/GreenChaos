@@ -543,5 +543,7 @@ extern const BehaviorScript bhvUnusedFakeStar[];
 extern const BehaviorScript bhvCombatEnemy[];
 extern const BehaviorScript bhvDisplayObj[];
 extern const BehaviorScript bhvTitleStaticObject[];
+extern const BehaviorScript bhvMovingShadow[];
+extern const BehaviorScript bhvMovingTitle[];
 
 #endif // BEHAVIOR_DATA_H

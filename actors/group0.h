@@ -339,4 +339,6 @@ extern const Gfx white_particle_small_unused_dl[];
 
 #include "title_bg/geo_header.h"
 
+#include "title_logo/geo_header.h"
+
 #endif
