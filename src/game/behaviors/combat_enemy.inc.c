@@ -1,13 +1,13 @@
 static struct ObjectHitbox sCombatEnmemyHitbox = {
-    /* interactType:      */ INTERACT_BOUNCE_TOP,
+    /* interactType:      */ INTERACT_COMBAT_ENEMY,
     /* downOffset:        */ 0,
     /* damageOrCoinValue: */ 1,
     /* health:            */ 5,
     /* numLootCoins:      */ 1,
-    /* radius:            */ 200,
-    /* height:            */ 300,
-    /* hurtboxRadius:     */ 25,
-    /* hurtboxHeight:     */ 25,   
+    /* radius:            */ 300,
+    /* height:            */ 400,
+    /* hurtboxRadius:     */ 200,
+    /* hurtboxHeight:     */ 200,   
 };
 
 static u8 sCombatEnemyAttackHandlers[6] = {
@@ -32,24 +32,22 @@ void bhv_combat_enemy_loop(void) {
 
         // Makes Mario invincible while launching the enemy (for 2 seconds)
         gMarioState->invincTimer = 30;
-        gMarioState->combo++;
-        gMarioState->comboTimer = 60;
         
         o->oHealth--;
         o->oForwardVel = 0.0f;
         if ((o->oMoveFlags & OBJ_MOVE_LANDED) || (o->oMoveFlags & OBJ_MOVE_ON_GROUND)) {
-            o->oVelY = 60.0f;
+            o->oVelY = 120.0f;
             // This defines how long Mario has in frames to cancel his kick into a jump after hitting this enemy.
             gMarioState->jumpTimer = 10;
         }
         else {
-            o->oVelY = 40.0f;
+            o->oVelY = 80.0f;
             gMarioState->airComboCancel = 1;
         }
 
         // This defines how long the enemy is invincible for in frames before it can be attacked again.
         // This is to prevent attacks like the kick from hitting multiple times.
-        invFrames = 6;
+        invFrames = 60;
 
         hitstopFrames = 3;
 
@@ -71,7 +69,11 @@ void bhv_combat_enemy_loop(void) {
     }
 
     if (o->oMoveFlags & OBJ_MOVE_BOUNCE) {
-        play_sound(SOUND_OBJ_POUNDING_LOUD, gGlobalSoundSource);
+        if (o->oMoveFlags & OBJ_MOVE_ABOVE_DEATH_BARRIER) {
+            obj_mark_for_deletion(o);
+        }
+        o->oForwardVel = 0.0f;
+        cur_obj_play_sound_2(SOUND_OBJ_POUNDING_LOUD);
     }
 
     // Movement functions, commented out ones were used for testing and may be used later

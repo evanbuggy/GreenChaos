@@ -464,6 +464,8 @@ static s32 obj_resolve_collisions_and_turn(s16 targetYaw, s16 turnSpeed) {
 }
 
 static void obj_die_if_health_non_positive(void) {
+    gMarioState->combo++;
+    gMarioState->comboTimer = 100;
     if (o->oHealth <= 0) {
         disable_time_stop_including_mario();
         if (o->oDeathSound == 0) {

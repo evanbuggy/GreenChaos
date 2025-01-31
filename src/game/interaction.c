@@ -56,6 +56,7 @@ u32 interact_hoot          (struct MarioState *m, u32 interactType, struct Objec
 u32 interact_cap           (struct MarioState *m, u32 interactType, struct Object *obj);
 u32 interact_grabbable     (struct MarioState *m, u32 interactType, struct Object *obj);
 u32 interact_text          (struct MarioState *m, u32 interactType, struct Object *obj);
+u32 interact_combat_enemy  (struct MarioState *m, u32 interactType, struct Object *obj);
 
 struct InteractionHandler {
     u32 interactType;
@@ -94,6 +95,7 @@ static struct InteractionHandler sInteractionHandlers[] = {
     { INTERACT_CAP,            interact_cap },
     { INTERACT_GRABBABLE,      interact_grabbable },
     { INTERACT_TEXT,           interact_text },
+    { INTERACT_COMBAT_ENEMY,   interact_combat_enemy },
 };
 
 static u32 sForwardKnockbackActions[][3] = {
@@ -734,6 +736,8 @@ void reset_mario_pitch(struct MarioState *m) {
 
 u32 interact_coin(struct MarioState *m, UNUSED u32 interactType, struct Object *obj) {
     m->numCoins += obj->oDamageOrCoinValue;
+    m->combo++;
+    m->comboTimer = 100;
     m->healCounter += 4 * obj->oDamageOrCoinValue;
 #ifdef BREATH_METER
     m->breathCounter += (4 * obj->oDamageOrCoinValue);
@@ -1257,6 +1261,39 @@ u32 interact_bully(struct MarioState *m, UNUSED u32 interactType, struct Object 
 
         push_mario_out_of_object(m, obj, 5.0f);
         drop_and_set_mario_action(m, bully_knock_back_mario(m), 0);
+#if ENABLE_RUMBLE
+        queue_rumble_data(5, 80);
+#endif
+        return TRUE;
+    }
+
+    return FALSE;
+}
+
+// New Interaction type for combat enemies - Buggy
+u32 interact_combat_enemy(struct MarioState *m, UNUSED u32 interactType, struct Object *obj) {
+    u32 interaction;
+    if (m->flags & MARIO_METAL_CAP) {
+        interaction = INT_FAST_ATTACK_OR_SHELL;
+    } else {
+        interaction = determine_interaction(m, obj);
+    }
+
+    m->interactObj = obj;
+    take_damage_and_knock_back(m, obj);
+
+    if (interaction & INT_ATTACK_NOT_FROM_BELOW) {
+#if ENABLE_RUMBLE
+        queue_rumble_data(5, 80);
+#endif
+        attack_object(obj, interaction);
+        bounce_back_from_attack(m, interaction);
+        return TRUE;
+    } else if (!sInvulnerable && !(m->flags & MARIO_VANISH_CAP)
+             && !(obj->oInteractionSubtype & INT_SUBTYPE_DELAY_INVINCIBILITY)) {
+        obj->oInteractStatus = INT_STATUS_INTERACTED;
+
+        update_mario_sound_and_camera(m);
 #if ENABLE_RUMBLE
         queue_rumble_data(5, 80);
 #endif

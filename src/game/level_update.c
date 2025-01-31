@@ -977,6 +977,7 @@ void update_hud_values(void) {
         gHudDisplay.lives = gMarioState->numLives;
         gHudDisplay.keys = gMarioState->numKeys;
         gHudDisplay.combo = gMarioState->combo;
+        gHudDisplay.comboTimer = gMarioState->comboTimer;
 
         if (numHealthWedges > gHudDisplay.wedges) {
             play_sound(SOUND_MENU_POWER_METER, gGlobalSoundSource);

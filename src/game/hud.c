@@ -197,7 +197,8 @@ void render_dl_power_meter(s16 numHealthWedges) {
 void render_combo() {
     if (gHudDisplay.combo >= 2) {
         print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(54), HUD_TOP_Y - 64, "%d", gHudDisplay.combo);
-        print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(40), HUD_TOP_Y - 80, "COMBO!");
+        print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(40), HUD_TOP_Y - 80, "COMBO");
+        print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(54), HUD_TOP_Y - 120, "%d", gHudDisplay.comboTimer);
     }
 }
 
