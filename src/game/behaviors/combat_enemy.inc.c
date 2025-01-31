@@ -6,8 +6,8 @@ static struct ObjectHitbox sCombatEnmemyHitbox = {
     /* numLootCoins:      */ 1,
     /* radius:            */ 300,
     /* height:            */ 400,
-    /* hurtboxRadius:     */ 200,
-    /* hurtboxHeight:     */ 200,   
+    /* hurtboxRadius:     */ 100,
+    /* hurtboxHeight:     */ 100,   
 };
 
 static u8 sCombatEnemyAttackHandlers[6] = {
@@ -36,12 +36,12 @@ void bhv_combat_enemy_loop(void) {
         o->oHealth--;
         o->oForwardVel = 0.0f;
         if ((o->oMoveFlags & OBJ_MOVE_LANDED) || (o->oMoveFlags & OBJ_MOVE_ON_GROUND)) {
-            o->oVelY = 120.0f;
+            o->oVelY = 100.0f;
             // This defines how long Mario has in frames to cancel his kick into a jump after hitting this enemy.
             gMarioState->jumpTimer = 10;
         }
         else {
-            o->oVelY = 80.0f;
+            o->oVelY = 60.0f;
             gMarioState->airComboCancel = 1;
         }
 
