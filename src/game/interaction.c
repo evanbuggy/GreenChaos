@@ -188,7 +188,11 @@ u32 determine_interaction(struct MarioState *m, struct Object *obj) {
                     interaction = INT_TRIP;
                 }
             }
-        } else if (action == ACT_GROUND_POUND || action == ACT_TWIRLING) {
+        } else if (action == ACT_AIR_SPIN) {
+            interaction = INT_SPIN_SAW;
+            set_mario_action(m, ACT_SPIN_SAW, 0);
+            }
+        else if (action == ACT_GROUND_POUND || action == ACT_TWIRLING) {
             if (m->vel[1] < 0.0f) {
                 interaction = INT_GROUND_POUND_OR_TWIRL;
             }
@@ -208,6 +212,7 @@ u32 determine_interaction(struct MarioState *m, struct Object *obj) {
             interaction = INT_FAST_ATTACK_OR_SHELL;
         }
     }
+    
 
     // Prior to this, the interaction type could be overwritten. This requires, however,
     // that the interaction not be set prior. This specifically overrides turning a ground
@@ -253,6 +258,9 @@ u32 attack_object(struct Object *obj, s32 interaction) {
             break;
         case INT_HIT_FROM_BELOW:
             attackType = ATTACK_FROM_BELOW;
+            break;
+        case INT_SPIN_SAW:
+            attackType = ATTACK_SPIN_SAW;
             break;
     }
 

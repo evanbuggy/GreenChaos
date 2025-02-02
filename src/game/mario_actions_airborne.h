@@ -77,7 +77,11 @@ enum ActionArgsFreefall { // act_freefall
     ACT_ARG_FREEFALL_FROM_SLIDE,
     ACT_ARG_FREEFALL_FROM_SLIDE_KICK
 };
-
+enum ActionStatesSpinSaw {
+    ACT_STATE_SPIN_SAW_IDLE,
+    ACT_STATE_SPIN_SAW_FAIL,
+    ACT_STATE_SPIN_SAW_SUCCESS
+};
 s32 mario_execute_airborne_action(struct MarioState *m);
 
 #endif // MARIO_ACTIONS_AIRBORNE_H
