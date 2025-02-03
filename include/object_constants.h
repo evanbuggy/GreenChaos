@@ -233,7 +233,8 @@ enum ObjGeneralDeathActions {
 enum ObjGeneralKnockbackActions {
     OBJ_ACT_HORIZONTAL_KNOCKBACK = 100,
     OBJ_ACT_VERTICAL_KNOCKBACK,
-    OBJ_ACT_SQUISHED
+    OBJ_ACT_SQUISHED,
+    OBJ_ACT_SPIN_SAWED
 };
 
 /* oAnimState */

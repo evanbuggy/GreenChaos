@@ -16,7 +16,8 @@
 #include "rumble_init.h"
 
 #include "config.h"
-
+#include "debug_box.h"
+#include "print.h"
 void play_flip_sounds(struct MarioState *m, s16 frame1, s16 frame2, s16 frame3) {
     s32 animFrame = m->marioObj->header.gfx.animInfo.animFrame;
     if (animFrame == frame1 || animFrame == frame2 || animFrame == frame3) {
@@ -437,6 +438,12 @@ s32 act_jump(struct MarioState *m) {
         return set_mario_action(m, ACT_GROUND_POUND, 0);
     }
 
+    //TEMP CONTROL
+    if( m->controller->buttonPressed & L_TRIG ) 
+    {
+        return set_mario_action(m, ACT_AIR_SPIN, 0);
+    }
+    
     play_mario_sound(m, SOUND_ACTION_TERRAIN_JUMP, 0);
     common_air_action_step(m, ACT_JUMP_LAND, MARIO_ANIM_SINGLE_JUMP,
                            AIR_STEP_CHECK_LEDGE_GRAB | AIR_STEP_CHECK_HANG);
@@ -1001,6 +1008,47 @@ s32 act_ground_pound(struct MarioState *m) {
 
     return FALSE;
 }
+s32 act_air_spin(struct MarioState *m) {
+    if(!(m->controller->buttonDown & L_TRIG)) {
+        return set_mario_action(m, ACT_FREEFALL, 0);
+    }
+    common_air_action_step(m, ACT_JUMP_LAND, MARIO_ANIM_CROUCHING, AIR_STEP_CHECK_LEDGE_GRAB | AIR_STEP_CHECK_HANG);
+    return FALSE;
+}
+s32 act_spin_saw(struct MarioState *m) {
+
+    const f32 velDecrement=1.0f;
+
+    switch (m->actionState) {
+            
+        case ACT_STATE_SPIN_SAW_IDLE:
+            if (m->forwardVel>0 || !(m->controller->buttonDown & L_TRIG)) {
+                m->forwardVel-=velDecrement;
+            }
+            else {
+                m->actionState=ACT_STATE_SPIN_SAW_FAIL;
+            }
+            break;
+        case ACT_STATE_SPIN_SAW_FAIL:
+            m->forwardVel= -20;
+            play_mario_sound(m, SOUND_ACTION_BONK, 0);
+            return set_mario_action(m,ACT_SOFT_BONK,0);
+            break;
+        case ACT_STATE_SPIN_SAW_SUCCESS:
+            m->forwardVel=50;
+            m->vel[1]=20;
+            mario_set_forward_vel(m,m->forwardVel);
+            return set_mario_action(m,ACT_AIR_SPIN,0);
+            break;
+            
+    }
+
+    m->actionTimer++;
+
+    return FALSE;
+}
+
+
 
 s32 act_burning_jump(struct MarioState *m) {
     play_mario_sound(m, SOUND_ACTION_TERRAIN_JUMP, m->actionArg == 0 ? 0 : -1);
@@ -2121,6 +2169,8 @@ s32 mario_execute_airborne_action(struct MarioState *m) {
         case ACT_CRAZY_BOX_BOUNCE:     cancel = act_crazy_box_bounce(m);     break;
         case ACT_SPECIAL_TRIPLE_JUMP:  cancel = act_special_triple_jump(m);  break;
         case ACT_GROUND_POUND:         cancel = act_ground_pound(m);         break;
+        case ACT_AIR_SPIN:             cancel = act_air_spin(m);             break;
+        case ACT_SPIN_SAW:             cancel = act_spin_saw(m);             break;
         case ACT_THROWN_FORWARD:       cancel = act_thrown_forward(m);       break;
         case ACT_THROWN_BACKWARD:      cancel = act_thrown_backward(m);      break;
         case ACT_FLYING_TRIPLE_JUMP:   cancel = act_flying_triple_jump(m);   break;
