@@ -450,6 +450,7 @@ struct MarioState {
     u16 combo;
     u16 highestCombo;
     u8 comboTimer;
+    u8 rank;
     // -- HackerSM64 MarioState fields begin --
 #ifdef BREATH_METER
              s16 breath;

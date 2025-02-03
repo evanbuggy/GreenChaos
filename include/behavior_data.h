@@ -541,6 +541,7 @@ extern const BehaviorScript bhvEndBirds2[];
 extern const BehaviorScript bhvIntroScene[];
 extern const BehaviorScript bhvUnusedFakeStar[];
 extern const BehaviorScript bhvCombatEnemy[];
+extern const BehaviorScript bhvRank[];
 extern const BehaviorScript bhvDisplayObj[];
 extern const BehaviorScript bhvTitleStaticObject[];
 extern const BehaviorScript bhvMovingShadow[];

@@ -6084,6 +6084,14 @@ const BehaviorScript bhvCombatEnemy[] = {
     END_LOOP(),
 };
 
+const BehaviorScript bhvRank[] = {
+    BEGIN(OBJ_LIST_DEFAULT),
+    CALL_NATIVE(bhv_rank_init),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_rank_loop),
+    END_LOOP(),
+};
+
 // Frijoles: Luigi Head in LLL
 const BehaviorScript bhvDisplayObj[] = {
     BEGIN(OBJ_LIST_DEFAULT),

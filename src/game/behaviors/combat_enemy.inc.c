@@ -25,18 +25,18 @@ u8 invFrames = 0;
 u8 hitstopFrames = 0;
 
 void bhv_combat_enemy_loop(void) {
-    switch (o->oAction) {
-        case OBJ_ACT_SPIN_SAWED:
-            osSyncPrintf("SpinSaw");
-            break;
-        case 0:
-            osSyncPrintf("IDLE");
-            break;
-        default:
-            osSyncPrintf("%d", o->oAction);
-            break;
+    // switch (o->oAction) {
+    //     case OBJ_ACT_SPIN_SAWED:
+    //         osSyncPrintf("SpinSaw");
+    //         break;
+    //     case 0:
+    //         osSyncPrintf("IDLE");
+    //         break;
+    //     default:
+    //         osSyncPrintf("%d", o->oAction);
+    //         break;
         
-    }
+    // }
     if (obj_update_standard_actions(1)) {
         cur_obj_update_floor_and_walls();
         if (obj_handle_attacks(&sCombatEnmemyHitbox, o->oAction, sCombatEnemyAttackHandlers) == ATTACK_KICK_OR_TRIP) {

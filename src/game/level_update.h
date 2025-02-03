@@ -119,6 +119,7 @@ struct HudDisplay {
     /*0x0E*/ u16 combo;
     /*0x10*/ u16 rank;
     /*0x12*/ u16 comboTimer;
+    /*0x14*/ u8 currentRank;
 #ifdef BREATH_METER
              u16 breath;
 #endif

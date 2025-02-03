@@ -203,6 +203,7 @@ void render_combo() {
 }
 
 void render_rank_screen() {
+    // This is so bad pls dont judge me - Buggy
     switch (gHudDisplay.rank) {
         case 1:
             print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(40), HUD_TOP_Y - 80, "COMBO:");
@@ -227,7 +228,8 @@ void render_rank_screen() {
             print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(60), HUD_TOP_Y - 80, "%d", gMarioState->highestCombo);
             print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(40), HUD_TOP_Y - 120, "COINS:");
             print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(60), HUD_TOP_Y - 120, "%d", gHudDisplay.coins);
-            print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(100), HUD_TOP_Y - 160, "RANK GOES HERE");
+            // print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(100), HUD_TOP_Y - 160, "RANK GOES HERE");
+            print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(100), HUD_TOP_Y - 160, "%d", gHudDisplay.currentRank);
             break;
     }
 }
