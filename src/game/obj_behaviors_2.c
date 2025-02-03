@@ -45,7 +45,7 @@
 #include "save_file.h"
 #include "seq_ids.h"
 #include "spawn_sound.h"
-
+#include "print.h"
 //! TODO: remove static
 
 enum ObjPositionOperation {
@@ -549,7 +549,10 @@ static s32 obj_die_if_above_lava_and_health_non_positive(void) {
 
     return FALSE;
 }
+static void obj_set_spin_sawed_action() {
 
+            o->oAction = OBJ_ACT_SPIN_SAWED;
+}
 static s32 obj_handle_attacks(struct ObjectHitbox *hitbox, s32 attackedMarioAction,
                               u8 *attackHandlers) {
     s32 attackType;
@@ -565,8 +568,13 @@ static s32 obj_handle_attacks(struct ObjectHitbox *hitbox, s32 attackedMarioActi
                 o->oAction = attackedMarioAction;
                 o->oTimer = 0;
             }
+        } else if ((o->oInteractStatus & INT_STATUS_ATTACK_MASK) == ATTACK_SPIN_SAW) {
+            attackType = (o->oInteractStatus & INT_STATUS_ATTACK_MASK);
+            obj_set_spin_sawed_action();
+            o->oInteractStatus = INT_STATUS_NONE;
+            return attackType;
         } else {
-            attackType = o->oInteractStatus & INT_STATUS_ATTACK_MASK;
+            attackType = (o->oInteractStatus & INT_STATUS_ATTACK_MASK);
 
             switch (attackHandlers[attackType - 1]) {
                 case ATTACK_HANDLER_NOP:
@@ -615,6 +623,7 @@ static s32 obj_handle_attacks(struct ObjectHitbox *hitbox, s32 attackedMarioActi
     return ATTACK_HANDLER_NOP;
 }
 
+
 static void obj_act_knockback(UNUSED f32 baseScale) {
     cur_obj_update_floor_and_walls();
 
@@ -652,6 +661,25 @@ static void obj_act_squished(f32 baseScale) {
     o->oForwardVel = 0.0f;
     cur_obj_move_standard(-78);
 }
+static void obj_act_spin_sawed() {
+    const u16 tickSpacing=2;
+    if ((gMarioState->action==ACT_SPIN_SAW) && (gMarioState->actionState != 1) /*ACT_STATE_SPIN_SAW_FAIL*/) {
+        if (gMarioState->actionTimer % tickSpacing==0) {
+            spawn_triangle_break_particles(5, MODEL_CARTOON_STAR, 0.3f, 3);
+            o->oHealth--;
+        }
+        if (o->oHealth<=0) {
+            gMarioState->actionState=2; //ACT_STATE_SPIN_SAW_SUCCESS
+        }
+    } 
+    else {
+        o->oAction=0;
+        cur_obj_become_tangible();
+    }
+    obj_die_if_health_non_positive();
+    // //If health is at 0 and mario is spinsaw, interrupt with success state. If health is>0 and mario is in spansaw, do tick code. If health 
+
+}
 
 static s32 obj_update_standard_actions(f32 scale) {
     if (o->oAction < 100) {
@@ -667,6 +695,9 @@ static s32 obj_update_standard_actions(f32 scale) {
 
             case OBJ_ACT_SQUISHED:
                 obj_act_squished(scale);
+                break;
+            case OBJ_ACT_SPIN_SAWED:
+                obj_act_spin_sawed();
                 break;
         }
 
