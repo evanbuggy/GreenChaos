@@ -1022,7 +1022,7 @@ s32 act_spin_saw(struct MarioState *m) {
     switch (m->actionState) {
             
         case ACT_STATE_SPIN_SAW_IDLE:
-            if (m->forwardVel>0 || !(m->controller->buttonDown & L_TRIG)) {
+            if (m->forwardVel>0 && (m->controller->buttonDown & L_TRIG)) {
                 m->forwardVel-=velDecrement;
             }
             else {

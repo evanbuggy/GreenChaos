@@ -568,13 +568,13 @@ static s32 obj_handle_attacks(struct ObjectHitbox *hitbox, s32 attackedMarioActi
                 o->oAction = attackedMarioAction;
                 o->oTimer = 0;
             }
-        } else if (o->oInteractStatus & INT_STATUS_ATTACK_MASK == ATTACK_SPIN_SAW) {
-            attackType = o->oInteractStatus & INT_STATUS_ATTACK_MASK;
+        } else if ((o->oInteractStatus & INT_STATUS_ATTACK_MASK) == ATTACK_SPIN_SAW) {
+            attackType = (o->oInteractStatus & INT_STATUS_ATTACK_MASK);
             obj_set_spin_sawed_action();
             o->oInteractStatus = INT_STATUS_NONE;
             return attackType;
         } else {
-            attackType = o->oInteractStatus & INT_STATUS_ATTACK_MASK;
+            attackType = (o->oInteractStatus & INT_STATUS_ATTACK_MASK);
 
             switch (attackHandlers[attackType - 1]) {
                 case ATTACK_HANDLER_NOP:
@@ -663,7 +663,7 @@ static void obj_act_squished(f32 baseScale) {
 }
 static void obj_act_spin_sawed() {
     const u16 tickSpacing=2;
-    if (gMarioState->action==ACT_SPIN_SAW && gMarioState->actionState != 1 /*ACT_STATE_SPIN_SAW_FAIL*/) {
+    if ((gMarioState->action==ACT_SPIN_SAW) && (gMarioState->actionState != 1) /*ACT_STATE_SPIN_SAW_FAIL*/) {
         if (gMarioState->actionTimer % tickSpacing==0) {
             spawn_triangle_break_particles(5, MODEL_CARTOON_STAR, 0.3f, 3);
             o->oHealth--;
@@ -673,7 +673,8 @@ static void obj_act_spin_sawed() {
         }
     } 
     else {
-        
+        o->oAction=0;
+        cur_obj_become_tangible();
     }
     obj_die_if_health_non_positive();
     // //If health is at 0 and mario is spinsaw, interrupt with success state. If health is>0 and mario is in spansaw, do tick code. If health 
