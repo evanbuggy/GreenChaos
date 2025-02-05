@@ -104,6 +104,7 @@ const LevelScript level_lll_entry[] = {
 	LOAD_MODEL_FROM_GEO(MODEL_BROTHER_LUIGI_HEAD, luigi_head_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_BROTHER_LUIGI_HEAD, luigi_head_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_BROTHER_LUIGI_HEAD, luigi_head_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_BROTHER_LUIGI_HEAD, luigi_head_geo), 
 	/* Fast64 begin persistent block [level commands] */
 	LOAD_MODEL_FROM_GEO(MODEL_BROTHER_LUIGI_HEAD, luigi_head_geo),
 	/* Fast64 end persistent block [level commands] */
