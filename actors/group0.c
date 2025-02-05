@@ -35,3 +35,6 @@
 #include "shadow_mario_title/model.inc.c"
 #include "title_bg/model.inc.c"
 #include "title_logo/model.inc.c"
+#include "simpleflips_npc/model.inc.c"
+#include "simpleflips/anims/data.inc.c"
+#include "simpleflips/anims/table.inc.c"

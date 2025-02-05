@@ -103,7 +103,7 @@ Gfx *geo_draw_mario_head_goddard(s32 callContext, struct GraphNode *node, UNUSED
 #endif
 
 static void toad_message_faded(void) {
-    if (o->oDistanceToMario > 700.0f) {
+    if (o->oDistanceToMario > 0.0f) {
         o->oToadMessageRecentlyTalked = FALSE;
     }
     if (!o->oToadMessageRecentlyTalked && o->oDistanceToMario < 600.0f) {
@@ -125,7 +125,7 @@ static void toad_message_opaque(void) {
 }
 
 static void toad_message_talking(void) {
-    if (cur_obj_update_dialog_with_cutscene(MARIO_DIALOG_LOOK_DOWN,
+    if (cur_obj_update_dialog_with_cutscene(MARIO_DIALOG_LOOK_FRONT,
         DIALOG_FLAG_TURN_TO_MARIO, CUTSCENE_DIALOG, o->oToadMessageDialogId)) {
         o->oToadMessageRecentlyTalked = TRUE;
         o->oToadMessageState = TOAD_MESSAGE_FADING;
