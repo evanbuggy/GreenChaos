@@ -56,6 +56,7 @@ const GeoLayout wf_area_1_geo[] = {
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, 2736, -1483, -4681, 10, 0, 0, wf_dl_RoadWiggle_001_mesh_layer_1),
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, 5385, 4368, -10134, 0, 35, -90, wf_dl_Sign_mesh_layer_1),
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, 9292, 969, -4872, -133, 22, 75, wf_dl_Sign_001_mesh_layer_1),
+		GEO_TRANSLATE_NODE_WITH_DL(LAYER_OPAQUE, 3787, 2066, -7936, wf_dl_TimerEnd_mesh_layer_1),
 	GEO_CLOSE_NODE(),
 	GEO_RETURN(),
 };
