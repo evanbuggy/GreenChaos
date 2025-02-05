@@ -105,7 +105,7 @@ void scroll_lll_dl_Plane_013_mesh_layer_1_vtx_0() {
 
 void scroll_lll_dl_Plane_014_mesh_layer_1_vtx_0() {
 	int i = 0;
-	int count = 44;
+	int count = 83;
 	int height = 32 * 0x20;
 
 	static int currentY = 0;
