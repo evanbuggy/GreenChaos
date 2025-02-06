@@ -3270,7 +3270,7 @@ Gfx simpleflips_npc_000_offset_001_mesh_layer_1_tri_1[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx simpleflips_npc_000_displaylist_mesh_layer_1_vtx_0[203] = {
+Vtx simpleflips_npc_000_displaylist_mesh_layer_1_vtx_0[204] = {
 	{{ {176, 91, 44}, 0, {834, 33}, {147, 65, 10, 255} }},
 	{{ {146, 101, 0}, 0, {492, 279}, {15, 126, 255, 255} }},
 	{{ {98, 103, 15}, 0, {612, 675}, {64, 89, 64, 255} }},
@@ -3279,6 +3279,7 @@ Vtx simpleflips_npc_000_displaylist_mesh_layer_1_vtx_0[203] = {
 	{{ {145, 83, -66}, 0, {-23, 288}, {26, 94, 174, 255} }},
 	{{ {145, 83, 74}, 0, {1065, 289}, {232, 100, 75, 255} }},
 	{{ {176, 91, 44}, 0, {831, 33}, {147, 65, 10, 255} }},
+	{{ {98, 103, 15}, 0, {612, 675}, {64, 89, 64, 255} }},
 	{{ {98, 103, 15}, 0, {612, 675}, {64, 89, 64, 255} }},
 	{{ {105, 87, 70}, 0, {1038, 617}, {247, 94, 85, 255} }},
 	{{ {145, 83, 74}, 0, {1067, 289}, {232, 100, 75, 255} }},
@@ -3477,22 +3478,22 @@ Vtx simpleflips_npc_000_displaylist_mesh_layer_1_vtx_0[203] = {
 };
 
 Gfx simpleflips_npc_000_displaylist_mesh_layer_1_tri_0[] = {
-	gsSPVertex(simpleflips_npc_000_displaylist_mesh_layer_1_vtx_0 + 0, 31, 0),
+	gsSPVertex(simpleflips_npc_000_displaylist_mesh_layer_1_vtx_0 + 0, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 3, 4, 5, 0),
-	gsSP2Triangles(6, 7, 8, 0, 8, 9, 10, 0),
-	gsSP2Triangles(11, 12, 8, 0, 12, 9, 2, 0),
-	gsSP2Triangles(13, 14, 15, 0, 16, 15, 17, 0),
-	gsSP2Triangles(18, 19, 20, 0, 21, 22, 4, 0),
-	gsSP2Triangles(21, 20, 3, 0, 23, 24, 25, 0),
-	gsSP2Triangles(26, 27, 28, 0, 29, 30, 16, 0),
-	gsSPVertex(simpleflips_npc_000_displaylist_mesh_layer_1_vtx_0 + 31, 32, 0),
+	gsSP2Triangles(6, 7, 8, 0, 9, 10, 11, 0),
+	gsSP2Triangles(12, 13, 9, 0, 13, 10, 2, 0),
+	gsSP2Triangles(14, 15, 16, 0, 17, 16, 18, 0),
+	gsSP2Triangles(19, 20, 21, 0, 22, 23, 4, 0),
+	gsSP2Triangles(22, 21, 3, 0, 24, 25, 26, 0),
+	gsSP2Triangles(27, 28, 29, 0, 30, 31, 17, 0),
+	gsSPVertex(simpleflips_npc_000_displaylist_mesh_layer_1_vtx_0 + 32, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 3, 4, 5, 0),
 	gsSP2Triangles(6, 7, 8, 0, 9, 10, 11, 0),
 	gsSP2Triangles(12, 13, 14, 0, 15, 16, 17, 0),
 	gsSP2Triangles(18, 19, 20, 0, 19, 21, 22, 0),
 	gsSP2Triangles(23, 24, 25, 0, 26, 27, 28, 0),
 	gsSP1Triangle(29, 30, 31, 0),
-	gsSPVertex(simpleflips_npc_000_displaylist_mesh_layer_1_vtx_0 + 63, 32, 0),
+	gsSPVertex(simpleflips_npc_000_displaylist_mesh_layer_1_vtx_0 + 64, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 3, 4, 5, 0),
 	gsSP2Triangles(6, 7, 8, 0, 9, 10, 11, 0),
 	gsSP2Triangles(12, 13, 10, 0, 14, 15, 12, 0),
@@ -3500,7 +3501,7 @@ Gfx simpleflips_npc_000_displaylist_mesh_layer_1_tri_0[] = {
 	gsSP2Triangles(15, 20, 10, 0, 21, 22, 23, 0),
 	gsSP2Triangles(24, 25, 26, 0, 27, 28, 29, 0),
 	gsSP1Triangle(23, 30, 31, 0),
-	gsSPVertex(simpleflips_npc_000_displaylist_mesh_layer_1_vtx_0 + 95, 31, 0),
+	gsSPVertex(simpleflips_npc_000_displaylist_mesh_layer_1_vtx_0 + 96, 31, 0),
 	gsSP2Triangles(0, 1, 2, 0, 3, 4, 2, 0),
 	gsSP2Triangles(5, 6, 7, 0, 8, 9, 10, 0),
 	gsSP2Triangles(10, 11, 12, 0, 1, 10, 13, 0),
@@ -3508,7 +3509,7 @@ Gfx simpleflips_npc_000_displaylist_mesh_layer_1_tri_0[] = {
 	gsSP2Triangles(19, 2, 20, 0, 21, 22, 1, 0),
 	gsSP2Triangles(23, 24, 25, 0, 26, 27, 28, 0),
 	gsSP1Triangle(29, 27, 30, 0),
-	gsSPVertex(simpleflips_npc_000_displaylist_mesh_layer_1_vtx_0 + 126, 32, 0),
+	gsSPVertex(simpleflips_npc_000_displaylist_mesh_layer_1_vtx_0 + 127, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 3, 1, 4, 0),
 	gsSP2Triangles(5, 2, 4, 0, 6, 7, 8, 0),
 	gsSP2Triangles(9, 10, 6, 0, 11, 3, 5, 0),
@@ -3518,7 +3519,7 @@ Gfx simpleflips_npc_000_displaylist_mesh_layer_1_tri_0[] = {
 	gsSP2Triangles(19, 18, 20, 0, 21, 22, 23, 0),
 	gsSP2Triangles(21, 24, 22, 0, 25, 26, 27, 0),
 	gsSP2Triangles(28, 29, 30, 0, 29, 31, 30, 0),
-	gsSPVertex(simpleflips_npc_000_displaylist_mesh_layer_1_vtx_0 + 158, 30, 0),
+	gsSPVertex(simpleflips_npc_000_displaylist_mesh_layer_1_vtx_0 + 159, 30, 0),
 	gsSP2Triangles(0, 1, 2, 0, 3, 1, 0, 0),
 	gsSP2Triangles(4, 5, 6, 0, 7, 5, 4, 0),
 	gsSP2Triangles(8, 9, 7, 0, 10, 7, 9, 0),
@@ -3528,7 +3529,7 @@ Gfx simpleflips_npc_000_displaylist_mesh_layer_1_tri_0[] = {
 	gsSP2Triangles(21, 22, 19, 0, 22, 23, 24, 0),
 	gsSP2Triangles(18, 25, 26, 0, 25, 18, 23, 0),
 	gsSP1Triangle(27, 28, 29, 0),
-	gsSPVertex(simpleflips_npc_000_displaylist_mesh_layer_1_vtx_0 + 188, 15, 0),
+	gsSPVertex(simpleflips_npc_000_displaylist_mesh_layer_1_vtx_0 + 189, 15, 0),
 	gsSP2Triangles(0, 1, 2, 0, 3, 4, 5, 0),
 	gsSP2Triangles(5, 6, 3, 0, 7, 8, 9, 0),
 	gsSP2Triangles(9, 8, 10, 0, 11, 12, 13, 0),
@@ -3882,7 +3883,7 @@ Gfx simpleflips_npc_000_displaylist_mesh_layer_1_tri_1[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx simpleflips_npc_000_displaylist_mesh_layer_1_vtx_2[19] = {
+Vtx simpleflips_npc_000_displaylist_mesh_layer_1_vtx_2[21] = {
 	{{ {49, 87, -64}, 0, {-140, 429}, {214, 76, 164, 255} }},
 	{{ {78, 108, -33}, 0, {164, 134}, {37, 80, 164, 255} }},
 	{{ {86, 82, -71}, 0, {-207, 46}, {254, 76, 154, 255} }},
@@ -3898,23 +3899,25 @@ Vtx simpleflips_npc_000_displaylist_mesh_layer_1_vtx_2[19] = {
 	{{ {28, 100, 30}, 0, {788, 646}, {177, 91, 39, 255} }},
 	{{ {10, 53, 44}, 0, {930, 821}, {149, 32, 61, 255} }},
 	{{ {49, 87, 65}, 0, {1132, 429}, {214, 76, 92, 255} }},
+	{{ {45, 44, 83}, 0, {1309, 464}, {213, 33, 115, 255} }},
 	{{ {53, 111, 31}, 0, {798, 390}, {211, 100, 64, 255} }},
 	{{ {78, 108, 34}, 0, {828, 134}, {36, 82, 90, 255} }},
+	{{ {46, 109, 0}, 0, {491, 456}, {166, 90, 0, 255} }},
 	{{ {46, 109, 0}, 0, {491, 456}, {166, 90, 0, 255} }},
 	{{ {53, 111, -30}, 0, {194, 390}, {210, 99, 191, 255} }},
 };
 
 Gfx simpleflips_npc_000_displaylist_mesh_layer_1_tri_2[] = {
-	gsSPVertex(simpleflips_npc_000_displaylist_mesh_layer_1_vtx_2 + 0, 19, 0),
+	gsSPVertex(simpleflips_npc_000_displaylist_mesh_layer_1_vtx_2 + 0, 21, 0),
 	gsSP2Triangles(0, 1, 2, 0, 3, 4, 5, 0),
 	gsSP2Triangles(6, 7, 8, 0, 9, 8, 7, 0),
 	gsSP2Triangles(10, 8, 9, 0, 10, 9, 11, 0),
 	gsSP2Triangles(12, 10, 11, 0, 11, 13, 12, 0),
-	gsSP2Triangles(13, 14, 12, 0, 4, 14, 13, 0),
-	gsSP2Triangles(12, 14, 15, 0, 16, 15, 14, 0),
-	gsSP2Triangles(5, 16, 14, 0, 12, 15, 17, 0),
-	gsSP2Triangles(17, 10, 12, 0, 17, 18, 10, 0),
-	gsSP2Triangles(18, 8, 10, 0, 8, 18, 1, 0),
+	gsSP2Triangles(13, 14, 12, 0, 15, 14, 13, 0),
+	gsSP2Triangles(12, 14, 16, 0, 17, 16, 14, 0),
+	gsSP2Triangles(5, 17, 14, 0, 12, 16, 18, 0),
+	gsSP2Triangles(19, 10, 12, 0, 19, 20, 10, 0),
+	gsSP2Triangles(20, 8, 10, 0, 8, 20, 1, 0),
 	gsSPEndDisplayList(),
 };
 
@@ -4015,7 +4018,7 @@ Gfx simpleflips_npc_000_displaylist_mesh_layer_1_tri_5[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx simpleflips_npc_002_switch_option_head__no_cap__mesh_layer_1_vtx_0[203] = {
+Vtx simpleflips_npc_002_switch_option_head__no_cap__mesh_layer_1_vtx_0[204] = {
 	{{ {176, 91, 44}, 0, {834, 33}, {147, 65, 10, 255} }},
 	{{ {146, 101, 0}, 0, {492, 279}, {15, 126, 255, 255} }},
 	{{ {98, 103, 15}, 0, {612, 675}, {64, 89, 64, 255} }},
@@ -4024,6 +4027,7 @@ Vtx simpleflips_npc_002_switch_option_head__no_cap__mesh_layer_1_vtx_0[203] = {
 	{{ {145, 83, -66}, 0, {-23, 288}, {26, 94, 174, 255} }},
 	{{ {145, 83, 74}, 0, {1065, 289}, {232, 100, 75, 255} }},
 	{{ {176, 91, 44}, 0, {831, 33}, {147, 65, 10, 255} }},
+	{{ {98, 103, 15}, 0, {612, 675}, {64, 89, 64, 255} }},
 	{{ {98, 103, 15}, 0, {612, 675}, {64, 89, 64, 255} }},
 	{{ {105, 87, 70}, 0, {1038, 617}, {247, 94, 85, 255} }},
 	{{ {145, 83, 74}, 0, {1067, 289}, {232, 100, 75, 255} }},
@@ -4222,22 +4226,22 @@ Vtx simpleflips_npc_002_switch_option_head__no_cap__mesh_layer_1_vtx_0[203] = {
 };
 
 Gfx simpleflips_npc_002_switch_option_head__no_cap__mesh_layer_1_tri_0[] = {
-	gsSPVertex(simpleflips_npc_002_switch_option_head__no_cap__mesh_layer_1_vtx_0 + 0, 31, 0),
+	gsSPVertex(simpleflips_npc_002_switch_option_head__no_cap__mesh_layer_1_vtx_0 + 0, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 3, 4, 5, 0),
-	gsSP2Triangles(6, 7, 8, 0, 8, 9, 10, 0),
-	gsSP2Triangles(11, 12, 8, 0, 12, 9, 2, 0),
-	gsSP2Triangles(13, 14, 15, 0, 16, 15, 17, 0),
-	gsSP2Triangles(18, 19, 20, 0, 21, 22, 4, 0),
-	gsSP2Triangles(21, 20, 3, 0, 23, 24, 25, 0),
-	gsSP2Triangles(26, 27, 28, 0, 29, 30, 16, 0),
-	gsSPVertex(simpleflips_npc_002_switch_option_head__no_cap__mesh_layer_1_vtx_0 + 31, 32, 0),
+	gsSP2Triangles(6, 7, 8, 0, 9, 10, 11, 0),
+	gsSP2Triangles(12, 13, 9, 0, 13, 10, 2, 0),
+	gsSP2Triangles(14, 15, 16, 0, 17, 16, 18, 0),
+	gsSP2Triangles(19, 20, 21, 0, 22, 23, 4, 0),
+	gsSP2Triangles(22, 21, 3, 0, 24, 25, 26, 0),
+	gsSP2Triangles(27, 28, 29, 0, 30, 31, 17, 0),
+	gsSPVertex(simpleflips_npc_002_switch_option_head__no_cap__mesh_layer_1_vtx_0 + 32, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 3, 4, 5, 0),
 	gsSP2Triangles(6, 7, 8, 0, 9, 10, 11, 0),
 	gsSP2Triangles(12, 13, 14, 0, 15, 16, 17, 0),
 	gsSP2Triangles(18, 19, 20, 0, 19, 21, 22, 0),
 	gsSP2Triangles(23, 24, 25, 0, 26, 27, 28, 0),
 	gsSP1Triangle(29, 30, 31, 0),
-	gsSPVertex(simpleflips_npc_002_switch_option_head__no_cap__mesh_layer_1_vtx_0 + 63, 32, 0),
+	gsSPVertex(simpleflips_npc_002_switch_option_head__no_cap__mesh_layer_1_vtx_0 + 64, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 3, 4, 5, 0),
 	gsSP2Triangles(6, 7, 8, 0, 9, 10, 11, 0),
 	gsSP2Triangles(12, 13, 10, 0, 14, 15, 12, 0),
@@ -4245,7 +4249,7 @@ Gfx simpleflips_npc_002_switch_option_head__no_cap__mesh_layer_1_tri_0[] = {
 	gsSP2Triangles(15, 20, 10, 0, 21, 22, 23, 0),
 	gsSP2Triangles(24, 25, 26, 0, 27, 28, 29, 0),
 	gsSP1Triangle(23, 30, 31, 0),
-	gsSPVertex(simpleflips_npc_002_switch_option_head__no_cap__mesh_layer_1_vtx_0 + 95, 31, 0),
+	gsSPVertex(simpleflips_npc_002_switch_option_head__no_cap__mesh_layer_1_vtx_0 + 96, 31, 0),
 	gsSP2Triangles(0, 1, 2, 0, 3, 4, 2, 0),
 	gsSP2Triangles(5, 6, 7, 0, 8, 9, 10, 0),
 	gsSP2Triangles(10, 11, 12, 0, 1, 10, 13, 0),
@@ -4253,7 +4257,7 @@ Gfx simpleflips_npc_002_switch_option_head__no_cap__mesh_layer_1_tri_0[] = {
 	gsSP2Triangles(19, 2, 20, 0, 21, 22, 1, 0),
 	gsSP2Triangles(23, 24, 25, 0, 26, 27, 28, 0),
 	gsSP1Triangle(29, 27, 30, 0),
-	gsSPVertex(simpleflips_npc_002_switch_option_head__no_cap__mesh_layer_1_vtx_0 + 126, 32, 0),
+	gsSPVertex(simpleflips_npc_002_switch_option_head__no_cap__mesh_layer_1_vtx_0 + 127, 32, 0),
 	gsSP2Triangles(0, 1, 2, 0, 3, 1, 4, 0),
 	gsSP2Triangles(5, 2, 4, 0, 6, 7, 8, 0),
 	gsSP2Triangles(9, 10, 6, 0, 11, 3, 5, 0),
@@ -4263,7 +4267,7 @@ Gfx simpleflips_npc_002_switch_option_head__no_cap__mesh_layer_1_tri_0[] = {
 	gsSP2Triangles(19, 18, 20, 0, 21, 22, 23, 0),
 	gsSP2Triangles(21, 24, 22, 0, 25, 26, 27, 0),
 	gsSP2Triangles(28, 29, 30, 0, 29, 31, 30, 0),
-	gsSPVertex(simpleflips_npc_002_switch_option_head__no_cap__mesh_layer_1_vtx_0 + 158, 30, 0),
+	gsSPVertex(simpleflips_npc_002_switch_option_head__no_cap__mesh_layer_1_vtx_0 + 159, 30, 0),
 	gsSP2Triangles(0, 1, 2, 0, 3, 1, 0, 0),
 	gsSP2Triangles(4, 5, 6, 0, 7, 5, 4, 0),
 	gsSP2Triangles(8, 9, 7, 0, 10, 7, 9, 0),
@@ -4273,7 +4277,7 @@ Gfx simpleflips_npc_002_switch_option_head__no_cap__mesh_layer_1_tri_0[] = {
 	gsSP2Triangles(21, 22, 19, 0, 22, 23, 24, 0),
 	gsSP2Triangles(18, 25, 26, 0, 25, 18, 23, 0),
 	gsSP1Triangle(27, 28, 29, 0),
-	gsSPVertex(simpleflips_npc_002_switch_option_head__no_cap__mesh_layer_1_vtx_0 + 188, 15, 0),
+	gsSPVertex(simpleflips_npc_002_switch_option_head__no_cap__mesh_layer_1_vtx_0 + 189, 15, 0),
 	gsSP2Triangles(0, 1, 2, 0, 3, 4, 5, 0),
 	gsSP2Triangles(5, 6, 3, 0, 7, 8, 9, 0),
 	gsSP2Triangles(9, 8, 10, 0, 11, 12, 13, 0),
@@ -4627,7 +4631,7 @@ Gfx simpleflips_npc_002_switch_option_head__no_cap__mesh_layer_1_tri_1[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx simpleflips_npc_002_switch_option_head__no_cap__mesh_layer_1_vtx_2[19] = {
+Vtx simpleflips_npc_002_switch_option_head__no_cap__mesh_layer_1_vtx_2[21] = {
 	{{ {49, 87, -64}, 0, {-140, 429}, {214, 76, 164, 255} }},
 	{{ {78, 108, -33}, 0, {164, 134}, {37, 80, 164, 255} }},
 	{{ {86, 82, -71}, 0, {-207, 46}, {254, 76, 154, 255} }},
@@ -4643,23 +4647,25 @@ Vtx simpleflips_npc_002_switch_option_head__no_cap__mesh_layer_1_vtx_2[19] = {
 	{{ {28, 100, 30}, 0, {788, 646}, {177, 91, 39, 255} }},
 	{{ {11, 53, 44}, 0, {930, 821}, {149, 32, 61, 255} }},
 	{{ {49, 87, 65}, 0, {1132, 429}, {214, 76, 92, 255} }},
+	{{ {45, 44, 83}, 0, {1309, 464}, {213, 33, 115, 255} }},
 	{{ {53, 111, 31}, 0, {798, 390}, {211, 100, 64, 255} }},
 	{{ {78, 108, 34}, 0, {828, 134}, {36, 82, 90, 255} }},
+	{{ {46, 109, 0}, 0, {491, 456}, {166, 90, 0, 255} }},
 	{{ {46, 109, 0}, 0, {491, 456}, {166, 90, 0, 255} }},
 	{{ {53, 111, -30}, 0, {194, 390}, {210, 99, 191, 255} }},
 };
 
 Gfx simpleflips_npc_002_switch_option_head__no_cap__mesh_layer_1_tri_2[] = {
-	gsSPVertex(simpleflips_npc_002_switch_option_head__no_cap__mesh_layer_1_vtx_2 + 0, 19, 0),
+	gsSPVertex(simpleflips_npc_002_switch_option_head__no_cap__mesh_layer_1_vtx_2 + 0, 21, 0),
 	gsSP2Triangles(0, 1, 2, 0, 3, 4, 5, 0),
 	gsSP2Triangles(6, 7, 8, 0, 9, 8, 7, 0),
 	gsSP2Triangles(10, 8, 9, 0, 10, 9, 11, 0),
 	gsSP2Triangles(12, 10, 11, 0, 11, 13, 12, 0),
-	gsSP2Triangles(13, 14, 12, 0, 4, 14, 13, 0),
-	gsSP2Triangles(12, 14, 15, 0, 16, 15, 14, 0),
-	gsSP2Triangles(5, 16, 14, 0, 12, 15, 17, 0),
-	gsSP2Triangles(17, 10, 12, 0, 17, 18, 10, 0),
-	gsSP2Triangles(18, 8, 10, 0, 8, 18, 1, 0),
+	gsSP2Triangles(13, 14, 12, 0, 15, 14, 13, 0),
+	gsSP2Triangles(12, 14, 16, 0, 17, 16, 14, 0),
+	gsSP2Triangles(5, 17, 14, 0, 12, 16, 18, 0),
+	gsSP2Triangles(19, 10, 12, 0, 19, 20, 10, 0),
+	gsSP2Triangles(20, 8, 10, 0, 8, 20, 1, 0),
 	gsSPEndDisplayList(),
 };
 

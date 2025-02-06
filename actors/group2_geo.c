@@ -9,3 +9,5 @@
 
 #include "bully/geo.inc.c"
 #include "blargg/geo.inc.c"
+
+#include "blargg_new/geo.inc.c"

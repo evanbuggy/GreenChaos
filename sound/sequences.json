@@ -93,7 +93,7 @@
         "14_piranha_music_box"
     ],
     "1C_event_toad_message": [
-        "20"
+        "yowhatup"
     ],
     "1D_event_peach_message": [
         "1E"
@@ -125,5 +125,8 @@
     ],
     "03_level_grass": [
         "bobstage"
+    ],
+    "24_void": [
+        "void"
     ]
 }

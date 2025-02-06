@@ -547,5 +547,6 @@ extern const BehaviorScript bhvTitleStaticObject[];
 extern const BehaviorScript bhvMovingShadow[];
 extern const BehaviorScript bhvMovingTitle[];
 extern const BehaviorScript bhvSimpleflips[];
+extern const BehaviorScript bhvBlargg[];
 
 #endif // BEHAVIOR_DATA_H
