@@ -901,7 +901,13 @@ const BehaviorScript bhvWhitePuffExplosion[] = {
         CALL_NATIVE(bhv_white_puff_exploding_loop),
     END_LOOP(),
 };
-
+const BehaviorScript bhvPathParticle[] = {
+    BEGIN(OBJ_LIST_PLAYER),
+    OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
+    BILLBOARD(),
+    DELAY(1),
+    DEACTIVATE(),
+    };
 const BehaviorScript bhvSpawnedStar[] = {
     BEGIN(OBJ_LIST_LEVEL),
     OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),

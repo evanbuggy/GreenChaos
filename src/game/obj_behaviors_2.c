@@ -500,7 +500,7 @@ UNUSED static void obj_unused_die(void) {
 
 static void obj_act_spin_sawed() {
     osSyncPrintf("obj_behaviors_2.c: obj_act_spin_sawed_reached");
-    const u16 tickSpacing=2;
+    const u16 tickSpacing=5;
     if ((gMarioState->action==ACT_SPIN_SAW) && (gMarioState->actionState != 1) /*ACT_STATE_SPIN_SAW_FAIL*/) {
         if (gMarioState->actionTimer % tickSpacing==0) {
             spawn_triangle_break_particles(5, MODEL_CARTOON_STAR, 0.3f, 3);

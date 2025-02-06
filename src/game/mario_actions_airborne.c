@@ -18,6 +18,7 @@
 #include "config.h"
 #include "debug_box.h"
 #include "print.h"
+#include "behavior_data.h"
 void play_flip_sounds(struct MarioState *m, s16 frame1, s16 frame2, s16 frame3) {
     s32 animFrame = m->marioObj->header.gfx.animInfo.animFrame;
     if (animFrame == frame1 || animFrame == frame2 || animFrame == frame3) {
@@ -1016,7 +1017,8 @@ s32 act_air_spin(struct MarioState *m) {
     return FALSE;
 }
 s32 act_spin_saw(struct MarioState *m) {
-
+    const f32 speedMult=3;
+    const u16 upwardSpeed=50;
     const f32 velDecrement=1.0f;
 
     switch (m->actionState) {
@@ -1024,6 +1026,39 @@ s32 act_spin_saw(struct MarioState *m) {
         case ACT_STATE_SPIN_SAW_IDLE:
             if (m->forwardVel>0 && (m->controller->buttonDown & L_TRIG)) {
                 m->forwardVel-=velDecrement;
+                Vec3f testPos;
+                vec3_copy(testPos,m->pos);
+                f32 testForwardVel =  (m->input & INPUT_NONZERO_ANALOG) ? m->intendedMag*speedMult : 0;
+                f32 testUpwardVel = upwardSpeed;
+                testPos[0]+= sins(m->intendedYaw) * testForwardVel;
+                testPos[2]+= coss(m->intendedYaw) * testForwardVel;
+                testPos[1]+=testUpwardVel;
+                for (int i=0;i<120;i++) {
+                    //Calculate velocity
+                    testForwardVel = approach_f32(testForwardVel, 0.0f, 0.35f, 0.35f);
+                    if (m->input & INPUT_NONZERO_ANALOG) {
+                       testForwardVel+= (m->intendedMag/32.0f) * 1.5f;
+                    }   
+                    if (testForwardVel > 32.0f) {
+                        testForwardVel -= 1.0f;
+                    }
+                    if (testForwardVel < -16.0f) {
+                        testForwardVel += 2.0f;
+                    }
+                    testUpwardVel -= 4.0f;
+                    if (testUpwardVel < -75.0f) {
+                        testUpwardVel = -75.0f;
+                    }
+                    testPos[0] += testForwardVel * sins(m->intendedYaw);
+                    testPos[1] += testUpwardVel;
+                    testPos[2] += testForwardVel * coss(m->intendedYaw);
+                    if (i % 3 == 0){
+                        struct Object *path = spawn_object(m->marioObj, MODEL_BOWLING_BALL, bhvPathParticle);
+                        obj_scale(path,0.2);
+                        obj_set_pos(path,(s16)testPos[0],(s16)testPos[1],(s16)testPos[2]);
+                    }
+                    
+                }
             }
             else {
                 m->actionState=ACT_STATE_SPIN_SAW_FAIL;
@@ -1035,9 +1070,10 @@ s32 act_spin_saw(struct MarioState *m) {
             return set_mario_action(m,ACT_SOFT_BONK,0);
             break;
         case ACT_STATE_SPIN_SAW_SUCCESS:
-            m->forwardVel=50;
-            m->vel[1]=20;
-            mario_set_forward_vel(m,m->forwardVel);
+            m->vel[1]=upwardSpeed;
+            m->faceAngle[1]=m->intendedYaw;
+            mario_set_forward_vel(m,(m->input & INPUT_NONZERO_ANALOG) ? m->intendedMag*speedMult : 0 );
+
             return set_mario_action(m,ACT_AIR_SPIN,0);
             break;
             

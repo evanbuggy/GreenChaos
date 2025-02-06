@@ -49,6 +49,8 @@ extern const BehaviorScript bhvFadingWarp[];
 extern const BehaviorScript bhvWarp[];
 extern const BehaviorScript bhvWarpPipe[];
 extern const BehaviorScript bhvWhitePuffExplosion[];
+extern const BehaviorScript bhvPathParticle[];
+
 extern const BehaviorScript bhvSpawnedStar[];
 extern const BehaviorScript bhvSpawnedStarNoLevelExit[];
 extern const BehaviorScript bhvMrIBlueCoin[];
