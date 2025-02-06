@@ -13,7 +13,7 @@
 #endif
 
 DEFINE_DIALOG(DIALOG_000, 1, 1, 95, 200, _("\
-yo whaddup"))
+yo waddup"))
 
 DEFINE_DIALOG(DIALOG_001, 1, 4, 95, 200, _("\
 Watch out! If you wander\n\

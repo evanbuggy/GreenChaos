@@ -46,6 +46,8 @@ const GeoLayout lll_area_1_geo[] = {
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, 12667, 2600, -3482, -90, 0, 0, lll_dl_Light_Pole_019_mesh_layer_1),
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, 2203, 3062, -3482, -90, 0, 0, lll_dl_Light_Pole_020_mesh_layer_1),
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, 2016, 2662, -7517, -90, 0, 0, lll_dl_Light_Pole_021_mesh_layer_1),
+		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, 11230, -6664, 6679, 90, 0, 180, lll_dl_LLL_001_mesh_layer_1),
+		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, -299, -9306, 2620, 90, 0, 180, lll_dl_LLL_002_mesh_layer_1),
 		GEO_DISPLAY_LIST(LAYER_OPAQUE, lll_dl_Plane_mesh_layer_1),
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_ALPHA, 12349, 5977, -18829, -90, 0, 0, lll_dl_Plane_001_mesh_layer_4),
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_ALPHA, 16965, 6177, -18829, -90, 0, 0, lll_dl_Plane_002_mesh_layer_4),
@@ -213,6 +215,7 @@ const GeoLayout lll_area_1_geo[] = {
 			GEO_DISPLAY_LIST(LAYER_ALPHA, lll_dl_RCP_dokan_023_mesh_layer_4),
 		GEO_CLOSE_NODE(),
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, 13043, -261, -7214, -95, -11, -90, lll_dl_RCP_dokan_024_mesh_layer_1),
+		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, -343, -6679, 2600, 95, 28, -13, lll_dl_skinned_mesh_layer_1),
 	GEO_CLOSE_NODE(),
 	GEO_RETURN(),
 };
