@@ -12,6 +12,13 @@ u16 comboCRank;
 u16 comboDRank;
 u16 combo[5] = {0, 0, 0, 0, 0};
 
+u32 timeSRank;
+u32 timeARank;
+u32 timeBRank;
+u32 timeCRank;
+u32 timeDRank;
+u32 time[5] = {0, 0, 0, 0, 0};
+
 void bhv_rank_init(void) {
     coinSRank = o->oBehParams2ndByte;
     coinDRank = coinSRank / 5;
@@ -25,6 +32,12 @@ void bhv_rank_init(void) {
     comboBRank = comboDRank * 3;
     comboARank = comboDRank * 4;
 
+    timeSRank = o->oBehParams >> 8 & 0xFF;
+    timeDRank = timeSRank / 5;
+    timeCRank = timeDRank * 2;
+    timeBRank = timeDRank * 3;
+    timeARank = timeDRank * 4;
+
     coin[0] = coinDRank;
     coin[1] = coinCRank;
     coin[2] = coinBRank;
@@ -36,6 +49,12 @@ void bhv_rank_init(void) {
     combo[2] = comboBRank;
     combo[3] = comboARank;
     combo[4] = comboSRank;
+
+    time[0] = timeDRank;
+    time[1] = timeCRank;
+    time[2] = timeBRank;
+    time[3] = timeARank;
+    time[4] = timeSRank;
 
     osSyncPrintf("COMBO RANKS (D-S):");
     osSyncPrintf("%d", comboDRank);
@@ -50,6 +69,13 @@ void bhv_rank_init(void) {
     osSyncPrintf("%d", coinBRank);
     osSyncPrintf("%d", coinARank);
     osSyncPrintf("%d", coinSRank);
+
+    osSyncPrintf("TIME RANKS (D-S):");
+    osSyncPrintf("%d", timeDRank);
+    osSyncPrintf("%d", timeCRank);
+    osSyncPrintf("%d", timeBRank);
+    osSyncPrintf("%d", timeARank);
+    osSyncPrintf("%d", timeSRank);
 }
 
 void bhv_rank_loop(void) {
@@ -64,9 +90,14 @@ void bhv_rank_loop(void) {
                 break;
             }
             else {
-                gMarioState->rank = 4;
+                if (gMarioState->highestCombo < combo[i]) {
+                    gMarioState->rank = i;
+                    break;
+                }
+                else {
+                    gMarioState->rank = 4;
+                }
             }
         }
     }
-    //osSyncPrintf("%d", gMarioState->rank);
 }
