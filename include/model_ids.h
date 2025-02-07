@@ -551,6 +551,8 @@
 #define MODEL_TITLE_SCREEN_BG             0xE4        // title_bg_geo
 #define MODEL_TITLE_SCREEN_TITLE          0xE5        // title_logo
 #define MODEL_SIMPLEFLIPS_NPC             0xE6        // simpleflips_npc_geo
+#define MODEL_VOID_TREE                   0xE7        // void_tree
+
 
 #ifdef IA8_30FPS_COINS
 #define MODEL_SILVER_COIN                 0xE2        // silver_coin_geo

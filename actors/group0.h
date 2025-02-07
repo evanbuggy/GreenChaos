@@ -345,4 +345,6 @@ extern const Gfx white_particle_small_unused_dl[];
 
 
 #include "simpleflips/anim_header.h"
+#include "void_tree/geo_header.h"
+
 #endif

@@ -22,3 +22,4 @@
 #include "title_bg/geo.inc.c"
 #include "title_logo/geo.inc.c"
 #include "simpleflips_npc/geo.inc.c"
+#include "void_tree/geo.inc.c"
