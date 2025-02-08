@@ -10,6 +10,7 @@
 #include "game/level_update.h"
 
 #include "levels/scripts.h"
+#include "actors/group0.h"
 
 #include "actors/common1.h"
 
@@ -71,9 +72,10 @@ const LevelScript level_wf_entry[] = {
 	LOAD_MODEL_FROM_GEO(MODEL_WF_BREAKABLE_WALL_LEFT, wf_geo_000B90), 
 	LOAD_MODEL_FROM_GEO(MODEL_WF_KICKABLE_BOARD, wf_geo_000BA8), 
 	LOAD_MODEL_FROM_GEO(MODEL_WF_TOWER_DOOR, wf_geo_000BE0), 
-	LOAD_MODEL_FROM_GEO(MODEL_WF_KICKABLE_BOARD_FELLED, wf_geo_000BC8),
+	LOAD_MODEL_FROM_GEO(MODEL_WF_KICKABLE_BOARD_FELLED, wf_geo_000BC8), 
 
 	/* Fast64 begin persistent block [level commands] */
+	LOAD_MODEL_FROM_GEO(MODEL_ELECTRO_LUIGI, electro_luigi_geo),
 	/* Fast64 end persistent block [level commands] */
 
 	AREA(1, wf_area_1),
@@ -85,7 +87,8 @@ const LevelScript level_wf_entry[] = {
 		OBJECT(MODEL_NONE, 7522, 815, -4664, 0, -95, 0, 0x00000000, bhvCoinFormation),
 		OBJECT(MODEL_NONE, 5607, 3874, -10439, 0, 130, 0, 0x00000000, bhvCoinFormation),
 		OBJECT(MODEL_AMP, 5599, 3889, -10462, 0, 130, 0, 0x00000000, bhvCirclingAmp),
-		OBJECT(MODEL_WHOMP, 2, 491, -4792, 0, -180, 0, 0x00000000, bhvElectroLuigi),
+		OBJECT(MODEL_ELECTRO_LUIGI, 2, 491, -4792, 0, -180, 0, 0x00000000, bhvElectroLuigi),
+		OBJECT(MODEL_ELECTRO_LUIGI, 2, 491, 2440, 0, -180, 0, 0x00000000, bhvElectroLuigi),
 		OBJECT(MODEL_GOOMBA, 10154, 5334, -10340, 0, 0, 0, 0x00000000, bhvGoomba),
 		OBJECT(MODEL_GOOMBA, 7245, 5334, -10340, 0, -90, 0, 0x00000000, bhvGoomba),
 		OBJECT(MODEL_NONE, 12206, 333, -4702, 0, -95, 0, 0x00000000, bhvGoombaTripletSpawner),

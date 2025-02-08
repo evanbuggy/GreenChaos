@@ -39,3 +39,4 @@
 #include "simpleflips/anims/data.inc.c"
 #include "simpleflips/anims/table.inc.c"
 #include "void_tree/model.inc.c"
+#include "electro_luigi/model.inc.c"

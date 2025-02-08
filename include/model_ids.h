@@ -552,6 +552,7 @@
 #define MODEL_TITLE_SCREEN_TITLE          0xE5        // title_logo
 #define MODEL_SIMPLEFLIPS_NPC             0xE6        // simpleflips_npc_geo
 #define MODEL_VOID_TREE                   0xE7        // void_tree
+#define MODEL_ELECTRO_LUIGI               0xE8        // electro_luigi_geo
 
 
 #ifdef IA8_30FPS_COINS
