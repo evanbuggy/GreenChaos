@@ -133,4 +133,10 @@ extern const Gfx whomp_seg6_dl_06020038[];
 extern const struct Animation *const whomp_seg6_anims_06020A04[];
 extern const Collision whomp_seg6_collision_06020A0C[];
 
+// impact_ring
+extern const GeoLayout invisible_bowser_accessory_geo[];
+extern const Gfx impact_ring_seg6_dl_0601EA50[];
+extern const Gfx impact_ring_seg6_dl_0601EA88[];
+extern const Gfx impact_ring_seg6_dl_0601EAC0[];
+
 #endif

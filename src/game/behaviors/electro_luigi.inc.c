@@ -28,6 +28,7 @@ void bhv_electro_luigi_loop(void) {
 
     cur_obj_update_floor_and_walls();
     if (obj_handle_attacks(&sElectroLuigiHitbox, o->oAction, sElectroLuigiAttackHandlers) == ATTACK_KICK_OR_TRIP) {
+        spawn_object(o, MODEL_BOWSER_WAVE, bhvBowserShockWave);
         play_sound(SOUND_GENERAL_COIN_DROP, gGlobalSoundSource);
         cur_obj_become_intangible();
         enable_time_stop_including_mario();

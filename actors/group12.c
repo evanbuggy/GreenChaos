@@ -9,9 +9,6 @@
 #include "bowser_flame/model.inc.c"
 UNUSED static const u64 binid_0 = 0;
 
-#include "impact_ring/model.inc.c"
-UNUSED static const u64 binid_1 = 1;
-
 #include "yellow_sphere/model.inc.c"
 UNUSED static const u64 binid_2 = 2;
 
