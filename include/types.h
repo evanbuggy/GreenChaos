@@ -446,11 +446,18 @@ struct MarioState {
 
     // How long Mario has to jump cancel attacks
     s8 jumpTimer;
+    // If Mario can air combo cancel or not
     u8 airComboCancel;
+    // Mario's current combo
     u16 combo;
+    // The highest combo Mario has gotten in the current level
     u16 highestCombo;
+    // How long Mario has before the current combo ends
     u8 comboTimer;
+    // Stores Mario's current rank
     u8 rank;
+    // Stores the time for ranking when Mario collects a star
+    u32 stopTime;
     // -- HackerSM64 MarioState fields begin --
 #ifdef BREATH_METER
              s16 breath;

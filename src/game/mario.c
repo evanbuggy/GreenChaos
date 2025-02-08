@@ -1839,6 +1839,7 @@ void init_mario(void) {
     gMarioState->combo = 0;
     gMarioState->comboTimer = 0;
     gMarioState->highestCombo = 0;
+    gMarioState->stopTime = 0;
 
     gMarioState->hurtCounter = 0;
     gMarioState->healCounter = 0;

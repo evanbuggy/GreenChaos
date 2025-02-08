@@ -98,7 +98,16 @@ void bhv_rank_loop(void) {
                 break;
             }
             else {
-                if (gGlobalTimer > time[i]) {
+                u32 temp = 0;
+                if (gMarioState->stopTime > 0) {
+                    temp = gMarioState->stopTime;
+                }
+                else {
+                    temp = gGlobalTimer;
+                }
+                osSyncPrintf("%d", temp);
+
+                if (temp > time[i]) {
                     gMarioState->rank = i;
                     break;
                 }
@@ -108,5 +117,4 @@ void bhv_rank_loop(void) {
             }
         }
     }
-    //osSyncPrintf("%d", gGlobalTimer);
 }
