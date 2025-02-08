@@ -34,4 +34,8 @@ void scroll_textures() {
 		scroll_textures_castle_grounds();
 	}
 
+	if(SCROLL_CONDITION(sSegmentROMTable[0x4] == (uintptr_t)_group0_mio0SegmentRomStart)) {
+		scroll_textures_group0();
+	}
+
 }
