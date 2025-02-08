@@ -25,18 +25,21 @@ u8 invFrames = 0;
 u8 hitstopFrames = 0;
 
 void bhv_combat_enemy_loop(void) {
-    switch (o->oAction) {
-        case OBJ_ACT_SPIN_SAWED:
-            osSyncPrintf("combat_enemy.inc.c: case OBJ_ACT_SPIN_SAWED");
-            obj_act_spin_sawed();
-            break;
-        case 0:
-            osSyncPrintf("IDLE");
-            break;
-        default:
-            osSyncPrintf("%d", o->oAction);
-            break;
-        
+    // switch (o->oAction) {
+    //     case OBJ_ACT_SPIN_SAWED:
+    //         osSyncPrintf("combat_enemy.inc.c: case OBJ_ACT_SPIN_SAWED");
+    //         obj_act_spin_sawed();
+    //         break;
+    //     case 0:
+    //         osSyncPrintf("IDLE");
+    //         break;
+    //     default:
+    //         osSyncPrintf("%d", o->oAction);
+    //         break;
+    // }
+
+    if (o->oAction & OBJ_ACT_SPIN_SAWED) {
+        obj_act_spin_sawed();
     }
     // if (obj_update_standard_actions(1)) {
         cur_obj_update_floor_and_walls();

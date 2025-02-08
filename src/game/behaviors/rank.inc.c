@@ -20,23 +20,31 @@ u32 timeDRank;
 u32 time[5] = {0, 0, 0, 0, 0};
 
 void bhv_rank_init(void) {
-    coinSRank = o->oBehParams2ndByte;
+    // Coin Requirements per rank:
+    // Each level will have a minimum of 30 coins needed for at least an S rank.
+    coinSRank = (o->oBehParams2ndByte) + 30;
     coinDRank = coinSRank / 5;
     coinCRank = coinDRank * 2;
     coinBRank = coinDRank * 3;
     coinARank = coinDRank * 4;
 
-    comboSRank = o->oBehParams >> 24;
+    // Combo Requirements per rank:
+    // The param is doubled so when you are using a rank object, enter half the
+    // highest combo you want for an S rank for the 2nd param.
+    comboSRank = (o->oBehParams >> 24) * 2;
     comboDRank = comboSRank / 5;
     comboCRank = comboDRank * 2;
     comboBRank = comboDRank * 3;
     comboARank = comboDRank * 4;
 
-    timeSRank = o->oBehParams >> 8 & 0xFF;
-    timeDRank = timeSRank / 5;
-    timeCRank = timeDRank * 2;
-    timeBRank = timeDRank * 3;
-    timeARank = timeDRank * 4;
+    // Timer Requirements per rank:
+    // The param is multiplied by 100 so when you are using the rank object enter
+    // the time in frames in hundreds for the 3rd param.
+    timeSRank = (o->oBehParams >> 8 & 0xFF) * 100;
+    timeDRank = timeSRank * 5;
+    timeCRank = timeDRank / 2;
+    timeBRank = timeDRank / 3;
+    timeARank = timeDRank / 4;
 
     coin[0] = coinDRank;
     coin[1] = coinCRank;
@@ -90,7 +98,7 @@ void bhv_rank_loop(void) {
                 break;
             }
             else {
-                if (gMarioState->highestCombo < combo[i]) {
+                if (gGlobalTimer > time[i]) {
                     gMarioState->rank = i;
                     break;
                 }
@@ -100,4 +108,5 @@ void bhv_rank_loop(void) {
             }
         }
     }
+    //osSyncPrintf("%d", gGlobalTimer);
 }

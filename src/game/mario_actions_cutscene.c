@@ -589,6 +589,7 @@ s32 act_debug_free_move(struct MarioState *m) {
 void general_star_dance_handler(struct MarioState *m, s32 isInWater) {
     struct Object *celebStar = NULL;
 
+    level_control_timer(TIMER_CONTROL_STOP);
     if (m->actionState == ACT_STATE_STAR_DANCE_CUTSCENE) {
         switch (++m->actionTimer) {
             case 1:
