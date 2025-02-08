@@ -504,7 +504,10 @@ static void obj_act_spin_sawed() {
     if ((gMarioState->action==ACT_SPIN_SAW) && (gMarioState->actionState != 1) /*ACT_STATE_SPIN_SAW_FAIL*/) {
         if (gMarioState->actionTimer % tickSpacing==0) {
             spawn_triangle_break_particles(5, MODEL_CARTOON_STAR, 0.3f, 3);
+            play_sound(SOUND_GENERAL_POUND_ROCK, gGlobalSoundSource);
+
             o->oHealth--;
+            obj_die_if_health_non_positive();
         }
         if (o->oHealth<=0) {
             gMarioState->actionState=2; //ACT_STATE_SPIN_SAW_SUCCESS
@@ -514,7 +517,6 @@ static void obj_act_spin_sawed() {
         o->oAction=0;
         cur_obj_become_tangible();
     }
-    obj_die_if_health_non_positive();
     osSyncPrintf("%d", o->oHealth);
     // //If health is at 0 and mario is spinsaw, interrupt with success state. If health is>0 and mario is in spansaw, do tick code. If health 
 
@@ -861,3 +863,4 @@ void obj_spit_fire(s16 relativePosX, s16 relativePosY, s16 relativePosZ, f32 sca
 #include "behaviors/bubba.inc.c"
 #include "behaviors/combat_enemy.inc.c"
 #include "behaviors/blargg.inc.c"
+#include "behaviors/electro_luigi.inc.c"

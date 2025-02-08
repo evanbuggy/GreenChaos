@@ -1013,7 +1013,7 @@ s32 act_air_spin(struct MarioState *m) {
     if(!(m->controller->buttonDown & L_TRIG)) {
         return set_mario_action(m, ACT_FREEFALL, 0);
     }
-    common_air_action_step(m, ACT_JUMP_LAND, MARIO_ANIM_CROUCHING, AIR_STEP_CHECK_LEDGE_GRAB | AIR_STEP_CHECK_HANG);
+    common_air_action_step(m, ACT_JUMP_LAND, MARIO_ANIM_FORWARD_SPINNING, AIR_STEP_CHECK_LEDGE_GRAB | AIR_STEP_CHECK_HANG);
     return FALSE;
 }
 s32 act_spin_saw(struct MarioState *m) {

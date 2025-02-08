@@ -551,6 +551,7 @@ void bhv_dust_smoke_loop(void);
 void bhv_yoshi_loop(void);
 void bhv_volcano_trap_loop(void);
 void bhv_combat_enemy_loop(void);
+void bhv_electro_luigi_loop(void);
 void bhv_rank_loop(void);
 void bhv_rank_init(void);
 void bhv_unbaba_loop(void);

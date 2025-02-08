@@ -14,7 +14,6 @@
 
 
 
-
 Gfx wf_dl_forward_sign_ci8_aligner[] = {gsSPEndDisplayList()};
 u8 wf_dl_forward_sign_ci8[] = {
 	0x00, 0x00, 0x00, 0x00, 0x01, 0x01, 0x01, 0x01, 
@@ -14610,20 +14609,6 @@ Gfx wf_dl_Sign_001_mesh_layer_1_tri_0[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx wf_dl_TimerEnd_mesh_layer_1_vtx_0[4] = {
-	{{ {-100, 0, 100}, 0, {-16, 1008}, {0, 127, 0, 255} }},
-	{{ {100, 0, 100}, 0, {1008, 1008}, {0, 127, 0, 255} }},
-	{{ {100, 0, -100}, 0, {1008, -16}, {0, 127, 0, 255} }},
-	{{ {-100, 0, -100}, 0, {-16, -16}, {0, 127, 0, 255} }},
-};
-
-Gfx wf_dl_TimerEnd_mesh_layer_1_tri_0[] = {
-	gsSPVertex(wf_dl_TimerEnd_mesh_layer_1_vtx_0 + 0, 4, 0),
-	gsSP1Triangle(0, 1, 2, 0),
-	gsSP1Triangle(0, 2, 3, 0),
-	gsSPEndDisplayList(),
-};
-
 Gfx mat_wf_dl_arrow_sign[] = {
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT, TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT),
@@ -15058,22 +15043,6 @@ Gfx mat_revert_wf_dl_road_sign[] = {
 	gsDPPipeSync(),
 	gsSPSetGeometryMode(G_CULL_BACK),
 	gsDPSetTextureLUT(G_TT_NONE),
-	gsSPEndDisplayList(),
-};
-
-Gfx mat_wf_dl_timer_end[] = {
-	gsDPPipeSync(),
-	gsDPSetCombineLERP(0, 0, 0, SHADE, 0, 0, 0, ENVIRONMENT, 0, 0, 0, SHADE, 0, 0, 0, ENVIRONMENT),
-	gsSPSetGeometryMode(G_CULL_FRONT),
-	gsSPTexture(65535, 65535, 0, 0, 1),
-    gsSPLightColor(LIGHT_1, 0xffffffff),
-    gsSPLightColor(LIGHT_2, 0x7f7f7fff),
-	gsSPEndDisplayList(),
-};
-
-Gfx mat_revert_wf_dl_timer_end[] = {
-	gsDPPipeSync(),
-	gsSPClearGeometryMode(G_CULL_FRONT),
 	gsSPEndDisplayList(),
 };
 
@@ -15673,13 +15642,6 @@ Gfx wf_dl_Sign_001_mesh_layer_1[] = {
 	gsSPDisplayList(mat_wf_dl_road_sign),
 	gsSPDisplayList(wf_dl_Sign_001_mesh_layer_1_tri_0),
 	gsSPDisplayList(mat_revert_wf_dl_road_sign),
-	gsSPEndDisplayList(),
-};
-
-Gfx wf_dl_TimerEnd_mesh_layer_1[] = {
-	gsSPDisplayList(mat_wf_dl_timer_end),
-	gsSPDisplayList(wf_dl_TimerEnd_mesh_layer_1_tri_0),
-	gsSPDisplayList(mat_revert_wf_dl_timer_end),
 	gsDPPipeSync(),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPClearGeometryMode(G_TEXTURE_GEN),
