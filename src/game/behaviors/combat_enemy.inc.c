@@ -21,9 +21,11 @@ static u8 sCombatEnemyAttackHandlers[6] = {
 
 // These structs were all stolen from Goomba
 
-u8 invFrames = 0;
-u8 hitstopFrames = 0;
 
+void bhv_combat_enemy_init(void){
+    o->oInvFrames=0;
+    o->oHitstopFrames=0;
+}
 void bhv_combat_enemy_loop(void) {
     // switch (o->oAction) {
     //     case OBJ_ACT_SPIN_SAWED:
@@ -65,22 +67,22 @@ void bhv_combat_enemy_loop(void) {
 
             // This defines how long the enemy is invincible for in frames before it can be attacked again.
             // This is to prevent attacks like the kick from hitting multiple times.
-            invFrames = 60;
+            o->oInvFrames = 60;
 
-            hitstopFrames = 3;
+            o->oHitstopFrames = 3;
 
             obj_die_if_health_non_positive();
         }
 
-        if (invFrames > 0) {
-            invFrames--;
+        if (o->oInvFrames > 0) {
+            o->oInvFrames--;
         }
         else {
             cur_obj_become_tangible();
         }
 
-        if (hitstopFrames > 0) {
-            hitstopFrames--;
+        if (o->oHitstopFrames > 0) {
+            o->oHitstopFrames--;
         }
         else {
             disable_time_stop_including_mario();

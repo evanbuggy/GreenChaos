@@ -55,6 +55,8 @@
 #define /*0x092*/ oDialogState                OBJECT_FIELD_S16(0x02, 1)
 #define /*0x094*/ oUnk94                      OBJECT_FIELD_U32(0x03)
 // 0x98 unused/removed.
+#define oInvFrames                            OBJECT_FIELD_S16(0x04,0)
+#define oHitstopFrames                        OBJECT_FIELD_S16(0x04,1)
 #define /*0x09C*/ oIntangibleTimer            OBJECT_FIELD_S32(0x05)
 /* Position vector */
 #define /*0x0A0*/ O_POS_INDEX                 0x06

@@ -20,7 +20,10 @@ static u8 sElectroLuigiAttackHandlers[6] = {
 };
 
 // These structs were all stolen from Goomba
-
+void bhv_electro_luigi_init(void) {
+    o->oInvFrames=0;
+    o->oHitstopFrames=0;
+}
 void bhv_electro_luigi_loop(void) {
 
     if (o->oAction & OBJ_ACT_SPIN_SAWED) {
@@ -71,22 +74,22 @@ void bhv_electro_luigi_loop(void) {
 
         // This defines how long the enemy is invincible for in frames before it can be attacked again.
         // This is to prevent attacks like the kick from hitting multiple times.
-        invFrames = 60;
+        o->oInvFrames = 60; 
 
-        hitstopFrames = 3;
+        o->oHitstopFrames = 3;
 
         obj_die_if_health_non_positive();
     }
 
-    if (invFrames > 0) {
-        invFrames--;
+    if (o->oInvFrames > 0) {
+        o->oInvFrames--;
     }
     else {
         cur_obj_become_tangible();
     }
 
-    if (hitstopFrames > 0) {
-        hitstopFrames--;
+    if (o->oHitstopFrames > 0) {
+        o->oHitstopFrames--;
     }
     else {
         disable_time_stop_including_mario();
