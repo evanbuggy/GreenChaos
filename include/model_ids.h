@@ -553,7 +553,7 @@
 #define MODEL_SIMPLEFLIPS_NPC             0xE6        // simpleflips_npc_geo
 #define MODEL_VOID_TREE                   0xE7        // void_tree
 #define MODEL_ELECTRO_LUIGI               0xE8        // electro_luigi_geo
-
+#define MODEL_STAR_SELECT_BG              0xE9        // starselectbg_geo
 
 #ifdef IA8_30FPS_COINS
 #define MODEL_SILVER_COIN                 0xE2        // silver_coin_geo

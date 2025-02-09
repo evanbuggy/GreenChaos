@@ -24,3 +24,4 @@
 #include "simpleflips_npc/geo.inc.c"
 #include "void_tree/geo.inc.c"
 #include "electro_luigi/geo.inc.c"
+#include "starselectbg/geo.inc.c"

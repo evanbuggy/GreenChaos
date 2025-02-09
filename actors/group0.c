@@ -42,3 +42,4 @@
 #include "electro_luigi/model.inc.c"
 #include "electro_luigi/anims/data.inc.c"
 #include "electro_luigi/anims/table.inc.c"
+#include "starselectbg/model.inc.c"

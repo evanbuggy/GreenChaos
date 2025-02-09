@@ -31,7 +31,8 @@ const LevelScript level_main_menu_entry_file_select[] = {
     ALLOC_LEVEL_POOL(),
     LOAD_MODEL_FROM_GEO(MODEL_SHADOW_TITLE_SCREEN,                   shadow_mario_title_geo),
     LOAD_MODEL_FROM_GEO(MODEL_TITLE_SCREEN_BG,                       title_bg_geo),
-    LOAD_MODEL_FROM_GEO(MODEL_TITLE_SCREEN_TITLE,                       title_logo_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_TITLE_SCREEN_TITLE,                    title_logo_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_STAR_SELECT_BG,                        starselectbg_geo),
 
 
     AREA(/*index*/ 1, geo_menu_file_select_strings_and_menu_cursor),
@@ -75,8 +76,9 @@ const LevelScript level_main_menu_entry_act_select[] = {
 
     AREA(/*index*/ 2, geo_menu_act_selector_strings),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ 0, -100, 0, /*angle*/ 0, 0, 0, /*behParam*/ BP(0x04, 0x00, 0x00, 0x00), /*beh*/ bhvActSelector),
-        TERRAIN(/*terrainData*/ main_menu_seg7_collision),
-    END_AREA(),
+        OBJECT(MODEL_STAR_SELECT_BG,  0, 0, -600,       0, 0, 0, 0x00000000, bhvStaticObject),
+    TERRAIN(/*terrainData*/ main_menu_seg7_collision),
+END_AREA(),
 
     FREE_LEVEL_POOL(),
     LOAD_AREA(/*area*/ 2),

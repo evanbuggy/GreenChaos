@@ -11,6 +11,7 @@
 #include "game/ingame_menu.h"
 #include "game/level_update.h"
 #include "game/memory.h"
+#include "game/print.h"
 #include "game/object_helpers.h"
 #include "game/object_list_processor.h"
 #include "game/save_file.h"
@@ -66,7 +67,7 @@ void bhv_act_selector_star_type_loop(void) {
             if (gCurrentObject->oStarSelectorSize < 1.0f) {
                 gCurrentObject->oStarSelectorSize = 1.0f;
             }
-            gCurrentObject->oFaceAngleYaw = 0;
+            gCurrentObject->oAnimState = 0;
             break;
         // If a star is selected, rotate and slightly increase size
         case STAR_SELECTOR_SELECTED:
@@ -74,11 +75,11 @@ void bhv_act_selector_star_type_loop(void) {
             if (gCurrentObject->oStarSelectorSize > 1.3f) {
                 gCurrentObject->oStarSelectorSize = 1.3f;
             }
-            gCurrentObject->oFaceAngleYaw += 0x800;
+            if (gGlobalTimer % 2) gCurrentObject->oAnimState++;
             break;
         // If the 100 coin star is selected, rotate
         case STAR_SELECTOR_100_COINS:
-            gCurrentObject->oFaceAngleYaw += 0x800;
+            if (gGlobalTimer % 2) gCurrentObject->oAnimState++;
             break;
     }
     // Scale act selector stars depending of the type selected
@@ -91,6 +92,7 @@ void bhv_act_selector_star_type_loop(void) {
  * Renders the 100 coin star with an special star selector type.
  */
 void render_100_coin_star(u8 stars) {
+#ifdef X_COIN_STAR
     if (stars & STAR_FLAG_ACT_100_COINS) {
         // If the 100 coin star has been collected, create a new star selector next to the coin score.
     #ifdef WIDE
@@ -109,6 +111,37 @@ void render_100_coin_star(u8 stars) {
         sStarSelectorModels[6]->oStarSelectorSize = 0.8f;
         sStarSelectorModels[6]->oStarSelectorType = STAR_SELECTOR_100_COINS;
     }
+#endif
+}
+
+void set_mario_anim_to_obj_anim(struct Object *obj, s32 targetAnimID) {
+    struct Animation *targetAnim = gMarioState->animList->bufTarget;
+
+    if (load_patchable_table(gMarioState->animList, targetAnimID)) {
+        targetAnim->values = (void *) VIRTUAL_TO_PHYSICAL((u8 *) targetAnim + (uintptr_t) targetAnim->values);
+        targetAnim->index  = (void *) VIRTUAL_TO_PHYSICAL((u8 *) targetAnim + (uintptr_t) targetAnim->index);
+    }
+
+    if (obj->header.gfx.animInfo.animID != targetAnimID) {
+        obj->header.gfx.animInfo.animID = targetAnimID;
+        obj->header.gfx.animInfo.curAnim = targetAnim;
+        obj->header.gfx.animInfo.animAccel = 0;
+        obj->header.gfx.animInfo.animYTrans = targetAnim->animYTransDivisor;
+
+        if (targetAnim->flags & ANIM_FLAG_NO_ACCEL) {
+            obj->header.gfx.animInfo.animFrame = targetAnim->startFrame;
+        } else {
+            if (targetAnim->flags & ANIM_FLAG_FORWARD) {
+                obj->header.gfx.animInfo.animFrame = targetAnim->startFrame + 1;
+            } else {
+                obj->header.gfx.animInfo.animFrame = targetAnim->startFrame - 1;
+            }
+        }
+    }
+}
+
+void bhv_mario_star_bg_init() {
+    set_mario_anim_to_obj_anim(o, MARIO_ANIM_AIRBORNE_ON_STOMACH);
 }
 
 /**
@@ -194,7 +227,9 @@ void bhv_act_selector_init(void) {
  * Also handles 2 star selector types whenever the star is selected
  * or not, the types are defined in bhv_act_selector_star_type_loop.
  */
+//#include "actors/starselectbg/geo_header.h"
 void bhv_act_selector_loop(void) {
+//    gSPDisplayList(gDisplayListHead++, starselectbg_Cube_mesh_layer_1);
     s8 i;
     u8 starIndexCounter;
     u8 stars = save_file_get_star_flags(gCurrSaveFileNum - 1, COURSE_NUM_TO_INDEX(gCurrCourseNum));
@@ -244,7 +279,7 @@ void print_course_number(void) {
     create_dl_translation_matrix(MENU_MTX_PUSH, 158.0f, 81.0f, 0.0f);
 
     // Full wood texture in JP & US, lower part of it on EU
-    gSPDisplayList(gDisplayListHead++, dl_menu_rgba16_wood_course);
+//    gSPDisplayList(gDisplayListHead++, dl_menu_rgba16_wood_course);
 
 #if MULTILANG
     // Change upper part of the wood texture depending of the language defined
@@ -265,15 +300,16 @@ void print_course_number(void) {
 
     gSPPopMatrix(gDisplayListHead++, G_MTX_MODELVIEW);
     gSPDisplayList(gDisplayListHead++, dl_rgba16_text_begin);
-    gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, 255);
+    gDPSetEnvColor(gDisplayListHead++, 0, 0, 0, 255);
 
-    int_to_str(gCurrCourseNum, courseNum);
+/*    int_to_str(gCurrCourseNum, courseNum);
 
     if (gCurrCourseNum < 10) { // 1 digit number
         print_hud_lut_string(HUD_LUT_GLOBAL, 152, 158, courseNum);
     } else { // 2 digit number
         print_hud_lut_string(HUD_LUT_GLOBAL, 143, 158, courseNum);
     }
+*/
 
     gSPDisplayList(gDisplayListHead++, dl_rgba16_text_end);
 }
@@ -332,21 +368,11 @@ void print_act_selector_strings(void) {
 #endif
 
     // Print the coin highscore.
-    gSPDisplayList(gDisplayListHead++, dl_rgba16_text_begin);
-    gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, 255);
-    print_hud_my_score_coins(1, gCurrSaveFileNum - 1, COURSE_NUM_TO_INDEX(gCurrCourseNum), 155, 106);
-    gSPDisplayList(gDisplayListHead++, dl_rgba16_text_end);
+
+    print_text_centered(SCREEN_WIDTH/2, 50, "HEADING TO"); 
 
     gSPDisplayList(gDisplayListHead++, dl_ia_text_begin);
-    gDPSetEnvColor(gDisplayListHead++, 0, 0, 0, 255);
-    // Print the "MY SCORE" text if the coin score is more than 0
-    if (save_file_get_course_coin_score(gCurrSaveFileNum - 1, COURSE_NUM_TO_INDEX(gCurrCourseNum)) != 0) {
-#if MULTILANG
-        print_generic_string(95, 118, myScore[language]);
-#else
-        print_generic_string(102, 118, myScore);
-#endif
-    }
+    gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, 255);
 
 #if MULTILANG
     print_generic_string(get_str_x_pos_from_center(160, (currLevelName + 3), 10.0f), 33, currLevelName + 3);
@@ -355,25 +381,16 @@ void print_act_selector_strings(void) {
     print_generic_string(lvlNameX, 33, currLevelName + 3);
 #endif
 
-    gSPDisplayList(gDisplayListHead++, dl_ia_text_end);
-
-#if MULTILANG
-    print_course_number(language);
-#else
-    print_course_number();
-#endif
-
-    gSPDisplayList(gDisplayListHead++, dl_menu_ia8_text_begin);
-    gDPSetEnvColor(gDisplayListHead++, 0, 0, 0, 255);
+    // gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, 255);
     // Print the name of the selected act.
     if (sVisibleStars != 0) {
         selectedActName = segmented_to_virtual(actNameTbl[COURSE_NUM_TO_INDEX(gCurrCourseNum) * 6 + sSelectedActIndex]);
 
 #if MULTILANG
-        print_menu_generic_string(get_str_x_pos_from_center(ACT_NAME_X, selectedActName, 8.0f), 81, selectedActName);
+        print_generic_string(get_str_x_pos_from_center(ACT_NAME_X, selectedActName, 10.0f), 81, selectedActName);
 #else
-        actNameX = get_str_x_pos_from_center(ACT_NAME_X, selectedActName, 8.0f);
-        print_menu_generic_string(actNameX, 81, selectedActName);
+        actNameX = get_str_x_pos_from_center(160, selectedActName, 10.0f);
+        print_generic_string(actNameX, 141, selectedActName);
 #endif
     }
 
@@ -383,11 +400,18 @@ void print_act_selector_strings(void) {
 #if MULTILANG
         print_menu_generic_string(143 - sVisibleStars * 15 + i * 30, 38, starNumbers);
 #else
-        print_menu_generic_string(139 - sVisibleStars * 17 + i * 34, 38, starNumbers);
+//        print_menu_generic_string(139 - sVisibleStars * 17 + i * 34, 38, starNumbers);
 #endif
     }
+    gSPDisplayList(gDisplayListHead++, dl_ia_text_end);
 
-    gSPDisplayList(gDisplayListHead++, dl_menu_ia8_text_end);
+#if MULTILANG
+    print_course_number(language);
+#else
+    print_course_number();
+#endif
+
+    // gSPDisplayList(gDisplayListHead++, dl_menu_ia8_text_end);
  }
 
 /**
@@ -427,7 +451,7 @@ s32 lvl_init_act_selector_values_and_stars(UNUSED s32 arg, UNUSED s32 unused) {
  * Also updates objects and returns act number selected after is chosen.
  */
 s32 lvl_update_obj_and_load_act_button_actions(UNUSED s32 arg, UNUSED s32 unused) {
-    if (sActSelectorMenuTimer > 10) {
+    if ((sActSelectorMenuTimer > 10+16) && !sLoadedActNum) {
         // If any of these buttons are pressed, play sound and go to course act
         if ((gPlayer1Controller->buttonPressed & (A_BUTTON | START_BUTTON | B_BUTTON | Z_TRIG))) {
             play_sound(SOUND_MENU_STAR_SOUND_LETS_A_GO, gGlobalSoundSource);

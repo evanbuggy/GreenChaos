@@ -1,0 +1,10 @@
+extern const GeoLayout starselectbg_geo[];
+extern Lights1 starselectbg_Fast3D_Material_011_lights;
+extern u8 starselectbg_titlecard_ci4[];
+extern u8 starselectbg_titlecard_pal_rgba16[];
+extern Vtx starselectbg_Plane_002_mesh_layer_4_vtx_cull[8];
+extern Vtx starselectbg_Plane_002_mesh_layer_4_vtx_0[24];
+extern Gfx starselectbg_Plane_002_mesh_layer_4_tri_0[];
+extern Gfx mat_starselectbg_Fast3D_Material_011[];
+extern Gfx mat_revert_starselectbg_Fast3D_Material_011[];
+extern Gfx starselectbg_Plane_002_mesh_layer_4[];
