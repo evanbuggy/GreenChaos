@@ -653,12 +653,12 @@ void print_hud_my_score_coins(s32 useCourseCoinScore, s8 fileIndex, s8 courseInd
         numCoins = save_file_get_course_coin_score(fileIndex, courseIndex);
     }
 
-    if (numCoins != 0) {
+    // if (numCoins != 0) {
         print_hud_lut_string(HUD_LUT_GLOBAL, x +  0, y, gHudSymCoin);
         print_hud_lut_string(HUD_LUT_GLOBAL, x + 16, y, gHudSymX);
         int_to_str(numCoins, strNumCoins);
         print_hud_lut_string(HUD_LUT_GLOBAL, x + 32, y, strNumCoins);
-    }
+    // }
 }
 
 void print_hud_my_score_stars(s8 fileIndex, s8 courseIndex, s16 x, s16 y) {

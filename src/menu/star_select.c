@@ -367,7 +367,11 @@ void print_act_selector_strings(void) {
     currLevelName = segmented_to_virtual(levelNameTbl[COURSE_NUM_TO_INDEX(gCurrCourseNum)]);
 #endif
 
-    // Print the coin highscore.
+    //Print the coin highscore.
+    gSPDisplayList(gDisplayListHead++, dl_rgba16_text_begin);
+    gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, 255);
+    print_hud_my_score_coins(1, gCurrSaveFileNum - 1, COURSE_NUM_TO_INDEX(gCurrCourseNum), 155, 106);
+    gSPDisplayList(gDisplayListHead++, dl_rgba16_text_end);
 
     print_text_centered(SCREEN_WIDTH/2, 50, "HEADING TO"); 
 
