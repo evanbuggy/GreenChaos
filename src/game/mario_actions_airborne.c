@@ -440,8 +440,7 @@ s32 act_jump(struct MarioState *m) {
     }
 
     //TEMP CONTROL
-    if( m->controller->buttonPressed & L_TRIG ) 
-    {
+    if (m->controller->buttonPressed & L_TRIG ) {
         return set_mario_action(m, ACT_AIR_SPIN, 0);
     }
     
@@ -464,6 +463,10 @@ s32 act_double_jump(struct MarioState *m) {
         return set_mario_action(m, ACT_GROUND_POUND, 0);
     }
 
+    if (m->controller->buttonPressed & L_TRIG ) {
+        return set_mario_action(m, ACT_AIR_SPIN, 0);
+    }
+
     play_mario_sound(m, SOUND_ACTION_TERRAIN_JUMP, SOUND_MARIO_HOOHOO);
     common_air_action_step(m, ACT_DOUBLE_JUMP_LAND, animation,
                            AIR_STEP_CHECK_LEDGE_GRAB | AIR_STEP_CHECK_HANG);
@@ -479,6 +482,10 @@ s32 act_triple_jump(struct MarioState *m) {
 
         if (m->input & INPUT_B_PRESSED) {
             return set_mario_action(m, ACT_DIVE, 0);
+        }
+
+        if (m->controller->buttonPressed & L_TRIG ) {
+            return set_mario_action(m, ACT_AIR_SPIN, 0);
         }
 
         if (m->input & INPUT_Z_PRESSED) {
@@ -662,6 +669,10 @@ s32 act_long_jump(struct MarioState *m) {
     if (m->floor->type == SURFACE_VERTICAL_WIND && m->actionState == 0) {
         play_sound(SOUND_MARIO_HERE_WE_GO, m->marioObj->header.gfx.cameraToObject);
         m->actionState = 1;
+    }
+
+    if (m->controller->buttonPressed & L_TRIG ) {
+        return set_mario_action(m, ACT_AIR_SPIN, 0);
     }
 
     if (m->input & INPUT_Z_PRESSED){
@@ -1010,9 +1021,15 @@ s32 act_ground_pound(struct MarioState *m) {
     return FALSE;
 }
 s32 act_air_spin(struct MarioState *m) {
-    if(!(m->controller->buttonDown & L_TRIG)) {
+    if (!(m->controller->buttonDown & L_TRIG)) {
         return set_mario_action(m, ACT_FREEFALL, 0);
     }
+
+    if (++m->actionTimer == 1) {
+        play_sound(SOUND_ACTION_FLYING_FAST, m->marioObj->header.gfx.cameraToObject);
+        m->particleFlags |= PARTICLE_MIST_CIRCLE | PARTICLE_HORIZONTAL_STAR;
+    }
+
     common_air_action_step(m, ACT_JUMP_LAND, MARIO_ANIM_FORWARD_SPINNING, AIR_STEP_CHECK_LEDGE_GRAB | AIR_STEP_CHECK_HANG);
     return FALSE;
 }
@@ -1074,7 +1091,7 @@ s32 act_spin_saw(struct MarioState *m) {
             m->faceAngle[1]=m->intendedYaw;
             mario_set_forward_vel(m,(m->input & INPUT_NONZERO_ANALOG) ? m->intendedMag*speedMult : 0 );
 
-            return set_mario_action(m,ACT_AIR_SPIN,0);
+            return set_mario_action(m, ACT_AIR_SPIN, 0);
             break;
             
     }
