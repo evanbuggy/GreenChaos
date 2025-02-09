@@ -6,8 +6,8 @@ static struct ObjectHitbox sElectroLuigiHitbox = {
     /* numLootCoins:      */ 1,
     /* radius:            */ 300,
     /* height:            */ 500,
-    /* hurtboxRadius:     */ 150,
-    /* hurtboxHeight:     */ 150,   
+    /* hurtboxRadius:     */ 200,
+    /* hurtboxHeight:     */ 300,   
 };
 
 static u8 sElectroLuigiAttackHandlers[6] = {
@@ -22,14 +22,35 @@ static u8 sElectroLuigiAttackHandlers[6] = {
 // These structs were all stolen from Goomba
 
 void bhv_electro_luigi_loop(void) {
+
     if (o->oAction & OBJ_ACT_SPIN_SAWED) {
         obj_act_spin_sawed();
     }
 
+    switch (gGlobalTimer % 200) {
+        case 30:
+            cur_obj_play_sound_2(SOUND_GENERAL_WING_FLAP);
+            cur_obj_init_animation(1);
+            break;
+        
+        case 50:
+            cur_obj_play_sound_2(SOUND_OBJ_THWOMP);
+            spawn_object(o, MODEL_BOWSER_WAVE, bhvBowserShockWave);
+            break;
+
+        case 70:
+            cur_obj_init_animation(0);
+            break;
+
+        default:
+            break;
+    }
+    
+
     cur_obj_update_floor_and_walls();
     if (obj_handle_attacks(&sElectroLuigiHitbox, o->oAction, sElectroLuigiAttackHandlers) == ATTACK_KICK_OR_TRIP) {
-        spawn_object(o, MODEL_BOWSER_WAVE, bhvBowserShockWave);
-        play_sound(SOUND_GENERAL_COIN_DROP, gGlobalSoundSource);
+        play_sound(SOUND_GENERAL_BIG_POUND, gGlobalSoundSource);
+        cur_obj_init_animation(2);
         cur_obj_become_intangible();
         enable_time_stop_including_mario();
 
@@ -75,6 +96,7 @@ void bhv_electro_luigi_loop(void) {
         if (o->oMoveFlags & OBJ_MOVE_ABOVE_DEATH_BARRIER) {
             obj_mark_for_deletion(o);
         }
+        cur_obj_init_animation(0);
         o->oForwardVel = 0.0f;
         cur_obj_play_sound_2(SOUND_OBJ_POUNDING_LOUD);
     }

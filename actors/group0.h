@@ -349,4 +349,6 @@ extern const Gfx white_particle_small_unused_dl[];
 
 #include "electro_luigi/geo_header.h"
 
+
+#include "electro_luigi/anim_header.h"
 #endif

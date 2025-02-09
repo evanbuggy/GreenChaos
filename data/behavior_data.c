@@ -6094,7 +6094,10 @@ const BehaviorScript bhvCombatEnemy[] = {
 const BehaviorScript bhvElectroLuigi[] = {
     BEGIN(OBJ_LIST_PUSHABLE),
     OR_INT(oFlags, (OBJ_FLAG_COMPUTE_ANGLE_TO_MARIO | OBJ_FLAG_COMPUTE_DIST_TO_MARIO | OBJ_FLAG_SET_FACE_YAW_TO_MOVE_YAW | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
+    LOAD_ANIMATIONS(oAnimations, &electro_luigi_anims),
     SET_OBJ_PHYSICS(/*Wall hitbox radius*/ 40, /*Gravity*/ -700, /*Bounciness*/ -50, /*Drag strength*/ 1000, /*Friction*/ 1000, /*Buoyancy*/ 0, /*Unused*/ 0, 0),
+    DROP_TO_FLOOR(),
+    ANIMATE(0),
     BEGIN_LOOP(),
         CALL_NATIVE(bhv_electro_luigi_loop),
     END_LOOP(),
