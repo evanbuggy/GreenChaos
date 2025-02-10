@@ -609,7 +609,8 @@
 #define /*0x1B0*/ oZoomPosZ    OBJECT_FIELD_F32(0x4A)
 #endif
 #endif
-
+/* Goombalike*/
+#define /*0x0F4*/ oGoombalikeType               OBJECT_FIELD_S32(0x1B)
 /* Haunted Chair */
 #define /*0x0F4*/ oHauntedChairSpinTimer          OBJECT_FIELD_S32(0x1B)
 #define /*0x0F8*/ oHauntedChairPitchVel           OBJECT_FIELD_F32(0x1C)

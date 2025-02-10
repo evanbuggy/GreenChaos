@@ -711,7 +711,31 @@ static s32 obj_update_standard_actions(f32 scale) {
         return FALSE;
     }
 }
-
+static s32 combat_enemy_standard_actions() {
+    if (o->oAction < 100) {
+        return TRUE;
+    } else { 
+        if ( o->oAction == OBJ_ACT_SPIN_SAWED) 
+        {
+            obj_act_spin_sawed();
+        }
+        else {
+            cur_obj_update_floor_and_walls();
+        
+            //! Dies immediately if above lava
+            if (o->oMoveFlags & OBJ_MOVE_ABOVE_LAVA) {
+                o->oHealth=0;
+                obj_die_if_health_non_positive();
+            }
+            if (o->oMoveFlags & OBJ_MOVE_ON_GROUND) {
+                o->oAction=0;
+                o->oFlags |= OBJ_FLAG_SET_FACE_YAW_TO_MOVE_YAW;
+            }
+        }
+        return FALSE;
+    
+    }
+}
 static s32 obj_check_attacks(struct ObjectHitbox *hitbox, s32 attackedMarioAction) {
     s32 attackType;
 
@@ -862,5 +886,6 @@ void obj_spit_fire(s16 relativePosX, s16 relativePosY, s16 relativePosZ, f32 sca
 #include "behaviors/triplet_butterfly.inc.c"
 #include "behaviors/bubba.inc.c"
 #include "behaviors/combat_enemy.inc.c"
+#include "behaviors/goombalike.inc.c"
 #include "behaviors/blargg.inc.c"
 #include "behaviors/electro_luigi.inc.c"

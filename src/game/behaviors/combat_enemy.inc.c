@@ -1,4 +1,4 @@
-static struct ObjectHitbox sCombatEnmemyHitbox = {
+static struct ObjectHitbox sCombatEnemyHitbox = {
     /* interactType:      */ INTERACT_COMBAT_ENEMY,
     /* downOffset:        */ 0,
     /* damageOrCoinValue: */ 1,
@@ -13,7 +13,7 @@ static struct ObjectHitbox sCombatEnmemyHitbox = {
 static u8 sCombatEnemyAttackHandlers[6] = {
     /* ATTACK_PUNCH:                 */ ATTACK_HANDLER_KNOCKBACK,
     /* ATTACK_KICK_OR_TRIP:          */ ATTACK_HANDLER_KNOCKBACK,
-    /* ATTACK_FROM_ABOVE:            */ ATTACK_HANDLER_SQUISHED,
+    /* ATTACK_FROM_ABOVE:            */ ATTACK_HANDLER_NOP,
     /* ATTACK_GROUND_POUND_OR_TWIRL: */ ATTACK_HANDLER_KNOCKBACK,
     /* ATTACK_FAST_ATTACK:           */ ATTACK_HANDLER_KNOCKBACK,
     /* ATTACK_SPIN_SAW:              */ ATTACK_HANDLER_KNOCKBACK,
@@ -27,25 +27,14 @@ void bhv_combat_enemy_init(void){
     o->oHitstopFrames=0;
 }
 void bhv_combat_enemy_loop(void) {
-    // switch (o->oAction) {
-    //     case OBJ_ACT_SPIN_SAWED:
-    //         osSyncPrintf("combat_enemy.inc.c: case OBJ_ACT_SPIN_SAWED");
-    //         obj_act_spin_sawed();
-    //         break;
-    //     case 0:
-    //         osSyncPrintf("IDLE");
-    //         break;
-    //     default:
-    //         osSyncPrintf("%d", o->oAction);
-    //         break;
-    // }
+
 
     if (o->oAction & OBJ_ACT_SPIN_SAWED) {
         obj_act_spin_sawed();
     }
     // if (obj_update_standard_actions(1)) {
         cur_obj_update_floor_and_walls();
-        if (obj_handle_attacks(&sCombatEnmemyHitbox, o->oAction, sCombatEnemyAttackHandlers) == ATTACK_KICK_OR_TRIP) {
+        if (obj_handle_attacks(&sCombatEnemyHitbox, o->oAction, sCombatEnemyAttackHandlers) == ATTACK_KICK_OR_TRIP) {
             play_sound(SOUND_GENERAL_COIN_DROP, gGlobalSoundSource);
             cur_obj_become_intangible();
             enable_time_stop_including_mario();

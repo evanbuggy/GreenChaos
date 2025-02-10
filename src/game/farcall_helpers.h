@@ -71,6 +71,7 @@ s32 obj_handle_attacks(struct ObjectHitbox *hitbox, s32 attackedMarioAction, u8 
 void obj_act_knockback(UNUSED f32 baseScale);
 void obj_act_squished(f32 baseScale);
 s32 obj_update_standard_actions(f32 scale);
+s32 combat_enemy_standard_actions();
 s32 obj_check_attacks(struct ObjectHitbox *hitbox, s32 attackedMarioAction);
 s32 obj_move_for_one_second(s32 endAction);
 void treat_far_home_as_mario(f32 threshold);
