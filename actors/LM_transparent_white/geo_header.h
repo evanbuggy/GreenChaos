@@ -1,0 +1,8 @@
+extern const GeoLayout LM_transparent_white_geo[];
+extern Lights1 LM_transparent_white_Star1_001_lights;
+extern u8 LM_transparent_white_luigitransparent_ia8[];
+extern Vtx LM_transparent_white_000_displaylist_mesh_layer_4_vtx_0[4];
+extern Gfx LM_transparent_white_000_displaylist_mesh_layer_4_tri_0[];
+extern Gfx mat_LM_transparent_white_Star1_001[];
+extern Gfx mat_revert_LM_transparent_white_Star1_001[];
+extern Gfx LM_transparent_white_000_displaylist_mesh_layer_4[];

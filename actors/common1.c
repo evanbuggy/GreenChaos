@@ -90,3 +90,5 @@ UNUSED static const u64 binid_22 = 22;
 
 #include "yellow_coin_new/model.inc.c"
 #include "red_coin_new/model.inc.c"
+#include "LM_transparent_white/model.inc.c"
+#include "LM_star_select/model.inc.c"

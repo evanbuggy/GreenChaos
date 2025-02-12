@@ -28,3 +28,5 @@
 
 #include "yellow_coin_new/geo.inc.c"
 #include "red_coin_new/geo.inc.c"
+#include "LM_transparent_white/geo.inc.c"
+#include "LM_star_select/geo.inc.c"

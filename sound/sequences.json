@@ -48,7 +48,7 @@
         "15"
     ],
     "0D_menu_star_select": [
-        "16_course_start"
+        "options_star"
     ],
     "0E_event_powerup": [
         "17"
@@ -128,5 +128,8 @@
     ],
     "24_void": [
         "void"
+    ],
+    "25_options_star": [
+        "options_star"
     ]
 }

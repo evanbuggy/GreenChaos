@@ -554,6 +554,9 @@
 #define MODEL_VOID_TREE                   0xE7        // void_tree
 #define MODEL_ELECTRO_LUIGI               0xE8        // electro_luigi_geo
 #define MODEL_STAR_SELECT_BG              0xE9        // starselectbg_geo
+#define MODEL_TRANSPARENT_LM              0xF0        // LM_transparent_white_geo
+#define MODEL_LM_STAR_SELECT              0xF1        // LM_star_select_geo
+
 
 #ifdef IA8_30FPS_COINS
 #define MODEL_SILVER_COIN                 0xE2        // silver_coin_geo

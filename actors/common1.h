@@ -298,4 +298,8 @@ extern const Collision wooden_signpost_seg3_collision_0302DD80[];
 
 #include "red_coin_new/geo_header.h"
 
+#include "LM_transparent_white/geo_header.h"
+
+#include "LM_star_select/geo_header.h"
+
 #endif

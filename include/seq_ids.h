@@ -47,6 +47,7 @@ enum SeqId {
     SEQ_EVENT_CUTSCENE_LAKITU,  // 0x22 (not in JP)
     SEQ_ENDING_FLY,  // 0x23
     SEQ_VOID,  // 0x24
+    SEQ_STAR_OPTIONS,  // 0x25
     SEQ_COUNT,
 };
 

@@ -16,6 +16,7 @@
 #include "levels/scripts.h"
 
 #include "actors/group0.h"
+#include "actors/common1.h"
 
 #include "make_const_nonconst.h"
 #include "levels/menu/header.h"

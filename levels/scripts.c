@@ -88,6 +88,8 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_SHADOW_TITLE_SCREEN,     shadow_mario_title_geo), // New
     LOAD_MODEL_FROM_GEO(MODEL_TITLE_SCREEN_BG,         title_bg_geo), // New
     LOAD_MODEL_FROM_GEO(MODEL_STAR_SELECT_BG,          starselectbg_geo), // New
+    LOAD_MODEL_FROM_GEO(MODEL_TRANSPARENT_LM,          LM_transparent_white_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_LM_STAR_SELECT,          LM_star_select_geo),
     //marie splatoon gaming
 
     // LOAD_MODEL_FROM_GEO(MODEL_FISH_SHADOW,             fish_shadow_geo),
