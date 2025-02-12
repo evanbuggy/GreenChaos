@@ -55,6 +55,8 @@
 #define /*0x092*/ oDialogState                OBJECT_FIELD_S16(0x02, 1)
 #define /*0x094*/ oUnk94                      OBJECT_FIELD_U32(0x03)
 // 0x98 unused/removed.
+#define oInvFrames                            OBJECT_FIELD_S16(0x04,0)
+#define oHitstopFrames                        OBJECT_FIELD_S16(0x04,1)
 #define /*0x09C*/ oIntangibleTimer            OBJECT_FIELD_S32(0x05)
 /* Position vector */
 #define /*0x0A0*/ O_POS_INDEX                 0x06
@@ -607,7 +609,8 @@
 #define /*0x1B0*/ oZoomPosZ    OBJECT_FIELD_F32(0x4A)
 #endif
 #endif
-
+/* Goombalike*/
+#define /*0x0F4*/ oGoombalikeType               OBJECT_FIELD_S32(0x1B)
 /* Haunted Chair */
 #define /*0x0F4*/ oHauntedChairSpinTimer          OBJECT_FIELD_S32(0x1B)
 #define /*0x0F8*/ oHauntedChairPitchVel           OBJECT_FIELD_F32(0x1C)
