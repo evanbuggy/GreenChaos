@@ -32,4 +32,6 @@ extern const struct Animation *const bully_seg5_anims_0500470C[];
 
 #include "blargg_new/geo_header.h"
 
+#include "whomp_boss_luigi/geo_header.h"
+
 #endif

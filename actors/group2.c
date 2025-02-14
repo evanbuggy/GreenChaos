@@ -17,3 +17,4 @@ UNUSED static const u64 binid_0 = 0;
 UNUSED static const u64 binid_1 = 1;
 
 #include "blargg_new/model.inc.c"
+#include "whomp_boss_luigi/model.inc.c"

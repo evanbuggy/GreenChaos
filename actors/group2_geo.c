@@ -11,3 +11,4 @@
 #include "blargg/geo.inc.c"
 
 #include "blargg_new/geo.inc.c"
+#include "whomp_boss_luigi/geo.inc.c"
