@@ -3,8 +3,10 @@
 const GeoLayout wdw_area_1_geo[] = {
 	GEO_NODE_START(),
 	GEO_OPEN_NODE(),
+		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, -8206, 1490, 2602, 0, 25, 0, wdw_dl_Arch_mesh_layer_1),
 		GEO_TRANSLATE_NODE_WITH_DL(LAYER_OPAQUE, 136, 2179, 1361, wdw_dl_Barrier_mesh_layer_1),
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, -669, 1048, 4305, 0, 0, -90, wdw_dl_BarrierCeiling_mesh_layer_1),
+		GEO_TRANSLATE_NODE_WITH_DL(LAYER_OPAQUE, 0, 492, 0, wdw_dl_DecorIsland_mesh_layer_1),
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_ALPHA, 781, 441, 3775, 0, 30, 0, wdw_dl_Flower_mesh_layer_4),
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_ALPHA, -575, 518, 967, 0, -25, 0, wdw_dl_Flower_001_mesh_layer_4),
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_ALPHA, 532, 514, -499, 0, 30, 0, wdw_dl_Flower_002_mesh_layer_4),
@@ -16,6 +18,8 @@ const GeoLayout wdw_area_1_geo[] = {
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_ALPHA, -551, 633, -927, 90, 0, 90, wdw_dl_Plant_002_mesh_layer_4),
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_ALPHA, -631, 667, -457, 90, 0, 135, wdw_dl_Plant_003_mesh_layer_4),
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_ALPHA, 895, 491, 6034, 90, 0, 130, wdw_dl_Plant_004_mesh_layer_4),
+		GEO_TRANSLATE_NODE_WITH_DL(LAYER_OPAQUE, 2882, 854, -8099, wdw_dl_ScaleWall_mesh_layer_1),
+		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_ALPHA, -8298, 520, 2710, 0, 0, -90, wdw_dl_Vine_mesh_layer_4),
 	GEO_CLOSE_NODE(),
 	GEO_RETURN(),
 };
@@ -33,7 +37,7 @@ const GeoLayout wdw_area_1[] = {
 		GEO_OPEN_NODE(),
 			GEO_CAMERA_FRUSTUM_WITH_FUNC(45.0000, 100, 30000, geo_camera_fov),
 			GEO_OPEN_NODE(),
-				GEO_CAMERA(CAMERA_MODE_8_DIRECTIONS, 0, 0, 0, 0, -100, 0, geo_camera_main),
+				GEO_CAMERA(CAMERA_MODE_FREE_ROAM, 0, 0, 0, 0, -100, 0, geo_camera_main),
 				GEO_OPEN_NODE(),
 					GEO_BRANCH(1, wdw_area_1_geo),
 					GEO_RENDER_OBJ(),

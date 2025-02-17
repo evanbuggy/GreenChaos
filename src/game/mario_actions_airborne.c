@@ -1025,13 +1025,13 @@ s32 act_ground_pound(struct MarioState *m) {
     return FALSE;
 }
 s32 act_air_spin(struct MarioState *m) {
-    if (!(m->controller->buttonDown & L_TRIG)) {
-        return set_mario_action(m, ACT_FREEFALL, 0);
-    }
-
     if (++m->actionTimer == 1) {
         play_sound(SOUND_ACTION_FLYING_FAST, m->marioObj->header.gfx.cameraToObject);
         m->particleFlags |= PARTICLE_MIST_CIRCLE | PARTICLE_HORIZONTAL_STAR;
+    }
+    
+    if ((m->input & INPUT_Z_PRESSED) && m->actionTimer > 1) {
+        return set_mario_action(m, ACT_GROUND_POUND, 1);
     }
 
     common_air_action_step(m, ACT_JUMP_LAND, MARIO_ANIM_FORWARD_SPINNING, AIR_STEP_CHECK_LEDGE_GRAB | AIR_STEP_CHECK_HANG);
