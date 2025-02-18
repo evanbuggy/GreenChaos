@@ -92,4 +92,20 @@ extern u8 render_hud_mario_life_icon_new_shadowmarioraw2_rgba16[];
 
 extern u8 render_hud_mario_name_2_mariohud0_rgba16[];
 
+extern u8 render_rank_a_00_ARank00_rgba16[];
+
+extern u8 render_rank_a_01_ARank01_rgba16[];
+
+extern u8 render_rank_b_01_BRank01_rgba16[];
+
+extern u8 render_rank_b_00_BRank00_rgba16[];
+
+extern u8 render_rank_c_00_CRank00_rgba16[];
+
+extern u8 render_rank_c_01_CRank01_rgba16[];
+
+extern u8 render_rank_d_00_DRank00_rgba16[];
+
+extern u8 render_rank_d_01_DRank01_rgba16[];
+
 #endif // SEGMENT2_H
