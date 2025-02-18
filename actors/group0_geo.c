@@ -25,3 +25,4 @@
 #include "void_tree/geo.inc.c"
 #include "electro_luigi/geo.inc.c"
 #include "starselectbg/geo.inc.c"
+#include "luigi_doll/geo.inc.c"

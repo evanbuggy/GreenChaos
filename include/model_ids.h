@@ -557,6 +557,7 @@
 #define MODEL_STAR_SELECT_BG              0xE9        // starselectbg_geo
 #define MODEL_TRANSPARENT_LM              0xF0        // LM_transparent_white_geo
 #define MODEL_LM_STAR_SELECT              0xF1        // LM_star_select_geo
+#define MODEL_LUIGI_DOLL                  0xF2        // luigi_doll_geo
 
 
 #ifdef IA8_30FPS_COINS

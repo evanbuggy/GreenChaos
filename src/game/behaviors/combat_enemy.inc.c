@@ -22,16 +22,17 @@ static u8 sCombatEnemyAttackHandlers[6] = {
 // These structs were all stolen from Goomba
 
 
-void bhv_combat_enemy_init(void){
-    o->oInvFrames=0;
-    o->oHitstopFrames=0;
+void bhv_combat_enemy_init(void) {
+    o->oInvFrames = 0;
+    o->oHitstopFrames = 0;
 }
+
 void bhv_combat_enemy_loop(void) {
 
-
-    if (o->oAction & OBJ_ACT_SPIN_SAWED) {
+    if ((o->oAction & OBJ_ACT_SPIN_SAWED) && (o->oBehParams2ndByte != 0)) {
         obj_act_spin_sawed();
     }
+
     // if (obj_update_standard_actions(1)) {
         cur_obj_update_floor_and_walls();
         if (obj_handle_attacks(&sCombatEnemyHitbox, o->oAction, sCombatEnemyAttackHandlers) == ATTACK_KICK_OR_TRIP) {
@@ -42,7 +43,10 @@ void bhv_combat_enemy_loop(void) {
             // Makes Mario invincible while launching the enemy (for 2 seconds)
             gMarioState->invincTimer = 30;
             
-            o->oHealth--;
+            if (o->oBehParams2ndByte != 0) {
+                o->oHealth--;
+            }
+
             o->oForwardVel = 0.0f;
             if ((o->oMoveFlags & OBJ_MOVE_LANDED) || (o->oMoveFlags & OBJ_MOVE_ON_GROUND)) {
                 o->oVelY = 100.0f;
@@ -56,7 +60,7 @@ void bhv_combat_enemy_loop(void) {
 
             // This defines how long the enemy is invincible for in frames before it can be attacked again.
             // This is to prevent attacks like the kick from hitting multiple times.
-            o->oInvFrames = 60;
+            o->oInvFrames = 6;
 
             o->oHitstopFrames = 3;
 

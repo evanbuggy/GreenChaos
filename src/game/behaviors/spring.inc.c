@@ -21,9 +21,10 @@ static u8 sSpringAttackHandlers[6] = {
 
 void bhv_spring_loop(void) {
     if (obj_handle_attacks(&sSpringHitbox, o->oAction, sSpringAttackHandlers)) {
+        play_sound(SOUND_OBJ_WIGGLER_JUMP, gGlobalSoundSource);
         gMarioState->action = ACT_LONG_JUMP;
         gMarioState->faceAngle[1] = o->oFaceAngleYaw;
-        gMarioState->forwardVel = (o->oBehParams2ndByte) * 10; // 2nd param: Forward vel in 10s
         gMarioState->vel[1] = (o->oBehParams >> 24) * 10; // 1st param: Upward vel in 10s
+        gMarioState->forwardVel = (o->oBehParams2ndByte) * 10; // 2nd param: Forward vel in 10s
     }
 }
