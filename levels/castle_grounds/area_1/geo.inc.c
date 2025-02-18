@@ -5,6 +5,7 @@ const GeoLayout castle_grounds_area_1_geo[] = {
 	GEO_OPEN_NODE(),
 		GEO_DISPLAY_LIST(LAYER_OPAQUE, castle_grounds_dl_Cube_mesh_layer_1),
 		GEO_TRANSLATE_NODE_WITH_DL(LAYER_TRANSPARENT, 0, -47, 0, castle_grounds_dl_Cube_001_mesh_layer_5),
+		GEO_DISPLAY_LIST(LAYER_TRANSPARENT, castle_grounds_dl_Cube_003_mesh_layer_5),
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_ALPHA, -22, 4928, 1, 0, 0, 180, castle_grounds_dl_Cylinder_mesh_layer_4),
 		GEO_TRANSLATE_NODE_WITH_DL(LAYER_TRANSPARENT, 1278, 33, 618, castle_grounds_dl_shadowtree_001_mesh_layer_5),
 		GEO_TRANSLATE_NODE_WITH_DL(LAYER_TRANSPARENT, 457, 33, 1327, castle_grounds_dl_shadowtree_002_mesh_layer_5),
@@ -56,6 +57,7 @@ const GeoLayout castle_grounds_area_1_geo[] = {
 		GEO_TRANSLATE_NODE_WITH_DL(LAYER_TRANSPARENT, -2876, -50, -986, castle_grounds_dl_shadowtree_048_mesh_layer_5),
 		GEO_TRANSLATE_NODE_WITH_DL(LAYER_TRANSPARENT, 2518, -50, -557, castle_grounds_dl_shadowtree_049_mesh_layer_5),
 		GEO_TRANSLATE_NODE_WITH_DL(LAYER_TRANSPARENT, 1279, 33, -1033, castle_grounds_dl_shadowtree_050_mesh_layer_5),
+		GEO_TRANSLATE_NODE_WITH_DL(LAYER_TRANSPARENT, 4881, 398, -4893, castle_grounds_dl_Water_Box_Mesh_mesh_layer_5),
 	GEO_CLOSE_NODE(),
 	GEO_RETURN(),
 };
