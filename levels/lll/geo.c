@@ -47,3 +47,4 @@
 
 #include "levels/lll/luigi_head_geo/geo.inc.c"
 #include "levels/lll/luigi_bully/geo.inc.c"
+#include "levels/lll/goomba_luigi_LLL/geo.inc.c"

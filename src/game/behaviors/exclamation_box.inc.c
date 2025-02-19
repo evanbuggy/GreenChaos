@@ -6,10 +6,10 @@ struct ObjectHitbox sExclamationBoxHitbox = {
     .damageOrCoinValue = 0,
     .health            = 1,
     .numLootCoins      = 0,
-    .radius            = 40,
-    .height            = 30,
-    .hurtboxRadius     = 40,
-    .hurtboxHeight     = 30,
+    .radius            = 50,
+    .height            = 50,
+    .hurtboxRadius     = 50,
+    .hurtboxHeight     = 50,
 };
 
 struct ExclamationBoxContents {
@@ -133,9 +133,7 @@ void exclamation_box_spawn_contents(struct ExclamationBoxContents *contentsList,
 
 void exclamation_box_act_explode(void) {
     exclamation_box_spawn_contents(sExclamationBoxContents, o->oBehParams2ndByte);
-    spawn_mist_particles_variable(0, 0, 46.0f);
-    spawn_triangle_break_particles(20, MODEL_CARTOON_STAR, 0.3f, o->oAnimState);
-    create_sound_spawner(SOUND_GENERAL_BREAK_BOX);
+    struct Object *explosion = spawn_object(o, MODEL_EXPLOSION, bhvExplosion);
     if (o->oBehParams2ndByte <= EXCLAMATION_BOX_BP_KOOPA_SHELL) {
         // Cap boxes + Koopa shell boxes.
         o->oAction = EXCLAMATION_BOX_ACT_WAIT_FOR_RESPAWN;

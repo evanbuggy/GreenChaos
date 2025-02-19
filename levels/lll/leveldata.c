@@ -72,3 +72,4 @@
 
 #include "levels/lll/luigi_head_geo/model.inc.c"
 #include "levels/lll/luigi_bully/model.inc.c"
+#include "levels/lll/goomba_luigi_LLL/model.inc.c"

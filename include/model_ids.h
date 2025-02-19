@@ -258,6 +258,7 @@
 #define MODEL_LLL_VOLCANO_FALLING_TRAP            0x53        // lll_geo_000EA8
 #define MODEL_BROTHER_LUIGI_HEAD                  0x54        // luigi_head_geo
 #define MODEL_BULLY_LUIGI                         0x55        // luigi_bully_geo
+#define MODEL_GOOMBA_LUIGI_LLL                    0x56        // goomba_luigi_LLL_geo
 
 // ddd
 #define MODEL_DDD_BOWSER_SUB_DOOR                 0x36        // ddd_geo_000478
