@@ -26,3 +26,6 @@
 #include "electro_luigi/geo.inc.c"
 #include "starselectbg/geo.inc.c"
 #include "luigi_doll/geo.inc.c"
+#include "GreenSpring/geo.inc.c"
+#include "RingBox/geo.inc.c"
+#include "LifeBox/geo.inc.c"

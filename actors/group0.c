@@ -44,3 +44,6 @@
 #include "electro_luigi/anims/table.inc.c"
 #include "starselectbg/model.inc.c"
 #include "luigi_doll/model.inc.c"
+#include "GreenSpring/model.inc.c"
+#include "RingBox/model.inc.c"
+#include "LifeBox/model.inc.c"

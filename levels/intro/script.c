@@ -62,9 +62,13 @@ const LevelScript level_intro_splash_screen[] = {
         SLEEP(/*frames*/ 1),
     JUMP_N_TIMES(),
 #else
-    // Load "Super Mario 64" logo
+    LOAD_COMMON0(),    
+
+// Load "Super Mario 64" logo
     ALLOC_LEVEL_POOL(),
+//    LOAD_MODEL_FROM_GEO(MODEL_TITLE_CHAR_ANIM,         char_title_intro_geo),
     AREA(/*index*/ 1, intro_geo_splash_screen),
+//        OBJECT(/*model*/ MODEL_TITLE_CHAR_ANIM, /*pos*/ -570, -480, 1500, /*angle*/ 0,  0, 0, /*behParam*/ BP(0x18, 0x00, 0x10, 0x0B), /*beh*/ bhvTitleChar),
     END_AREA(),
     FREE_LEVEL_POOL(),
 

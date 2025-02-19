@@ -1,46 +1,13 @@
-Lights1 wdw_dl_InvisWall_lights = gdSPDefLights1(
-	0x7F, 0x7F, 0x7F,
-	0xFF, 0xFF, 0xFF, 0x49, 0x49, 0x49);
 
-Lights1 wdw_dl_death_plane_lights = gdSPDefLights1(
-	0x7F, 0x7F, 0x7F,
-	0xFF, 0xFF, 0xFF, 0x49, 0x49, 0x49);
 
-Lights1 wdw_dl_flowers1_lights = gdSPDefLights1(
-	0x7F, 0x7F, 0x7F,
-	0xFF, 0xFF, 0xFF, 0x49, 0x49, 0x49);
 
-Lights1 wdw_dl_flowers2_lights = gdSPDefLights1(
-	0x7F, 0x7F, 0x7F,
-	0xFF, 0xFF, 0xFF, 0x49, 0x49, 0x49);
 
-Lights1 wdw_dl_cobblestone_lights = gdSPDefLights1(
-	0x7F, 0x7F, 0x7F,
-	0xFF, 0xFF, 0xFF, 0x49, 0x49, 0x49);
 
-Lights1 wdw_dl_grate_lights = gdSPDefLights1(
-	0x7F, 0x7F, 0x7F,
-	0xFF, 0xFF, 0xFF, 0x49, 0x49, 0x49);
 
-Lights1 wdw_dl_grate_exit_lights = gdSPDefLights1(
-	0x0, 0x0, 0x0,
-	0x0, 0x0, 0x0, 0x49, 0x49, 0x49);
 
-Lights1 wdw_dl_Water_lights = gdSPDefLights1(
-	0x0, 0x5A, 0x7F,
-	0x0, 0xB8, 0xFF, 0x49, 0x49, 0x49);
 
-Lights1 wdw_dl_leaf_lights = gdSPDefLights1(
-	0x7F, 0x7F, 0x7F,
-	0xFF, 0xFF, 0xFF, 0x49, 0x49, 0x49);
 
-Lights1 wdw_dl_f3dlite_material_lights = gdSPDefLights1(
-	0x7F, 0x7F, 0x7F,
-	0xFF, 0xFF, 0xFF, 0x49, 0x49, 0x49);
 
-Lights1 wdw_dl_vine_lights = gdSPDefLights1(
-	0x7F, 0x7F, 0x7F,
-	0xFF, 0xFF, 0xFF, 0x49, 0x49, 0x49);
 
 Gfx wdw_dl_RMGP01_f7fc1e5f_14_ci4_aligner[] = {gsSPEndDisplayList()};
 u8 wdw_dl_RMGP01_f7fc1e5f_14_ci4[] = {
@@ -5667,7 +5634,8 @@ Gfx mat_wdw_dl_InvisWall[] = {
 	gsDPSetCombineLERP(0, 0, 0, SHADE, 0, 0, 0, ENVIRONMENT, 0, 0, 0, SHADE, 0, 0, 0, ENVIRONMENT),
 	gsSPSetGeometryMode(G_CULL_FRONT),
 	gsSPTexture(65535, 65535, 0, 0, 1),
-	gsSPSetLights1(wdw_dl_InvisWall_lights),
+    gsSPLightColor(LIGHT_1, 0xffffffff),
+    gsSPLightColor(LIGHT_2, 0x7f7f7fff),
 	gsSPEndDisplayList(),
 };
 
@@ -5682,7 +5650,8 @@ Gfx mat_wdw_dl_death_plane[] = {
 	gsDPSetCombineLERP(0, 0, 0, SHADE, 0, 0, 0, ENVIRONMENT, 0, 0, 0, SHADE, 0, 0, 0, ENVIRONMENT),
 	gsSPSetGeometryMode(G_CULL_FRONT),
 	gsSPTexture(65535, 65535, 0, 0, 1),
-	gsSPSetLights1(wdw_dl_death_plane_lights),
+    gsSPLightColor(LIGHT_1, 0xffffffff),
+    gsSPLightColor(LIGHT_2, 0x7f7f7fff),
 	gsSPEndDisplayList(),
 };
 
@@ -5741,7 +5710,8 @@ Gfx mat_wdw_dl_flowers1[] = {
 	gsSPClearGeometryMode(G_CULL_BACK),
 	gsDPSetTextureLUT(G_TT_RGBA16),
 	gsSPTexture(65535, 65535, 0, 0, 1),
-	gsSPSetLights1(wdw_dl_flowers1_lights),
+    gsSPLightColor(LIGHT_1, 0xffffffff),
+    gsSPLightColor(LIGHT_2, 0x7f7f7fff),
 	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, wdw_dl__23_pal_rgba16),
 	gsDPSetTile(0, 0, 0, 256, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadTLUTCmd(5, 122),
@@ -5766,7 +5736,8 @@ Gfx mat_wdw_dl_flowers2[] = {
 	gsSPClearGeometryMode(G_CULL_BACK),
 	gsDPSetTextureLUT(G_TT_RGBA16),
 	gsSPTexture(65535, 65535, 0, 0, 1),
-	gsSPSetLights1(wdw_dl_flowers2_lights),
+    gsSPLightColor(LIGHT_1, 0xffffffff),
+    gsSPLightColor(LIGHT_2, 0x7f7f7fff),
 	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, wdw_dl__24_pal_rgba16),
 	gsDPSetTile(0, 0, 0, 256, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadTLUTCmd(5, 142),
@@ -5838,7 +5809,8 @@ Gfx mat_wdw_dl_cobblestone[] = {
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT, TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT),
 	gsDPSetTextureLUT(G_TT_RGBA16),
 	gsSPTexture(65535, 65535, 0, 0, 1),
-	gsSPSetLights1(wdw_dl_cobblestone_lights),
+    gsSPLightColor(LIGHT_1, 0xffffffff),
+    gsSPLightColor(LIGHT_2, 0x7f7f7fff),
 	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, wdw_dl_RMGP01_28ecef68_14_pal_rgba16),
 	gsDPSetTile(0, 0, 0, 256, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadTLUTCmd(5, 67),
@@ -5860,7 +5832,8 @@ Gfx mat_wdw_dl_grate[] = {
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT, TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT),
 	gsSPTexture(65535, 65535, 0, 0, 1),
-	gsSPSetLights1(wdw_dl_grate_lights),
+    gsSPLightColor(LIGHT_1, 0xffffffff),
+    gsSPLightColor(LIGHT_2, 0x7f7f7fff),
 	gsDPSetTextureImage(G_IM_FMT_I, G_IM_SIZ_8b_LOAD_BLOCK, 1, wdw_dl_RMGP01_9446cbe6_14_i8),
 	gsDPSetTile(G_IM_FMT_I, G_IM_SIZ_8b_LOAD_BLOCK, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadBlock(7, 0, 0, 511, 512),
@@ -5873,7 +5846,8 @@ Gfx mat_wdw_dl_grate_exit[] = {
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(0, 0, 0, SHADE, 0, 0, 0, ENVIRONMENT, 0, 0, 0, SHADE, 0, 0, 0, ENVIRONMENT),
 	gsSPTexture(65535, 65535, 0, 0, 1),
-	gsSPSetLights1(wdw_dl_grate_exit_lights),
+    gsSPLightColor(LIGHT_1, 0xff),
+    gsSPLightColor(LIGHT_2, 0xff),
 	gsSPEndDisplayList(),
 };
 
@@ -5902,7 +5876,8 @@ Gfx mat_wdw_dl_Water[] = {
 	gsSPClearGeometryMode(G_CULL_BACK),
 	gsSPTexture(65535, 65535, 0, 0, 1),
 	gsDPSetPrimColor(0, 0, 255, 255, 255, 255),
-	gsSPSetLights1(wdw_dl_Water_lights),
+    gsSPLightColor(LIGHT_1, 0xb8ffff),
+    gsSPLightColor(LIGHT_2, 0x5a7fff),
 	gsDPSetTextureImage(G_IM_FMT_I, G_IM_SIZ_8b_LOAD_BLOCK, 1, wdw_dl_water_i8),
 	gsDPSetTile(G_IM_FMT_I, G_IM_SIZ_8b_LOAD_BLOCK, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadBlock(7, 0, 0, 511, 512),
@@ -5923,7 +5898,8 @@ Gfx mat_wdw_dl_leaf[] = {
 	gsSPClearGeometryMode(G_CULL_BACK),
 	gsDPSetTextureLUT(G_TT_RGBA16),
 	gsSPTexture(65535, 65535, 0, 0, 1),
-	gsSPSetLights1(wdw_dl_leaf_lights),
+    gsSPLightColor(LIGHT_1, 0xffffffff),
+    gsSPLightColor(LIGHT_2, 0x7f7f7fff),
 	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, wdw_dl__86_pal_rgba16),
 	gsDPSetTile(0, 0, 0, 256, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadTLUTCmd(5, 165),
@@ -5946,7 +5922,8 @@ Gfx mat_wdw_dl_f3dlite_material[] = {
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(0, 0, 0, SHADE, 0, 0, 0, ENVIRONMENT, 0, 0, 0, SHADE, 0, 0, 0, ENVIRONMENT),
 	gsSPTexture(65535, 65535, 0, 0, 1),
-	gsSPSetLights1(wdw_dl_f3dlite_material_lights),
+    gsSPLightColor(LIGHT_1, 0xffffffff),
+    gsSPLightColor(LIGHT_2, 0x7f7f7fff),
 	gsSPEndDisplayList(),
 };
 
@@ -5955,7 +5932,8 @@ Gfx mat_wdw_dl_vine[] = {
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, TEXEL0, 0, ENVIRONMENT, 0, TEXEL0, 0, SHADE, 0, TEXEL0, 0, ENVIRONMENT, 0),
 	gsDPSetTextureLUT(G_TT_RGBA16),
 	gsSPTexture(65535, 65535, 0, 0, 1),
-	gsSPSetLights1(wdw_dl_vine_lights),
+    gsSPLightColor(LIGHT_1, 0xffffffff),
+    gsSPLightColor(LIGHT_2, 0x7f7f7fff),
 	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, wdw_dl_RMGP01_4213dfa5_14_pal_rgba16),
 	gsDPSetTile(0, 0, 0, 256, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadTLUTCmd(5, 34),

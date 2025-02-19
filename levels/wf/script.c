@@ -120,7 +120,7 @@ const LevelScript level_wf_entry[] = {
 		OBJECT(MODEL_YELLOW_COIN, 3126, 2787, -9514, 0, 0, 0, 0x00000000, bhvOneCoin),
 		OBJECT(MODEL_YELLOW_COIN, 11181, 4457, -9636, 0, 0, 0, 0x00000000, bhvOneCoin),
 		OBJECT(MODEL_NONE, 1509, 146, 0, 0, 0, 0, (60 << 24) | (30 << 16) | (30 << 8), bhvRank),
-		OBJECT(MODEL_GOOMBA, 0, 1, 2780, 0, 180, 0, (8 << 24) | (8 << 16), bhvSpring),
+		OBJECT(MODEL_GREEN_SPRING, 0, 1, 2780, 0, 180, 0, (8 << 24) | (8 << 16), bhvSpring),
 		OBJECT(MODEL_STAR, 3792, 2381, -7915, 0, 180, 0, (20 << 24) | (20 << 16), bhvStar),
 		OBJECT(MODEL_GOOMBA, 3070, 5694, -8305, 0, -32, 0, 0x00000000, bhvCombatEnemy),
 		OBJECT(MODEL_NONE, 0, 130, 3231, 0, 180, 0, 0x000A0000, bhvSpinAirborneWarp),

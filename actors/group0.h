@@ -355,4 +355,10 @@ extern const Gfx white_particle_small_unused_dl[];
 
 #include "luigi_doll/geo_header.h"
 
+#include "GreenSpring/geo_header.h"
+
+#include "RingBox/geo_header.h"
+
+#include "LifeBox/geo_header.h"
+
 #endif

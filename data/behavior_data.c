@@ -6208,3 +6208,14 @@ const BehaviorScript bhvSpring[] = {
         CALL_NATIVE(bhv_spring_loop),
     END_LOOP(),
 };
+
+const BehaviorScript bhvTitleChar[] = {
+    BEGIN(OBJ_LIST_SURFACE),
+    OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
+    SET_FLOAT(oDrawingDistance, 20000),
+    SET_HOME(),
+    BILLBOARD(),
+    BEGIN_LOOP(),
+        ADD_INT(oAnimState, 1),
+    END_LOOP(),
+};

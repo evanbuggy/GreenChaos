@@ -71,3 +71,4 @@
 #include "levels/lll/leveldata.inc.c"
 
 #include "levels/lll/luigi_head_geo/model.inc.c"
+#include "levels/lll/luigi_bully/model.inc.c"

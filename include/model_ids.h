@@ -257,6 +257,7 @@
 #define MODEL_LLL_LARGE_FALLING_PLATFORM          0x3D        // lll_geo_000B98
 #define MODEL_LLL_VOLCANO_FALLING_TRAP            0x53        // lll_geo_000EA8
 #define MODEL_BROTHER_LUIGI_HEAD                  0x54        // luigi_head_geo
+#define MODEL_BULLY_LUIGI                         0x55        // luigi_bully_geo
 
 // ddd
 #define MODEL_DDD_BOWSER_SUB_DOOR                 0x36        // ddd_geo_000478
@@ -558,7 +559,10 @@
 #define MODEL_TRANSPARENT_LM              0xF0        // LM_transparent_white_geo
 #define MODEL_LM_STAR_SELECT              0xF1        // LM_star_select_geo
 #define MODEL_LUIGI_DOLL                  0xF2        // luigi_doll_geo
-
+#define MODEL_GREEN_SPRING                0xF3        // GreenSpring_geo
+#define MODEL_RING_BOX                    0xF4        // RingBox_geo
+#define MODEL_LIFE_BOX                    0xF5        // LifeBox_geo
+#define MODEL_TITLE_CHAR_ANIM             0xF6        // char_title_intro_geo
 
 #ifdef IA8_30FPS_COINS
 #define MODEL_SILVER_COIN                 0xE2        // silver_coin_geo

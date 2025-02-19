@@ -90,6 +90,11 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_STAR_SELECT_BG,          starselectbg_geo), // New
     LOAD_MODEL_FROM_GEO(MODEL_TRANSPARENT_LM,          LM_transparent_white_geo),
     LOAD_MODEL_FROM_GEO(MODEL_LM_STAR_SELECT,          LM_star_select_geo),
+
+    LOAD_MODEL_FROM_GEO(MODEL_GREEN_SPRING,            GreenSpring_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_RING_BOX,                RingBox_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_LIFE_BOX,                LifeBox_geo),
+//    LOAD_MODEL_FROM_GEO(MODEL_TITLE_CHAR_ANIM,         char_title_intro_geo),
     //marie splatoon gaming
 
     // LOAD_MODEL_FROM_GEO(MODEL_FISH_SHADOW,             fish_shadow_geo),
