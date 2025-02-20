@@ -29,3 +29,4 @@
 #include "GreenSpring/geo.inc.c"
 #include "RingBox/geo.inc.c"
 #include "LifeBox/geo.inc.c"
+#include "bug_luigi/geo.inc.c"
