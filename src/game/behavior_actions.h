@@ -560,7 +560,6 @@ void bhv_rank_loop(void);
 void bhv_rank_init(void);
 void bhv_unbaba_loop(void);
 void bhv_spring_loop(void);
-void bhv_bug_luigi_init(void);
 void bhv_bug_luigi_loop(void);
 
 Gfx *geo_move_mario_part_from_parent(s32 callContext, UNUSED struct GraphNode *node, Mat4 mtx);

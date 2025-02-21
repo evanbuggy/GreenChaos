@@ -12,6 +12,7 @@
 #include "levels/scripts.h"
 
 #include "actors/group0.h"
+#include "actors/group2.h"
 #include "actors/common1.h"
 
 /* Fast64 begin persistent block [includes] */
@@ -84,10 +85,16 @@ const LevelScript level_wf_entry[] = {
 	LOAD_MODEL_FROM_GEO(MODEL_BUG_LUIGI, bug_luigi_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_ELECTRO_LUIGI, electro_luigi_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_BUG_LUIGI, bug_luigi_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_ELECTRO_LUIGI, electro_luigi_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_BUG_LUIGI, bug_luigi_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_ELECTRO_LUIGI, electro_luigi_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_BUG_LUIGI, bug_luigi_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_WHOMP_LUIGI, whomp_boss_luigi_geo), 
 
 	/* Fast64 begin persistent block [level commands] */
 	LOAD_MODEL_FROM_GEO(MODEL_ELECTRO_LUIGI, electro_luigi_geo),
 	LOAD_MODEL_FROM_GEO(MODEL_BUG_LUIGI, bug_luigi_geo),
+	LOAD_MODEL_FROM_GEO(MODEL_WHOMP_LUIGI, whomp_boss_luigi_geo),
 	/* Fast64 end persistent block [level commands] */
 
 	AREA(1, wf_area_1),
@@ -132,7 +139,7 @@ const LevelScript level_wf_entry[] = {
 		OBJECT(MODEL_YELLOW_COIN, 3126, 2787, -9514, 0, 0, 0, 0x00000000, bhvOneCoin),
 		OBJECT(MODEL_YELLOW_COIN, 11181, 4457, -9636, 0, 0, 0, 0x00000000, bhvOneCoin),
 		OBJECT(MODEL_NONE, 1509, 146, 0, 0, 0, 0, (60 << 24) | (30 << 16) | (30 << 8), bhvRank),
-		OBJECT(MODEL_GREEN_SPRING, 0, 1, 2780, 0, 180, 0, (8 << 24) | (8 << 16), bhvSpring),
+		OBJECT(MODEL_WHOMP_LUIGI, 0, 1, 2780, 0, 180, 0, (8 << 24) | (8 << 16), bhvWhompKingBoss),
 		OBJECT(MODEL_STAR, 3792, 2381, -7915, 0, 180, 0, (20 << 24) | (20 << 16), bhvStar),
 		OBJECT(MODEL_GOOMBA, 3070, 5694, -8305, 0, -32, 0, 0x00000000, bhvCombatEnemy),
 		OBJECT(MODEL_NONE, 0, 130, 3231, 0, 180, 0, 0x000A0000, bhvSpinAirborneWarp),
