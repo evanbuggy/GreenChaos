@@ -365,4 +365,8 @@ extern const Gfx white_particle_small_unused_dl[];
 
 
 #include "bug_luigi/anim_header.h"
+#include "cutscene_luigi/geo_header.h"
+
+
+#include "cutscene_luigi/anim_header.h"
 #endif

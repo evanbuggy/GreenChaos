@@ -6231,3 +6231,19 @@ const BehaviorScript bhvBugLuigi[] = {
         CALL_NATIVE(bhv_bug_luigi_loop),
     END_LOOP(),
 };
+
+// Buggy 25/2/21: bhv script for a cutscene Luigi
+const BehaviorScript bhvCutsceneLuigi[] = {
+    BEGIN(OBJ_LIST_GENACTOR),
+    OR_INT(oFlags, (OBJ_FLAG_COMPUTE_ANGLE_TO_MARIO | OBJ_FLAG_HOLDABLE | OBJ_FLAG_COMPUTE_DIST_TO_MARIO | OBJ_FLAG_SET_FACE_YAW_TO_MOVE_YAW | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
+    LOAD_ANIMATIONS(oAnimations, &cutscene_luigi_anims),
+    SET_INTERACT_TYPE(INTERACT_TEXT),
+    DROP_TO_FLOOR(),
+    SET_HITBOX(/*Radius*/ 100, /*Height*/ 160),
+    ANIMATE(1),
+    SET_HOME(),
+    BEGIN_LOOP(),
+        SET_INT(oIntangibleTimer, 0),
+        CALL_NATIVE(bhv_cutscene_luigi_loop),
+    END_LOOP(),
+};

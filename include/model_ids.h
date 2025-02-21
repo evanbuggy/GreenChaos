@@ -565,6 +565,7 @@
 #define MODEL_LIFE_BOX                    0xF5        // LifeBox_geo
 #define MODEL_TITLE_CHAR_ANIM             0xF6        // char_title_intro_geo
 #define MODEL_BUG_LUIGI                   0xF7        // bug_luigi_geo
+#define MODEL_CUTSCENE_LUIGI              0xF8        // cutscene_luigi_geo
 
 #ifdef IA8_30FPS_COINS
 #define MODEL_SILVER_COIN                 0xE2        // silver_coin_geo

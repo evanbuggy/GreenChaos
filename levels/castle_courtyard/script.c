@@ -12,6 +12,7 @@
 #include "levels/scripts.h"
 
 #include "actors/common1.h"
+#include "actors/group0.h"
 #include "make_const_nonconst.h"
 #include "levels/castle_courtyard/header.h"
 
@@ -35,15 +36,21 @@ const LevelScript level_castle_courtyard_entry[] = {
 	LOAD_MODEL_FROM_GEO(MODEL_COURTYARD_SPIKY_TREE, spiky_tree_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_COURTYARD_WOODEN_DOOR, wooden_door_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_LEVEL_GEOMETRY_03, castle_courtyard_geo_000200), 
+	LOAD_MODEL_FROM_GEO(MODEL_CUTSCENE_LUIGI, cutscene_luigi_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_CUTSCENE_LUIGI, cutscene_luigi_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_CUTSCENE_LUIGI, cutscene_luigi_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_CUTSCENE_LUIGI, cutscene_luigi_geo), 
 	/* Fast64 begin persistent block [level commands] */
+	LOAD_MODEL_FROM_GEO(MODEL_CUTSCENE_LUIGI, cutscene_luigi_geo),
 	/* Fast64 end persistent block [level commands] */
 
 	AREA(1, castle_courtyard_area_1),
 		WARP_NODE(0x0A, LEVEL_BOB, 0x01, 0x0A, WARP_NO_CHECKPOINT),
 		WARP_NODE(0xF0, LEVEL_BOB, 0x01, 0x0A, WARP_NO_CHECKPOINT),
 		WARP_NODE(0xF1, LEVEL_BOB, 0x01, 0x0A, WARP_NO_CHECKPOINT),
-		MARIO_POS(0x01, 0, -331, 329, -222),
-		OBJECT(MODEL_NONE, -331, 329, -222, 0, 0, 0, 0x000A0000, bhvSpinAirborneWarp),
+		OBJECT(MODEL_CUTSCENE_LUIGI, 243, 251, 153, 0, 0, 0, 0x00000000, bhvCutsceneLuigi),
+		MARIO_POS(0x01, 0, -1402, -511, -8),
+		OBJECT(MODEL_NONE, -1402, -511, -8, 0, 0, 0, 0x000A0000, bhvSpinAirborneWarp),
 		TERRAIN(castle_courtyard_area_1_collision),
 		MACRO_OBJECTS(castle_courtyard_area_1_macro_objs),
 		STOP_MUSIC(0),
@@ -52,7 +59,7 @@ const LevelScript level_castle_courtyard_entry[] = {
 		/* Fast64 end persistent block [area commands] */
 	END_AREA(),
 	FREE_LEVEL_POOL(),
-	MARIO_POS(0x01, 0, -331, 329, -222),
+	MARIO_POS(0x01, 0, -1402, -511, -8),
 	CALL(0, lvl_init_or_update),
 	CALL_LOOP(1, lvl_init_or_update),
 	CLEAR_LEVEL(),

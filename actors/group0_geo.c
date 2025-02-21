@@ -30,3 +30,4 @@
 #include "RingBox/geo.inc.c"
 #include "LifeBox/geo.inc.c"
 #include "bug_luigi/geo.inc.c"
+#include "cutscene_luigi/geo.inc.c"
