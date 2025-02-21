@@ -28,8 +28,6 @@ void bhv_bug_luigi_loop(void) {
     cur_obj_update_floor_and_walls();
     if (obj_handle_attacks(&sBugLuigiHitbox, o->oAction, sBugLuigiAttackHandlers) == ATTACK_KICK_OR_TRIP) {
         play_sound(SOUND_ACTION_METAL_STEP, gGlobalSoundSource);
-        cur_obj_become_intangible();
-        enable_time_stop_including_mario();
 
         // Makes Mario invincible while launching the enemy (for 1 second)
         gMarioState->invincTimer = 30;
@@ -41,7 +39,4 @@ void bhv_bug_luigi_loop(void) {
 
         obj_die_if_health_non_positive();
     }
-
-    // Movement functions
-    cur_obj_move_standard(-78);
 }
