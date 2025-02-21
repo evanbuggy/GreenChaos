@@ -628,7 +628,6 @@ s32 get_str_x_pos_from_center(s16 centerPos, u8 *str, UNUSED f32 scale) {
     return (s16)(centerPos - (s16)(spacesWidth / 2.0f));
 }
 
-
 s32 get_string_width(u8 *str) {
     s16 strPos = 0;
     s16 width = 0;
@@ -653,12 +652,30 @@ void print_hud_my_score_coins(s32 useCourseCoinScore, s8 fileIndex, s8 courseInd
         numCoins = save_file_get_course_coin_score(fileIndex, courseIndex);
     }
 
-    // if (numCoins != 0) {
-        print_hud_lut_string(HUD_LUT_GLOBAL, x +  0, y, gHudSymCoin);
-        print_hud_lut_string(HUD_LUT_GLOBAL, x + 16, y, gHudSymX);
-        int_to_str(numCoins, strNumCoins);
-        print_hud_lut_string(HUD_LUT_GLOBAL, x + 32, y, strNumCoins);
-    // }
+    print_text(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(60) - 12, 100, "RANK");
+    switch (numCoins) {
+        case 0:
+            render_rank_d_00(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(60) - 16, 60, 32, 64, 0, 0);
+            render_rank_d_01(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(60) + 16, 60, 32, 64, 0, 0);
+            break;
+        case 1:
+            render_rank_c_00(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(60) - 16, 60, 32, 64, 0, 0);
+            render_rank_c_01(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(60) + 16, 60, 32, 64, 0, 0);
+            break;
+        case 2:
+            render_rank_b_00(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(60) - 16, 60, 32, 64, 0, 0);
+            render_rank_b_01(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(60) + 16, 60, 32, 64, 0, 0);
+            break;
+        case 3:
+            render_rank_a_00(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(60) - 16, 60, 32, 64, 0, 0);
+            render_rank_a_01(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(60) + 16, 60, 32, 64, 0, 0);
+            break;
+        case 4:
+            // render_rank_s_00(100, 50, 32, 64, 1, 1);
+            // render_rank_s_01(132, 50, 32, 64, 1, 1);
+            print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(40), 160, "S RANK!!!");
+            break;
+    }
 }
 
 void print_hud_my_score_stars(s8 fileIndex, s8 courseIndex, s16 x, s16 y) {
@@ -1607,20 +1624,20 @@ void render_pause_my_score_coins(void) {
     gSPDisplayList(gDisplayListHead++, dl_rgba16_text_begin);
     gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, gDialogTextAlpha);
 
-    if (courseIndex <= COURSE_NUM_TO_INDEX(COURSE_STAGES_MAX)) {
-        print_hud_my_score_coins(1, gCurrSaveFileNum - 1, courseIndex, 178, 103);
-        print_hud_my_score_stars(gCurrSaveFileNum - 1, courseIndex, 118, 103);
-    }
+    // if (courseIndex <= COURSE_NUM_TO_INDEX(COURSE_STAGES_MAX)) {
+    //     print_hud_my_score_coins(1, gCurrSaveFileNum - 1, courseIndex, 178, 103);
+    //     print_hud_my_score_stars(gCurrSaveFileNum - 1, courseIndex, 118, 103);
+    // }
 
     gSPDisplayList(gDisplayListHead++, dl_rgba16_text_end);
     gSPDisplayList(gDisplayListHead++, dl_ia_text_begin);
 
     gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, gDialogTextAlpha);
 
-    if (courseIndex <= COURSE_NUM_TO_INDEX(COURSE_STAGES_MAX)
-        && (save_file_get_course_star_count(gCurrSaveFileNum - 1, courseIndex) != 0)) {
-        print_generic_string(MYSCORE_X, 121, LANGUAGE_ARRAY(textMyScore));
-    }
+    // if (courseIndex <= COURSE_NUM_TO_INDEX(COURSE_STAGES_MAX)
+    //     && (save_file_get_course_star_count(gCurrSaveFileNum - 1, courseIndex) != 0)) {
+    //     print_generic_string(MYSCORE_X, 121, LANGUAGE_ARRAY(textMyScore));
+    // }
 
     u8 *courseName = segmented_to_virtual(courseNameTbl[courseIndex]);
 

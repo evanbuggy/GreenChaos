@@ -890,3 +890,4 @@ void obj_spit_fire(s16 relativePosX, s16 relativePosY, s16 relativePosZ, f32 sca
 #include "behaviors/blargg.inc.c"
 #include "behaviors/electro_luigi.inc.c"
 #include "behaviors/spring.inc.c"
+#include "behaviors/bug_luigi.inc.c"

@@ -13,6 +13,10 @@
 
 #include "actors/group0.h"
 #include "actors/common1.h"
+
+/* Fast64 begin persistent block [includes] */
+/* Fast64 end persistent block [includes] */
+
 #include "make_const_nonconst.h"
 #include "levels/wf/header.h"
 
@@ -74,8 +78,16 @@ const LevelScript level_wf_entry[] = {
 	LOAD_MODEL_FROM_GEO(MODEL_ELECTRO_LUIGI, electro_luigi_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_ELECTRO_LUIGI, electro_luigi_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_ELECTRO_LUIGI, electro_luigi_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_ELECTRO_LUIGI, electro_luigi_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_BUG_LUIGI, bug_luigi_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_ELECTRO_LUIGI, electro_luigi_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_BUG_LUIGI, bug_luigi_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_ELECTRO_LUIGI, electro_luigi_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_BUG_LUIGI, bug_luigi_geo), 
+
 	/* Fast64 begin persistent block [level commands] */
 	LOAD_MODEL_FROM_GEO(MODEL_ELECTRO_LUIGI, electro_luigi_geo),
+	LOAD_MODEL_FROM_GEO(MODEL_BUG_LUIGI, bug_luigi_geo),
 	/* Fast64 end persistent block [level commands] */
 
 	AREA(1, wf_area_1),
@@ -83,17 +95,17 @@ const LevelScript level_wf_entry[] = {
 		WARP_NODE(0xF0, LEVEL_CASTLE, 0x01, 0x0A, WARP_NO_CHECKPOINT),
 		WARP_NODE(0xF1, LEVEL_CASTLE, 0x01, 0x0A, WARP_NO_CHECKPOINT),
 		WARP_NODE(0x01, LEVEL_ENDING, 0x01, 0x0A, WARP_NO_CHECKPOINT),
-		OBJECT(MODEL_NONE, 0, 1216, -188, 0, 0, 0, 0x00000000, bhvCoinFormation),
 		OBJECT(MODEL_NONE, 7522, 815, -4664, 0, -95, 0, 0x00000000, bhvCoinFormation),
 		OBJECT(MODEL_NONE, 5607, 3874, -10439, 0, 130, 0, 0x00000000, bhvCoinFormation),
-		OBJECT(MODEL_ELECTRO_LUIGI, 2, 491, -4792, 0, -180, 0, 0x00000000, bhvElectroLuigi),
+		OBJECT(MODEL_AMP, 5599, 3889, -10462, 0, 130, 0, 0x00000000, bhvCirclingAmp),
+		OBJECT(MODEL_BUG_LUIGI, 2, 651, -4792, 0, -90, 0, 0x00000000, bhvBugLuigi),
 		OBJECT(MODEL_ELECTRO_LUIGI, 3269, 491, -4682, 0, 90, 0, 0x00000000, bhvElectroLuigi),
 		OBJECT(MODEL_GOOMBA, 10154, 5334, -10340, 0, 0, 0, 0x00000000, bhvGoomba),
 		OBJECT(MODEL_GOOMBA, 7245, 5334, -10340, 0, -90, 0, 0x00000000, bhvGoomba),
 		OBJECT(MODEL_NONE, 12206, 333, -4702, 0, -95, 0, 0x00000000, bhvGoombaTripletSpawner),
+		MARIO_POS(0x01, 180, 0, 130, 3231),
 		OBJECT(MODEL_RED_COIN, 5877, 1356, -4803, 0, 0, 0, 0x00000000, bhvRedCoin),
 		OBJECT(MODEL_RED_COIN, 9060, 4022, -5869, 0, 0, 0, 0x00000000, bhvRedCoin),
-		MARIO_POS(0x01, 180, 0, 130, 3231),
 		OBJECT(MODEL_YELLOW_COIN, 7768, 1887, -4803, 0, 0, 0, 0x00000000, bhvOneCoin),
 		OBJECT(MODEL_YELLOW_COIN, 13227, 2418, -4139, 0, 0, 0, 0x00000000, bhvOneCoin),
 		OBJECT(MODEL_YELLOW_COIN, 9458, 2149, -4933, 0, 0, 0, 0x00000000, bhvOneCoin),
@@ -124,7 +136,6 @@ const LevelScript level_wf_entry[] = {
 		OBJECT(MODEL_STAR, 3792, 2381, -7915, 0, 180, 0, (20 << 24) | (20 << 16), bhvStar),
 		OBJECT(MODEL_GOOMBA, 3070, 5694, -8305, 0, -32, 0, 0x00000000, bhvCombatEnemy),
 		OBJECT(MODEL_NONE, 0, 130, 3231, 0, 180, 0, 0x000A0000, bhvSpinAirborneWarp),
-		OBJECT(MODEL_AMP, 5599, 3889, -10462, 0, 130, 0, 0x00000000, bhvCirclingAmp),
 		TERRAIN(wf_area_1_collision),
 		MACRO_OBJECTS(wf_area_1_macro_objs),
 		SET_BACKGROUND_MUSIC(0x00, SEQ_HIGHWAY),
@@ -132,6 +143,7 @@ const LevelScript level_wf_entry[] = {
 		/* Fast64 begin persistent block [area commands] */
 		/* Fast64 end persistent block [area commands] */
 	END_AREA(),
+
 	FREE_LEVEL_POOL(),
 	MARIO_POS(0x01, 180, 0, 130, 3231),
 	CALL(0, lvl_init_or_update),

@@ -361,4 +361,8 @@ extern const Gfx white_particle_small_unused_dl[];
 
 #include "LifeBox/geo_header.h"
 
+#include "bug_luigi/geo_header.h"
+
+
+#include "bug_luigi/anim_header.h"
 #endif

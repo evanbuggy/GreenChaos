@@ -47,3 +47,6 @@
 #include "GreenSpring/model.inc.c"
 #include "RingBox/model.inc.c"
 #include "LifeBox/model.inc.c"
+#include "bug_luigi/model.inc.c"
+#include "bug_luigi/anims/data.inc.c"
+#include "bug_luigi/anims/table.inc.c"

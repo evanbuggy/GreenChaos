@@ -202,38 +202,6 @@ void render_combo() {
     }
 }
 
-void render_rank_screen() {
-    // This is so bad pls dont judge me - Buggy
-    switch (gHudDisplay.rank) {
-        case 1:
-            print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(40), HUD_TOP_Y - 80, "COMBO:");
-            break;
-        case 2:
-            print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(40), HUD_TOP_Y - 80, "COMBO:");
-            print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(60), HUD_TOP_Y - 80, "%d", gMarioState->highestCombo);
-            break;
-        case 3:
-            print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(40), HUD_TOP_Y - 80, "COMBO:");
-            print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(60), HUD_TOP_Y - 80, "%d", gMarioState->highestCombo);
-            print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(40), HUD_TOP_Y - 120, "COINS:");
-            break;
-        case 4:
-            print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(40), HUD_TOP_Y - 80, "COMBO:");
-            print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(60), HUD_TOP_Y - 80, "%d", gMarioState->highestCombo);
-            print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(40), HUD_TOP_Y - 120, "COINS:");
-            print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(60), HUD_TOP_Y - 120, "%d", gHudDisplay.coins);
-            break;
-        case 5:
-            print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(40), HUD_TOP_Y - 80, "COMBO:");
-            print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(60), HUD_TOP_Y - 80, "%d", gMarioState->highestCombo);
-            print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(40), HUD_TOP_Y - 120, "COINS:");
-            print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(60), HUD_TOP_Y - 120, "%d", gHudDisplay.coins);
-            // print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(100), HUD_TOP_Y - 160, "RANK GOES HERE");
-            print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(100), HUD_TOP_Y - 160, "%d", gHudDisplay.currentRank);
-            break;
-    }
-}
-
 /**
  * Power meter animation called when there's less than 8 health segments
  * Checks its timer to later change into deemphasizing mode.
@@ -899,6 +867,61 @@ void render_rank_d_01(s32 x, s32 y, s32 width, s32 height, s32 s, s32 t) {
 	gDPSetTexturePersp(gDisplayListHead++, G_TP_PERSP);
 	gDPSetAlphaCompare(gDisplayListHead++, G_AC_NONE);
 	gDPSetRenderMode(gDisplayListHead++, G_RM_AA_ZB_OPA_SURF, G_RM_AA_ZB_OPA_SURF2);
+}
+
+void render_rank_screen() {
+    // This is so bad pls dont judge me - Buggy
+    switch (gHudDisplay.rank) {
+        case 1:
+            print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(40), HUD_TOP_Y - 80, "COMBO:");
+            break;
+        case 2:
+            print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(40), HUD_TOP_Y - 80, "COMBO:");
+            print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(60), HUD_TOP_Y - 80, "%d", gMarioState->highestCombo);
+            break;
+        case 3:
+            print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(40), HUD_TOP_Y - 80, "COMBO:");
+            print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(60), HUD_TOP_Y - 80, "%d", gMarioState->highestCombo);
+            print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(40), HUD_TOP_Y - 120, "COINS:");
+            break;
+        case 4:
+            print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(40), HUD_TOP_Y - 80, "COMBO:");
+            print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(60), HUD_TOP_Y - 80, "%d", gMarioState->highestCombo);
+            print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(40), HUD_TOP_Y - 120, "COINS:");
+            print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(60), HUD_TOP_Y - 120, "%d", gHudDisplay.coins);
+            break;
+        case 5:
+            print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(40), HUD_TOP_Y - 80, "COMBO:");
+            print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(60), HUD_TOP_Y - 80, "%d", gMarioState->highestCombo);
+            print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(40), HUD_TOP_Y - 120, "COINS:");
+            print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(60), HUD_TOP_Y - 120, "%d", gHudDisplay.coins);
+            //print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(100), HUD_TOP_Y - 160, "%d", gHudDisplay.currentRank);
+            print_text(SCREEN_CENTER_X - 10, HUD_TOP_Y - 200, "RANK");
+            switch (gHudDisplay.currentRank) {
+                case 0:
+                    render_rank_d_00(SCREEN_CENTER_X - 16, 150, 32, 64, 0, 0);
+                    render_rank_d_01(SCREEN_CENTER_X + 16, 150, 32, 64, 0, 0);
+                    break;
+                case 1:
+                    render_rank_c_00(SCREEN_CENTER_X - 16, 150, 32, 64, 0, 0);
+                    render_rank_c_01(SCREEN_CENTER_X + 16, 150, 32, 64, 0, 0);
+                    break;
+                case 2:
+                    render_rank_b_00(SCREEN_CENTER_X - 16, 150, 32, 64, 0, 0);
+                    render_rank_b_01(SCREEN_CENTER_X + 16, 150, 32, 64, 0, 0);
+                    break;
+                case 3:
+                    render_rank_a_00(SCREEN_CENTER_X - 16, 150, 32, 64, 0, 0);
+                    render_rank_a_01(SCREEN_CENTER_X + 16, 150, 32, 64, 0, 0);
+                    break;
+                case 4:
+                    // render_rank_s_00(100, 50, 32, 64, 1, 1);
+                    // render_rank_s_01(132, 50, 32, 64, 1, 1);
+                    print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(40), HUD_TOP_Y - 160, "S RANK!!!");
+                    break;
+            }
+            break;
+    }
 }
 
 void render_hud(void) {

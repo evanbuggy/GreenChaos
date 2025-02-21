@@ -316,6 +316,8 @@ void print_course_number(void) {
 
 #define ACT_NAME_X 163
 
+
+
 /**
  * Print act selector strings, some with special checks.
  */
