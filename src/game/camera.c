@@ -8639,6 +8639,57 @@ void cutscene_dialog(struct Camera *c) {
     }
 }
 
+void cutscene_enter_painting(struct Camera *c);
+
+void cutscene_luigi_init(struct Camera *c) {
+    s16 pitch, yaw;
+    f32 dist;
+    Vec3f origin;
+    origin[0] = 1400;
+    origin[1] = 800;
+    origin[2] = 1000;
+    vec3_copy(c->pos, origin);
+    vec3f_get_dist_and_angle(sMarioCamState->pos, c->pos, &dist, &pitch, &yaw);
+    approach_s16_asymptotic_bool(&yaw, c->yaw, -8);
+    vec3f_set_dist_and_angle(sMarioCamState->pos, c->pos, dist, pitch, yaw);
+}
+
+void cutscene_shot_luigi_one(struct Camera *c) {
+    sStatusFlags |= CAM_FLAG_SMOOTH_MOVEMENT;
+
+    s16 pitch, yaw;
+    f32 dist;
+
+    vec3f_get_dist_and_angle(sMarioCamState->pos, c->pos, &dist, &pitch, &yaw);
+    approach_s16_asymptotic_bool(&yaw, c->yaw, -500);
+    vec3f_set_dist_and_angle(sMarioCamState->pos, c->pos, dist, pitch, yaw);
+}
+
+/**
+ * Cutscene that plays at the start of the game to introduce Luigi.
+ */
+void cutscene_dialog_luigi(struct Camera *c) {
+    gHudDisplay.flags = HUD_DISPLAY_NONE;
+    gMarioState->action = ACT_WAITING_FOR_DIALOG;
+    cutscene_event(cutscene_luigi_init, c, 0, 0);
+    cutscene_event(cutscene_shot_luigi_one, c, 1, 100);
+    // cutscene_event(cutscene_dialog_start, c, 0, 0);
+    // cutscene_event(cutscene_dialog_move_mario_shoulder, c, 0, -1);
+    cutscene_event(cutscene_dialog_create_dialog_box, c, 100, 100);
+
+    if (gDialogResponse != DIALOG_RESPONSE_NONE) {
+        sCutsceneDialogResponse = gDialogResponse;
+    }
+
+    if ((get_dialog_id() == DIALOG_NONE) && (sCutsceneVars[8].angle[0] != 0)) {
+        if (c->cutscene != CUTSCENE_RACE_DIALOG) {
+            sCutsceneDialogResponse = DIALOG_RESPONSE_NOT_DEFINED;
+        }
+
+        cutscene_event(cutscene_enter_painting, c, 101, 1000);
+    }
+}
+
 /**
  * Sets the CAM_FLAG_UNUSED_CUTSCENE_ACTIVE flag, which does nothing.
  */
@@ -10355,6 +10406,15 @@ struct Cutscene sCutsceneDialog[] = {
 };
 
 /**
+ * Cutscene that plays with Luigi at the start of the game.
+ */
+struct Cutscene sCutsceneDialogLuigi[] = {
+    { cutscene_dialog_luigi, CUTSCENE_LOOP },
+    { cutscene_dialog_set_flag, 12 },
+    { cutscene_dialog_end, 0 }
+};
+
+/**
  * Cutscene that plays when Mario reads a sign or message.
  */
 struct Cutscene sCutsceneReadMessage[] = {
@@ -10824,6 +10884,7 @@ void play_cutscene(struct Camera *c) {
         CUTSCENE(CUTSCENE_RACE_DIALOG,          sCutsceneDialog)
         CUTSCENE(CUTSCENE_ENTER_PYRAMID_TOP,    sCutsceneEnterPyramidTop)
         CUTSCENE(CUTSCENE_SSL_PYRAMID_EXPLODE,  sCutscenePyramidTopExplode)
+        CUTSCENE(CUTSCENE_START_LUIGI,          sCutsceneDialogLuigi)
     }
 
 #undef CUTSCENE

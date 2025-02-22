@@ -20,6 +20,7 @@ const GeoLayout castle_courtyard_area_1_geo[] = {
 		GEO_TRANSLATE_NODE_WITH_DL(LAYER_OPAQUE, 286, 97, -58, castle_courtyard_dl_Cube_014_mesh_layer_1),
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, 276, 520, -298, 15, 0, 0, castle_courtyard_dl_Cube_015_mesh_layer_1),
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, 358, 212, 152, 0, -60, 0, castle_courtyard_dl_Cube_016_mesh_layer_1),
+		GEO_TRANSLATE_NODE_WITH_DL(LAYER_OPAQUE, -1385, -503, 0, castle_courtyard_dl_Cube_017_mesh_layer_1),
 		GEO_TRANSLATE_NODE_WITH_DL(LAYER_OPAQUE, -4, 293, 260, castle_courtyard_dl_Cylinder_mesh_layer_1),
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, -4, 208, 260, 0, 0, -180, castle_courtyard_dl_Cylinder_001_mesh_layer_1),
 		GEO_TRANSLATE_NODE_WITH_DL(LAYER_OPAQUE, -41, 217, 231, castle_courtyard_dl_Cylinder_002_mesh_layer_1),

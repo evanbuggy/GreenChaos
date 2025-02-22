@@ -4268,6 +4268,51 @@ Gfx castle_courtyard_dl_Cube_016_mesh_layer_1_tri_1[] = {
 	gsSPEndDisplayList(),
 };
 
+Vtx castle_courtyard_dl_Cube_017_mesh_layer_1_vtx_0[24] = {
+	{{ {-194, -194, 194}, 0, {368, 1008}, {127, 0, 0, 255} }},
+	{{ {-194, -194, -194}, 0, {368, 752}, {127, 0, 0, 255} }},
+	{{ {-194, 194, -194}, 0, {624, 752}, {127, 0, 0, 255} }},
+	{{ {-194, 194, 194}, 0, {624, 1008}, {127, 0, 0, 255} }},
+	{{ {-194, -194, -194}, 0, {368, 752}, {0, 0, 127, 255} }},
+	{{ {194, -194, -194}, 0, {368, 496}, {0, 0, 127, 255} }},
+	{{ {194, 194, -194}, 0, {624, 496}, {0, 0, 127, 255} }},
+	{{ {-194, 194, -194}, 0, {624, 752}, {0, 0, 127, 255} }},
+	{{ {194, -194, -194}, 0, {368, 496}, {129, 0, 0, 255} }},
+	{{ {194, -194, 194}, 0, {368, 240}, {129, 0, 0, 255} }},
+	{{ {194, 194, 194}, 0, {624, 240}, {129, 0, 0, 255} }},
+	{{ {194, 194, -194}, 0, {624, 496}, {129, 0, 0, 255} }},
+	{{ {194, -194, 194}, 0, {368, 240}, {0, 0, 129, 255} }},
+	{{ {-194, -194, 194}, 0, {368, -16}, {0, 0, 129, 255} }},
+	{{ {-194, 194, 194}, 0, {624, -16}, {0, 0, 129, 255} }},
+	{{ {194, 194, 194}, 0, {624, 240}, {0, 0, 129, 255} }},
+	{{ {-194, -194, -194}, 0, {112, 496}, {0, 127, 0, 255} }},
+	{{ {-194, -194, 194}, 0, {112, 240}, {0, 127, 0, 255} }},
+	{{ {194, -194, 194}, 0, {368, 240}, {0, 127, 0, 255} }},
+	{{ {194, -194, -194}, 0, {368, 496}, {0, 127, 0, 255} }},
+	{{ {194, 194, -194}, 0, {624, 496}, {0, 129, 0, 255} }},
+	{{ {194, 194, 194}, 0, {624, 240}, {0, 129, 0, 255} }},
+	{{ {-194, 194, 194}, 0, {880, 240}, {0, 129, 0, 255} }},
+	{{ {-194, 194, -194}, 0, {880, 496}, {0, 129, 0, 255} }},
+};
+
+Gfx castle_courtyard_dl_Cube_017_mesh_layer_1_tri_0[] = {
+	gsSPVertex(castle_courtyard_dl_Cube_017_mesh_layer_1_vtx_0 + 0, 16, 0),
+	gsSP1Triangle(0, 1, 2, 0),
+	gsSP1Triangle(0, 2, 3, 0),
+	gsSP1Triangle(4, 5, 6, 0),
+	gsSP1Triangle(4, 6, 7, 0),
+	gsSP1Triangle(8, 9, 10, 0),
+	gsSP1Triangle(8, 10, 11, 0),
+	gsSP1Triangle(12, 13, 14, 0),
+	gsSP1Triangle(12, 14, 15, 0),
+	gsSPVertex(castle_courtyard_dl_Cube_017_mesh_layer_1_vtx_0 + 16, 8, 0),
+	gsSP1Triangle(0, 1, 2, 0),
+	gsSP1Triangle(0, 2, 3, 0),
+	gsSP1Triangle(4, 5, 6, 0),
+	gsSP1Triangle(4, 6, 7, 0),
+	gsSPEndDisplayList(),
+};
+
 Vtx castle_courtyard_dl_Cylinder_mesh_layer_1_vtx_0[32] = {
 	{{ {0, -53, -53}, 0, {1008, 496}, {71, 41, 159, 255} }},
 	{{ {0, 7, -27}, 0, {1008, -16}, {71, 41, 159, 255} }},
@@ -5318,6 +5363,13 @@ Gfx castle_courtyard_dl_Cube_016_mesh_layer_1[] = {
 	gsSPDisplayList(mat_revert_castle_courtyard_dl_laptop_screen),
 	gsSPDisplayList(mat_castle_courtyard_dl_tv_frame),
 	gsSPDisplayList(castle_courtyard_dl_Cube_016_mesh_layer_1_tri_1),
+	gsSPDisplayList(mat_revert_castle_courtyard_dl_tv_frame),
+	gsSPEndDisplayList(),
+};
+
+Gfx castle_courtyard_dl_Cube_017_mesh_layer_1[] = {
+	gsSPDisplayList(mat_castle_courtyard_dl_tv_frame),
+	gsSPDisplayList(castle_courtyard_dl_Cube_017_mesh_layer_1_tri_0),
 	gsSPDisplayList(mat_revert_castle_courtyard_dl_tv_frame),
 	gsSPEndDisplayList(),
 };
