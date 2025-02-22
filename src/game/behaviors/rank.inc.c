@@ -20,14 +20,6 @@ u32 timeDRank;
 u32 time[5] = {0, 0, 0, 0, 0};
 
 void bhv_rank_init(void) {
-    // Coin Requirements per rank:
-    // Each level will have a minimum of 30 coins needed for at least an S rank.
-    coinSRank = (o->oBehParams2ndByte) + 30;
-    coinDRank = coinSRank / 5;
-    coinCRank = coinDRank * 2;
-    coinBRank = coinDRank * 3;
-    coinARank = coinDRank * 4;
-
     // Combo Requirements per rank:
     // The param is doubled so when you are using a rank object, enter half the
     // highest combo you want for an S rank for the 2nd param.
@@ -36,6 +28,15 @@ void bhv_rank_init(void) {
     comboCRank = comboDRank * 2;
     comboBRank = comboDRank * 3;
     comboARank = comboDRank * 4;
+
+    // Coin Requirements per rank:
+    // The param is doubled so when you are using a rank object, enter half the
+    // highest ring count you want for an S rank for the 2nd param.
+    coinSRank = (o->oBehParams2ndByte) * 2;
+    coinDRank = coinSRank / 5;
+    coinCRank = coinDRank * 2;
+    coinBRank = coinDRank * 3;
+    coinARank = coinDRank * 4;
 
     // Timer Requirements per rank:
     // The param is multiplied by 100 so when you are using the rank object enter
@@ -84,9 +85,15 @@ void bhv_rank_init(void) {
     osSyncPrintf("%d", timeBRank);
     osSyncPrintf("%d", timeARank);
     osSyncPrintf("%d", timeSRank);
+
+    osSyncPrintf("DEBUG: numCoins, highestCombo and rank");
+    osSyncPrintf("%d", gMarioState->numCoins);
+    osSyncPrintf("%d", gMarioState->highestCombo);
+    osSyncPrintf("%d", gMarioState->rank);
 }
 
 void bhv_rank_loop(void) {
+    osSyncPrintf("%d", gHudDisplay.timer);
     for (u8 i = 0; i < 5; i++) {
         if (gMarioState->numCoins < coin[i]) {
             gMarioState->rank = i;
@@ -98,16 +105,7 @@ void bhv_rank_loop(void) {
                 break;
             }
             else {
-                u32 temp = 0;
-                if (gMarioState->stopTime > 0) {
-                    temp = gMarioState->stopTime;
-                }
-                else {
-                    temp = gGlobalTimer;
-                }
-                osSyncPrintf("%d", temp);
-
-                if (temp > time[i]) {
+                if (gHudDisplay.timer > time[i]) {
                     gMarioState->rank = i;
                     break;
                 }

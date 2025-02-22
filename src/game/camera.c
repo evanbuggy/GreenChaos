@@ -8673,9 +8673,10 @@ void cutscene_dialog_luigi(struct Camera *c) {
     gMarioState->action = ACT_WAITING_FOR_DIALOG;
     cutscene_event(cutscene_luigi_init, c, 0, 0);
     cutscene_event(cutscene_shot_luigi_one, c, 1, 100);
+    cutscene_event(cutscene_enter_painting, c, 450, 700);
     // cutscene_event(cutscene_dialog_start, c, 0, 0);
-    // cutscene_event(cutscene_dialog_move_mario_shoulder, c, 0, -1);
-    cutscene_event(cutscene_dialog_create_dialog_box, c, 100, 100);
+    cutscene_event(cutscene_dialog_move_mario_shoulder, c, 701, 740);
+    cutscene_event(cutscene_dialog_create_dialog_box, c, 741, 742);
 
     if (gDialogResponse != DIALOG_RESPONSE_NONE) {
         sCutsceneDialogResponse = gDialogResponse;
@@ -8685,8 +8686,7 @@ void cutscene_dialog_luigi(struct Camera *c) {
         if (c->cutscene != CUTSCENE_RACE_DIALOG) {
             sCutsceneDialogResponse = DIALOG_RESPONSE_NOT_DEFINED;
         }
-
-        cutscene_event(cutscene_enter_painting, c, 101, 1000);
+        level_trigger_warp(gMarioState, WARP_OP_STAR_EXIT);
     }
 }
 

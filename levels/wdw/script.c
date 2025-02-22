@@ -13,10 +13,6 @@
 
 #include "actors/common1.h"
 #include "actors/group0.h"
-
-/* Fast64 begin persistent block [includes] */
-/* Fast64 end persistent block [includes] */
-
 #include "make_const_nonconst.h"
 #include "levels/wdw/header.h"
 
@@ -27,7 +23,7 @@ const LevelScript level_wdw_entry[] = {
 	INIT_LEVEL(),
 	LOAD_YAY0(0x07, _wdw_segment_7SegmentRomStart, _wdw_segment_7SegmentRomEnd), 
 	LOAD_YAY0_TEXTURE(0x09, _grass_yay0SegmentRomStart, _grass_yay0SegmentRomEnd), 
-	LOAD_YAY0(0x0A, _wdw_skybox_yay0SegmentRomStart, _wdw_skybox_yay0SegmentRomEnd), 
+	LOAD_YAY0(0x0A, _cloud_floor_skybox_yay0SegmentRomStart, _cloud_floor_skybox_yay0SegmentRomEnd), 
 	LOAD_YAY0(0x05, _group1_yay0SegmentRomStart, _group1_yay0SegmentRomEnd), 
 	LOAD_RAW(0x0C, _group1_geoSegmentRomStart, _group1_geoSegmentRomEnd), 
 	LOAD_YAY0(0x06, _group13_yay0SegmentRomStart, _group13_yay0SegmentRomEnd), 
@@ -37,6 +33,7 @@ const LevelScript level_wdw_entry[] = {
 	LOAD_MIO0(0x7, _wdw_segment_7SegmentRomStart, _wdw_segment_7SegmentRomEnd), 
 	LOAD_MIO0(0xb, _effect_mio0SegmentRomStart, _effect_mio0SegmentRomEnd), 
 	LOAD_MIO0(0xa, _cloud_floor_skybox_mio0SegmentRomStart, _cloud_floor_skybox_mio0SegmentRomEnd), 
+	LOAD_YAY0(0xb, _effect_yay0SegmentRomStart, _effect_yay0SegmentRomEnd), 
 	ALLOC_LEVEL_POOL(),
 	MARIO(MODEL_MARIO, 0x00000001, bhvMario), 
 	JUMP_LINK(script_func_global_1), 
@@ -64,7 +61,7 @@ const LevelScript level_wdw_entry[] = {
 	LOAD_MODEL_FROM_GEO(MODEL_LUIGI_DOLL, luigi_doll_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_LUIGI_DOLL, luigi_doll_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_LUIGI_DOLL, luigi_doll_geo), 
-
+	LOAD_MODEL_FROM_GEO(MODEL_LUIGI_DOLL, luigi_doll_geo), 
 	/* Fast64 begin persistent block [level commands] */
 	LOAD_MODEL_FROM_GEO(MODEL_LUIGI_DOLL, luigi_doll_geo),
 	/* Fast64 end persistent block [level commands] */
@@ -79,7 +76,6 @@ const LevelScript level_wdw_entry[] = {
 		OBJECT(MODEL_NONE, 5456, -681, 10230, 0, 0, 0, 0x00000000, bhvCoinFormation),
 		OBJECT(MODEL_LUIGI_DOLL, 5419, -1948, 7351, 0, 180, 0, (0 << 16), bhvCombatEnemy),
 		OBJECT(MODEL_WOODEN_SIGNPOST, 837, 447, 4224, 0, -35, 0, (61 << 16), bhvMessagePanel),
-		MARIO_POS(0x01, 180, 0, 583, 4760),
 		OBJECT(MODEL_RED_COIN, 41, 1374, 2177, 0, 0, 0, (0 << 16), bhvRedCoin),
 		OBJECT(MODEL_RED_COIN, -783, 1951, -8597, 0, 0, 0, (0 << 16), bhvRedCoin),
 		OBJECT(MODEL_RED_COIN, 3544, 281, -7051, 0, 0, 0, (0 << 16), bhvRedCoin),
@@ -89,7 +85,8 @@ const LevelScript level_wdw_entry[] = {
 		OBJECT(MODEL_RED_COIN, 8273, -691, 12318, 0, 0, 0, (0 << 16), bhvRedCoin),
 		OBJECT(MODEL_RED_COIN, 10156, -1621, -1720, 0, 0, 0, (0 << 16), bhvRedCoin),
 		OBJECT(MODEL_NONE, 1013, 716, 5253, 0, 90, 0, 0x00000000, bhvHiddenRedCoinStar),
-		OBJECT(MODEL_NONE, -2105, 109, 9039, 0, 0, 0, (0 << 24) | (0 << 16) | (60 << 8), bhvRank),
+		MARIO_POS(0x01, 180, 0, 583, 4760),
+		OBJECT(MODEL_NONE, -2105, 109, 9039, 0, 0, 0, (5 << 24) | (15 << 16) | (60 << 8), bhvRank),
 		OBJECT(MODEL_WOODEN_SIGNPOST, -100, 131, -6500, 0, 0, 0, (61 << 16), bhvMessagePanel),
 		OBJECT(MODEL_WOODEN_SIGNPOST, 4617, -1064, -2848, 0, 180, 0, (61 << 16), bhvMessagePanel),
 		OBJECT(MODEL_WOODEN_SIGNPOST, 4617, -1921, 5832, 0, 180, 0, (61 << 16), bhvMessagePanel),
@@ -108,7 +105,6 @@ const LevelScript level_wdw_entry[] = {
 		/* Fast64 begin persistent block [area commands] */
 		/* Fast64 end persistent block [area commands] */
 	END_AREA(),
-
 	FREE_LEVEL_POOL(),
 	MARIO_POS(0x01, 180, 0, 583, 4760),
 	CALL(0, lvl_init_or_update),

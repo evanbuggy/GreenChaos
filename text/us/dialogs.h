@@ -767,15 +767,32 @@ The only problem:\n\
 It is too heavy to\n\
 swim with."))
 
-DEFINE_DIALOG(DIALOG_063, 1, 5, 30, 200, _("\
-The Vanish Cap is inside\n\
-the blue block. Mr. I.\n\
-will be surprised, since\n\
-you'll be invisible when\n\
-you wear it!\n\
-Even the Big Boo will be\n\
-fooled--and you can walk\n\
-through secret walls, too."))
+DEFINE_DIALOG(DIALOG_063, 1, 5, 150, 200, _("\
+With the Casino money\n\
+dried up, Luigi has to\n\
+live frugally in a damp\n\
+apartment block. A rough\n\
+time for our green hero!\n\
+After a breakup with\n\
+Daisy and years of being\n\
+overshadowed by his\n\
+brother, Luigi turns to\n\
+the Chaos Emeralds.\n\
+Which, he obviously just\n\
+has one with a moustache\n\
+lying around. It was\n\
+gathering dust not being\n\
+put to use.\n\
+It is now up to his older\n\
+brother to stop his\n\
+destructive rampage!\n\
+To do this, Mario has\n\
+learned some new tricks.\n\
+With Shadow's help,\n\
+Mario has learned all\n\
+he needs to know to\n\
+stop his younger brother's\n\
+Green Chaos."))
 
 DEFINE_DIALOG(DIALOG_064, 1, 5, 30, 200, _("\
 When you put on the Wing\n\

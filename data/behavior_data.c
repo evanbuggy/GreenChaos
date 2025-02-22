@@ -6247,3 +6247,15 @@ const BehaviorScript bhvCutsceneLuigi[] = {
         CALL_NATIVE(bhv_cutscene_luigi_loop),
     END_LOOP(),
 };
+
+// Buggy 25/2/22: bhv script for an emerald in the luigi cutscene
+const BehaviorScript bhvCutsceneEmerald[] = {
+    BEGIN(OBJ_LIST_PUSHABLE),
+    OR_INT(oFlags, (OBJ_FLAG_COMPUTE_ANGLE_TO_MARIO | OBJ_FLAG_COMPUTE_DIST_TO_MARIO | OBJ_FLAG_SET_FACE_YAW_TO_MOVE_YAW | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
+    SET_OBJ_PHYSICS(/*Wall hitbox radius*/ 40, /*Gravity*/ -300, /*Bounciness*/ -50, /*Drag strength*/ 1000, /*Friction*/ 1000, /*Buoyancy*/ 0, /*Unused*/ 0, 0),
+    SET_FLOAT(oGraphYOffset, 50),
+    BILLBOARD(),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_cutscene_emerald_loop),
+    END_LOOP(),
+};

@@ -13,10 +13,6 @@
 
 #include "actors/common1.h"
 #include "actors/group2.h"
-
-/* Fast64 begin persistent block [includes] */
-/* Fast64 end persistent block [includes] */
-
 #include "make_const_nonconst.h"
 #include "levels/lll/header.h"
 
@@ -80,7 +76,11 @@ const LevelScript level_lll_entry[] = {
 	LOAD_MODEL_FROM_GEO(MODEL_LLL_FALLING_PLATFORM, lll_geo_000B80), 
 	LOAD_MODEL_FROM_GEO(MODEL_LLL_LARGE_FALLING_PLATFORM, lll_geo_000B98), 
 	LOAD_MODEL_FROM_GEO(MODEL_LLL_VOLCANO_FALLING_TRAP, lll_geo_000EA8), 
-
+	LOAD_MODEL_FROM_GEO(MODEL_BLARGG_NEW, blargg_new_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_BROTHER_LUIGI_HEAD, luigi_head_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_WHOMP_LUIGI, whomp_boss_luigi_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_BULLY_LUIGI, luigi_bully_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_GOOMBA_LUIGI_LLL, goomba_luigi_LLL_geo), 
 	/* Fast64 begin persistent block [level commands] */
 	LOAD_MODEL_FROM_GEO(MODEL_BLARGG_NEW, blargg_new_geo),
 	LOAD_MODEL_FROM_GEO(MODEL_BROTHER_LUIGI_HEAD, luigi_head_geo),
@@ -95,6 +95,15 @@ const LevelScript level_lll_entry[] = {
 		WARP_NODE(0xF1, LEVEL_CASTLE_GROUNDS, 0x01, 0x03, WARP_NO_CHECKPOINT),
 		WARP_NODE(0x01, LEVEL_LLL, 0x01, 0x02, WARP_NO_CHECKPOINT),
 		WARP_NODE(0xF3, LEVEL_LLL, 0x02, 0x0A, WARP_NO_CHECKPOINT),
+		OBJECT(MODEL_NONE, -19328, 1361, -28209, 0, 0, 0, (20 << 24) | (20 << 16) | (20 << 8), bhvRank),
+		MARIO_POS(0x01, 90, -4897, 3650, -18517),
+		OBJECT(MODEL_GREEN_SPRING, -13626, -4984, 5265, 0, -90, 0, (20 << 24) | (20 << 16), bhvSpring),
+		OBJECT(MODEL_GREEN_SPRING, -12837, -7207, 9008, 0, 0, 0, (10 << 24) | (10 << 16), bhvSpring),
+		OBJECT(MODEL_GREEN_SPRING, -10966, -8578, 8122, 0, -90, 0, (5 << 24), bhvSpring),
+		OBJECT(MODEL_GREEN_SPRING, -13873, -7207, 6985, 0, 180, 0, (10 << 24), bhvSpring),
+		OBJECT(MODEL_GREEN_SPRING, -4200, -1597, -3414, 0, -140, 0, (20 << 24) | (10 << 16), bhvSpring),
+		OBJECT(MODEL_STAR, 4728, 1239, -2578, 0, 0, 0, 0x00000000, bhvStar),
+		OBJECT(MODEL_NONE, -4897, 3650, -18517, 0, 90, 0, 0x000A0000, bhvSpinAirborneWarp),
 		OBJECT(MODEL_BLARGG_NEW, 1047, -153, -4228, 0, 0, 0, 0x00000000, bhvBlargg),
 		OBJECT(MODEL_BLARGG_NEW, 161, 3362, -15702, 0, 0, 0, 0x00000000, bhvBlargg),
 		OBJECT(MODEL_BLARGG_NEW, 161, 3442, -19509, 0, 0, 0, 0x00000000, bhvBlargg),
@@ -159,7 +168,6 @@ const LevelScript level_lll_entry[] = {
 		OBJECT(MODEL_BULLY_LUIGI , 20238, -6978, 707, 0, 0, 0, 0x00000000, bhvSmallBully),
 		OBJECT(MODEL_BULLY_LUIGI , 19385, -6978, 7354, 0, 0, 0, 0x00000000, bhvSmallBully),
 		OBJECT(MODEL_BULLY_LUIGI , 19091, -6978, 6791, 0, 0, 0, 0x00000000, bhvSmallBully),
-		MARIO_POS(0x01, 90, -4897, 3650, -18517),
 		OBJECT(MODEL_LIFE_BOX, 4251, 4954, -16526, 0, 90, 0, (7 << 16) | (7), bhvExclamationBox),
 		OBJECT(MODEL_BROTHER_LUIGI_HEAD, 399, 4879, -22536, 0, 0, 0, 0x00000000, bhvDisplayObj),
 		OBJECT(MODEL_NONE, 6143, 1305, -5072, 0, 0, -14, (0x02 << 16), bhvWarpPipe),
@@ -171,13 +179,6 @@ const LevelScript level_lll_entry[] = {
 		OBJECT(MODEL_RING_BOX, -10852, -8990, 4125, 0, -90, 0, (6 << 24) | (6 << 16), bhvExclamationBox),
 		OBJECT(MODEL_RING_BOX, -10654, -8990, 4125, 0, -90, 0, (6 << 24) | (6 << 16), bhvExclamationBox),
 		OBJECT(MODEL_RING_BOX, -10454, -8990, 4125, 0, -90, 0, (6 << 24) | (6 << 16), bhvExclamationBox),
-		OBJECT(MODEL_GREEN_SPRING, -13626, -4984, 5265, 0, -90, 0, (20 << 24) | (20 << 16), bhvSpring),
-		OBJECT(MODEL_GREEN_SPRING, -12837, -7207, 9008, 0, 0, 0, (10 << 24) | (10 << 16), bhvSpring),
-		OBJECT(MODEL_GREEN_SPRING, -10966, -8578, 8122, 0, -90, 0, (5 << 24), bhvSpring),
-		OBJECT(MODEL_GREEN_SPRING, -13873, -7207, 6985, 0, 180, 0, (10 << 24), bhvSpring),
-		OBJECT(MODEL_GREEN_SPRING, -4200, -1597, -3414, 0, -140, 0, (20 << 24) | (10 << 16), bhvSpring),
-		OBJECT(MODEL_STAR, 4728, 1239, -2578, 0, 0, 0, 0x00000000, bhvStar),
-		OBJECT(MODEL_NONE, -4897, 3650, -18517, 0, 90, 0, 0x000A0000, bhvSpinAirborneWarp),
 		OBJECT(MODEL_NONE, -5125, -2737, -3419, 0, 0, 0, (10 << 24) | (0x01 << 16), bhvWarp),
 		TERRAIN(lll_area_1_collision),
 		MACRO_OBJECTS(lll_area_1_macro_objs),
@@ -186,7 +187,6 @@ const LevelScript level_lll_entry[] = {
 		/* Fast64 begin persistent block [area commands] */
 		/* Fast64 end persistent block [area commands] */
 	END_AREA(),
-
 	AREA(2, lll_area_2),
 		WARP_NODE(0x0A, LEVEL_LLL, 0x02, 0x0A, WARP_NO_CHECKPOINT),
 		WARP_NODE(0xF0, LEVEL_CASTLE_GROUNDS, 0x01, 0x02, WARP_NO_CHECKPOINT),
@@ -200,7 +200,6 @@ const LevelScript level_lll_entry[] = {
 		/* Fast64 begin persistent block [area commands] */
 		/* Fast64 end persistent block [area commands] */
 	END_AREA(),
-
 	FREE_LEVEL_POOL(),
 	MARIO_POS(0x01, 90, -4897, 3650, -18517),
 	CALL(0, lvl_init_or_update),

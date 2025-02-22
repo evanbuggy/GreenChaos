@@ -456,8 +456,6 @@ struct MarioState {
     u8 comboTimer;
     // Stores Mario's current rank
     u8 rank;
-    // Stores the time for ranking when Mario collects a star
-    u32 stopTime;
     // -- HackerSM64 MarioState fields begin --
 #ifdef BREATH_METER
              s16 breath;

@@ -30,7 +30,7 @@ void bhv_electro_luigi_loop(void) {
         obj_act_spin_sawed();
     }
 
-    switch (gGlobalTimer % 200) {
+    switch (o->oTimer % 200) {
         case 30:
             cur_obj_play_sound_2(SOUND_GENERAL_WING_FLAP);
             cur_obj_init_animation(1);

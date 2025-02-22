@@ -1,2 +1,5 @@
 #include "anim__194___First_person.inc.c"
 #include "anim__135___Sleep_laying.inc.c"
+#include "anim__201___Wake_up_from_laying.inc.c"
+#include "anim__122___Shocked.inc.c"
+#include "anim__94___Missing_cap.inc.c"

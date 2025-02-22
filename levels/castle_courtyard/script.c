@@ -40,6 +40,8 @@ const LevelScript level_castle_courtyard_entry[] = {
 	LOAD_MODEL_FROM_GEO(MODEL_CUTSCENE_LUIGI, cutscene_luigi_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_CUTSCENE_LUIGI, cutscene_luigi_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_CUTSCENE_LUIGI, cutscene_luigi_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_CUTSCENE_LUIGI, cutscene_luigi_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_CUTSCENE_LUIGI, cutscene_luigi_geo), 
 	/* Fast64 begin persistent block [level commands] */
 	LOAD_MODEL_FROM_GEO(MODEL_CUTSCENE_LUIGI, cutscene_luigi_geo),
 	/* Fast64 end persistent block [level commands] */
@@ -48,7 +50,7 @@ const LevelScript level_castle_courtyard_entry[] = {
 		WARP_NODE(0x0A, LEVEL_BOB, 0x01, 0x0A, WARP_NO_CHECKPOINT),
 		WARP_NODE(0xF0, LEVEL_BOB, 0x01, 0x0A, WARP_NO_CHECKPOINT),
 		WARP_NODE(0xF1, LEVEL_BOB, 0x01, 0x0A, WARP_NO_CHECKPOINT),
-		OBJECT(MODEL_CUTSCENE_LUIGI, 243, 251, 153, 0, 0, 0, 0x00000000, bhvCutsceneLuigi),
+		OBJECT(MODEL_CUTSCENE_LUIGI, 243, 251, 99, 0, 180, 0, 0x00000000, bhvCutsceneLuigi),
 		MARIO_POS(0x01, 0, -1402, -511, -8),
 		OBJECT(MODEL_NONE, -1402, -511, -8, 0, 0, 0, 0x000A0000, bhvSpinAirborneWarp),
 		TERRAIN(castle_courtyard_area_1_collision),

@@ -892,3 +892,4 @@ void obj_spit_fire(s16 relativePosX, s16 relativePosY, s16 relativePosZ, f32 sca
 #include "behaviors/spring.inc.c"
 #include "behaviors/bug_luigi.inc.c"
 #include "behaviors/cutscene_luigi.inc.c"
+#include "behaviors/cutscene_emerald.inc.c"

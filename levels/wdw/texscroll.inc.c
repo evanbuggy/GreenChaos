@@ -1,6 +1,6 @@
 void scroll_wdw_dl_Plane_mesh_layer_5_vtx_0() {
 	int i = 0;
-	int count = 27;
+	int count = 25;
 	int height = 32 * 0x20;
 
 	static int currentY = 0;
@@ -21,7 +21,7 @@ void scroll_wdw_dl_Plane_mesh_layer_5_vtx_0() {
 
 void scroll_wdw_dl_WaterInside_mesh_layer_5_vtx_0() {
 	int i = 0;
-	int count = 25;
+	int count = 18;
 	int height = 32 * 0x20;
 
 	static int currentY = 0;
@@ -42,7 +42,7 @@ void scroll_wdw_dl_WaterInside_mesh_layer_5_vtx_0() {
 
 void scroll_wdw_dl_WaterInside_001_mesh_layer_5_vtx_0() {
 	int i = 0;
-	int count = 25;
+	int count = 18;
 	int height = 32 * 0x20;
 
 	static int currentY = 0;

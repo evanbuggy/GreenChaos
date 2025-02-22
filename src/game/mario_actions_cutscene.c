@@ -593,7 +593,6 @@ void general_star_dance_handler(struct MarioState *m, s32 isInWater) {
     if (m->actionState == ACT_STATE_STAR_DANCE_CUTSCENE) {
         switch (++m->actionTimer) {
             case 1:
-                m->stopTime = gGlobalTimer;
                 celebStar = spawn_object(m->marioObj, MODEL_NONE, bhvCelebrationStar);
 #ifdef STAR_DANCE_USES_STARS_MODEL
                 obj_set_model(celebStar, gStarModelLastCollected);
