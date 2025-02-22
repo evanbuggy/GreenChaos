@@ -1,19 +1,70 @@
+Lights1 castle_courtyard_dl_window_lights = gdSPDefLights1(
+	0x7F, 0x7F, 0x7F,
+	0xFF, 0xFF, 0xFF, 0x49, 0x49, 0x49);
 
+Lights1 castle_courtyard_dl_duvet_lights = gdSPDefLights1(
+	0x7F, 0x7F, 0x7F,
+	0xFF, 0xFF, 0xFF, 0x49, 0x49, 0x49);
 
+Lights1 castle_courtyard_dl_wood_frame_lights = gdSPDefLights1(
+	0x7F, 0x7F, 0x7F,
+	0xFF, 0xFF, 0xFF, 0x49, 0x49, 0x49);
 
+Lights1 castle_courtyard_dl_pillow_lights = gdSPDefLights1(
+	0x7F, 0x7F, 0x7F,
+	0xFF, 0xFF, 0xFF, 0x49, 0x49, 0x49);
 
+Lights1 castle_courtyard_dl_wardrobe_lights = gdSPDefLights1(
+	0x7F, 0x7F, 0x7F,
+	0xFF, 0xFF, 0xFF, 0x49, 0x49, 0x49);
 
+Lights1 castle_courtyard_dl_tv_frame_lights = gdSPDefLights1(
+	0x0, 0x0, 0x0,
+	0x0, 0x0, 0x0, 0x49, 0x49, 0x49);
 
+Lights1 castle_courtyard_dl_couch_seat_lights = gdSPDefLights1(
+	0x7F, 0x7F, 0x7F,
+	0xFF, 0xFF, 0xFF, 0x49, 0x49, 0x49);
 
+Lights1 castle_courtyard_dl_couch_lights = gdSPDefLights1(
+	0x7F, 0x7F, 0x7F,
+	0xFF, 0xFF, 0xFF, 0x49, 0x49, 0x49);
 
+Lights1 castle_courtyard_dl_carpet_lights = gdSPDefLights1(
+	0x7F, 0x7F, 0x7F,
+	0xFF, 0xFF, 0xFF, 0x49, 0x49, 0x49);
 
+Lights1 castle_courtyard_dl_tv_static_lights = gdSPDefLights1(
+	0x7F, 0x7F, 0x7F,
+	0xFF, 0xFF, 0xFF, 0x49, 0x49, 0x49);
 
+Lights1 castle_courtyard_dl_laptop_screen_lights = gdSPDefLights1(
+	0x7F, 0x7F, 0x7F,
+	0xFF, 0xFF, 0xFF, 0x49, 0x49, 0x49);
 
+Lights1 castle_courtyard_dl_lampshade_lights = gdSPDefLights1(
+	0x7F, 0x50, 0x6,
+	0xFF, 0xA4, 0x16, 0x49, 0x49, 0x49);
 
+Lights1 castle_courtyard_dl_frame_lights = gdSPDefLights1(
+	0x7F, 0x7F, 0x7F,
+	0xFF, 0xFF, 0xFF, 0x49, 0x49, 0x49);
 
+Lights1 castle_courtyard_dl_daisy1_lights = gdSPDefLights1(
+	0x7F, 0x7F, 0x7F,
+	0xFF, 0xFF, 0xFF, 0x49, 0x49, 0x49);
 
+Lights1 castle_courtyard_dl_daisy2_lights = gdSPDefLights1(
+	0x7F, 0x7F, 0x7F,
+	0xFF, 0xFF, 0xFF, 0x49, 0x49, 0x49);
 
+Lights1 castle_courtyard_dl_daisy3_lights = gdSPDefLights1(
+	0x7F, 0x7F, 0x7F,
+	0xFF, 0xFF, 0xFF, 0x49, 0x49, 0x49);
 
+Lights1 castle_courtyard_dl_daisy4_lights = gdSPDefLights1(
+	0x7F, 0x7F, 0x7F,
+	0xFF, 0xFF, 0xFF, 0x49, 0x49, 0x49);
 
 Gfx castle_courtyard_dl_wall_bottom_i8_aligner[] = {gsSPEndDisplayList()};
 u8 castle_courtyard_dl_wall_bottom_i8[] = {
@@ -4841,8 +4892,7 @@ Gfx mat_revert_castle_courtyard_dl_floor[] = {
 };
 
 Gfx mat_castle_courtyard_dl_window[] = {
-    gsSPLightColor(LIGHT_1, 0xffffffff),
-    gsSPLightColor(LIGHT_2, 0x7f7f7fff),
+	gsSPSetLights1(castle_courtyard_dl_window_lights),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT, TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT),
 	gsDPSetAlphaDither(G_AD_NOISE),
@@ -4867,8 +4917,7 @@ Gfx mat_revert_castle_courtyard_dl_window[] = {
 };
 
 Gfx mat_castle_courtyard_dl_duvet[] = {
-    gsSPLightColor(LIGHT_1, 0xffffffff),
-    gsSPLightColor(LIGHT_2, 0x7f7f7fff),
+	gsSPSetLights1(castle_courtyard_dl_duvet_lights),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT, TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT),
 	gsDPSetAlphaDither(G_AD_NOISE),
@@ -4893,8 +4942,7 @@ Gfx mat_revert_castle_courtyard_dl_duvet[] = {
 };
 
 Gfx mat_castle_courtyard_dl_wood_frame[] = {
-    gsSPLightColor(LIGHT_1, 0xffffffff),
-    gsSPLightColor(LIGHT_2, 0x7f7f7fff),
+	gsSPSetLights1(castle_courtyard_dl_wood_frame_lights),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT, TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT),
 	gsDPSetAlphaDither(G_AD_NOISE),
@@ -4919,8 +4967,7 @@ Gfx mat_revert_castle_courtyard_dl_wood_frame[] = {
 };
 
 Gfx mat_castle_courtyard_dl_pillow[] = {
-    gsSPLightColor(LIGHT_1, 0xffffffff),
-    gsSPLightColor(LIGHT_2, 0x7f7f7fff),
+	gsSPSetLights1(castle_courtyard_dl_pillow_lights),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(0, 0, 0, SHADE, 0, 0, 0, ENVIRONMENT, 0, 0, 0, SHADE, 0, 0, 0, ENVIRONMENT),
 	gsDPSetAlphaDither(G_AD_NOISE),
@@ -4935,8 +4982,7 @@ Gfx mat_revert_castle_courtyard_dl_pillow[] = {
 };
 
 Gfx mat_castle_courtyard_dl_wardrobe[] = {
-    gsSPLightColor(LIGHT_1, 0xffffffff),
-    gsSPLightColor(LIGHT_2, 0x7f7f7fff),
+	gsSPSetLights1(castle_courtyard_dl_wardrobe_lights),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT, TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT),
 	gsDPSetAlphaDither(G_AD_NOISE),
@@ -4961,8 +5007,7 @@ Gfx mat_revert_castle_courtyard_dl_wardrobe[] = {
 };
 
 Gfx mat_castle_courtyard_dl_tv_frame[] = {
-    gsSPLightColor(LIGHT_1, 0xff),
-    gsSPLightColor(LIGHT_2, 0xff),
+	gsSPSetLights1(castle_courtyard_dl_tv_frame_lights),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(0, 0, 0, SHADE, 0, 0, 0, ENVIRONMENT, 0, 0, 0, SHADE, 0, 0, 0, ENVIRONMENT),
 	gsDPSetAlphaDither(G_AD_NOISE),
@@ -4977,8 +5022,7 @@ Gfx mat_revert_castle_courtyard_dl_tv_frame[] = {
 };
 
 Gfx mat_castle_courtyard_dl_couch_seat[] = {
-    gsSPLightColor(LIGHT_1, 0xffffffff),
-    gsSPLightColor(LIGHT_2, 0x7f7f7fff),
+	gsSPSetLights1(castle_courtyard_dl_couch_seat_lights),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT, TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT),
 	gsDPSetAlphaDither(G_AD_NOISE),
@@ -5003,8 +5047,7 @@ Gfx mat_revert_castle_courtyard_dl_couch_seat[] = {
 };
 
 Gfx mat_castle_courtyard_dl_couch[] = {
-    gsSPLightColor(LIGHT_1, 0xffffffff),
-    gsSPLightColor(LIGHT_2, 0x7f7f7fff),
+	gsSPSetLights1(castle_courtyard_dl_couch_lights),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT, TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT),
 	gsDPSetAlphaDither(G_AD_NOISE),
@@ -5029,8 +5072,7 @@ Gfx mat_revert_castle_courtyard_dl_couch[] = {
 };
 
 Gfx mat_castle_courtyard_dl_carpet[] = {
-    gsSPLightColor(LIGHT_1, 0xffffffff),
-    gsSPLightColor(LIGHT_2, 0x7f7f7fff),
+	gsSPSetLights1(castle_courtyard_dl_carpet_lights),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT, TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT),
 	gsDPSetAlphaDither(G_AD_NOISE),
@@ -5055,8 +5097,7 @@ Gfx mat_revert_castle_courtyard_dl_carpet[] = {
 };
 
 Gfx mat_castle_courtyard_dl_tv_static[] = {
-    gsSPLightColor(LIGHT_1, 0xffffffff),
-    gsSPLightColor(LIGHT_2, 0x7f7f7fff),
+	gsSPSetLights1(castle_courtyard_dl_tv_static_lights),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(NOISE, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT, NOISE, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT),
 	gsDPSetAlphaDither(G_AD_NOISE),
@@ -5071,8 +5112,7 @@ Gfx mat_revert_castle_courtyard_dl_tv_static[] = {
 };
 
 Gfx mat_castle_courtyard_dl_laptop_screen[] = {
-    gsSPLightColor(LIGHT_1, 0xffffffff),
-    gsSPLightColor(LIGHT_2, 0x7f7f7fff),
+	gsSPSetLights1(castle_courtyard_dl_laptop_screen_lights),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT, TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT),
 	gsDPSetAlphaDither(G_AD_NOISE),
@@ -5097,8 +5137,7 @@ Gfx mat_revert_castle_courtyard_dl_laptop_screen[] = {
 };
 
 Gfx mat_castle_courtyard_dl_lampshade[] = {
-    gsSPLightColor(LIGHT_1, 0xffa416ff),
-    gsSPLightColor(LIGHT_2, 0x7f5006ff),
+	gsSPSetLights1(castle_courtyard_dl_lampshade_lights),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(0, 0, 0, SHADE, 0, 0, 0, ENVIRONMENT, 0, 0, 0, SHADE, 0, 0, 0, ENVIRONMENT),
 	gsDPSetAlphaDither(G_AD_NOISE),
@@ -5113,8 +5152,7 @@ Gfx mat_revert_castle_courtyard_dl_lampshade[] = {
 };
 
 Gfx mat_castle_courtyard_dl_frame[] = {
-    gsSPLightColor(LIGHT_1, 0xffffffff),
-    gsSPLightColor(LIGHT_2, 0x7f7f7fff),
+	gsSPSetLights1(castle_courtyard_dl_frame_lights),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT, TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT),
 	gsDPSetAlphaDither(G_AD_NOISE),
@@ -5139,8 +5177,7 @@ Gfx mat_revert_castle_courtyard_dl_frame[] = {
 };
 
 Gfx mat_castle_courtyard_dl_daisy1[] = {
-    gsSPLightColor(LIGHT_1, 0xffffffff),
-    gsSPLightColor(LIGHT_2, 0x7f7f7fff),
+	gsSPSetLights1(castle_courtyard_dl_daisy1_lights),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT, TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT),
 	gsDPSetAlphaDither(G_AD_NOISE),
@@ -5160,8 +5197,7 @@ Gfx mat_revert_castle_courtyard_dl_daisy1[] = {
 };
 
 Gfx mat_castle_courtyard_dl_daisy2[] = {
-    gsSPLightColor(LIGHT_1, 0xffffffff),
-    gsSPLightColor(LIGHT_2, 0x7f7f7fff),
+	gsSPSetLights1(castle_courtyard_dl_daisy2_lights),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT, TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT),
 	gsDPSetAlphaDither(G_AD_NOISE),
@@ -5181,8 +5217,7 @@ Gfx mat_revert_castle_courtyard_dl_daisy2[] = {
 };
 
 Gfx mat_castle_courtyard_dl_daisy3[] = {
-    gsSPLightColor(LIGHT_1, 0xffffffff),
-    gsSPLightColor(LIGHT_2, 0x7f7f7fff),
+	gsSPSetLights1(castle_courtyard_dl_daisy3_lights),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT, TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT),
 	gsDPSetAlphaDither(G_AD_NOISE),
@@ -5202,8 +5237,7 @@ Gfx mat_revert_castle_courtyard_dl_daisy3[] = {
 };
 
 Gfx mat_castle_courtyard_dl_daisy4[] = {
-    gsSPLightColor(LIGHT_1, 0xffffffff),
-    gsSPLightColor(LIGHT_2, 0x7f7f7fff),
+	gsSPSetLights1(castle_courtyard_dl_daisy4_lights),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT, TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT),
 	gsDPSetAlphaDither(G_AD_NOISE),

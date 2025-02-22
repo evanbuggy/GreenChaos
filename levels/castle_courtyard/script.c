@@ -42,6 +42,7 @@ const LevelScript level_castle_courtyard_entry[] = {
 	LOAD_MODEL_FROM_GEO(MODEL_CUTSCENE_LUIGI, cutscene_luigi_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_CUTSCENE_LUIGI, cutscene_luigi_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_CUTSCENE_LUIGI, cutscene_luigi_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_CUTSCENE_LUIGI, cutscene_luigi_geo), 
 	/* Fast64 begin persistent block [level commands] */
 	LOAD_MODEL_FROM_GEO(MODEL_CUTSCENE_LUIGI, cutscene_luigi_geo),
 	/* Fast64 end persistent block [level commands] */

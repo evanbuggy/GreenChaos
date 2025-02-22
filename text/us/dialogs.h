@@ -748,10 +748,30 @@ the edge of the water to\n\
 jump out."))
 
 DEFINE_DIALOG(DIALOG_061, 1, 4, 30, 200, _("\
-BRRR! Frostbite Danger!\n\
-Do not swim here.\n\
-I'm serious.\n\
-/--The Penguin"))
+Welcome to the tutorial!\n\
+This will take you through\n\
+all the new moves that\n\
+Mario has learned.\n\
+Mario has had some general\n\
+speed buffs, like faster\n\
+running and the ability to\n\
+run up slopes.\n\
+Mario also has a new ground\n\
+pound that is important\n\
+to get used to. It gives\n\
+access to his full moveset.\n\
+To cross this river, you\n\
+can use a douvle jump.\n\
+Begin a ground pound with\n\
+[Z], then press [A].\n\
+This double jump allows\n\
+you to change direction\n\
+mid air but it can only\n\
+be used once in the air.\n\
+It also can't be used\n\
+after performing a wall\n\
+jump.\n\
+"))
 
 DEFINE_DIALOG(DIALOG_062, 1, 3, 30, 200, _("\
 Hidden inside the green\n\
