@@ -53,3 +53,6 @@
 #include "cutscene_luigi/model.inc.c"
 #include "cutscene_luigi/anims/data.inc.c"
 #include "cutscene_luigi/anims/table.inc.c"
+#include "mr_l/model.inc.c"
+#include "mr_l/anims/data.inc.c"
+#include "mr_l/anims/table.inc.c"
