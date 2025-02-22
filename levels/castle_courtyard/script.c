@@ -56,7 +56,7 @@ const LevelScript level_castle_courtyard_entry[] = {
 		OBJECT(MODEL_NONE, -1402, -511, -8, 0, 0, 0, 0x000A0000, bhvSpinAirborneWarp),
 		TERRAIN(castle_courtyard_area_1_collision),
 		MACRO_OBJECTS(castle_courtyard_area_1_macro_objs),
-		STOP_MUSIC(0),
+		SET_BACKGROUND_MUSIC(0x00, SEQ_LUIGI_CUTSCENE_INTRO),
 		TERRAIN_TYPE(TERRAIN_GRASS),
 		/* Fast64 begin persistent block [area commands] */
 		/* Fast64 end persistent block [area commands] */

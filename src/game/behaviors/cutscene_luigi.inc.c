@@ -38,8 +38,9 @@ void bhv_cutscene_luigi_loop(void) {
             cur_obj_init_animation(3);
             play_sound(SOUND_OBJ_THWOMP, gGlobalSoundSource);
             play_sound(SOUND_MARIO_WAAAOOOW, gGlobalSoundSource);
+            play_luigi_cutscene_jingle();
             break;
-        
+            
         default:
             break;
     }

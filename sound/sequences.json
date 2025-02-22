@@ -140,5 +140,11 @@
     ],
     "28_intro_screen": [
         "intro_screen"
+    ],
+    "29_luigi_shadow_intro_part_two": [
+        "luigi_shadow_intro_part_two"
+    ],
+    "2A_luigi_cutscene_intro": [
+        "luigi_cutscene_intro"
     ]
 }

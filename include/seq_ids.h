@@ -51,6 +51,8 @@ enum SeqId {
     SEQ_BOSS_INTRO,  // 0x26
     SEQ_HIGHWAY,  // 0x27
     SEQ_INTRO_SCREEN,  // 0x28
+    SEQ_LUIGI_CUTSCENE_PART_TWO,  // 0x29
+    SEQ_LUIGI_CUTSCENE_INTRO,  // 0x2A
     SEQ_COUNT,
 };
 

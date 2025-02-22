@@ -2499,6 +2499,22 @@ void play_toads_jingle(void) {
     begin_background_music_fade(50);
 }
 
+void play_luigi_cutscene_intro(void) {
+    seq_player_play_sequence(SEQ_PLAYER_ENV, SEQ_LUIGI_CUTSCENE_PART_TWO, 0);
+    sBackgroundMusicMaxTargetVolume = TARGET_VOLUME_IS_PRESENT_FLAG | 20;
+}
+
+void play_luigi_cutscene_jingle(void) {
+    seq_player_play_sequence(SEQ_PLAYER_ENV, SEQ_LUIGI_CUTSCENE_PART_TWO, 0);
+    sBackgroundMusicMaxTargetVolume = TARGET_VOLUME_IS_PRESENT_FLAG | 20;
+#if defined(VERSION_EU) || defined(VERSION_SH)
+    D_EU_80300558 = 2;
+#endif
+    begin_background_music_fade(100);
+}
+
+
+
 /**
  * Called from threads: thread5_game_loop
  */
