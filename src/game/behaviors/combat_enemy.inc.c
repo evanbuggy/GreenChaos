@@ -4,10 +4,10 @@ static struct ObjectHitbox sCombatEnemyHitbox = {
     /* damageOrCoinValue: */ 1,
     /* health:            */ 5,
     /* numLootCoins:      */ 1,
-    /* radius:            */ 300,
-    /* height:            */ 400,
-    /* hurtboxRadius:     */ 100,
-    /* hurtboxHeight:     */ 100,   
+    /* radius:            */ 100,
+    /* height:            */ 200,
+    /* hurtboxRadius:     */ 1,
+    /* hurtboxHeight:     */ 1,   
 };
 
 static u8 sCombatEnemyAttackHandlers[6] = {

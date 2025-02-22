@@ -589,77 +589,160 @@ conditions! Please enter\n\
 the cottage first."))
 
 DEFINE_DIALOG(DIALOG_049, 1, 5, 30, 200, _("\
-Remember that tricky Wall\n\
-Kick jump? It's a\n\
-technique you'll have to\n\
-master in order to reach\n\
-high places.\n\
-Use it to jump from wall\n\
-to wall. Press the\n\
-Control Stick in the\n\
-direction you want to\n\
-bounce to gain momentum.\n\
-Practice makes perfect!"))
+This is a spring! Jumping\n\
+or attacking it will send\n\
+you flying. You still\n\
+have some air control\n\
+after use so be careful!"))
 
 DEFINE_DIALOG(DIALOG_050, 1, 4, 30, 200, _("\
-Hold [Z] to crouch and\n\
-slide down a slope.\n\
-Or press [Z] while in the\n\
-air to Pound the Ground!\n\
-If you stop, crouch, then\n\
-jump, you'll do a\n\
-Backward Somersault!\n\
-Got that?\n\
-There's more. Crouch and\n\
-then jump to do a\n\
-Long Jump! Or crouch and\n\
-walk to...never mind."))
+Another combat option\n\
+Mario has is the Spin\n\
+Saw.\n\
+\n\
+By pressing L mid-air\n\
+and making contact with\n\
+an enemy, you damage them\n\
+based on your speed!\n\
+The higher your speed,\n\
+The more damage you deal.\n\
+\n\
+\n\
+After killing an enemy\n\
+with the Spin Saw, you\n\
+will be launched super\n\
+far.\n\
+This makes it a good\n\
+option for getting over\n\
+giant chasms like the\n\
+one below!\n\
+That's all for the\n\
+tutorial. Now get out\n\
+there and save the world\n\
+and your brother!"))
 
 DEFINE_DIALOG(DIALOG_051, 1, 6, 30, 200, _("\
-Climbing's easy! When you\n\
-jump at trees, poles or\n\
-pillars, you'll grab them\n\
-automatically. Press [A] to\n\
-jump off backward.\n\
+These are L rings! There\n\
+are 8 per level. Like red\n\
+coins, collecting 8 of\n\
+them will spawn a star.\n\
 \n\
-To rotate around the\n\
-object, press Right or\n\
-Left on the Control Stick.\n\
-When you reach the top,\n\
-press Up to do a\n\
-handstand!\n\
-Jump off from the\n\
-handstand for a high,\n\
-stylin' dismount."))
+\n\
+Of course, you won't be\n\
+collecting stars in this\n\
+game. You'll be collecting\n\
+the 7 Luigi Emeralds\n\
+to stop Mr. L's evil plans\n\
+for worldwide destruction!\n\
+Every level, including\n\
+this tutorial, has an\n\
+associated rank. How well\n\
+you perform affects your\n\
+final rank. The lowest is\n\
+D while the highest is S.\n\
+Your time, ring count and\n\
+highest combo affect your\n\
+rank. Each level has\n\
+different criteria for\n\
+their respective ranks!\n\
+\n\
+Try to get an S rank in\n\
+every level. Ranks are\n\
+level wide, so the star\n\
+you collect does not\n\
+affect your rank.\n\
+\n\
+There are various hints\n\
+around that may help you\n\
+figure out the exact\n\
+totals needed for S\n\
+ranks. Try get one on\n\
+every level!"))
 
 DEFINE_DIALOG(DIALOG_052, 1, 5, 30, 200, _("\
-Stop and press [Z] to\n\
-crouch, then press [A]\n\
-to do a high, Backward\n\
-Somersault!\n\
+Prepare for a big lesson!\n\
+This will teach you how\n\
+to fight the various\n\
+enemies you will come\n\
+across on your journey.\n\
+The enemy you see before\n\
+yourself is no threat.\n\
+It can't hurt you, it is\n\
+merely a dummy.\n\
 \n\
-To perform a Side\n\
-Somersault, run, do a\n\
-sharp U-turn and jump.\n\
-You can catch lots of\n\
-air with both jumps."))
+Most enemies will not be\n\
+hurt by punches or jumps.\n\
+You need to do an air\n\
+combo to do real damage!\n\
+\n\
+Air combos are started\n\
+with a kick. Holding A as\n\
+you kick the enemy will\n\
+launch you upwards to\n\
+start the pummelling!\n\
+Pressing [B] after a launch\n\
+will make Mario punch.\n\
+You can cancel the punch\n\
+with [Z], to then punch\n\
+with [B] again.\n\
+Repeat this loop to juggle\n\
+the enemy into the skies!\n\
+The challenge is timing\n\
+your attacks and strafing\n\
+to hit the enemy.\n\
+Press [A] at any point\n\
+to do a super dive!\n\
+Combo the enemy for\n\
+height and super dive for\n\
+horizontal distance."))
 
 DEFINE_DIALOG(DIALOG_053, 1, 5, 30, 200, _("\
-Sometimes, if you pass\n\
-through a coin ring or\n\
-find a secret point in a\n\
-course, a red number will\n\
-appear.\n\
-If you trigger five red\n\
-numbers, a secret Star\n\
-will show up."))
+How will Mario cross\n\
+this giant body of\n\
+water? The answer is\n\
+speed of course!\n\
+\n\
+Mario has multiple\n\
+tricks up his sleeve...\n\
+Or, fur? Quills? Suit?\n\
+We were too afraid to\n\
+ask him or Shadow.\n\
+Pressing [B] after\n\
+landing from a ground\n\
+pound will make Mario\n\
+dive, which you can\n\
+change the direction of.\n\
+This makes for a good\n\
+option for getting back\n\
+on your feet quick.\n\
+\n\
+\n\
+Combine this with ground\n\
+pound jumping to really\n\
+get Mario's speed up!\n\
+\n\
+\n\
+Hold [A] while falling\n\
+from a ground pound\n\
+to do a ground pound\n\
+jump. These jumps add\n\
+to your forward velocity.\n\
+Rapidly press [Z] while\n\
+holding [A] to do them\n\
+consecutively! This is\n\
+a great way to increase\n\
+your speed.\n\
+As a reminder, your\n\
+double jump allows you\n\
+to change direction mid-\n\
+air without losing any\n\
+speed."))
 
-DEFINE_DIALOG(DIALOG_054, 1, 5, 30, 200, _("\
-Welcome to the snow\n\
-slide! Hop on! To speed\n\
-up, press forward on the\n\
-Control Stick. To slow\n\
-down, pull back."))
+DEFINE_DIALOG(DIALOG_054, 1, 4, 30, 200, _("\
+A reminder that Mario\n\
+sticks to steep surfaces!\n\
+He can run down ramps\n\
+such as this one."))
 
 DEFINE_DIALOG(DIALOG_055, 1, 4, 30, 200, _("\
 Hey-ey, Mario, buddy,\n\
@@ -718,55 +801,39 @@ Her parents must be\n\
 worried sick!"))
 
 DEFINE_DIALOG(DIALOG_060, 1, 4, 30, 200, _("\
-ATTENTION!\n\
-Read Before Diving In!\n\
-\n\
-\n\
-If you stay under the\n\
-water for too long, you'll\n\
-run out of oxygen.\n\
-\n\
-Return to the surface for\n\
-air or find an air bubble\n\
-or coins to breathe while\n\
-underwater.\n\
-Press [A] to swim. Hold [A]\n\
-to swim slow and steady.\n\
-Tap [A] with smooth timing\n\
-to gain speed.\n\
-Press Up on the\n\
-Control Stick and press [A]\n\
-to dive.\n\
-\n\
-Press Down on the Control\n\
-Stick and press [A] to\n\
-return to the surface.\n\
-\n\
-Hold Down and press [A]\n\
-while on the surface near\n\
-the edge of the water to\n\
-jump out."))
+This wall might seem like\n\
+a challenge to climb.\n\
+They key is to combine\n\
+different types of jumps.\n\
+While airborne, try a\n\
+ground pound kick! Press\n\
+[B] after doing a ground\n\
+pound to kick.\n\
+This will help you gain\n\
+just that bit more height\n\
+and distance in really\n\
+big jumps."))
 
 DEFINE_DIALOG(DIALOG_061, 1, 4, 30, 200, _("\
 Welcome to the tutorial!\n\
 This will take you through\n\
 all the new moves that\n\
 Mario has learned.\n\
-Mario has had some general\n\
+Mario has had some\n\
 speed buffs, like faster\n\
 running and the ability to\n\
 run up slopes.\n\
-Mario also has a new ground\n\
+He also has a new ground\n\
 pound that is important\n\
 to get used to. It gives\n\
 access to his full moveset.\n\
 To cross this river, you\n\
-can use a douvle jump.\n\
+can use a double jump.\n\
 Begin a ground pound with\n\
 [Z], then press [A].\n\
 This double jump allows\n\
 you to change direction\n\
-mid air but it can only\n\
+mid-air but it can only\n\
 be used once in the air.\n\
 It also can't be used\n\
 after performing a wall\n\
@@ -799,15 +866,20 @@ overshadowed by his\n\
 brother, Luigi turns to\n\
 the Chaos Emeralds.\n\
 Which, he obviously just\n\
-has one with a moustache\n\
-lying around. It was\n\
-gathering dust not being\n\
-put to use.\n\
+has one lying around.\n\
+It was gathering dust not\n\
+being put to use.\n\
+\n\
+With his Negative Aura,\n\
+Luigi transforms the\n\
+Chaos Emeralds into the\n\
+Luigi Emeralds, 'stache\n\
+and all!\n\
 It is now up to his older\n\
 brother to stop his\n\
-destructive rampage!\n\
-To do this, Mario has\n\
-learned some new tricks.\n\
+destructive rampage\n\
+by collecting the other\n\
+Luigi Emeralds.\n\
 With Shadow's help,\n\
 Mario has learned all\n\
 he needs to know to\n\

@@ -6204,6 +6204,7 @@ const BehaviorScript bhvSpring[] = {
     BEGIN(OBJ_LIST_SURFACE),
     OR_INT(oFlags, (OBJ_FLAG_COMPUTE_DIST_TO_MARIO | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
     SET_HOME(),
+    DROP_TO_FLOOR(),
     BEGIN_LOOP(),
         CALL_NATIVE(bhv_spring_loop),
     END_LOOP(),
