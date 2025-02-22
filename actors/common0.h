@@ -199,4 +199,6 @@ extern const Collision unknown_seg8_collision_080262F8[];
 
 #include "char_title_intro/geo_header.h"
 
+#include "letter_title_intro/geo_header.h"
+
 #endif

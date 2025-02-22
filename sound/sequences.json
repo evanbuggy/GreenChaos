@@ -137,5 +137,8 @@
     ],
     "27_highway": [
         "highway"
+    ],
+    "28_intro_screen": [
+        "intro_screen"
     ]
 }

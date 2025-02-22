@@ -49,7 +49,8 @@ enum SeqId {
     SEQ_VOID,  // 0x24
     SEQ_STAR_OPTIONS,  // 0x25
     SEQ_BOSS_INTRO,  // 0x26
-    SEQ_HIGHWAY, // 0x27
+    SEQ_HIGHWAY,  // 0x27
+    SEQ_INTRO_SCREEN,  // 0x28
     SEQ_COUNT,
 };
 

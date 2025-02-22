@@ -81,3 +81,4 @@ UNUSED static const u64 binid_17 = 17;
 UNUSED static const u64 binid_18 = 18;
 
 #include "char_title_intro/model.inc.c"
+#include "letter_title_intro/model.inc.c"

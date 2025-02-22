@@ -39,16 +39,18 @@ const LevelScript level_intro_splash_screen[] = {
     // Load "Super Mario 64" logo
     ALLOC_LEVEL_POOL(),
     LOAD_MODEL_FROM_GEO(MODEL_TITLE_CHAR_ANIM, char_title_intro_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_TITLE_LETTERS,   letter_title_intro_geo),
     AREA(/*index*/ 1, intro_geo_splash_screen),
-        OBJECT(/*model*/ MODEL_TITLE_CHAR_ANIM, /*pos*/ -570, -480, 1500, /*angle*/ 0,  0, 0, /*behParam*/ BP(0x18, 0x00, 0x10, 0x0B), /*beh*/ bhvTitleChar),
+        OBJECT(/*model*/ MODEL_TITLE_CHAR_ANIM, /*pos*/ 400, -430, 1500, /*angle*/ 0,  0, 0, /*behParam*/ BP(0x18, 0x00, 0x10, 0x0B), /*beh*/ bhvTitleChar),
+        OBJECT(/*model*/ MODEL_TITLE_LETTERS, /*pos*/ -200, 200, 1200, /*angle*/ 0,  0, 0, /*behParam*/ BP(0x18, 0x00, 0x10, 0x0B), /*beh*/ bhvTitleChar),
     END_AREA(),
     FREE_LEVEL_POOL(),
 
     // Start animation
     LOAD_AREA(/*area*/ 1),
-
-    SET_MENU_MUSIC(/*seq*/ SEQ_SOUND_PLAYER),
-    CALL(/*arg*/ LVL_INTRO_PLAY_ITS_A_ME_MARIO, /*func*/ lvl_intro_update),
+    TRANSITION(/*transType*/ WARP_TRANSITION_FADE_FROM_COLOR, /*time*/ 16, /*color*/ 0xFF, 0xFF, 0xFF),
+    SLEEP(/*frames*/ 1),
+    SET_MENU_MUSIC(/*seq*/ SEQ_INTRO_SCREEN),
     CALL(/*arg*/ 0, /*func*/ load_mario_area),
     
     JUMP_LINK_PUSH_ARG(75),

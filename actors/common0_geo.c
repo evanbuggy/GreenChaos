@@ -29,3 +29,4 @@
 #include "koopa_shell/geo.inc.c"
 
 #include "char_title_intro/geo.inc.c"
+#include "letter_title_intro/geo.inc.c"
