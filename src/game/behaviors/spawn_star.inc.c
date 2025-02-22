@@ -21,7 +21,7 @@ void bhv_collect_star_init(void) {
     u8 currentLevelStarFlags = save_file_get_star_flags((gCurrSaveFileNum - 1), COURSE_NUM_TO_INDEX(gCurrCourseNum));
     if (currentLevelStarFlags & (1 << starId)) {
 #endif
-        o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_TRANSPARENT_STAR];
+        o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_TRANSPARENT_LM];
     } else {
         o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_STAR_RING];
     }
@@ -156,10 +156,10 @@ void bhv_hidden_red_coin_star_init(void) {
 
 #ifdef ENABLE_VANILLA_LEVEL_SPECIFIC_CHECKS
     if (gCurrCourseNum != COURSE_JRB) {
-        spawn_object(o, MODEL_TRANSPARENT_STAR, bhvRedCoinStarMarker);
+        spawn_object(o, MODEL_TRANSPARENT_LM, bhvRedCoinStarMarker);
     }
 #else
-    spawn_object(o, MODEL_TRANSPARENT_STAR, bhvRedCoinStarMarker);
+    spawn_object(o, MODEL_TRANSPARENT_LM, bhvRedCoinStarMarker);
 #endif
 
     // check if bparam2 specifies a total number of coins that should spawn the star
