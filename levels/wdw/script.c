@@ -65,6 +65,8 @@ const LevelScript level_wdw_entry[] = {
 	LOAD_MODEL_FROM_GEO(MODEL_LUIGI_DOLL, luigi_doll_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_LUIGI_DOLL, luigi_doll_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_LUIGI_DOLL, luigi_doll_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_LUIGI_DOLL, luigi_doll_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_LUIGI_DOLL, luigi_doll_geo), 
 	/* Fast64 begin persistent block [level commands] */
 	LOAD_MODEL_FROM_GEO(MODEL_LUIGI_DOLL, luigi_doll_geo),
 	/* Fast64 end persistent block [level commands] */
@@ -89,7 +91,7 @@ const LevelScript level_wdw_entry[] = {
 		OBJECT(MODEL_RED_COIN, 10156, -1621, -1720, 0, 0, 0, (0 << 16), bhvRedCoin),
 		OBJECT(MODEL_NONE, 1013, 716, 5253, 0, 90, 0, 0x00000000, bhvHiddenRedCoinStar),
 		MARIO_POS(0x01, 180, 0, 583, 4760),
-		OBJECT(MODEL_NONE, -2105, 109, 9039, 0, 0, 0, (5 << 24) | (15 << 16) | (60 << 8), bhvRank),
+		OBJECT(MODEL_NONE, -2105, 109, 9039, 0, 0, 0, (5 << 24) | (15 << 16) | (30 << 8), bhvRank),
 		OBJECT(MODEL_WOODEN_SIGNPOST, -100, 131, -6500, 0, 0, 0, (60 << 16), bhvMessagePanel),
 		OBJECT(MODEL_WOODEN_SIGNPOST, 4617, -1064, -2848, 0, 180, 0, (53 << 16), bhvMessagePanel),
 		OBJECT(MODEL_WOODEN_SIGNPOST, 4617, -1921, 5832, 0, 180, 0, (52 << 16), bhvMessagePanel),

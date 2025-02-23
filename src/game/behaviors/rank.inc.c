@@ -22,7 +22,7 @@ u32 time[5] = {0, 0, 0, 0, 0};
 void bhv_rank_init(void) {
     // Combo Requirements per rank:
     // The param is doubled so when you are using a rank object, enter half the
-    // highest combo you want for an S rank for the 2nd param.
+    // highest combo you want for an S rank for the 1st param.
     comboSRank = (o->oBehParams >> 24) * 2;
     comboDRank = comboSRank / 5;
     comboCRank = comboDRank * 2;

@@ -89,6 +89,9 @@ const LevelScript level_wf_entry[] = {
 	LOAD_MODEL_FROM_GEO(MODEL_ELECTRO_LUIGI, electro_luigi_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_BUG_LUIGI, bug_luigi_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_WHOMP_LUIGI, whomp_boss_luigi_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_ELECTRO_LUIGI, electro_luigi_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_BUG_LUIGI, bug_luigi_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_WHOMP_LUIGI, whomp_boss_luigi_geo), 
 	/* Fast64 begin persistent block [level commands] */
 	LOAD_MODEL_FROM_GEO(MODEL_ELECTRO_LUIGI, electro_luigi_geo),
 	LOAD_MODEL_FROM_GEO(MODEL_BUG_LUIGI, bug_luigi_geo),
@@ -96,10 +99,9 @@ const LevelScript level_wf_entry[] = {
 	/* Fast64 end persistent block [level commands] */
 
 	AREA(1, wf_area_1),
-		WARP_NODE(0x0A, LEVEL_BOB, 0x01, 0x0A, WARP_NO_CHECKPOINT),
-		WARP_NODE(0xF0, LEVEL_CASTLE_GROUNDS, 0x05, 0x0A, WARP_NO_CHECKPOINT),
-		WARP_NODE(0xF1, LEVEL_CASTLE_GROUNDS, 0x06, 0x0A, WARP_NO_CHECKPOINT),
-		WARP_NODE(0x01, LEVEL_ENDING, 0x01, 0x0A, WARP_NO_CHECKPOINT),
+		WARP_NODE(0x0A, LEVEL_WF, 0x01, 0x0A, WARP_NO_CHECKPOINT),
+		WARP_NODE(0xF0, LEVEL_CASTLE_GROUNDS, 0x01, 0x05, WARP_NO_CHECKPOINT),
+		WARP_NODE(0xF1, LEVEL_CASTLE_GROUNDS, 0x01, 0x06, WARP_NO_CHECKPOINT),
 		OBJECT(MODEL_NONE, 7522, 815, -4664, 0, -95, 0, 0x00000000, bhvCoinFormation),
 		OBJECT(MODEL_NONE, 5607, 3874, -10439, 0, 130, 0, 0x00000000, bhvCoinFormation),
 		OBJECT(MODEL_BUG_LUIGI, 2, 651, -4792, 0, -90, 0, 0x00000000, bhvBugLuigi),
@@ -137,7 +139,6 @@ const LevelScript level_wf_entry[] = {
 		OBJECT(MODEL_YELLOW_COIN, 11181, 4457, -9636, 0, 0, 0, 0x00000000, bhvOneCoin),
 		OBJECT(MODEL_NONE, 1509, 146, 0, 0, 0, 0, (60 << 24) | (30 << 16) | (30 << 8), bhvRank),
 		OBJECT(MODEL_STAR, 3792, 2381, -7915, 0, 180, 0, (20 << 24) | (20 << 16), bhvStar),
-		OBJECT(MODEL_GOOMBA, 3070, 5694, -8305, 0, -32, 0, 0x00000000, bhvCombatEnemy),
 		OBJECT(MODEL_NONE, 0, 130, 3231, 0, 180, 0, 0x000A0000, bhvSpinAirborneWarp),
 		OBJECT(MODEL_AMP, 5599, 3889, -10462, 0, 130, 0, 0x00000000, bhvCirclingAmp),
 		TERRAIN(wf_area_1_collision),

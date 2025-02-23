@@ -671,9 +671,8 @@ void print_hud_my_score_coins(s32 useCourseCoinScore, s8 fileIndex, s8 courseInd
             render_rank_a_01(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(60) + 16, 60, 32, 64, 0, 0);
             break;
         case 4:
-            // render_rank_s_00(100, 50, 32, 64, 1, 1);
-            // render_rank_s_01(132, 50, 32, 64, 1, 1);
-            print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(40), 160, "S RANK!!!");
+            render_rank_s_00(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(60) - 16, 60, 32, 64, 0, 0);
+            render_rank_s_01(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(60) + 16, 60, 32, 64, 0, 0);
             break;
     }
 }
