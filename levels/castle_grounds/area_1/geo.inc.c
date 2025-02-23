@@ -16,6 +16,7 @@ const GeoLayout castle_grounds_area_1_geo[] = {
 		GEO_DISPLAY_LIST(LAYER_TRANSPARENT, castle_grounds_dl_Cube_002_mesh_layer_5),
 		GEO_DISPLAY_LIST(LAYER_TRANSPARENT, castle_grounds_dl_Cube_003_mesh_layer_5),
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_ALPHA, -22, 4928, 1, 0, 0, 180, castle_grounds_dl_Cylinder_mesh_layer_4),
+		GEO_TRANSLATE_NODE_WITH_DL(LAYER_OPAQUE, -5812, 322, 5795, castle_grounds_dl_Cylinder_001_mesh_layer_1),
 		GEO_TRANSLATE_NODE_WITH_DL(LAYER_OPAQUE, 4874, 874, -4892, castle_grounds_dl_Cylinder_004_mesh_layer_1),
 		GEO_TRANSLATE_NODE_WITH_DL(LAYER_TRANSPARENT, 1278, 33, 618, castle_grounds_dl_shadowtree_001_mesh_layer_5),
 		GEO_TRANSLATE_NODE_WITH_DL(LAYER_TRANSPARENT, 457, 33, 1327, castle_grounds_dl_shadowtree_002_mesh_layer_5),

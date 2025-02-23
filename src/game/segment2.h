@@ -108,4 +108,8 @@ extern u8 render_rank_d_00_DRank00_rgba16[];
 
 extern u8 render_rank_d_01_DRank01_rgba16[];
 
+extern u8 render_s_rank_00_SRank00_rgba16[];
+
+extern u8 render_s_rank_01_SRank01_rgba16[];
+
 #endif // SEGMENT2_H
