@@ -7,5 +7,6 @@ extern void scroll_lll_dl_Plane_014_mesh_layer_1_vtx_0();
 extern void scroll_lll_dl_Plane_026_mesh_layer_1_vtx_0();
 extern void scroll_lll_dl_Plane_027_mesh_layer_1_vtx_0();
 extern void scroll_lll_dl_Plane_027_mesh_layer_1_vtx_1();
+extern void scroll_lll_dl_Cylinder_002_mesh_layer_1_vtx_2();
 extern void scroll_lll_dl_Plane_036_mesh_layer_1_vtx_0();
 extern void scroll_lll();

@@ -59,3 +59,4 @@
 #include "broozer/model.inc.c"
 #include "broozer/anims/data.inc.c"
 #include "broozer/anims/table.inc.c"
+#include "Area_1/collision.inc.c"
