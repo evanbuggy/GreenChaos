@@ -1452,20 +1452,16 @@ switches in the hidden\n\
 courses to activate the\n\
 Cap Blocks."))
 
-DEFINE_DIALOG(DIALOG_114, 1, 5, 95, 200, _("\
-It makes me so mad! We\n\
-build your houses, your\n\
-castles. We pave your\n\
-roads, and still you\n\
-walk all over us.\n\
-Do you ever say thank\n\
-you? No! Well, you're not\n\
-going to wipe your feet\n\
-on me! I think I'll crush\n\
-you just for fun!\n\
-Do you have a problem\n\
-with that? Just try to\n\
-pound me, wimp! Ha!"))
+DEFINE_DIALOG(DIALOG_114, 1, 3, 95, 200, _("\
+Grr, the big boss warned\n\
+me about you.\n\
+\n\
+Told me to take down\n\
+any rodent I see in the\n\
+factory.\n\
+Hmph, it's a chubby one\n\
+at that! This should be\n\
+easy!"))
 
 DEFINE_DIALOG(DIALOG_115, 1, 5, 95, 200, _("\
 No! Crushed again!\n\

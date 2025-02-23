@@ -23,6 +23,7 @@ const GeoLayout wdw_area_1_geo[] = {
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, 4409, 36, 2581, 0, 30, 0, wdw_dl_Pillar_003_mesh_layer_1),
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, 8235, -123, 11168, 0, 30, 0, wdw_dl_Pillar_004_mesh_layer_1),
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, 10417, -591, 12380, -30, -62, 102, wdw_dl_Pillar_005_mesh_layer_1),
+		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, 5467, -1083, 2020, 0, 30, 0, wdw_dl_Pillar_006_mesh_layer_1),
 		GEO_TRANSLATE_NODE_WITH_DL(LAYER_TRANSPARENT, 6238, 1565, 2027, wdw_dl_Plane_mesh_layer_5),
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_ALPHA, 1418, 513, 4700, 90, 0, 90, wdw_dl_Plant_mesh_layer_4),
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_ALPHA, 1228, 540, 4417, 90, 0, 30, wdw_dl_Plant_001_mesh_layer_4),
