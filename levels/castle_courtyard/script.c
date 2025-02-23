@@ -43,6 +43,12 @@ const LevelScript level_castle_courtyard_entry[] = {
 	LOAD_MODEL_FROM_GEO(MODEL_CUTSCENE_LUIGI, cutscene_luigi_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_CUTSCENE_LUIGI, cutscene_luigi_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_CUTSCENE_LUIGI, cutscene_luigi_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_CUTSCENE_LUIGI, cutscene_luigi_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_MR_L, mr_l_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_CUTSCENE_LUIGI, cutscene_luigi_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_MR_L, mr_l_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_CUTSCENE_LUIGI, cutscene_luigi_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_MR_L, mr_l_geo), 
 	/* Fast64 begin persistent block [level commands] */
 	LOAD_MODEL_FROM_GEO(MODEL_CUTSCENE_LUIGI, cutscene_luigi_geo),
 	LOAD_MODEL_FROM_GEO(MODEL_MR_L, mr_l_geo),
@@ -50,8 +56,8 @@ const LevelScript level_castle_courtyard_entry[] = {
 
 	AREA(1, castle_courtyard_area_1),
 		WARP_NODE(0x0A, LEVEL_BOB, 0x01, 0x0A, WARP_NO_CHECKPOINT),
-		WARP_NODE(0xF0, LEVEL_BOB, 0x01, 0x0A, WARP_NO_CHECKPOINT),
-		WARP_NODE(0xF1, LEVEL_BOB, 0x01, 0x0A, WARP_NO_CHECKPOINT),
+		WARP_NODE(0xF0, LEVEL_CASTLE_GROUNDS, 0x01, 0x0A, WARP_NO_CHECKPOINT),
+		WARP_NODE(0xF1, LEVEL_CASTLE_GROUNDS, 0x01, 0x0A, WARP_NO_CHECKPOINT),
 		OBJECT(MODEL_CUTSCENE_LUIGI, 243, 251, 99, 0, 180, 0, 0x00000000, bhvCutsceneLuigi),
 		MARIO_POS(0x01, 0, -1402, -511, -8),
 		OBJECT(MODEL_NONE, -1402, -511, -8, 0, 0, 0, 0x000A0000, bhvSpinAirborneWarp),
