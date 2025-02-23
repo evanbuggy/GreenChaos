@@ -895,3 +895,4 @@ void obj_spit_fire(s16 relativePosX, s16 relativePosY, s16 relativePosZ, f32 sca
 #include "behaviors/cutscene_luigi.inc.c"
 #include "behaviors/cutscene_emerald.inc.c"
 #include "behaviors/broozer.inc.c"
+#include "behaviors/boss_luigi.inc.c"

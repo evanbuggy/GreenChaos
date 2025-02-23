@@ -558,4 +558,5 @@ extern const BehaviorScript bhvBugLuigi[];
 extern const BehaviorScript bhvCutsceneLuigi[];
 extern const BehaviorScript bhvCutsceneEmerald[];
 extern const BehaviorScript bhvBroozer[];
+extern const BehaviorScript bhvBossLuigi[];
 #endif // BEHAVIOR_DATA_H

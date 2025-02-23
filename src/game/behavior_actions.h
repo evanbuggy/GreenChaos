@@ -565,6 +565,8 @@ void bhv_cutscene_luigi_loop(void);
 void bhv_cutscene_emerald_loop(void);
 void bhv_broozer_init(void);
 void bhv_broozer_loop(void);
+void bhv_boss_luigi_init(void);
+void bhv_boss_luigi_loop(void);
 
 Gfx *geo_move_mario_part_from_parent(s32 callContext, UNUSED struct GraphNode *node, Mat4 mtx);
 
