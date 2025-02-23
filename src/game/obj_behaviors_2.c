@@ -543,8 +543,9 @@ static void obj_set_knockback_action(s32 attackType) {
             break;
     }
 
-    o->oFlags &= ~OBJ_FLAG_SET_FACE_YAW_TO_MOVE_YAW;
-    o->oMoveAngleYaw = obj_angle_to_object(gMarioObject, o);
+    // This is commented out for the Broozer enemy!
+    //o->oFlags &= ~OBJ_FLAG_SET_FACE_YAW_TO_MOVE_YAW;
+    //o->oMoveAngleYaw = obj_angle_to_object(gMarioObject, o);
 }
 
 static void obj_set_squished_action(void) {
@@ -893,3 +894,4 @@ void obj_spit_fire(s16 relativePosX, s16 relativePosY, s16 relativePosZ, f32 sca
 #include "behaviors/bug_luigi.inc.c"
 #include "behaviors/cutscene_luigi.inc.c"
 #include "behaviors/cutscene_emerald.inc.c"
+#include "behaviors/broozer.inc.c"

@@ -13,6 +13,7 @@
 
 #include "actors/common1.h"
 #include "actors/group2.h"
+#include "actors/group0.h"
 #include "make_const_nonconst.h"
 #include "levels/lll/header.h"
 
@@ -81,12 +82,37 @@ const LevelScript level_lll_entry[] = {
 	LOAD_MODEL_FROM_GEO(MODEL_WHOMP_LUIGI, whomp_boss_luigi_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_BULLY_LUIGI, luigi_bully_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_GOOMBA_LUIGI_LLL, goomba_luigi_LLL_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_BLARGG_NEW, blargg_new_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_BROTHER_LUIGI_HEAD, luigi_head_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_WHOMP_LUIGI, whomp_boss_luigi_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_BULLY_LUIGI, luigi_bully_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_GOOMBA_LUIGI_LLL, goomba_luigi_LLL_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_BROOZER, broozer_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_BLARGG_NEW, blargg_new_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_BROTHER_LUIGI_HEAD, luigi_head_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_WHOMP_LUIGI, whomp_boss_luigi_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_BULLY_LUIGI, luigi_bully_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_GOOMBA_LUIGI_LLL, goomba_luigi_LLL_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_BROOZER, broozer_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_BLARGG_NEW, blargg_new_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_BROTHER_LUIGI_HEAD, luigi_head_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_WHOMP_LUIGI, whomp_boss_luigi_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_BULLY_LUIGI, luigi_bully_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_GOOMBA_LUIGI_LLL, goomba_luigi_LLL_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_BROOZER, broozer_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_BLARGG_NEW, blargg_new_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_BROTHER_LUIGI_HEAD, luigi_head_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_WHOMP_LUIGI, whomp_boss_luigi_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_BULLY_LUIGI, luigi_bully_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_GOOMBA_LUIGI_LLL, goomba_luigi_LLL_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_BROOZER, broozer_geo), 
 	/* Fast64 begin persistent block [level commands] */
 	LOAD_MODEL_FROM_GEO(MODEL_BLARGG_NEW, blargg_new_geo),
 	LOAD_MODEL_FROM_GEO(MODEL_BROTHER_LUIGI_HEAD, luigi_head_geo),
 	LOAD_MODEL_FROM_GEO(MODEL_WHOMP_LUIGI,  whomp_boss_luigi_geo),
 	LOAD_MODEL_FROM_GEO(MODEL_BULLY_LUIGI,  luigi_bully_geo),
 	LOAD_MODEL_FROM_GEO(MODEL_GOOMBA_LUIGI_LLL, goomba_luigi_LLL_geo),
+	LOAD_MODEL_FROM_GEO(MODEL_BROOZER, broozer_geo),
 	/* Fast64 end persistent block [level commands] */
 
 	AREA(1, lll_area_1),
@@ -201,8 +227,8 @@ const LevelScript level_lll_entry[] = {
 		WARP_NODE(0x0A, LEVEL_LLL, 0x02, 0x0A, WARP_NO_CHECKPOINT),
 		WARP_NODE(0xF0, LEVEL_CASTLE_GROUNDS, 0x01, 0x02, WARP_NO_CHECKPOINT),
 		WARP_NODE(0xF1, LEVEL_CASTLE_GROUNDS, 0x01, 0x03, WARP_NO_CHECKPOINT),
-		OBJECT(MODEL_NONE, -32, 1932, 3286, 0, -180, 0, 0x000A0000, bhvFlyingWarp),
-		OBJECT(MODEL_WHOMP_LUIGI, -8, -331, -1359, 0, -180, 0, 0x00000000, bhvGoomba),
+		OBJECT(MODEL_NONE, -32, 1932, 1671, 0, -180, 0, 0x000A0000, bhvFlyingWarp),
+		OBJECT(MODEL_BROOZER, 7, -112, -1592, 0, -90, 0, 0x00000000, bhvBroozer),
 		TERRAIN(lll_area_2_collision),
 		MACRO_OBJECTS(lll_area_2_macro_objs),
 		SET_BACKGROUND_MUSIC(0x00, SEQ_BOSS_INTRO),

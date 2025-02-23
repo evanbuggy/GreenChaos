@@ -56,3 +56,6 @@
 #include "mr_l/model.inc.c"
 #include "mr_l/anims/data.inc.c"
 #include "mr_l/anims/table.inc.c"
+#include "broozer/model.inc.c"
+#include "broozer/anims/data.inc.c"
+#include "broozer/anims/table.inc.c"

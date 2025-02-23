@@ -74,7 +74,7 @@ void bhv_electro_luigi_loop(void) {
 
         // This defines how long the enemy is invincible for in frames before it can be attacked again.
         // This is to prevent attacks like the kick from hitting multiple times.
-        o->oInvFrames = 60; 
+        o->oInvFrames = 6; 
 
         o->oHitstopFrames = 3;
 

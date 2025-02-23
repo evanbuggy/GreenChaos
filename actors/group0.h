@@ -373,4 +373,8 @@ extern const Gfx white_particle_small_unused_dl[];
 
 
 #include "mr_l/anim_header.h"
+#include "broozer/geo_header.h"
+
+
+#include "broozer/anim_header.h"
 #endif

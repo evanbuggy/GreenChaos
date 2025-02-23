@@ -7,6 +7,7 @@ const GeoLayout lll_area_2_geo[] = {
 		GEO_TRANSLATE_NODE_WITH_DL(LAYER_OPAQUE, -3, -5346, -7, lll_dl_Cylinder_016_mesh_layer_1),
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_TRANSPARENT, -226, 0, 10811, 0, 90, 0, lll_dl_Level_005_mesh_layer_5),
 		GEO_TRANSLATE_NODE_WITH_DL(LAYER_OPAQUE, 49984, 0, 0, lll_dl_Plane_036_mesh_layer_1),
+		GEO_TRANSLATE_NODE_WITH_DL(LAYER_OPAQUE, 49984, 2822, 0, lll_dl_Plane_037_mesh_layer_1),
 	GEO_CLOSE_NODE(),
 	GEO_RETURN(),
 };
