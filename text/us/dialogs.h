@@ -1444,7 +1444,20 @@ The damn things are named\n\
 after me! I give them\n\
 life and they give me\n\
 immeasurable power!\n\
-more power you'll recover."))
+You may as well just\n\
+hand them over to me\n\
+right now and save\n\
+yourself the pain!\n\
+Suffer before my homing\n\
+bombs and charge attack!\n\
+Every 5 hits, my suit\n\
+unleashes an explosion!\n\
+I'm done being in your\n\
+shadow, from now on, the\n\
+world will remember Mr.\n\
+L...\n\
+Whether they like it or\n\
+not!"))
 
 DEFINE_DIALOG(DIALOG_113, 1, 6, 30, 200, _("\
 There are special Caps in\n\
