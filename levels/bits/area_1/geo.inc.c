@@ -4,7 +4,12 @@ const GeoLayout bits_area_1_geo[] = {
 	GEO_NODE_START(),
 	GEO_OPEN_NODE(),
 		GEO_TRANSLATE_NODE_WITH_DL(LAYER_OPAQUE, 0, -1996, 4, bits_dl_1stPillar_mesh_layer_1),
+		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, -1050, 2574, 6648, 0, 85, 0, bits_dl_Arch_mesh_layer_1),
+		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, -1297, -33, -1683, 0, 0, -45, bits_dl_clouds_mesh_layer_1),
 		GEO_TRANSLATE_NODE_WITH_DL(LAYER_OPAQUE, 0, -3294, 0, bits_dl_DeathPlane_mesh_layer_1),
+		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_ALPHA, 3855, 1330, -1239, -20, 0, 90, bits_dl_LongLuigi_mesh_layer_4),
+		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_ALPHA, -247, -1004, -593, 90, 0, 157, bits_dl_Paintings_mesh_layer_4),
+		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_ALPHA, -991, 1358, 6814, 0, 80, -90, bits_dl_Vine_mesh_layer_4),
 	GEO_CLOSE_NODE(),
 	GEO_RETURN(),
 };

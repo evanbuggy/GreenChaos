@@ -74,6 +74,8 @@ const LevelScript level_bits_entry[] = {
 	LOAD_MODEL_FROM_GEO(MODEL_LUIGI_BOMB, luigi_bomb_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_MR_L, mr_l_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_LUIGI_BOMB, luigi_bomb_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_MR_L, mr_l_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_LUIGI_BOMB, luigi_bomb_geo), 
 	/* Fast64 begin persistent block [level commands] */
 	LOAD_MODEL_FROM_GEO(MODEL_MR_L, mr_l_geo),
 	LOAD_MODEL_FROM_GEO(MODEL_LUIGI_BOMB, luigi_bomb_geo),
@@ -85,6 +87,7 @@ const LevelScript level_bits_entry[] = {
 		WARP_NODE(0xF1, LEVEL_CASTLE_GROUNDS, 0x01, 0x06, WARP_NO_CHECKPOINT),
 		OBJECT(MODEL_MR_L, 0, -360, -679, 0, 0, 0, 0x00000000, bhvBossLuigi),
 		MARIO_POS(0x01, 180, 0, -114, 847),
+		OBJECT(MODEL_WF_BUBBLY_TREE, -1881, 1237, 5631, 0, -30, 0, 0x00000000, bhvTree),
 		OBJECT(MODEL_NONE, 0, -114, 847, 0, 180, 0, 0x000A0000, bhvSpinAirborneWarp),
 		OBJECT(MODEL_NONE, 1634, -270, 0, 0, 0, 0, (0 << 24) | (0 << 16) | (30 << 8), bhvRank),
 		TERRAIN(bits_area_1_collision),
