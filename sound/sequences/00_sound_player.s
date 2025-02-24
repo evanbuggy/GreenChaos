@@ -2878,6 +2878,8 @@ sound_ref .sound_general_boing2
 sound_ref .sound_general_yoshi_walk
 sound_ref .sound_general_enemy_alert1
 
+sound_ref .sound_general_thunder // thunder
+
 .sound_general_activate_cap_switch:
 chan_setbank 5
 chan_setinstr 7
@@ -4507,6 +4509,8 @@ sound_ref .sound_env_waterfall1
 sound_ref .sound_env_waterfall1
 sound_ref .sound_env_waterfall1
 sound_ref .sound_env_waterfall1
+
+sound_ref .sound_env_rain // rain
 
 .sound_env_waterfall1:
 chan_setbank 5
@@ -8174,3 +8178,24 @@ envelope_line 1000 32700
 envelope_line 10 16000
 envelope_line 200 32760
 envelope_goto 3
+
+.sound_env_rain:
+chan_setbank 5
+chan_setinstr 16
+chan_call .set_reverb
+chan_setlayer 0, .layer_rain
+chan_end
+
+.layer_1337:
+layer_somethingon
+
+.layer_rain:
+layer_note1 39, 0x4E0, 127
+layer_jump .layer_rain
+
+.sound_general_thunder:
+chan_setbank 5
+chan_setinstr 17
+chan_setlayer 0, .layer_F27
+chan_setlayer 1, .layer_F27
+chan_end

@@ -17,6 +17,7 @@
 #include "engine/math_util.h"
 #include "puppycam2.h"
 #include "puppyprint.h"
+#include "src/audio/external.h"
 
 #include "config.h"
 
@@ -544,6 +545,63 @@ void render_hud_camera_status(void) {
  * Render HUD strings using hudDisplayFlags with it's render functions,
  * excluding the cannon reticle which detects a camera preset for it.
  */
+
+
+ void render_lightning(f32 alphaVal) {
+    Mtx *mtx = alloc_display_list(sizeof(Mtx));
+
+    if (mtx == NULL) {
+        return;
+    }
+
+    if (alphaVal <= 0) {
+        alphaVal = 0;
+    }
+
+    guTranslate(mtx, SCREEN_WIDTH/2, SCREEN_HEIGHT/2, 0);
+
+    gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, alphaVal);
+
+    gSPMatrix(gDisplayListHead++, VIRTUAL_TO_PHYSICAL(mtx++),
+              G_MTX_MODELVIEW | G_MTX_MUL | G_MTX_PUSH);
+    gSPDisplayList(gDisplayListHead++, &dl_draw_lightning_box);
+
+    gSPPopMatrix(gDisplayListHead++, G_MTX_MODELVIEW);
+    
+}
+
+s16 lightningTimer = 0;
+f32 alpha = 255;
+
+/*
+STRUCT thunder_entry
+
+FIRST: COURSENUM
+SECOND: AREANUM
+*/
+
+
+typedef struct {
+    int course;
+    int area;
+} thunder_entry;
+
+thunder_entry thunders[50][50] = {
+//    { COURSE_WF, 1 },
+    { COURSE_BITS, 1 },
+};
+
+// for example, its 1/THUNDER_DIE_CHANCE for a thunder to kill
+#define THUNDER_DIE_CHANCE 10000
+#include "behavior_data.h"
+
+
+
+
+
+
+
+
 void render_hud_time(s32 x, s32 y, s32 width, s32 height, s32 s, s32 t) {
 	s32 xl = MAX(0, x);
 	s32 yl = MAX(0, y);
@@ -1002,6 +1060,24 @@ void render_hud(void) {
 #else
         create_dl_ortho_matrix();
 #endif
+
+
+for (s32 i = 0; i < ARRAY_COUNT(thunders); i++) {
+    if (thunders[i]->course == gCurrCourseNum && thunders[i]->area == gCurrAreaIndex) {
+    render_lightning(alpha);
+
+    if (lightningTimer >= 350 + random_float() * 125) {
+        alpha = 255;
+        lightningTimer = 0;
+        play_sound(SOUND_GENERAL2_THUNDER, gGlobalSoundSource);
+
+    } else { 
+        alpha -= 2.85f;
+        lightningTimer += 1 + random_float() * 2;
+    }
+}
+}
+
 
         if (gCurrentArea != NULL && gCurrentArea->camera->mode == CAMERA_MODE_INSIDE_CANNON) {
             render_hud_cannon_reticle();

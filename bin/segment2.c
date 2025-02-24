@@ -10287,3 +10287,23 @@ u8 render_hud_time_TIME__2__rgba16[] = {
 	
 };
 
+// 0x0200EDA8 - 0x0200EDE8
+#define LIGHTNING_INTENSITY 0xaf
+#define LIGHTNING_ALPHA 0xaf
+#define LIGHTNING_COLOR {LIGHTNING_INTENSITY, LIGHTNING_INTENSITY, LIGHTNING_INTENSITY, LIGHTNING_ALPHA}
+static const Vtx vertex_text_lightning_box[] = {
+    {{{ -320, -240, 0 }, 0, {     0,      0}, LIGHTNING_COLOR }},
+    {{{  320, -240, 0 }, 0, {     0,      0}, LIGHTNING_COLOR }},
+    {{{  320,  240, 0 }, 0, {     0,      0}, LIGHTNING_COLOR }},
+    {{{ -320,  240, 0 }, 0, {     0,      0}, LIGHTNING_COLOR }},
+};
+
+const Gfx dl_draw_lightning_box[] = {
+    gsDPPipeSync(),
+    gsSPClearGeometryMode(G_LIGHTING),
+    gsDPSetCombineMode(G_CC_FADE, G_CC_FADE),
+    gsDPSetRenderMode(G_RM_XLU_SURF, G_RM_XLU_SURF2),
+    gsSPVertex(vertex_text_lightning_box, 4, 0),
+    gsSP2Triangles( 0,  1,  2, 0x0,  0,  2,  3, 0x0),
+    gsSPEndDisplayList(),
+};

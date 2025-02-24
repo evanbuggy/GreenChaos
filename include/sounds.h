@@ -602,5 +602,9 @@ enum SoundBank {
 #define SOUND_OBJ2_MRI_SPINNING                  /* 0x906B0081 */ SOUND_ARG_LOAD(SOUND_BANK_OBJ2,     0x6B, 0x00, SOUND_DISCRETE)
 
 // Add defines for sounds using extra custom banks here!
+#define SOUND_ENV_RAIN	                                          SOUND_ARG_LOAD(SOUND_BANK_ENV,      0x28, 0x80, SOUND_CONSTANT_FREQUENCY)
+#define SOUND_GENERAL2_THUNDER                                    SOUND_ARG_LOAD(SOUND_BANK_GENERAL2, 0x80, 0xFF, SOUND_NO_PRIORITY_LOSS | SOUND_DISCRETE)
+// you know what they say
+// toast
 
 #endif // SOUNDS_H
