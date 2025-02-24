@@ -96,7 +96,7 @@ void boss_luigi(void)  {
                     }
                     if (o->oTimer % 40 == 0) {
                         play_sound(SOUND_OBJ_EVIL_LAKITU_THROW, gGlobalSoundSource);
-                        spawn_object(o, MODEL_BOWLING_BALL, bhvLuigiBomb);
+                        spawn_object(o, MODEL_LUIGI_BOMB, bhvLuigiBomb);
                     }
                 }
             }
