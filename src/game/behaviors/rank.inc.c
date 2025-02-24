@@ -21,18 +21,18 @@ u32 time[5] = {0, 0, 0, 0, 0};
 
 void bhv_rank_init(void) {
     // Combo Requirements per rank:
-    // The param is doubled so when you are using a rank object, enter half the
+    // The param is doubled so when you are using a rank object, enter a quarter of the
     // highest combo you want for an S rank for the 1st param.
-    comboSRank = (o->oBehParams >> 24) * 2;
+    comboSRank = (o->oBehParams >> 24) * 4;
     comboDRank = comboSRank / 5;
     comboCRank = comboDRank * 2;
     comboBRank = comboDRank * 3;
     comboARank = comboDRank * 4;
 
     // Coin Requirements per rank:
-    // The param is doubled so when you are using a rank object, enter half the
+    // The param is doubled so when you are using a rank object, enter a quarter of the
     // highest ring count you want for an S rank for the 2nd param.
-    coinSRank = (o->oBehParams2ndByte) * 2;
+    coinSRank = (o->oBehParams2ndByte) * 4;
     coinDRank = coinSRank / 5;
     coinCRank = coinDRank * 2;
     coinBRank = coinDRank * 3;
