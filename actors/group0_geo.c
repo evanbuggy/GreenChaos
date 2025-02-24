@@ -33,3 +33,4 @@
 #include "cutscene_luigi/geo.inc.c"
 #include "mr_l/geo.inc.c"
 #include "broozer/geo.inc.c"
+#include "luigi_bomb/geo.inc.c"

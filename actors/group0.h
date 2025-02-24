@@ -381,4 +381,6 @@ extern const Gfx white_particle_small_unused_dl[];
 
 #include "Area_2/collision_header.h"
 
+#include "luigi_bomb/geo_header.h"
+
 #endif

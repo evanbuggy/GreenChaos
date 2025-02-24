@@ -6289,3 +6289,15 @@ const BehaviorScript bhvBossLuigi[] = {
         CALL_NATIVE(bhv_boss_luigi_loop),
     END_LOOP(),
 };
+
+const BehaviorScript bhvLuigiBomb[] = {
+    BEGIN(OBJ_LIST_PUSHABLE),
+    OR_INT(oFlags, (OBJ_FLAG_COMPUTE_ANGLE_TO_MARIO | OBJ_FLAG_COMPUTE_DIST_TO_MARIO | OBJ_FLAG_SET_FACE_YAW_TO_MOVE_YAW | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
+    BILLBOARD(),
+    SET_OBJ_PHYSICS(/*Wall hitbox radius*/ 40, /*Gravity*/ -300, /*Bounciness*/ -50, /*Drag strength*/ 1000, /*Friction*/ 1000, /*Buoyancy*/ 0, /*Unused*/ 0, 0),
+    SET_FLOAT(oGraphYOffset, 150),
+    CALL_NATIVE(bhv_luigi_bomb_init),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_luigi_bomb_loop),
+    END_LOOP(),
+};
