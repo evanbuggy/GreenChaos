@@ -1428,20 +1428,22 @@ present for you. It's sure\n\
 to warm you up."))
 
 DEFINE_DIALOG(DIALOG_112, 1, 4, 30, 200, _("\
-Collect as many coins as\n\
-possible! They'll refill\n\
-your Power Meter.\n\
-\n\
-You can check to see how\n\
-many coins you've\n\
-collected in each of the\n\
-15 enemy worlds.\n\
-You can also recover\n\
-power by touching the\n\
-Spinning Heart.\n\
-\n\
-The faster you run\n\
-through the heart, the\n\
+Mario! Is that really\n\
+you? No way! You've found\n\
+all of the other Luigi\n\
+Emeralds?\n\
+This is preposterous!\n\
+Why do you always have to\n\
+take everything away from\n\
+me?\n\
+No matter! Even with only\n\
+a single Luigi Emerald,\n\
+I can withstand your\n\
+power!\n\
+The damn things are named\n\
+after me! I give them\n\
+life and they give me\n\
+immeasurable power!\n\
 more power you'll recover."))
 
 DEFINE_DIALOG(DIALOG_113, 1, 6, 30, 200, _("\
