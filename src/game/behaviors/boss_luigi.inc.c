@@ -81,7 +81,7 @@ void boss_luigi(void)  {
             else {
                 if (o->oTimer >= 23) {
                     o->oMoveAngleYaw += 0x100;
-                    obj_forward_vel_approach(100, 0.4f);
+                    obj_forward_vel_approach(150, 0.4f);
                     cur_obj_become_intangible();
                     cur_obj_init_animation(3);
                     o->oVelY = 8.0f;
@@ -94,13 +94,21 @@ void boss_luigi(void)  {
                             obj_become_tangible(flameObj);
                         }
                     }
-                    if (o->oTimer % 40 == 0) {
-                        play_sound(SOUND_OBJ_EVIL_LAKITU_THROW, gGlobalSoundSource);
-                        spawn_object(o, MODEL_LUIGI_BOMB, bhvLuigiBomb);
+                    if (o->oHealth <= 10) {
+                        if (o->oTimer % 20 == 0) {
+                            play_sound(SOUND_OBJ_EVIL_LAKITU_THROW, gGlobalSoundSource);
+                            spawn_object(o, MODEL_LUIGI_BOMB, bhvLuigiBomb);
+                        }
+                    }
+                    else {
+                        if (o->oTimer % 40 == 0) {
+                            play_sound(SOUND_OBJ_EVIL_LAKITU_THROW, gGlobalSoundSource);
+                            spawn_object(o, MODEL_LUIGI_BOMB, bhvLuigiBomb);
+                        }
                     }
                 }
             }
-         }
+        }
     }
 
     if (obj_handle_attacks(&sBossLuigiHitbox, o->oAction, sBossLuigiHandlers) == ATTACK_KICK_OR_TRIP) {
@@ -148,6 +156,7 @@ void boss_luigi(void)  {
             spawn_mist_particles_variable(0, 0, 200.0f);
             spawn_triangle_break_particles(20, MODEL_DIRT_ANIMATION, 3.0f, 4);
             cur_obj_shake_screen(SHAKE_POS_SMALL);
+            stop_background_music(SEQUENCE_ARGS(4, SEQ_LUIGI_FINAL_BOSS));
         } 
 
         obj_die_if_health_non_positive();
@@ -175,6 +184,7 @@ void boss_luigi(void)  {
             case 15:
                 spawn_object_relative_with_scale(OBJ_BP_NONE, 0, 0, 0, 3, o, MODEL_NONE, bhvExplosion);
                 spawn_triangle_break_particles(20, MODEL_DIRT_ANIMATION, 3.0f, 4);
+                spawn_object(o, MODEL_YELLOW_COIN, bhvSingleCoinGetsSpawned);
                 break;
 
             case 1:

@@ -1449,9 +1449,21 @@ hand them over to me\n\
 right now and save\n\
 yourself the pain!\n\
 Suffer before my homing\n\
-bombs and charge attack!\n\
+L Bombs! To avoid them\n\
+consistently, try out\n\
+the ground pound dive!\n\
 Every 5 hits, my suit\n\
-unleashes an explosion!\n\
+unleashes a devastating\n\
+explosion!\n\
+\n\
+Remember that [A] lets\n\
+you super dive away from\n\
+me during a combo!\n\
+\n\
+Uhh... I should probably\n\
+stop giving you tips\n\
+before we fight.\n\
+\n\
 I'm done being in your\n\
 shadow, from now on, the\n\
 world will remember Mr.\n\
