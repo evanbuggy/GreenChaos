@@ -379,4 +379,6 @@ extern const Gfx white_particle_small_unused_dl[];
 #include "broozer/anim_header.h"
 #include "Area_1/collision_header.h"
 
+#include "Area_2/collision_header.h"
+
 #endif
