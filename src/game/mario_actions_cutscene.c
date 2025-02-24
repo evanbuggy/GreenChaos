@@ -360,7 +360,7 @@ s32 act_reading_npc_dialog(struct MarioState *m) {
     s32 headTurnAmount = 0;
 
     if (m->actionArg == MARIO_DIALOG_LOOK_UP) {
-        headTurnAmount = -1024;
+        headTurnAmount = 0;
     }
     if (m->actionArg == MARIO_DIALOG_LOOK_DOWN) {
         headTurnAmount = 384;

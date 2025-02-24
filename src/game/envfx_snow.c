@@ -348,6 +348,15 @@ void rotate_triangle_vertices(Vec3s vertex1, Vec3s vertex2, Vec3s vertex3, s16 p
     vertex3[2] = v3[0] * sinMYaw + v3[1] * (-sinPitch * cosMYaw) + v3[2] * (cosPitch * cosMYaw);
 }
 
+#ifdef F3DEX_GBI_2
+#define SNOWFLAKE_VERTS 30
+#define SNOWFLAKES 10
+#else
+#define SNOWFLAKE_VERTS 15
+#define SNOWFLAKES 5
+#endif
+
+
 /**
  * Append 15 vertices to 'gfx', which is enough for 5 snowflakes starting at
  * 'index' in the buffer. The 3 input vertices represent the rotated triangle
@@ -356,13 +365,13 @@ void rotate_triangle_vertices(Vec3s vertex1, Vec3s vertex2, Vec3s vertex3, s16 p
  */
 void append_snowflake_vertex_buffer(Gfx *gfx, s32 index, Vec3s vertex1, Vec3s vertex2, Vec3s vertex3) {
     s32 i = 0;
-    Vtx *vertBuf = (Vtx *) alloc_display_list(15 * sizeof(Vtx));
+    Vtx *vertBuf = (Vtx *) alloc_display_list(SNOWFLAKE_VERTS * sizeof(Vtx));
 
     if (vertBuf == NULL) {
         return;
     }
 
-    for (i = 0; i < 15; i += 3) {
+    for (i = 0; i < SNOWFLAKE_VERTS; i += 3) {
         vertBuf[i] = gSnowTempVtx[0];
         (vertBuf + i)->v.ob[0] = (gEnvFxBuffer + (index + i / 3))->xPos + vertex1[0];
         (vertBuf + i)->v.ob[1] = (gEnvFxBuffer + (index + i / 3))->yPos + vertex1[1];
@@ -379,7 +388,7 @@ void append_snowflake_vertex_buffer(Gfx *gfx, s32 index, Vec3s vertex1, Vec3s ve
         (vertBuf + i + 2)->v.ob[2] = (gEnvFxBuffer + (index + i / 3))->zPos + vertex3[2];
     }
 
-    gSPVertex(gfx, VIRTUAL_TO_PHYSICAL(vertBuf), 15, 0);
+    gSPVertex(gfx, VIRTUAL_TO_PHYSICAL(vertBuf), SNOWFLAKE_VERTS, 0);
 }
 
 /**
@@ -458,7 +467,7 @@ Gfx *envfx_update_snow(s32 snowMode, Vec3s marioPos, Vec3s camFrom, Vec3s camTo)
         gSPDisplayList(gfx++, &tiny_rain_dl); // snowflake with blue edge
     }
 
-    for (i = 0; i < gSnowParticleCount; i += 5) {
+    for (i = 0; i < gSnowParticleCount; i += SNOWFLAKES) {
         append_snowflake_vertex_buffer(gfx++, i, (s16 *) &vertex1, (s16 *) &vertex2, (s16 *) &vertex3);
 
         gSP1Triangle(gfx++, 0, 1, 2, 0);
@@ -466,6 +475,13 @@ Gfx *envfx_update_snow(s32 snowMode, Vec3s marioPos, Vec3s camFrom, Vec3s camTo)
         gSP1Triangle(gfx++, 6, 7, 8, 0);
         gSP1Triangle(gfx++, 9, 10, 11, 0);
         gSP1Triangle(gfx++, 12, 13, 14, 0);
+        #ifdef F3DEX_GBI_2
+        gSP1Triangle(gfx++, 15, 16, 17, 0);
+        gSP1Triangle(gfx++, 18, 19, 20, 0);
+        gSP1Triangle(gfx++, 21, 22, 23, 0);
+        gSP1Triangle(gfx++, 24, 25, 26, 0);
+        gSP1Triangle(gfx++, 27, 28, 29, 0);
+#endif
     }
 
     gSPDisplayList(gfx++, &tiny_bubble_dl_0B006AB0) gSPEndDisplayList(gfx++);
@@ -479,11 +495,11 @@ Gfx *envfx_update_snow(s32 snowMode, Vec3s marioPos, Vec3s camFrom, Vec3s camTo)
  */
 Gfx *envfx_update_particles(s32 mode, Vec3s marioPos, Vec3s camTo, Vec3s camFrom) {
     Gfx *gfx;
-
+/**
     if (get_dialog_id() != DIALOG_NONE) {
         return NULL;
     }
-
+ */
     if (gEnvFxMode != ENVFX_MODE_NONE && gEnvFxMode != mode) {
         mode = ENVFX_MODE_NONE;
     }

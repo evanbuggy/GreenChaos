@@ -1,0 +1,14 @@
+extern const GeoLayout bg_tree_geo[];
+extern Lights1 bg_tree_right_001_layer4_lights;
+extern Lights1 bg_tree_left_001_layer4_lights;
+extern u8 bg_tree_SM64_Main_tree1_txt_rgba16[];
+extern u8 bg_tree_SM64_Main_tree2_txt_rgba16[];
+extern Vtx bg_tree_000_displaylist_mesh_layer_4_vtx_0[3];
+extern Gfx bg_tree_000_displaylist_mesh_layer_4_tri_0[];
+extern Vtx bg_tree_000_displaylist_mesh_layer_4_vtx_1[3];
+extern Gfx bg_tree_000_displaylist_mesh_layer_4_tri_1[];
+extern Gfx mat_bg_tree_right_001_layer4[];
+extern Gfx mat_revert_bg_tree_right_001_layer4[];
+extern Gfx mat_bg_tree_left_001_layer4[];
+extern Gfx mat_revert_bg_tree_left_001_layer4[];
+extern Gfx bg_tree_000_displaylist_mesh_layer_4[];

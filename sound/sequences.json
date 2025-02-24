@@ -146,5 +146,8 @@
     ],
     "2A_luigi_cutscene_intro": [
         "luigi_cutscene_intro"
+    ],
+    "2B_luigi_final_boss": [
+        "luigi_final_boss"
     ]
 }

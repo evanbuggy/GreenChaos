@@ -58,3 +58,4 @@
 #include "levels/bits/areas/1/32/collision.inc.c"
 
 #include "levels/bits/leveldata.inc.c"
+#include "levels/bits/bg_tree/model.inc.c"

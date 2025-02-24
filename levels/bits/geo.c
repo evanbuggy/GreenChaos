@@ -47,3 +47,4 @@
 #include "levels/bits/areas/1/geo.inc.c"
 
 #include "levels/bits/geo.inc.c"
+#include "levels/bits/bg_tree/geo.inc.c"

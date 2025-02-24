@@ -91,4 +91,6 @@ extern const LevelScript level_bits_entry[];
 
 
 #include "levels/bits/header.inc.h"
+#include "levels/bits/bg_tree/geo_header.h"
+
 #endif

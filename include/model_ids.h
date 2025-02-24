@@ -226,6 +226,7 @@
 #define MODEL_BITS_STAIRCASE_FRAME3               0x44        // bits_geo_0006E8
 #define MODEL_BITS_STAIRCASE_FRAME4               0x45        // bits_geo_000700
 #define MODEL_BITS_WARP_PIPE                      0x49        // warp_pipe_geo
+#define MODEL_BITS_TREE                           0x4A        // bg_tree_geo
 
 // lll
 #define MODEL_LLL_DRAWBRIDGE_PART                 0x38        // lll_geo_000B20
