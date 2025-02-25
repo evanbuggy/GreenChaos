@@ -218,30 +218,21 @@ ride wherever you want to\n\
 go! Shred those enemies!"))
 
 DEFINE_DIALOG(DIALOG_017, 1, 4, 30, 200, _("\
-I'm the Big Bob-omb, lord\n\
-of all blasting matter,\n\
-king of ka-booms the\n\
-world over!\n\
-How dare you scale my\n\
-mountain? By what right\n\
-do you set foot on my\n\
-imperial mountaintop?\n\
-You may have eluded my\n\
-guards, but you'll never\n\
-escape my grasp...\n\
+The boss told me to look\n\
+out for some red guy...\n\
+Well you look half red!\n\
+So it'll do!\n\
+That means you're Mario.\n\
+You've got my concrete\n\
+boiling since 1996.\n\
 \n\
-...and you'll never take\n\
-away my Power Star. I\n\
-hereby challenge you,\n\
-Mario!\n\
-If you want the Star I\n\
-hold, you must prove\n\
-yourself in battle.\n\
-\n\
-Can you pick me up from\n\
-the back and hurl me to\n\
-this royal turf? I think\n\
-that you cannot!"))
+Do you know how many of\n\
+my brethren have fallen\n\
+to the construction of\n\
+this city?\n\
+Your defeat will reign\n\
+justice for all of\n\
+Whomp-kind!"))
 
 DEFINE_DIALOG(DIALOG_018, 1, 4, 30, 200, _("\
 I'm sleeping because...\n\
@@ -1800,18 +1791,18 @@ Stars appear when you\n\
 collect 100 coins in each\n\
 of the 15 courses!"))
 
-DEFINE_DIALOG(DIALOG_138, 1, 3, 30, 200, _("\
+DEFINE_DIALOG(DIALOG_138, 1, 4, 30, 200, _("\
 Down: Underground Lake\n\
 Left: Black Hole\n\
 Right: Hazy Maze (Closed)"))
 
 DEFINE_DIALOG(DIALOG_139, 1, 6, 30, 200, _("\
-Above: Automatic Elevator\n\
-Elevator begins\n\
-automatically and follows\n\
-pre-set course.\n\
-It disappears\n\
-automatically, too."))
+What you see before\n\
+you is a Flying Bug\n\
+Luigi. They only take\n\
+one hit to destroy,\n\
+so chain them with the\n\
+Spin Saw with L!"))
 
 DEFINE_DIALOG(DIALOG_140, 1, 6, 30, 200, _("\
 Elevator Area\n\
@@ -1822,33 +1813,18 @@ Left: Black Hole\n\
 Arrow: You are here"))
 
 DEFINE_DIALOG(DIALOG_141, 1, 5, 150, 200, _("\
-You've recovered one of\n\
-the stolen Power Stars!\n\
-Now you can open some of\n\
-the sealed doors in the\n\
-castle.\n\
-Try the Princess's room\n\
-on the second floor and\n\
-the room with the\n\
-painting of Whomp's\n\
-Fortress on Floor 1.\n\
-Bowser's troops are still\n\
-gaining power, so you\n\
-can't give up. Save us,\n\
-Mario! Keep searching for\n\
-Stars!"))
+You found one of the\n\
+Luigi Emeralds! Way to\n\
+go! 6 remain. Find them\n\
+before your brother\n\
+does and stop him!"))
 
 DEFINE_DIALOG(DIALOG_142, 1, 5, 150, 200, _("\
 You've recovered three\n\
-Power Stars! Now you can\n\
-open any door with a 3\n\
-on its star.\n\
-\n\
-You can come and go from\n\
-the open courses as you\n\
-please. The enemies ahead\n\
-are even meaner, so be\n\
-careful!"))
+Luigi Emeralds! You're\n\
+halfway there! Mario's\n\
+power grows stronger\n\
+with each emerald..."))
 
 DEFINE_DIALOG(DIALOG_143, 1, 6, 150, 200, _("\
 You've recovered eight of\n\
