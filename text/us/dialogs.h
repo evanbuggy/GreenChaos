@@ -283,9 +283,9 @@ Stars."))
 
 DEFINE_DIALOG(DIALOG_026, 1, 4, 95, 200, _("\
 It takes the power of\n\
-6 Stars to open this\n\
-door. You need [%] more\n\
-Stars."))
+6 Luigi Emeralds to open\n\
+this door. You need [%]\n\
+more!"))
 
 DEFINE_DIALOG(DIALOG_027, 1, 4, 95, 200, _("\
 It takes the power of\n\
