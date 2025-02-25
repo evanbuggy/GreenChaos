@@ -12,7 +12,7 @@ const GeoLayout bits_area_1_geo[] = {
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, -1258, -4061, 2367, 17, 18, 34, bits_dl_CurveBuilding_mesh_layer_1),
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, 6531, -4417, -438, 19, -172, 16, bits_dl_CurveBuilding_001_mesh_layer_1),
 		GEO_TRANSLATE_NODE_WITH_DL(LAYER_ALPHA, 1277, -1568, -775, bits_dl_Cylinder_mesh_layer_4),
-		GEO_TRANSLATE_NODE_WITH_DL(LAYER_OPAQUE, 0, -3294, 0, bits_dl_DeathPlane_mesh_layer_1),
+		GEO_TRANSLATE_NODE_WITH_DL(LAYER_OPAQUE, 0, -3750, 0, bits_dl_DeathPlane_mesh_layer_1),
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_ALPHA, 3855, 1330, -1239, -20, 0, 90, bits_dl_LongLuigi_mesh_layer_4),
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_ALPHA, -247, -1004, -593, 90, 0, 157, bits_dl_Paintings_mesh_layer_4),
 		GEO_TRANSLATE_NODE_WITH_DL(LAYER_OPAQUE, 0, -270, 0, bits_dl_Plane_mesh_layer_1),

@@ -1598,7 +1598,7 @@ void render_widescreen_setting(void) {
     #define SECRET_LVL_NAME_X get_str_x_pos_from_center(159, &courseName[3], 10.0f)
     #define MYSCORE_X         48
 #else
-    #define TXT_COURSE_X      63
+    #define TXT_COURSE_X      75
     #define TXT_STAR_X        98
     #define ACT_NAME_X        116
     #define LVL_NAME_X        117
@@ -1642,8 +1642,8 @@ void render_pause_my_score_coins(void) {
 
     if (courseIndex <= COURSE_NUM_TO_INDEX(COURSE_STAGES_MAX)) {
         print_generic_string(TXT_COURSE_X, 157, LANGUAGE_ARRAY(textCourse));
-        int_to_str(gCurrCourseNum, strCourseNum);
-        print_generic_string(CRS_NUM_X1, 157, strCourseNum);
+    //    int_to_str(gCurrCourseNum, strCourseNum);
+    //    print_generic_string(CRS_NUM_X1, 157, strCourseNum);
 
         u8 *actName = segmented_to_virtual(actNameTbl[COURSE_NUM_TO_INDEX(gCurrCourseNum) * 6 + gDialogCourseActNum - 1]);
 
