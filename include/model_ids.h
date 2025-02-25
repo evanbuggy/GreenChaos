@@ -572,6 +572,7 @@
 #define MODEL_MR_L                        0xFA        // mr_l_geo
 #define MODEL_BROOZER                     0xFB        // broozer_geo
 #define MODEL_LUIGI_BOMB                  0xFC        // luigi_bomb_geo
+#define MODEL_CUTSCENE_LUIGI_ENDING       0xFD        // cutscene_luigi_ending
 
 #ifdef IA8_30FPS_COINS
 #define MODEL_SILVER_COIN                 0xE2        // silver_coin_geo

@@ -35,3 +35,4 @@
 #include "broozer/geo.inc.c"
 #include "luigi_bomb/geo.inc.c"
 #include "green_whomp/geo.inc.c"
+#include "cutscene_luigi_ending/geo.inc.c"

@@ -385,4 +385,6 @@ extern const Gfx white_particle_small_unused_dl[];
 
 #include "green_whomp/geo_header.h"
 
+#include "cutscene_luigi_ending/geo_header.h"
+
 #endif

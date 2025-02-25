@@ -47,7 +47,7 @@ const LevelScript level_castle_inside_entry[] = {
 	LOAD_MODEL_FROM_GEO(MODEL_CASTLE_STAR_DOOR_8_STARS, castle_geo_000F00), 
 	LOAD_MODEL_FROM_GEO(MODEL_CASTLE_STAR_DOOR_50_STARS, castle_geo_000F00), 
 	LOAD_MODEL_FROM_GEO(MODEL_CASTLE_STAR_DOOR_70_STARS, castle_geo_000F00), 
-	LOAD_MODEL_FROM_GEO(MODEL_CUTSCENE_LUIGI, cutscene_luigi_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_CUTSCENE_LUIGI_ENDING, cutscene_luigi_ending_geo), 
 	/* Fast64 begin persistent block [level commands] */
 	/* Fast64 end persistent block [level commands] */
 
@@ -55,9 +55,10 @@ const LevelScript level_castle_inside_entry[] = {
 		WARP_NODE(0x0A, LEVEL_BOB, 0x01, 0x0A, WARP_NO_CHECKPOINT),
 		WARP_NODE(0xF0, LEVEL_CASTLE_GROUNDS, 0x01, 0x0A, WARP_NO_CHECKPOINT),
 		WARP_NODE(0xF1, LEVEL_CASTLE_GROUNDS, 0x01, 0x0A, WARP_NO_CHECKPOINT),
-		OBJECT(MODEL_CUTSCENE_LUIGI, 243, 251, 99, 0, 180, 0, 0x00000000, bhvFinalLuigi),
+		OBJECT(MODEL_CUTSCENE_LUIGI_ENDING, 243, 251, 99, 0, 180, 0, (DIALOG_001 << 24) | (DIALOG_001 << 16) | (DIALOG_001 << 8) | (DIALOG_001), bhvFinalLuigi),
 		MARIO_POS(0x01, -90, 630, 177, -191),
 		OBJECT(MODEL_NONE, 630, 177, -191, 0, -90, 0, 0x000A0000, bhvSpinAirborneWarp),
+		OBJECT(MODEL_WOODEN_SIGNPOST, -250, 95, 0, 0, 90, 0, (DIALOG_008 << 24) | (DIALOG_008 << 16) | (DIALOG_008 << 8) | (DIALOG_008), bhvMessagePanel),
 		TERRAIN(castle_inside_area_1_collision),
 		MACRO_OBJECTS(castle_inside_area_1_macro_objs),
 		SET_BACKGROUND_MUSIC(0x00, SEQ_LUIGI_ROOM),
