@@ -55,7 +55,7 @@ extern Vtx castle_inside_dl_Cube_mesh_layer_1_vtx_2[27];
 extern Gfx castle_inside_dl_Cube_mesh_layer_1_tri_2[];
 extern Vtx castle_inside_dl_Cube_mesh_layer_1_vtx_3[9];
 extern Gfx castle_inside_dl_Cube_mesh_layer_1_tri_3[];
-extern Vtx castle_inside_dl_Cube_001_mesh_layer_1_vtx_0[52];
+extern Vtx castle_inside_dl_Cube_001_mesh_layer_1_vtx_0[42];
 extern Gfx castle_inside_dl_Cube_001_mesh_layer_1_tri_0[];
 extern Vtx castle_inside_dl_Cube_002_mesh_layer_1_vtx_0[12];
 extern Gfx castle_inside_dl_Cube_002_mesh_layer_1_tri_0[];
