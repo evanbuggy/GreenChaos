@@ -283,7 +283,7 @@ Stars."))
 
 DEFINE_DIALOG(DIALOG_026, 1, 4, 95, 200, _("\
 It takes the power of\n\
-8 Stars to open this\n\
+6 Stars to open this\n\
 door. You need [%] more\n\
 Stars."))
 
