@@ -102,8 +102,8 @@ Ready....\n\
 //Go!////Don't Go"))
 
 DEFINE_DIALOG(DIALOG_006, 1, 3, 30, 200, _("\
-Hey!!! Don't try to " SCAM_ME
-"You've gotta run\n\
+Hey!!! Don't try to\n\
+You've gotta run\n\
 the whole course.\n\
 Later. Look me up when\n\
 you want to race for\n\
@@ -117,18 +117,46 @@ Here you go--you've won\n\
 it, fair and square!"))
 
 DEFINE_DIALOG(DIALOG_008, 1, 4, 30, 200, _("\
-BEWARE OF CHAIN CHOMP\n\
-Extreme Danger!\n\
-Get close and press [C]^\n\
-for a better look.\n\
-Scary, huh?\n\
-See the Red Coin on top\n\
-of the stake?\n\
+Thank you for playing\n\
+the Green Chaos! This\n\
+is the end of your\n\
+adventure.\n\
+This hack was made for\n\
+Simpleflips' Chaos\n\
+Competition. We hope\n\
+you liked it!\n\
+Made and presented\n\
+with love from Buggy\n\
+and Frijoles.\n\
 \n\
-When you collect eight of\n\
-them, a Power Star will\n\
-appear in the meadow\n\
-across the bridge."))
+Special thanks to\n\
+Cooliokid956 and Phil\n\
+for squashing some\n\
+nasty bugs.\n\
+Special thanks to\n\
+Enzlor, Yoshbag and\n\
+Leo for playtesting\n\
+and feedback!\n\
+Thank you to Render96\n\
+for the beautiful\n\
+Mario base model on\n\
+the title screen.\n\
+Thank you to yoyotam3\n\
+for implementing the\n\
+Spin Saw and various\n\
+enemy interactions!\n\
+Thank you HackerSM64\n\
+and Fast64 Discord\n\
+for additional\n\
+assistance!\n\
+And finally, thank\n\
+you Rewind Music\n\
+for the music in\n\
+Luigi Factory!\n\
+\n\
+I am all of-a me!\n\
+\n\
+       -Mario"))
 
 DEFINE_DIALOG(DIALOG_009, 1, 5, 30, 200, _("\
 Long time, no see! Wow,\n\
