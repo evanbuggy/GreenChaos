@@ -34,3 +34,4 @@
 #include "mr_l/geo.inc.c"
 #include "broozer/geo.inc.c"
 #include "luigi_bomb/geo.inc.c"
+#include "green_whomp/geo.inc.c"

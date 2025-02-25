@@ -62,3 +62,4 @@
 #include "Area_1/collision.inc.c"
 #include "Area_2/collision.inc.c"
 #include "luigi_bomb/model.inc.c"
+#include "green_whomp/model.inc.c"

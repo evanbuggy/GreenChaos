@@ -330,6 +330,7 @@
 #define MODEL_BULLY_BOSS                  0x57        // bully_boss_geo
 #define MODEL_BLARGG_NEW                  0x58        // blargg_geo
 #define MODEL_WHOMP_LUIGI                 0x59        // whomp_boss_luigi_geo
+#define MODEL_GREEN_WHOMP                 0x60        // green_whomp_geo
 
 // group 3
 #define MODEL_WATER_BOMB                  0x54        // water_bomb_geo

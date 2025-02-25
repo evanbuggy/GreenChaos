@@ -383,4 +383,6 @@ extern const Gfx white_particle_small_unused_dl[];
 
 #include "luigi_bomb/geo_header.h"
 
+#include "green_whomp/geo_header.h"
+
 #endif

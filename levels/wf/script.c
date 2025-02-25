@@ -161,10 +161,13 @@ const LevelScript level_wf_entry[] = {
 	LOAD_MODEL_FROM_GEO(MODEL_ELECTRO_LUIGI, electro_luigi_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_BUG_LUIGI, bug_luigi_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_WHOMP_LUIGI, whomp_boss_luigi_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_ELECTRO_LUIGI, electro_luigi_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_BUG_LUIGI, bug_luigi_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_WHOMP_LUIGI, whomp_boss_luigi_geo), 
 	/* Fast64 begin persistent block [level commands] */
 	LOAD_MODEL_FROM_GEO(MODEL_ELECTRO_LUIGI, electro_luigi_geo),
 	LOAD_MODEL_FROM_GEO(MODEL_BUG_LUIGI, bug_luigi_geo),
-	LOAD_MODEL_FROM_GEO(MODEL_WHOMP_LUIGI, whomp_boss_luigi_geo),
+	LOAD_MODEL_FROM_GEO(MODEL_GREEN_WHOMP, green_whomp_geo),
 	/* Fast64 end persistent block [level commands] */
 
 	AREA(1, wf_area_1),
@@ -229,7 +232,7 @@ const LevelScript level_wf_entry[] = {
 		OBJECT_WITH_ACTS(MODEL_ELECTRO_LUIGI, -8356, 9031, 10179, 0, -90, 0, 0x00000000, bhvElectroLuigi, ACT_2 | ACT_3 | ACT_4 | ACT_5 | ACT_6),
 		OBJECT_WITH_ACTS(MODEL_ELECTRO_LUIGI, -6001, 2751, 6759, 0, 0, 0, 0x00000000, bhvElectroLuigi, ACT_2 | ACT_3 | ACT_4 | ACT_5 | ACT_6),
 		OBJECT(MODEL_ELECTRO_LUIGI, -304, 4979, -14505, 0, 85, 0, 0x00000000, bhvElectroLuigi),
-		OBJECT_WITH_ACTS(MODEL_WHOMP_LUIGI, 13521, 16510, 9852, 0, 90, 0, 0x00000000, bhvWhompKingBoss, ACT_1),
+		OBJECT_WITH_ACTS(MODEL_GREEN_WHOMP, 13521, 16510, 9852, 0, 90, 0, 0x00000000, bhvWhompKingBoss, ACT_1),
 		OBJECT(MODEL_NONE, 13420, 3187, -3646, 0, 90, 0, (2 << 24), bhvHiddenRedCoinStar),
 		OBJECT(MODEL_RED_COIN, 5877, 1356, -4803, 0, 0, 0, 0x00000000, bhvRedCoin),
 		OBJECT(MODEL_RED_COIN, 9060, 4022, -5869, 0, 0, 0, 0x00000000, bhvRedCoin),
