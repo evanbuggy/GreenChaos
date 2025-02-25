@@ -95,13 +95,13 @@ void boss_luigi(void)  {
                         }
                     }
                     if (o->oHealth <= 10) {
-                        if (o->oTimer % 20 == 0) {
+                        if (o->oTimer % 30 == 0) {
                             play_sound(SOUND_OBJ_EVIL_LAKITU_THROW, gGlobalSoundSource);
                             spawn_object(o, MODEL_LUIGI_BOMB, bhvLuigiBomb);
                         }
                     }
                     else {
-                        if (o->oTimer % 40 == 0) {
+                        if (o->oTimer % 60 == 0) {
                             play_sound(SOUND_OBJ_EVIL_LAKITU_THROW, gGlobalSoundSource);
                             spawn_object(o, MODEL_LUIGI_BOMB, bhvLuigiBomb);
                         }
