@@ -68,6 +68,7 @@ const LevelScript level_wdw_entry[] = {
 	LOAD_MODEL_FROM_GEO(MODEL_LUIGI_DOLL, luigi_doll_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_LUIGI_DOLL, luigi_doll_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_LUIGI_DOLL, luigi_doll_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_LUIGI_DOLL, luigi_doll_geo), 
 	/* Fast64 begin persistent block [level commands] */
 	LOAD_MODEL_FROM_GEO(MODEL_LUIGI_DOLL, luigi_doll_geo),
 	/* Fast64 end persistent block [level commands] */
@@ -102,7 +103,6 @@ const LevelScript level_wdw_entry[] = {
 		OBJECT(MODEL_WOODEN_SIGNPOST, 10748, -2039, -1920, 0, 0, 0, (49 << 16), bhvMessagePanel),
 		OBJECT(MODEL_LUIGI_DOLL, 10761, -2037, 4654, 0, 0, 0, (1 << 16), bhvCombatEnemy),
 		OBJECT(MODEL_GREEN_SPRING, 11184, -2037, -1720, 0, 0, 0, (5 << 24) | (14 << 16), bhvSpring),
-		OBJECT(MODEL_WF_BUBBLY_TREE, -4986, 1233, -3035, 0, -130, 0, 0x00000000, bhvTree),
 		OBJECT(MODEL_NONE, 0, 583, 4760, 0, 180, 0, 0x000A0000, bhvSpinAirborneWarp),
 		TERRAIN(wdw_area_1_collision),
 		MACRO_OBJECTS(wdw_area_1_macro_objs),
