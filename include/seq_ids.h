@@ -54,6 +54,7 @@ enum SeqId {
     SEQ_LUIGI_CUTSCENE_PART_TWO,  // 0x29
     SEQ_LUIGI_CUTSCENE_INTRO,  // 0x2A
     SEQ_LUIGI_FINAL_BOSS,  // 0x2B
+    SEQ_LUIGI_ROOM,  // 0x2C
     SEQ_COUNT,
 };
 
