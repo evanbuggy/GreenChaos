@@ -29,8 +29,8 @@ const MacroObject lll_area_1_macro_objs[] = {
 	MACRO_OBJECT_WITH_BEH_PARAM(macro_coin_line_horizontal, 180, -9575, -5228, -12881, 0x00000000),
 	MACRO_OBJECT_WITH_BEH_PARAM(macro_coin_line_horizontal, 180, -9575, -5228, -14939, 0x00000000),
 	MACRO_OBJECT_WITH_BEH_PARAM(macro_coin_line_horizontal, -90, -13310, -6475, -13590, 0x00000000),
-	MACRO_OBJECT_WITH_BEH_PARAM(macro_coin_line_horizontal, -90, 3603, -6475, -12762, 0x00000000),
-	MACRO_OBJECT_WITH_BEH_PARAM(macro_coin_line_horizontal, -90, 7325, -6475, -12762, 0x00000000),
+	MACRO_OBJECT_WITH_BEH_PARAM(macro_coin_line_horizontal, -90, 3603, -6475, -12513, 0x00000000),
+	MACRO_OBJECT_WITH_BEH_PARAM(macro_coin_line_horizontal, -90, 7325, -6475, -12513, 0x00000000),
 	MACRO_OBJECT_WITH_BEH_PARAM(macro_coin_line_horizontal, -90, 9888, -6251, -12762, 0x00000000),
 	MACRO_OBJECT_WITH_BEH_PARAM(macro_coin_line_horizontal, 155, 15114, -5786, -7815, 0x00000000),
 	MACRO_OBJECT_WITH_BEH_PARAM(macro_coin_line_horizontal, -152, 18174, -5786, -7875, 0x00000000),
@@ -79,6 +79,7 @@ const MacroObject lll_area_1_macro_objs[] = {
 	MACRO_OBJECT_WITH_BEH_PARAM(macro_coin_ring_horizontal, -90, -6790, -3526, -2540, 0x00000000),
 	MACRO_OBJECT_WITH_BEH_PARAM(macro_coin_ring_horizontal, -90, -8972, -6161, -4353, 0x00000000),
 	MACRO_OBJECT_WITH_BEH_PARAM(macro_red_coin, -90, -3231, -4898, -15748, 0x00000000),
+	MACRO_OBJECT_WITH_BEH_PARAM(macro_coin_ring_horizontal, 0, 4622, 942, -2578, 0x00000000),
 	MACRO_OBJECT_END(),
 };
 

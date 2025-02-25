@@ -240,7 +240,7 @@ const GeoLayout lll_area_1_geo[] = {
 		GEO_OPEN_NODE(),
 			GEO_DISPLAY_LIST(LAYER_ALPHA, lll_dl_RCP_dokan_012_mesh_layer_4),
 		GEO_CLOSE_NODE(),
-		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, -557, -101, -2515, 38, -90, 90, lll_dl_RCP_dokan_013_mesh_layer_1),
+		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, -2517, -724, -4762, 56, -110, 70, lll_dl_RCP_dokan_013_mesh_layer_1),
 		GEO_OPEN_NODE(),
 			GEO_DISPLAY_LIST(LAYER_ALPHA, lll_dl_RCP_dokan_013_mesh_layer_4),
 		GEO_CLOSE_NODE(),
