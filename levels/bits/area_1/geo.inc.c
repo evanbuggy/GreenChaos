@@ -20,6 +20,7 @@ const GeoLayout bits_area_1_geo[] = {
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_ALPHA, 2389, -1220, -13629, 74, 0, 0, bits_dl_Plane_002_mesh_layer_4),
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_ALPHA, 8265, -515, 7162, 92, -85, 49, bits_dl_Plane_003_mesh_layer_4),
 		GEO_TRANSLATE_NODE_WITH_DL(LAYER_TRANSPARENT, 0, -270, 0, bits_dl_Plane_004_mesh_layer_5),
+		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, -1770, -1749, 10217, 95, 157, -13, bits_dl_skinned_mesh_layer_1),
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_ALPHA, -991, 1358, 6814, 0, 80, -90, bits_dl_Vine_mesh_layer_4),
 	GEO_CLOSE_NODE(),
 	GEO_RETURN(),
