@@ -1,11 +1,11 @@
-void scroll_lll_dl_Level_001_mesh_layer_1_vtx_6() {
+void scroll_lll_dl_Level_002_mesh_layer_1_vtx_6() {
 	int i = 0;
 	int count = 14;
 	int height = 32 * 0x20;
 
 	static int currentY = 0;
 	int deltaY;
-	Vtx *vertices = segmented_to_virtual(lll_dl_Level_001_mesh_layer_1_vtx_6);
+	Vtx *vertices = segmented_to_virtual(lll_dl_Level_002_mesh_layer_1_vtx_6);
 
 	deltaY = (int)(-0.5 * 0x20) % height;
 
@@ -230,7 +230,7 @@ void scroll_lll_dl_Plane_036_mesh_layer_1_vtx_0() {
 }
 
 void scroll_lll() {
-	scroll_lll_dl_Level_001_mesh_layer_1_vtx_6();
+	scroll_lll_dl_Level_002_mesh_layer_1_vtx_6();
 	scroll_lll_dl_Plane_mesh_layer_1_vtx_0();
 	scroll_lll_dl_Plane_011_mesh_layer_1_vtx_0();
 	scroll_lll_dl_Plane_012_mesh_layer_1_vtx_0();
