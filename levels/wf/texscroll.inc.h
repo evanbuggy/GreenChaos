@@ -1,4 +1,14 @@
 extern void scroll_wf_dl_ArrowSIgn_mesh_layer_1_vtx_0();
+extern void scroll_wf_dl_ArrowSIgn_001_mesh_layer_1_vtx_0();
+extern void scroll_wf_dl_ArrowSIgn_002_mesh_layer_1_vtx_0();
+extern void scroll_wf_dl_ArrowSIgn_003_mesh_layer_1_vtx_0();
+extern void scroll_wf_dl_ArrowSIgn_004_mesh_layer_1_vtx_0();
+extern void scroll_wf_dl_ArrowSIgn_005_mesh_layer_1_vtx_0();
+extern void scroll_wf_dl_ArrowSIgn_006_mesh_layer_1_vtx_0();
+extern void scroll_wf_dl_ArrowSIgn_007_mesh_layer_1_vtx_0();
+extern void scroll_wf_dl_ArrowSIgn_008_mesh_layer_1_vtx_0();
+extern void scroll_wf_dl_ArrowSIgn_009_mesh_layer_1_vtx_0();
+extern void scroll_wf_dl_ArrowSIgn_010_mesh_layer_1_vtx_0();
 extern void scroll_wf_dl_ArrowSign2_mesh_layer_1_vtx_0();
 extern void scroll_wf_dl_ArrowSign2_001_mesh_layer_1_vtx_0();
 extern void scroll_wf();
