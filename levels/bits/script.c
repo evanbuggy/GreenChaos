@@ -151,6 +151,9 @@ const LevelScript level_bits_entry[] = {
 	LOAD_MODEL_FROM_GEO(MODEL_MR_L, mr_l_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_LUIGI_BOMB, luigi_bomb_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_BITS_TREE, bg_tree_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_MR_L, mr_l_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_LUIGI_BOMB, luigi_bomb_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_BITS_TREE, bg_tree_geo), 
 	/* Fast64 begin persistent block [level commands] */
 	LOAD_MODEL_FROM_GEO(MODEL_MR_L, mr_l_geo),
 	LOAD_MODEL_FROM_GEO(MODEL_LUIGI_BOMB, luigi_bomb_geo),
@@ -160,7 +163,7 @@ const LevelScript level_bits_entry[] = {
 	AREA(1, bits_area_1),
 		WARP_NODE(0x0A, LEVEL_WF, 0x01, 0x0A, WARP_NO_CHECKPOINT),
 		WARP_NODE(0xF0, LEVEL_CASTLE, 0x01, 0x0A, WARP_NO_CHECKPOINT),
-		WARP_NODE(0xF1, LEVEL_CASTLE_GROUNDS, 0x01, 0x08, WARP_NO_CHECKPOINT),
+		WARP_NODE(0xF1, LEVEL_CASTLE_GROUNDS, 0x02, 0x08, WARP_NO_CHECKPOINT),
 		OBJECT(MODEL_MR_L, 0, -360, -679, 0, 0, 0, 0x00000000, bhvBossLuigi),
 		MARIO_POS(0x01, 180, 0, 1625, 847),
 		OBJECT(MODEL_YELLOW_COIN, 1073, -403, 3, 0, 0, 0, 0x00000000, bhvYellowCoin),

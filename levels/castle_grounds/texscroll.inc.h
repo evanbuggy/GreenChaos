@@ -3,4 +3,6 @@ extern void scroll_castle_grounds_dl_Cylinder_001_mesh_layer_1_vtx_1();
 extern void scroll_castle_grounds_dl_Cylinder_004_mesh_layer_1_vtx_1();
 extern void scroll_castle_grounds_dl_Cylinder_005_mesh_layer_1_vtx_1();
 extern void scroll_castle_grounds_dl_Cylinder_006_mesh_layer_1_vtx_1();
+extern void scroll_castle_grounds_dl_Cylinder_007_mesh_layer_1_vtx_0();
+extern void scroll_castle_grounds_dl_Cylinder_008_mesh_layer_1_vtx_1();
 extern void scroll_castle_grounds();

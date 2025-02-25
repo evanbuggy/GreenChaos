@@ -33,7 +33,7 @@ const MacroObject lll_area_1_macro_objs[] = {
 	MACRO_OBJECT_WITH_BEH_PARAM(macro_coin_line_horizontal, -90, 16146, -5845, 6463, 0x00000000),
 	MACRO_OBJECT_WITH_BEH_PARAM(macro_coin_line_horizontal, -90, -13310, -6475, -13590, 0x00000000),
 	MACRO_OBJECT_WITH_BEH_PARAM(macro_coin_line_horizontal, -90, 3603, -6475, -12513, 0x00000000),
-	MACRO_OBJECT_WITH_BEH_PARAM(macro_coin_line_horizontal, -82, 7066, -6935, -12513, 0x00000000),
+	MACRO_OBJECT_WITH_BEH_PARAM(macro_coin_ring_horizontal, -82, 7051, -6935, -12619, 0x00000000),
 	MACRO_OBJECT_WITH_BEH_PARAM(macro_coin_line_horizontal, -90, 9888, -6251, -12762, 0x00000000),
 	MACRO_OBJECT_WITH_BEH_PARAM(macro_coin_line_horizontal, 155, 15114, -5786, -7815, 0x00000000),
 	MACRO_OBJECT_WITH_BEH_PARAM(macro_coin_line_horizontal, -152, 18174, -5786, -7875, 0x00000000),
