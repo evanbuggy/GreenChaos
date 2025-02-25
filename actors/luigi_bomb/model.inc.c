@@ -198,26 +198,15 @@ u8 luigi_bomb_luigi_bomb_pal_rgba16[] = {
 	0xf4, 0xde, 
 };
 
-Vtx luigi_bomb_luigi_bomb_mesh_layer_4_vtx_cull[8] = {
-	{{ {-100, -100, 0}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {-100, 100, 0}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {-100, 100, 0}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {-100, -100, 0}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {100, -100, 0}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {100, 100, 0}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {100, 100, 0}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {100, -100, 0}, 0, {0, 0}, {0, 0, 0, 0} }},
-};
-
-Vtx luigi_bomb_luigi_bomb_mesh_layer_4_vtx_0[4] = {
+Vtx luigi_bomb_000_displaylist_mesh_layer_4_vtx_0[4] = {
 	{{ {100, 100, 0}, 0, {993, -1}, {0, 0, 127, 255} }},
 	{{ {-100, 100, 0}, 0, {-1, -1}, {0, 0, 127, 255} }},
 	{{ {-100, -100, 0}, 0, {-1, 993}, {0, 0, 127, 255} }},
 	{{ {100, -100, 0}, 0, {993, 993}, {0, 0, 127, 255} }},
 };
 
-Gfx luigi_bomb_luigi_bomb_mesh_layer_4_tri_0[] = {
-	gsSPVertex(luigi_bomb_luigi_bomb_mesh_layer_4_vtx_0 + 0, 4, 0),
+Gfx luigi_bomb_000_displaylist_mesh_layer_4_tri_0[] = {
+	gsSPVertex(luigi_bomb_000_displaylist_mesh_layer_4_vtx_0 + 0, 4, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSPEndDisplayList(),
 };
@@ -251,13 +240,9 @@ Gfx mat_revert_luigi_bomb_luigi_bomb[] = {
 	gsSPEndDisplayList(),
 };
 
-Gfx luigi_bomb_luigi_bomb_mesh_layer_4[] = {
-	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPVertex(luigi_bomb_luigi_bomb_mesh_layer_4_vtx_cull + 0, 8, 0),
-	gsSPSetGeometryMode(G_LIGHTING),
-	gsSPCullDisplayList(0, 7),
+Gfx luigi_bomb_000_displaylist_mesh_layer_4[] = {
 	gsSPDisplayList(mat_luigi_bomb_luigi_bomb),
-	gsSPDisplayList(luigi_bomb_luigi_bomb_mesh_layer_4_tri_0),
+	gsSPDisplayList(luigi_bomb_000_displaylist_mesh_layer_4_tri_0),
 	gsSPDisplayList(mat_revert_luigi_bomb_luigi_bomb),
 	gsDPPipeSync(),
 	gsSPSetGeometryMode(G_LIGHTING),

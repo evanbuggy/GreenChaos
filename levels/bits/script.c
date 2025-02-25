@@ -127,6 +127,12 @@ const LevelScript level_bits_entry[] = {
 	LOAD_MODEL_FROM_GEO(MODEL_MR_L, mr_l_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_LUIGI_BOMB, luigi_bomb_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_BITS_TREE, bg_tree_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_MR_L, mr_l_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_LUIGI_BOMB, luigi_bomb_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_BITS_TREE, bg_tree_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_MR_L, mr_l_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_LUIGI_BOMB, luigi_bomb_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_BITS_TREE, bg_tree_geo), 
 	/* Fast64 begin persistent block [level commands] */
 	LOAD_MODEL_FROM_GEO(MODEL_MR_L, mr_l_geo),
 	LOAD_MODEL_FROM_GEO(MODEL_LUIGI_BOMB, luigi_bomb_geo),

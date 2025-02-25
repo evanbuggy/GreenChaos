@@ -6875,8 +6875,8 @@ void set_flag_post_door(struct Camera *c) {
 }
 
 void cutscene_soften_music(UNUSED struct Camera *c) {
-    seq_player_lower_volume(SEQ_PLAYER_LEVEL, 60, 40);
-}
+   seq_player_lower_volume(SEQ_PLAYER_LEVEL, 60, 40);
+} 
 
 void cutscene_unsoften_music(UNUSED struct Camera *c) {
     seq_player_unlower_volume(SEQ_PLAYER_LEVEL, 60);
@@ -8539,7 +8539,7 @@ void cutscene_enter_pyramid_top(struct Camera *c) {
 void cutscene_dialog_start(struct Camera *c) {
     s16 yaw;
 
-    cutscene_soften_music(c);
+//    cutscene_soften_music(c);
     set_time_stop_flags(TIME_STOP_ENABLED | TIME_STOP_DIALOG);
 
     if (c->mode == CAMERA_MODE_BOSS_FIGHT) {

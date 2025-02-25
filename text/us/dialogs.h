@@ -1480,14 +1480,14 @@ courses to activate the\n\
 Cap Blocks."))
 
 DEFINE_DIALOG(DIALOG_114, 1, 3, 95, 200, _("\
-Grr, the big boss warned\n\
-me about you.\n\
+Grrr... the big boss\n\
+warned me about you...\n\
 \n\
-Told me to take down\n\
+He told me to take down\n\
 any rodent I see in the\n\
 factory.\n\
-Hmph, it's a chubby one\n\
-at that! This should be\n\
+Hmph, a chubby one at\n\
+that! This should be\n\
 easy!"))
 
 DEFINE_DIALOG(DIALOG_115, 1, 5, 95, 200, _("\

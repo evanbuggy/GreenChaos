@@ -216,7 +216,18 @@ s32 get_star_collection_dialog(struct MarioState *m) {
     for (i = 0; i < ARRAY_COUNT(sStarsNeededForDialog); i++) {
         numStarsRequired = sStarsNeededForDialog[i];
         if (m->prevNumStarsForDialog < numStarsRequired && m->numStars >= numStarsRequired) {
-            dialogID = i + DIALOG_141;
+//            dialogID = i + DIALOG_141;
+// ok so what is the goal
+// did you check for an instance of the function within dialog related functions
+// i will Search (Ctrl+Shift+F) in my own repo  PLease wait
+// alright i think i found the function
+
+// look for seq_player_lower_volume and seq_player_unlower_volume
+
+// ok this I was just removing the dialog when you get stars dw about that I think I did it
+// but I wanted to remove the thing that causes the music to lower vol when during a dialog
+// yea, I didn't find anything though, unless im blindd
+//ok alr
             break;
         }
     }
