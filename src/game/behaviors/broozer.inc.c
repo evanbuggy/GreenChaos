@@ -2,7 +2,7 @@ static struct ObjectHitbox sBroozerHitbox = {
     /* interactType:      */ INTERACT_COMBAT_ENEMY,
     /* downOffset:        */ 0,
     /* damageOrCoinValue: */ 1,
-    /* health:            */ 1,
+    /* health:            */ 20,
     /* numLootCoins:      */ 1,
     /* radius:            */ 150,
     /* height:            */ 250,
