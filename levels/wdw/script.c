@@ -73,6 +73,7 @@ const LevelScript level_wdw_entry[] = {
 	LOAD_MODEL_FROM_GEO(MODEL_LUIGI_DOLL, luigi_doll_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_LUIGI_DOLL, luigi_doll_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_LUIGI_DOLL, luigi_doll_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_LUIGI_DOLL, luigi_doll_geo), 
 	/* Fast64 begin persistent block [level commands] */
 	LOAD_MODEL_FROM_GEO(MODEL_LUIGI_DOLL, luigi_doll_geo),
 	/* Fast64 end persistent block [level commands] */

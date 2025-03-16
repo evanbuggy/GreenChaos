@@ -125,10 +125,6 @@ Thank you to Render96\n\
 for the beautiful\n\
 Mario base model on\n\
 the title screen.\n\
-Thank you to yoyotam3\n\
-for implementing the\n\
-Spin Saw and various\n\
-enemy interactions!\n\
 Thank you HackerSM64\n\
 and Fast64 Discord\n\
 for additional\n\
